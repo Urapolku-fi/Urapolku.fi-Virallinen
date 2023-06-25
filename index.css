@@ -1,0 +1,87 @@
+body {
+    background-color: #bee46c;
+    color: #1D252C;
+    font-family: 'Outfit', sans-serif;
+    width: 1440px;
+    height: 900px;
+    margin: auto;
+    background-image: url(lines_grid.png);
+}
+header {
+    text-align: center;
+}
+#background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 1440px;
+    height: 900px;
+}
+#coming-text {
+    font-size: 100px; 
+    text-align: center;
+    margin: 20px;
+}
+#coming-text h1 {
+
+    margin-bottom: 20px;
+}
+#coming-desc {
+    font-size: 25px;
+    width: 575px;
+    height: 64px;
+    text-align: center;
+    margin: auto;
+}
+#redbox {
+    position: relative;
+    color: white;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    background-color:#C3553B ;
+    width: 400px;
+    height: 50px;
+    margin-top: 20px;
+    border-radius: 10px;
+    top: -10em;
+}
+#whitebox {
+        top: 3.6em;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        border: 3px solid white;
+        width: 500px;
+        height: 150px;
+        margin-bottom: 40px;
+        border-radius: 10px;
+        overflow: hidden;
+}
+.timer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    text-align: center;
+  }
+
+  .timer-item {
+    padding: 10px;
+    font-size: 25px;
+    font-weight: 600;
+    color: white;
+  }
+
+  .timer-item span {
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    margin-top: 10px;
+    color: black;
+  }
