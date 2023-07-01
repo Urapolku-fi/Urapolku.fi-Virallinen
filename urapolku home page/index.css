@@ -1,6 +1,7 @@
 body {
     margin: 0px;
     background-color: #0B0121;
+    margin: auto;
 }
 button:hover {
     cursor: pointer;
@@ -11,7 +12,6 @@ button {
 }
 #navbar {
     display: flex;
-    padding: 0px 24px;
     justify-content: center;
     align-items: flex-start;
     align-self: stretch;
@@ -687,4 +687,25 @@ button {
 .Footer-logo h2 {
     position: relative;
     top: -26px;
+} 
+/* Animations when scrolling */
+.hidden {
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 1s, transform 1s;
+}
+
+.show {
+    animation: zoom-fade-in 0.4s forwards;
+}
+
+@keyframes zoom-fade-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.75);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
