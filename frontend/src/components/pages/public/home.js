@@ -1,25 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="index.js" defer></script>
-    <script src="animations.js" defer></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <title>Document</title>
-</head>
-<body>
-    <section id="s1">
+import logo from '../../pictures/urapolku.png';
+import aiLogo from '../../pictures/Urapolku_AI_logo.png'
+import video from '../../pictures/video.png'
+import digital from '../../pictures/Digital-image.png'
+
+
+import '../../css/home.css';
+
+import observer from '../../animations/hover';
+import {useEffect} from 'react'
+
+
+function Home() {
+    useEffect(() => {
+      const elements = document.querySelectorAll('.hidden');
+      elements.forEach((el) => observer.observe(el));
+  
+      // Clean up the observer when the component unmounts
+      return () => {
+        elements.forEach((el) => observer.unobserve(el));
+      };
+    }, []);
+  return (
+    
+    <div>
+    <section id="s1" class="hidden">
         <div id="navbar">
             <div class="navbar-container">
                 <div class="navbar-content">
                     <div class="navbar-brand">
                         <div class="logo-wrapper">
                             <div class="logo">
-                                <img src="pictures/Valtflow_icon.png" alt="" width="22px" height="22px">
+                                <img src={logo} alt="icon" width="22px" height="22px"/>
                                 <p>Urapolku</p>
                             </div>
                         </div>
@@ -36,7 +47,7 @@
             </div>
         </div>
     </section>
-    <section id="s2"">
+    <section id="s2" class="hidden">
         <div id="Hero-stack">
             <div class="Small-container">
                 <div class="Title-section hidden">
@@ -44,7 +55,7 @@
                         <p>Kaikki työpaikat - ja myös niiden palkat</p>
 
                     </div>
-                    <div class="Content" class="hidden">
+                    <div class="Content hidden">
                         <h1>Yhdellä haulla urapolulta löydät kaikki avoimet työpaikat.</h1>
                         <div class="Paragraph-wrapper">
                             <p>Urapolku on työnetsimisalusta, joka tarjoaa sinulle nopean ja tehokkaan tavan löytää juuri sinulle sopivia työpaikkoja.</p>
@@ -52,18 +63,18 @@
                     </div>
                     <div class="Actions">
                         <button class="Download">Rekisteröidy</button>
-                        <button class="Talk">Avoimet työpaikat</button>
+                        <button class="Open-jobs">Avoimet työpaikat</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <section id="s3" class="hidden">
-        <div id="Content">
-            <div class="Video">
-                <img src="pictures/video.png" alt="">
-            </div>
+    <div id="Content">
+        <div class="Video">
+            <img src={video} alt=""/>
         </div>
+    </div>
     </section>
     <section id="s4" class="hidden">
         <div id="Middle-section">
@@ -78,7 +89,7 @@
             <div class="Middle-section-column">
                 <div class="Middle-section-card-wrapper">
                     <div class="Middle-section-icon-wrapper">
-                        <img src="pictures/Urapolku_AI_logo.png" alt="">
+                        <img src={aiLogo} alt=""/>
                     </div>
                     <div class="Middle-section-card-content">
                         <h2>Urapolku AI</h2>
@@ -92,7 +103,7 @@
             <div class="Middle-section-column">
                 <div class="Middle-section-card-wrapper">
                     <div class="Middle-section-icon-wrapper">
-                        <img src="pictures/Digital-image.png" alt="" class="">
+                        <img src={digital} alt="" class=""/>
                     </div>
                     <div class="Middle-section-card-content">
                         <h2>Digital Credit Tokens</h2>
@@ -103,6 +114,7 @@
                     </div>
                 </div>  
             </div>
+            </div>
     </section>
     <section id="s5" class="hidden">
         <div id="Lower-container">
@@ -111,7 +123,7 @@
                 <p>Etsitpä sitten töitä tai haluat löytää uusia työntekijöitä, me tarjoamme sinulle innovatiivisen ratkaisun löytää juuri sen mitä etsit: olipa kyseessä sitten uusi työpaikka, taitava osaaja, suunnanmuutos, unelmatyön tavoittelu tai vaikka kesätyö. Urapolullta löydät suuren valikoiman avoimia työpaikkoja, parhaat vinkit työnhakuun ja kiehtovimmat tarinat työelämän koukeroista.</p>
                 <button>Rekisteröidy</button>
             </div>
-            </div>
+        </div>
     </section>
     <section id="s6" class="hidden">
         <div id="Footer">
@@ -151,7 +163,7 @@
                     <div class="Footer-third-column">
                         <div class="Footer-logo-wrapper">
                             <div class="Footer-logo">
-                                <img src="pictures/Valtflow_icon.png" alt="">
+                                <img src={logo} alt=""/>
                                 <h2>Urapolku</h2>
                             </div>
                         </div>
@@ -161,5 +173,7 @@
             </div>
         </div>
     </section>
-</body>
-</html>
+    </div>
+  );
+}
+export default Home;
