@@ -72,11 +72,13 @@ body {
     gap: 10px;
     flex-shrink: 0;
   }
+
   .navbar-menu {
     display: flex;
     align-items: center;
     gap: 32px;
   }
+
   .navbar-menu li {
     display: flex;
     padding: 24px 12px;
@@ -710,3 +712,25 @@ body {
         transform: scale(1);
     }
   }
+
+@media screen and (max-width: 600px) {
+  .navbar-menu {
+    display: none;
+  }
+
+  .menu-icon {
+    width: 2em;
+    height: 2em;
+  }
+
+  .navbar-container {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .navbar-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
