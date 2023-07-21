@@ -36,14 +36,14 @@ function Home() {
                         </div>
                     </div>
                     <div class="navbar-menu">
-                        <li><a href="#">Avoimet Työpaikat</a></li>
-                        <li><a href="#">Jätä työpaikka ilmoitus</a></li>
-                        <li><a href="#">Suosikit</a></li>
+                        <li><a href="/">Avoimet Työpaikat</a></li>
+                        <li><a href="/">Jätä työpaikka ilmoitus</a></li>
+                        <li><a href="/">Suosikit</a></li>
                         <button class="Register">Rekisteröidy</button>
                         <button class="Login">Kirjaudu</button>
                     </div>
                     <div className="menu-icon">
-                        <img src={MenuIcon} />
+                        <img alt="burger icon" src={MenuIcon} />
                     </div>
                 </div>
             </div>
@@ -169,7 +169,6 @@ function Home() {
                                 <h2>Urapolku</h2>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
             </div>
