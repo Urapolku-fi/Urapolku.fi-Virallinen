@@ -2,7 +2,7 @@ import logo from '../../pictures/urapolku.png';
 import aiLogo from '../../pictures/Urapolku_AI_logo.png'
 import video from '../../pictures/video.png'
 import digital from '../../pictures/Digital-image.png'
-
+import MenuIcon from '../../pictures/menu.svg'
 
 import '../../css/home.css';
 
@@ -41,7 +41,9 @@ function Home() {
                         <li><a href="#">Suosikit</a></li>
                         <button class="Register">Rekisteröidy</button>
                         <button class="Login">Kirjaudu</button>
-
+                    </div>
+                    <div className="menu-icon">
+                        <img src={MenuIcon} />
                     </div>
                 </div>
             </div>
