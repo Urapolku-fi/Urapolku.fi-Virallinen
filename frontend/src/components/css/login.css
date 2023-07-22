@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap');
+#Login-wrapper {
+  background: #120A2F;
+  height: 800px;
+  width: 2000px;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0px auto;
+}
+
+#Login {
+  display: flex;
+}
+
+#Left-side {
+  width: 444px;
+  height: 800px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  height: 800px;
+  padding-top: 350px;
+  padding-left: 50px;
+}
+
+#logo {
+  display: relative;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+.Logo-wrapper {
+  display: inline-flex;
+  height: 40px;
+  padding: 0px 24.733px 0px 90.267px;
+  justify-content: flex-end;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+#Left-side p {
+  width: 392px;
+  height: 163px;
+  flex-shrink: 0;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 156.5%;
+  /* 37.56px */
+  letter-spacing: 1.92px;
+  color: white;
+  text-align: center;
+}
+
+.Top {
+  display: flex;
+  position: relative;
+  left: -20px;
+}
+
+#logo {
+  position: relative;
+  top: 30px;
+  padding-right: 20px;
+}
+
+.Top h2 {
+  color: #FFF;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: Montserrat;
+  font-size: 39.621px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: -1.189px;
+}
+
+#Right-side {
+  position:  relative;
+  background-color: #FEF9F9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 200px;
+  padding-top: 40px;
+  border-radius: 15px;
+  width: 1300px;
+
+}
+#Right-side h2 {
+    color: #000;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 136.5%; /* 40.95px */
+    letter-spacing: 3px;
+    padding-bottom: 20px;
+    width: 300px;
+
+}
+.box {
+    position: relative;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+    padding-left: 230px;
+}
+.Signin-buttons {
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+}
+.Google-signin button {
+    display: flex;
+    width: 247px;
+    height: 59px;
+    flex-shrink: 0;
+    border:  none;
+    background-color: #FFF;
+    gap: 10px;
+    border-radius: 8px;
+    border: 2px solid #D8D3D3;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+
+
+}
+.Google-signin button p {
+    position: relative;
+    color: #5C5C5C;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 136.5%;
+}
+.Google-signin button:hover {
+    opacity: 80%;
+    cursor: pointer;
+}
+
+.Facebook-signin button {
+    display: flex;
+    width: 247px;
+    height: 59px;
+    flex-shrink: 0;
+    border:  none;
+    background-color: #FFF;
+    gap: 10px;
+    border-radius: 8px;
+    border: 2px solid #D8D3D3;
+    justify-content: center;
+    align-items: center;
+}
+.Facebook-signin button p {
+    position: relative;
+    color: #5C5C5C;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 136.5%;
+}
+.Facebook-signin button:hover {
+    opacity: 80%;
+    cursor: pointer;
+}
+.OR {
+    position: relative;
+    width: 500px;
+    color: #797979;
+    text-align: center;
+    font-family: Telex;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    left: 20px;
+    top: 20px;
+}
+.email {
+    width: 559.997px;
+    height: 39px;
+    flex-shrink: 0;
+    border: none;
+    margin-bottom: 50px;
+    padding-left: 10px;
+    background-color: #FEF9F9;
+}
+.input-fields {
+    display: grid;
+    position: relative;
+    margin-top: 70px;
+}
+.password {
+    width: 559.997px;
+    height: 39px;
+    flex-shrink: 0;
+    border: none;
+    margin-bottom: 97px;
+    padding-left: 10px;
+    background-color: #FEF9F9;
+}
+.pass-field button {
+    position: relative;
+    left: -40px;
+    border: none;
+    top: 8px;
+    background: none;
+
+} .pass-field button:hover {
+    opacity: 80%;
+    cursor: pointer;
+}
+.Log-in {
+    display: flex;
+    width: 554px;
+    padding: 18px 0px 19px 0px;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 8px;
+    background: #120A2F;
+    border: none;
+    height: 70px;
+    margin-bottom: 57px;
+}
+.Log-in p {
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 136.5%; /* 21.84px */
+    letter-spacing: 1.28px;
+}
+.Log-in:hover {
+    opacity: 80%;
+    cursor: pointer;
+}
+.Create-account {
+    width: 397px;
+    height: 28px;
+    flex-shrink: 0;
+    display: flex;
+    gap: 10px;
+}
+.Create-account p {
+    color: #6B6A6A;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 136.5%; /* 21.84px */
+    letter-spacing: 1.28px;
+}
+.Create-account a {
+    position: relative;
+    text-decoration: none;
+    color: #3F3CEE;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 136.5%;
+    letter-spacing: 1.28px;
+    top: 16px;
+}
+.Create-account li {
+    list-style-type: none;
+}
