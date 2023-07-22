@@ -197,7 +197,7 @@ function Home() {
               <div className="Footer-third-column">
                 <div className="Footer-logo-wrapper">
                   <div className="Footer-logo">
-                    <img src={""} alt="" />
+                    <img src={"/pictures/urapolku.png"} alt="" />
                     <h2>Urapolku</h2>
                   </div>
                 </div>
