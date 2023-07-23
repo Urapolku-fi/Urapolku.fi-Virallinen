@@ -2,7 +2,7 @@
 body {
   background: #120A2F;
   height: 800px;
-  width: 2000px;
+  width: 100%;
   overflow: hidden;
   font-family: 'Montserrat', sans-serif;
   margin: 0px auto;
@@ -13,7 +13,7 @@ body {
 }
 
 #Left-side {
-  width: 444px;
+  width: 25%;
   height: 800px;
   flex-shrink: 0;
   align-items: center;
@@ -76,7 +76,6 @@ body {
 }
 
 #Right-side {
-  position:  relative;
   background-color: #FEF9F9;
   display: flex;
   justify-content: center;
@@ -84,7 +83,9 @@ body {
   padding-left: 200px;
   padding-top: 40px;
   border-radius: 15px;
-  width: 1300px;
+  width: 1400px;
+  height: 1000px;
+  margin-top: 90px;
 
 }
 #Right-side h2 {
@@ -103,7 +104,10 @@ body {
     width: 100%;
     height: 100%;
     margin-top: 100px;
-    padding-left: 230px;
+    padding-left: 5em;
+}
+.Mobile-logo-wrapper {
+    display: none;
 }
 .Signin-buttons {
     display: flex;
@@ -111,22 +115,25 @@ body {
     padding-left: 20px;
 }
 .Google-signin button {
-    display: flex;
     width: 247px;
     height: 59px;
-    flex-shrink: 0;
-    border:  none;
-    background-color: #FFF;
     gap: 10px;
+    margin-right: 30px;
+
+} .Google-signin button, .Mobile-google-signin button {
+
+
+    /* Google Signin styling */
+    display: flex;
     border-radius: 8px;
     border: 2px solid #D8D3D3;
     justify-content: center;
     align-items: center;
-    margin-right: 30px;
-
-
+    background-color: #FFF;
+    flex-shrink: 0;
 }
-.Google-signin button p {
+
+.Google-signin button p, .Mobile-google-signin p {
     position: relative;
     color: #5C5C5C;
     font-size: 14px;
@@ -140,19 +147,22 @@ body {
 }
 
 .Facebook-signin button {
-    display: flex;
     width: 247px;
     height: 59px;
     flex-shrink: 0;
-    border:  none;
-    background-color: #FFF;
     gap: 10px;
-    border-radius: 8px;
+}
+
+.Facebook-signin button, .Mobile-facebook-signin button {
+    display: flex;
     border: 2px solid #D8D3D3;
     justify-content: center;
     align-items: center;
+    border-radius: 8px;
+    background-color: #FFF;
+    gap: 10px;
 }
-.Facebook-signin button p {
+.Facebook-signin button p, .Mobile-facebook-signin button p {
     position: relative;
     color: #5C5C5C;
     font-size: 14px;
@@ -184,6 +194,7 @@ body {
     margin-bottom: 50px;
     padding-left: 10px;
     background-color: #FEF9F9;
+    border-bottom: 2px solid #C4C4C4;
 }
 .input-fields {
     display: grid;
@@ -198,6 +209,7 @@ body {
     margin-bottom: 97px;
     padding-left: 10px;
     background-color: #FEF9F9;
+    border-bottom: 2px solid #C4C4C4;
 }
 .pass-field button {
     position: relative;
@@ -264,3 +276,178 @@ body {
 .Create-account li {
     list-style-type: none;
 }
+.Mobile-signin-buttons {
+    display: none;
+}
+.Mobile-or {
+    display: none;
+}
+@media only screen and (max-width: 400px) {
+    body {
+        width: 100%;
+        height: 800px;
+        background-color: #FEF9F9;
+        position: relative;
+    }
+    .box {
+        width: 100%;
+        margin-right: 0px;
+        margin-top: 0px;
+        top: -2em;
+        padding-left: 0px;
+
+    }
+    #Left-side {
+        display: none;
+    }
+    #Right-side {
+        display: block;
+        height: 100%;
+        width: 23.5em;
+        margin-top: 0px;
+        padding: 0px;
+        gap: 0px;
+    }
+    Right-side h2 {
+        margin-block-end: 0px;
+    }
+    .Signin-buttons {
+        display: none;
+    }
+    .Mobile-logo-wrapper {
+        display: flex;
+        gap: 0.5em;
+        width: 100%;
+        padding-left: 5.5em;
+        margin: 0px;
+        margin-bottom: 2.5em;
+        margin-right: 0em;
+    }
+    .OR {
+        display: none;
+    }
+    .Mobile-or {
+        color: #000;
+        font-family: Inter;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.81px;
+        display: block;
+        overflow: hidden;
+        text-align: center;
+    }
+    .Mobile-or p {
+        width: 100px;
+        margin: 0px;
+        position: relative;
+        left: 7.7em;
+    }
+    .Mobile-or:before,
+    .Mobile-or:after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 2.5px;
+    opacity: 20%;
+    position: relative;
+    vertical-align: middle;
+    width: 25%;
+    }
+
+    .Mobile-or:before {
+    right: 0.5em;
+    margin-left: -50%;
+    top: 0.95em;
+    left: 1.1em;
+
+    }
+
+.Mobile-or:after {
+  left: 0.5em;
+  margin-right: -50%;
+  top: -1.3em;
+  left: -1em;
+}
+        
+    .box h2 {
+        font-size: 60px
+    }
+    .Welcome {
+        position: relative;
+        width: 100px;
+        border-bottom: 2px solid #C4C4C4;
+        left: 35px;
+        margin: 0px;
+        text-align: center;
+    }
+    .Welcome h2 {
+        margin-right: 0px;
+    }
+    .email {
+        width: 23.5em;
+        margin-left: 7.5%;
+        border: 2px solid #C4C4C4;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+    .password {
+        width: 23.5em;
+        margin-left: 7.5%;
+        border: 2px solid #C4C4C4;
+        border-radius: 10px;
+        margin-bottom: 1em;
+    }
+
+        .pass-field button {
+        display: none;
+    }
+    .pass-field {
+        padding-bottom: 0px;
+    }
+    .Log-in {
+        margin-left: 8.25em;
+        border-radius: 3em;
+        height: 3.3em;
+        width: 7.5em;
+        margin-bottom: 1em;
+    }
+    #Right-side h2 {
+        font-size: 25px;
+    }
+    #logo {
+        top: 19px;
+        padding-right: 2px;
+
+    }
+    h2 {
+        margin-block-end: 0px;
+    }
+    .Mobile-facebook-signin button, .Mobile-google-signin button {
+        width: 21em;
+        margin-left: 6%;
+    }
+    .Mobile-google-signin {
+        margin-bottom: 1em;
+    }
+    .Mobile-signin-buttons {
+        display: block;
+    }
+    .Create-account {
+        margin-left: 1.25em;
+    }
+    .input-fields {
+        width: 100%;
+    }
+    .Create-account p, .Create-account a {
+        font-size: 14px;
+    }
+    .Create-account a {
+        top: 10px;
+    }
+    .Create-account {
+        margin-left: 3.5em;
+    }
+    
+    }
