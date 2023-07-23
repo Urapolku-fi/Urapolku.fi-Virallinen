@@ -2,6 +2,7 @@ import { useState, createContext, useContext } from "react";
 import MenuIcon from "../assets/menu.svg";
 import MenuCloseIcon from "../assets/close-menu.svg";
 import "./css/navLayout.css";
+import { Link, useNavigate } from "react-router-dom";
 
 const NavMenuContext = createContext(undefined);
 
@@ -58,9 +59,9 @@ const MenuButton = () => {
 
 const NavLink = ({ styling = "", ...props }) => {
   return (
-    <a href={props.link} className={`nav-link${styling}`}>
+    <Link to={props.link} className={`nav-link${styling}`}>
       {props.text}
-    </a>
+    </Link>
   );
 };
 
@@ -89,6 +90,7 @@ const SideBar = () => {
 
 const NavBarLayout = (props) => {
   const [sideBarVisible, setSideBarVisible] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <NavMenuContext.Provider
@@ -98,8 +100,8 @@ const NavBarLayout = (props) => {
       }}
     >
       <header className="navbar">
-        <div className="nav-logo-wrapper">
-          <img className="nav-logo" src={"/pictures/urapolku.png"} />
+        <div className="nav-logo-wrapper" onClick={() => navigate("/")}>
+          <img className="nav-logo" src={"/pictures/urapolku.png"} />ä
           <p>Urapolku</p>
         </div>
         <div className="nav-items-wrapper">
