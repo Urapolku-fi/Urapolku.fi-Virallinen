@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap');
-body {
+#Login-wrapper {
   background: #120A2F;
   height: 800px;
   width: 100%;

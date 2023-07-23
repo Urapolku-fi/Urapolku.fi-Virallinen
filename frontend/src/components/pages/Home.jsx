@@ -15,40 +15,6 @@ function Home() {
   }, []);
   return (
     <div>
-      <section id="s1" className="hidden">
-        <div id="navbar">
-          <div className="navbar-container">
-            <div className="navbar-content">
-              <div className="navbar-brand">
-                <div className="logo-wrapper">
-                  <div className="logo">
-                    <img
-                      src={"/pictures/urapolku.png"}
-                      alt="icon"
-                      width="22px"
-                      height="22px"
-                    />
-                    <p>Urapolku</p>
-                  </div>
-                </div>
-              </div>
-              <div className="navbar-menu">
-                <li>
-                  <a href="#">Avoimet Työpaikat</a>
-                </li>
-                <li>
-                  <a href="#">Jätä työpaikka ilmoitus</a>
-                </li>
-                <li>
-                  <a href="#">Suosikit</a>
-                </li>
-                <button className="Register">Rekisteröidy</button>
-                <button className="Login">Kirjaudu</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       <section id="s2" className="hidden">
         <div id="Hero-stack">
           <div className="Small-container">
@@ -193,7 +159,7 @@ function Home() {
               <div className="Footer-third-column">
                 <div className="Footer-logo-wrapper">
                   <div className="Footer-logo">
-                    <img src={""} alt="" />
+                    <img src={"/pictures/urapolku.png"} alt="" />
                     <h2>Urapolku</h2>
                   </div>
                 </div>
