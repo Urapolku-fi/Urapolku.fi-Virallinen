@@ -1,10 +1,3 @@
-import Logo from '../pictures/urapolku.png';
-import Facebook from '../pictures/facebook-logo.png';
-import Google from '../pictures/Google-logo.png';
-import Passframe from '../pictures/pass-frame.png';
-import MobileGoogle from '../pictures/Mobile-google-icon.png';
-import MobileFacebook from '../pictures/Mobile-facebook-icon.png';
-
 import '../css/login.css';
 
 function Login() {
@@ -13,7 +6,7 @@ function Login() {
             <div id="Left-side">
                 <div className="Logo-wrapper">
                     <div className="Top">
-                        <img id="logo"src={Logo} alt=""/>
+                        <img id="logo"src={"pictures/urapolku.png"} alt=""/>
                         <h2>Urapolku</h2>
                     </div>
 
@@ -23,21 +16,21 @@ function Login() {
             <div id="Right-side">
                 <div className="box">
                     <div className="Mobile-logo-wrapper">
-                        <img id="logo"src={Logo} alt=""/>
+                        <img id="logo"src={"pictures/urapolku.png"} alt=""/>
                         <h2>Urapolku</h2>
                     </div>
                 <h2 className='Welcome'>Welcome back!</h2>
                 <div className="Signin-buttons">
                     <div className="Google-signin">
                         <button>
-                            <img src={Google} alt=""/>
+                            <img src={"pictures/Google-logo.png"} alt=""/>
                             <p>Sign in with google</p>
                         </button>
                     </div>
 
                     <div className="Facebook-signin">
                         <button>
-                            <img src={Facebook} alt=""/>
+                            <img src={"pictures/facebook-logo.png"} alt=""/>
                             <p>Sign in with Facebook</p>
                         </button>
                     </div>
@@ -52,7 +45,7 @@ function Login() {
                         </div>
                         <div className="pass-field">
                             <input type="password" className="password" placeholder='Password'/>
-                            <button><img src={Passframe} alt=""/></button>
+                            <button><img src={"pictures/pass-frame.png"} alt=""/></button>
                         </div>
                         
                     </div>
@@ -65,14 +58,14 @@ function Login() {
                     <div className="Mobile-signin-buttons">
                         <div className="Mobile-google-signin">
                             <button>
-                                <img src={MobileGoogle} alt=""/>
+                                <img src={"pictures/Mobile-google-icon.png"} alt=""/>
                                 <p>Sign in with google</p>
                             </button>
                         </div>
 
                     <div className="Mobile-facebook-signin">
                         <button>
-                            <img src={MobileFacebook} alt=""/>
+                            <img src={"/pictures/Mobile-facebook-icon.png"} alt=""/>
                             <p>Sign in with Facebook</p>
                         </button>
                     </div>
