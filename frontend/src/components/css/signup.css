@@ -1,32 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap');
-body{
-    margin: 0px;
-}
-#Wrapper-login {
+#Signup-wrapper {
     max-width: 100%;
-    max-height: 100%;
+    margin: auto;
     background-color: #FEF9F9;
     overflow: hidden;
-    margin: 0px;
     font-family: 'Montserrat', sans-serif;
-    padding-bottom: 20%;
 }
-#Login-Left-side {
+#Content {
+    border-radius: 50px;
+}
+#Left-side {
     display: none;
 }
 button:hover {
     cursor: pointer;
     opacity: 80%;
 }
-#Login-Header, #Login-Header-desktop {
+#Header, #Header-desktop {
     display: flex;
     max-width: 400px;
     justify-content: center;
     align-items: center;
     gap: 5%;
-    padding-top: 15%;
+    padding-top: 5%;
 }
-#Login-Header h2, .Login-Welcome h2, #Login-Header-desktop {
+#Header h2, .Welcome h2, #Header-desktop {
     color: #000;
     font-feature-settings: 'clig' off, 'liga' off;
     font-family: Montserrat;
@@ -35,7 +32,7 @@ button:hover {
     line-height: 100%; /* 22px */
     letter-spacing: -0.66px;
 }
-#Login-Header-desktop h2 {
+#Header-desktop h2 {
     color: #FFF;
     font-feature-settings: 'clig' off, 'liga' off;
     font-family: Montserrat;
@@ -45,18 +42,18 @@ button:hover {
     line-height: 100%; /* 39.621px */
     letter-spacing: -1.189px;
 }
-.Login-Welcome h2 {
+.Welcome h2 {
     max-width: 400px;
     text-align: center;
     font-size: 30px;
     border-bottom: 1px solid #CBD3D1;
     padding-bottom: 20px;
 }
-.Login-Welcome {
+.Welcome {
     padding: 0% 15%;
     padding-top: 10%;
 }
-.Login-Input-fields {
+.Input-fields {
     display: flex;
     flex-direction: column;
     max-width: 400px;
@@ -65,7 +62,7 @@ button:hover {
     gap: 1em;
 
 }
-#Login-Email, #Login-Password {
+#Email, #Password, #Fullname, #Phone-number-text, #File-upload {
     width: 75%;
     height: 40px;
     align-items: center;
@@ -80,10 +77,14 @@ button:hover {
     max-width: 350px;
     
 }
-input.Login-Email {
+#Phone-number-text {
+    border: 0px;
+    max-width: 850px;
+}
+input.Email {
     max-width: 250px;
 }
-input#Login-Email, input#Login-Password {
+input#Email, input#Password, input#Fullname, input#Phone-number-text, input#File-upload {
     color: var(--foundation-tertiary-tertiary-600, #99A5A1);
     font-family: Montserrat;
     font-size: 16px;
@@ -91,6 +92,45 @@ input#Login-Email, input#Login-Password {
     font-weight: 400;
     line-height: 28px;
     padding-left: 5%;
+}
+.Phone-number {
+    display: flex;
+    border: 1px solid #E1DEDE;
+    width: 80%;
+    border-radius: 10px;
+}
+.Country-number {
+    display: flex;
+    height: 30px;
+    padding: 6px 20px 10px 22px;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border-radius: 8px;
+    background: #ECEBEB;
+}
+label {
+    display: flex;
+    position: relative;
+    color: #5C5C5C;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 136.5%; /* 19.11px */
+    letter-spacing: 1.12px;
+    float: right;
+}
+.user-agree {
+    text-align: center;
+}
+.user-agree {
+    color: #5C5C5C;
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 136.5%; /* 16.38px */
+    letter-spacing: 0.3px;
 }
 .Login-button {
     display: flex;
@@ -117,13 +157,13 @@ input#Login-Email, input#Login-Password {
     line-height: normal;
     letter-spacing: 0.81px;
 }
-.Login-OR, .Login-Desktop-OR {
+.OR, .Desktop-OR {
     max-width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.Login-OR p, .Login-Desktop-OR p {
+.OR p, .Desktop-OR p {
     color: #000;
     font-family: Inter;
     font-size: 18px;
@@ -133,20 +173,20 @@ input#Login-Email, input#Login-Password {
     letter-spacing: 0.81px;
     margin-top: 0px;
 }
-.Login-Signin-buttons {
+.Signin-buttons {
     max-width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.Login-Google-signin, .Login-Facebook-signin {
+.Google-signin, .Facebook-signin {
     display: flex;
     padding: 10px 18px;
     justify-content: center;
     align-items: center;
     gap: 16px;
 }
-.Login-Google-signin button, .Login-Facebook-signin button {
+.Google-signin button, .Facebook-signin button {
     width: 90%;
     display: flex;
     border-radius: 8px;
@@ -158,7 +198,7 @@ input#Login-Email, input#Login-Password {
     align-items: center;
     gap: 5%;
 }
-.Login-Google-signin p, .Login-Facebook-signin p {
+.Google-signin p, .Facebook-signin p {
     color: #000;
     font-family: Montserrat;
     font-size: 16px;
@@ -166,14 +206,14 @@ input#Login-Email, input#Login-Password {
     font-weight: 400;
     line-height: 28px; /* 175% */
 }
-.Login-No-account {
+.No-account {
     max-width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding-bottom: 20%;
 }
-.Login-No-account a {
+.No-account a {
     color: #3F3CEE;
     font-family: Montserrat;
     font-size: 14px;
@@ -182,7 +222,7 @@ input#Login-Email, input#Login-Password {
     line-height: 16px;
     text-decoration-line: underline;
 }
-.Login-No-account p {
+.No-account p {
     color: #101828;
     font-family: Montserrat;
     font-size: 14px;
@@ -190,53 +230,53 @@ input#Login-Email, input#Login-Password {
     font-weight: 400;
     line-height: 20px; /* 142.857% */
 }
-.Login-Desktop-OR {
+.Desktop-OR {
     display: none;
 }
-.Login-Desktop-signin-buttons {
+.Desktop-signin-buttons {
     display: none;
 }
-.Login-passframe {
+.passframe {
     display: none;
 }
 @media screen and (min-width: 400px) {
-    #Wrapper-login {
+    #Signup-wrapper {
       max-width: 600px;
       padding: 15%;
-      padding-bottom: 20%;
+      padding-bottom: 0%;
       padding-top: 5%;
     }
-    #Login-Email, #Login-Password, #Login-Header {
+    #Email, #Password, #Header, #Fullname,#File-upload {
         max-width: 550px;
     }
-    .Login-Input-fields {
+    .Input-fields {
         max-width: 600px;
     }.Login-button {
         max-width: 600px;
     }
-    .Login-Welcome h2 {
+    .Welcome h2 {
         max-width: 600px;
     }
-    .Login-Welcome {
+    .Welcome {
         padding: 0% 30%;
     }
-    .Login-OR, .Login-Desktop-OR {
+    .OR, .Desktop-OR {
         max-width: 600px;
     }
-    .Login-No-account {
+    .No-account {
         max-width: 600px;
     }
-    .Login-Welcome {
+    .Welcome {
         padding: 0% 15%;
     }
   }
   @media screen and (min-width: 850px) {
-    #Wrapper-login {
+    #Signup-wrapper {
         padding: 0%;
         max-width: 1600px;
         max-height: 100%;
     }
-    #Login-Left-side {
+    #Left-side {
         display: block;
         width: 50%;
         background-color: #120A2F;
@@ -245,7 +285,7 @@ input#Login-Email, input#Login-Password {
         height: 100%;
         padding-bottom: 60%;
     }
-    #Login-Left-side p {
+    #Left-side p {
         color: #FFF;
         text-align: center;
         font-family: Montserrat;
@@ -256,7 +296,7 @@ input#Login-Email, input#Login-Password {
         letter-spacing: 1.92px;
         padding: 0% 5%;
     }
-    #Login-Header-desktop p {
+    #Header-desktop p {
         color: #FFF;
         font-feature-settings: 'clig' off, 'liga' off;
         font-family: Montserrat;
@@ -266,52 +306,56 @@ input#Login-Email, input#Login-Password {
         line-height: 100%; /* 39.621px */
         letter-spacing: -1.189px;
     }
-    #Login {
+    #Signup-wrapper {
         display: flex;
         padding: 0%;
     }
-    #Login-Header {
+    #Header {
         display: none;
     }
-    #Login-Container {
+    #Container {
         width: 50%;
         padding: 0% 10%;
         border-radius: 8px;
-        padding-bottom: 20%;
+        padding-bottom: 5%;
     }
-    .Login-Input-fields {
+    .Input-fields {
         max-width: 1600px;
     }.Login-button {
         max-width: 1600px;
     }
-    .Login-Welcome h2 {
+    .Welcome h2 {
         max-width: 1600px;
     }
-    .Login-OR, .Login-Desktop-OR {
+    .OR, .Desktop-OR {
         max-width: 1600px;
     }
-    .Login-No-account {
+    .No-account {
         max-width: 1600px;
     }
-    .Login-Welcome {
+    .Welcome {
         padding-top: 10%;
     }
-    .Login-No-account {
+    .No-account {
         padding-bottom: 0px;
     }
+
     
     @media screen and (min-width: 1000px) {
-        #Wrapper-login {
+        #Signup-wrapper {
             overflow: hidden;
             
         }
-        #Login-Left-side {
+        #Left-side {
             padding-bottom: 50%;
         }
-        .Login-Desktop-OR {
+        #Container {
+            padding: 5%;
+        }
+        .Desktop-OR {
             display: flex;
         }
-        .Login-Desktop-signin-buttons {
+        .Desktop-signin-buttons {
             display: flex;
             gap: 30px;
             flex-direction: column;
@@ -320,59 +364,65 @@ input#Login-Email, input#Login-Password {
             align-items: center;
             margin-bottom: 5%;
         }
-        .Login-Google-signin, .Login-Facebook-signin {
+        .Google-signin, .Facebook-signin {
             padding: 0px;
         }
-        .Login-Google-signin button, .Login-Facebook-signin button {
+        .Google-signin button, .Facebook-signin button {
             width: 300px;
         }
-        .Login-Signin-button {
+        .Signin-button {
             display: none;
         }
-        .Login-OR {
+        .OR {
             display: none;
         }
         .Login-button button {
             width: 90%;
             border-radius: 6px;
         }
+        .Phone-number {
+            max-width: 650px;
+        }
   }
 }
   @media screen and (min-width: 1600px) {
-    #Wrapper-login {
+    #Signup-wrapper {
         max-width: 2200px;
         max-height: 1000px;
     }
     #Left-side {
         max-width: 20%;
         padding-bottom: 363px;
+        height: 700px;
     }
-    .Login-Input-fields, .Login-button, .Login-Welcome h2, .Login-Desktop-OR, .Login-No-account, .Login-Google-signin, .Login-Facebook-signin, input.Login-passwords {
+    .Input-fields, .Login-button, .Welcome h2, .Desktop-OR, .No-account, .Google-signin, .Facebook-signin, input.passwords {
         align-items: left;
         justify-content: left;
         
     }
-    .Login-Welcome {
+    .Welcome {
         padding-left: 0%;
+        margin-top: 0%;
     }
-    .Login-Welcome h2 {
+    .Welcome h2 {
         text-align: left;
         border-bottom: none;
     }
-    .Login-Google-signin button, .Login-Facebook-signin button {
+    .Google-signin button, .Facebook-signin button {
         width: 300px;
     }
-    .Login-Google-signin {
+    .Google-signin {
         padding-left: 0px;
     }
-    .Login-Desktop-signin-buttons {
+    .Desktop-signin-buttons {
         display: flex;
         flex-direction: row;
         gap: 1.5%;
         align-items: flex-start;
         justify-content: flex-start;
+        margin-bottom: 5%;
     }
-    .Login-Welcome h2 {
+    .Welcome h2 {
         color: #000;
         font-family: Montserrat;
         font-size: 30px;
@@ -380,13 +430,15 @@ input#Login-Email, input#Login-Password {
         font-weight: 600;
         line-height: 136.5%; /* 40.95px */
         letter-spacing: 3px;
+        padding-bottom: 0px;
     }
-    .Login-Input-fields{
+    .Input-fields{
        max-width: 1300px;
        justify-content: flex-start;
        align-items: flex-start;
+       gap: 0px;
     }
-    input#Login-Email, input#Login-Password {
+    input#Email, input#Password, input#Fullname, .user-agree, input#File-upload{
         max-width: 650px;
         border: none;
         border-bottom: 1px solid #C4C4C4;
@@ -399,17 +451,40 @@ input#Login-Email, input#Login-Password {
         letter-spacing: 1.12px;
         padding: 0%;
     }
-    input#Login-Email {
+    input#Phone-number-text {
+        padding-right: 25%;
+    }
+    .Phone-number {
+        width: 700px;
         margin-bottom: 5%;
     }
-    .Login-Desktop-OR {
+    .user-agree {
+        border-bottom: 0px;
+        text-align: center;
+    }
+    .user-agree p {
+        width: 60%;
+        text-align: center;
+    }
+    input#Email {
+        margin-bottom: 5%;
+    }
+    input#Fullname {
+        margin-bottom: 5%;
+    }
+    .Phone-number {
+        max-width: 650px;
+    }
+    input#Phone-number-text {
+        max-width: 500px;
+    }
+    .Desktop-OR {
         justify-content: center;
         align-items: center;
         max-width: 650px;
-        padding-bottom: 4%;
-        padding-top: 4%;
+        padding-top: 1%;
     }
-    .Login-Desktop-OR p {
+    .Desktop-OR p {
         color: #797979;
         text-align: center;
         font-family: Telex;
@@ -418,6 +493,7 @@ input#Login-Email, input#Login-Password {
         font-weight: 400;
         line-height: 136.5%; /* 35.49px */
         letter-spacing: 2.47px;
+        margin-bottom: 0px;
     }
     .Login-button {
         max-width: 750px;
@@ -430,43 +506,61 @@ input#Login-Email, input#Login-Password {
         border-radius: 6px;
 
     }
-    .Login-No-account a {
+    .No-account a {
         font-size: 16px;
         font-style: normal;
         font-weight: 400;
         letter-spacing: 1.28px;
     }
-    .Login-No-account p {
+    .No-account p {
         color: #6B6A6A;
         font-size: 16px;
         font-style: normal;
         font-weight: 400;
         letter-spacing: 1.28px;
     }
-    input#Login-Password {
-        margin-bottom: 5%;
+    #Password {
+        margin-bottom: 0%;
     }
-    .Login-passframe {
+    .passframe {
         display: block;
         position: relative;
         left: 70%;
-        top: -97px;
+        top: -93px;
         background-color: #FEF9F9;
         border: 0px;
 
     }
+    .input#Phone-number, input#Email, input#Password, input#Fullname, input#File-upload {
+        margin-bottom: 4%;
+    }
+    input#File-upload {
+        max-width: 650px;
+    }
+    .Welcome {
+        margin-top: 0px;
+        padding-top: 2%;
+        margin-bottom: 0px;
+       }
+       .Welcome h2 {
+        margin-bottom: 2%;
+       }
+       .Desktop-OR {
+        height: 25px;
+       }
+       .Welcome h2 {
+        margin-top: 0px;
+       }
     @media screen and (min-width: 1700px) {
-        .Login-passframe {
-            left: 64%;
+        .passframe {
+            left: 63%;
+            top: -70px;
         }
-        .Login-Desktop-OR {
-            padding-bottom: 0%;
+        input#Password {
+            margin-bottom: 3%;
         }
-        #Login-Left-side {
-            padding-top: 10%;
-        }
-        .Login-Welcome {
-            padding-top: 5%;
+       .Login-button {
+        margin-bottom: 1%;
+       }
         }
     }
-  }
