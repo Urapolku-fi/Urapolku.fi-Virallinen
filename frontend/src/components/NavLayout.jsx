@@ -3,6 +3,7 @@ import MenuIcon from "../assets/menu.svg";
 import MenuCloseIcon from "../assets/close-menu.svg";
 import "./css/navLayout.css";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const NavMenuContext = createContext(undefined);
 
@@ -18,16 +19,6 @@ const navbarMenuItems = [
   {
     text: "Suosikit",
     link: "/favorites",
-  },
-  {
-    text: "Rekisteröidy",
-    link: "/register",
-    styling: " button-filled",
-  },
-  {
-    text: "Kirjaudu",
-    link: "/login",
-    styling: " button-hollow",
   },
 ];
 
@@ -91,6 +82,7 @@ const SideBar = () => {
 const NavBarLayout = (props) => {
   const [sideBarVisible, setSideBarVisible] = useState(false);
   const navigate = useNavigate();
+  const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
 
   return (
     <NavMenuContext.Provider
@@ -113,8 +105,29 @@ const NavBarLayout = (props) => {
               styling={item.styling}
             />
           ))}
-        </div>
 
+          {isAuthenticated ? (
+            <button
+              className="nav-link button-filled"
+              onClick={() =>
+                logout({
+                  logoutParams: {
+                    returnTo: import.meta.env.VITE_AUTH0_CALLBACK_URL,
+                  },
+                })
+              }
+            >
+              Kirjaudu ulos
+            </button>
+          ) : (
+            <button
+              className="nav-link button-hollow"
+              onClick={() => loginWithRedirect()}
+            >
+              Kirjaudu
+            </button>
+          )}
+        </div>
         <MenuButton />
       </header>
       {/*<SideBar />*/}
