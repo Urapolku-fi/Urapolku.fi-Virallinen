@@ -1,4 +1,4 @@
-import { useState, createContext, useContext } from "react";
+import { useState, createContext, useContext, useEffect } from "react";
 import MenuIcon from "../assets/menu.svg";
 import MenuCloseIcon from "../assets/close-menu.svg";
 import "./css/navLayout.css";
@@ -112,7 +112,7 @@ const NavBarLayout = (props) => {
               onClick={() =>
                 logout({
                   logoutParams: {
-                    returnTo: import.meta.env.VITE_AUTH0_CALLBACK_URL,
+                    returnTo: "https://localhost:5173/",
                   },
                 })
               }
