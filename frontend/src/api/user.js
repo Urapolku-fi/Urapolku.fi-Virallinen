@@ -1,20 +1,15 @@
 import { useAuth0 } from "@auth0/auth0-react";
 
-let backend = import.meta.env.VITE_BACKEND_URL + "/api"
-
-export const getUser = async (userId) =>  {
-    let result = await fetch(`${backend}/user/${userId}`);
-    let user = await result.json()
-    return user;
-}
+let backend = import.meta.env.VITE_BACKEND_URL + "api"
 
 export const useFetch = () => {
     const { getAccessTokenSilently } = useAuth0();
 
-    const fetchWithToken = async (url, options = {}) => {
+    const fetchWAuth = async (url, options = {}) => {
         const token = await getAccessTokenSilently();
-        const response = await fetch(url, {
+        const response = await fetch(backend + url, {
             ...options,
+            mode: 'cors',
             headers: {
                 ...options.headers,
                 Authorization: `Bearer ${token}`,
@@ -28,5 +23,26 @@ export const useFetch = () => {
         return response.json();
     }
 
-    return fetchWithToken;
+    const postWAuth = async (url, body, options = {}) => {
+        const token = await getAccessTokenSilently();
+        const response = await fetch(backend + url, {
+            method: "POST",
+            ...options,
+            mode: 'cors',
+            headers: {
+                ...options.headers,
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify(body)
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        return response.json();
+    }
+
+    return { fetchWAuth, postWAuth };
 }
