@@ -123,12 +123,12 @@
     height: 10px;
     border-radius: 50%;
 }
-.Profile-completion-two-content .Bottom .Next-Button{
+.Profile-completion-two-content .Bottom .Next-Button button{
     color: #FFF;
     font-size: 50px;
     font-style: normal;
     line-height: normal;
-
+    padding: 16px 43px;
 }
 .Profile-completion-two-content .Bottom .Next-Button p {
     font-family: 'Montserrat', sans-serif;
@@ -153,4 +153,65 @@
 }
 .Profile-completion-two-right .skipButton button {
     padding: 21px 45px;
+}
+@media screen and (max-width: 1000px) and (min-width:800px) {
+    .Profile-completion-two-content .Industry-dropdown-button, .skill-dropdown-button, .skill-dropdown-content {
+        width: 100%;
+    }
+    .Profile-completion-two-content .Industry-dropdown-content {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 800px) {
+    .Profile-completion-two-right .Header-logo {
+        display: flex;
+        margin-top: 25px;
+        margin-left: 50px;
+    }
+    .Profile-completion-two-content .Industry-dropdown-button, .skill-dropdown-button, .skill-dropdown-content {
+        width: 100%;
+    }
+    .Profile-completion-two-content .Industry-dropdown-content {
+        width: 100%;
+    }
+    .Profile-completion-two-content .Header-text h3 {
+        font-size: 34px;
+        text-align: center;
+    }
+    .Profile-completion-two-content {
+        gap: 30px;
+    }
+    .Profile-completion-two-right .skipButton button {
+        padding: 15px 45px;
+    }
+@media screen and (max-width: 400px) {
+    .Profile-completion-two-content .Header-text h3 {
+        font-size: 25px;
+        text-align: center;
+        width: 80%;
+    }
+    .Profile-completion-two-content .Header-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .Profile-completion-two-content {
+        margin-right: 35px;
+    }
+    .Profile-completion-two-right .Bottom .Next-Button button {
+        padding: 5px 30px;
+    }
+    .Profile-completion-two-right .skipButton button {
+        padding: 10px 26px;
+        margin-top: 20px;
+    }
+    .Profile-completion-two-content .Bottom {
+        margin-left: 0px;
+    }
+    .Profile-completion-two-content .Bottom .Proggress-bar {
+        margin-top: 15px;        
+    }
+    
+}
+    
 }

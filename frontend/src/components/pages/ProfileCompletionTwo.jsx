@@ -9,6 +9,34 @@ function ProfileCompletionTwo() {
     const [openIndustry,setOpenIndustry] = useState(false)
     const [openSkills,setOpenSkills] = useState(false)
 
+    const urapolkuBackround = {
+        background: "#120A2F",
+        color: "white",
+      };
+      const background2 = {
+        background: "#FFF"
+      }
+      const skills = []
+
+    const handleIndustryClick = (event) => {
+        /* This gets the text-content when industry children is clicked */
+        /* It stores the value into dataValue */
+        const IndustrydataValue = event.currentTarget.textContent;
+        const select = document.querySelector('.Industry-select-text')
+        select.textContent = IndustrydataValue
+        setOpenIndustry(false)
+    }
+    const handleSkillClick = (event) => {
+        const SkillDataValue = event.currentTarget
+        if (SkillDataValue.style.background = "#fff") {
+            SkillDataValue.style.background = urapolkuBackround.background
+            SkillDataValue.style.color = urapolkuBackround.color
+        } else {
+            SkillDataValue.style.background = background2.background
+        }
+        }
+
+
     return (
         <div id="ProfileCompletion-Wrapper">
             <LeftBar />
@@ -24,19 +52,51 @@ function ProfileCompletionTwo() {
                 <div className="Industry-dropdown">
                     <p className="Industry-text">Industry</p>
                     <button className="Industry-dropdown-button" onClick={()=>setOpenIndustry(!openIndustry)}>
-                        <p>Select an industry</p>
+                        <p className="Industry-select-text">Select an industry</p>
                         <img className="Expand-more" src="pictures/expand-more.png" alt="" />
                     </button>
                     { openIndustry &&
                     <div className="Industry-dropdown-content">
-                        <p className="Industry" data-value="IT">Information Technology (IT)</p>
-                        <p className="Industry" data-value="Healthcare">Healthcare and Medicine</p>
-                        <p className="Industry" data-value="Finance">Finance and Banking</p>
-                        <p className="Industry" data-value="Education">Education and E-Learning</p>
-                        <p className="Industry" data-value="Retail">Retail and E-commerce</p>
-                        <p className="Industry" data-value="Travel">Travel and Tourism</p>
-                        <p className="Industry" data-value="Automotive">Automotive and Transportation</p>
-                        <p className="Industry" data-value="Food">Food and Beverage</p>
+                        <p className="Industry" data-value="IT" onClick={handleIndustryClick}>Information Technology (IT)</p>
+                        <p className="Industry" data-value="Healthcare-Medicine" onClick={handleIndustryClick}>Healthcare and Medicine</p>
+                        <p className="Industry" data-value="Finance-Banking" onClick={handleIndustryClick}>Finance and Banking</p>
+                        <p className="Industry" data-value="Education-ELearning" onClick={handleIndustryClick}>Education and E-Learning</p>
+                        <p className="Industry" data-value="Retail-Ecommerce"onClick={handleIndustryClick}>Retail and E-commerce</p>
+                        <p className="Industry" data-value="Travel-Tourism" onClick={handleIndustryClick}>Travel and Tourism</p>
+                        <p className="Industry" data-value="Automotive-Transportation" onClick={handleIndustryClick}>Automotive and Transportation</p>
+                        <p className="Industry" data-value="Entertainment-Media" onClick={handleIndustryClick}>Entertainment and media</p>
+                        <p className="Industry" data-value="RealEstate-Property" onClick={handleIndustryClick}>Real estate and property</p>
+                        <p className="Industry" data-value="Fashion-Apparel" onClick={handleIndustryClick}>Fashion and apparel</p>
+                        <p className="Industry" data-value="Energy-Utilities" onClick={handleIndustryClick}>Energy and Utilities</p>
+                        <p className="Industry" data-value="Manufacturing-Production" onClick={handleIndustryClick}>Manufacturing and Production</p>
+                        <p className="Industry" data-value="Agriculture-Farming" onClick={handleIndustryClick}>Agriculture and Farming</p>
+                        <p className="Industry" data-value="Hospitality-Events" onClick={handleIndustryClick}>Hospitality and Events</p>
+                        <p className="Industry" data-value="Environment-Sustainability" onClick={handleIndustryClick}>Environmental and Sustainability</p>
+                        <p className="Industry" data-value="Gaming-InteractiveMedia" onClick={handleIndustryClick}>Gaming and Interactive Media</p>
+                        <p className="Industry" data-value="Sports-Fitness" onClick={handleIndustryClick}>Sports and Fitness</p>
+                        <p className="Industry" data-value="Marketing-Advertising" onClick={handleIndustryClick}>Marketing and Advertising</p>
+                        <p className="Industry" data-value="NonProfit-SocialServices" onClick={handleIndustryClick}>Non-profit and Social Services</p>
+                        <p className="Industry" data-value="Aerospace-Aviation" onClick={handleIndustryClick}>Aerospace and aviation)</p>
+                        <p className="Industry" data-value="Biotechnology-Pharmaceuticals" onClick={handleIndustryClick}>Biotechnology and Pharmaceuticals</p>
+                        <p className="Industry" data-value="Construction-Architecture" onClick={handleIndustryClick}>Construction and Architecture</p>
+                        <p className="Industry" data-value="Telecommunication-Networking" onClick={handleIndustryClick}>Telecommunications and Networking</p>
+                        <p className="Industry" data-value="Art-Design"onClick={handleIndustryClick}>Art and Design</p>
+                        <p className="Industry" data-value="Legal-LawServices" onClick={handleIndustryClick}>Legal and Law Services</p>
+                        <p className="Industry" data-value="Insurance" onClick={handleIndustryClick}>Insurance</p>
+                        <p className="Industry" data-value="Logistics-SupplyChain" onClick={handleIndustryClick}>Logistics and Supply Chain</p>
+                        <p className="Industry" data-value="RenewableEnergy" onClick={handleIndustryClick}>Renewable Energy</p>
+                        <p className="Industry" data-value="Mining-NaturalResources" onClick={handleIndustryClick}>Mining and Natural Resources</p>
+                        <p className="Industry" data-value="Publishing-Printing" onClick={handleIndustryClick}>Publishing and Printing</p>
+                        <p className="Industry" data-value="Music-AudioProduction" onClick={handleIndustryClick}>Music and Audio Production</p>
+                        <p className="Industry" data-value="EDTech" onClick={handleIndustryClick}>Education Technology (EdTech)</p>
+                        <p className="Industry" data-value="FitTech" onClick={handleIndustryClick}>Fitness Technology (FitTech)</p>
+                        <p className="Industry" data-value="Robotics-Automation" onClick={handleIndustryClick}>Robotics and Automation</p>
+                        <p className="Industry" data-value="Virtual-AugmentedReality" onClick={handleIndustryClick}>Virtual and Augmented Reality</p>
+                        <p className="Industry" data-value="InteriorDesing-HomeDecor" onClick={handleIndustryClick}>Interior Design and Home Decor</p>
+                        <p className="Industry" data-value="Crypto-Blockhain" onClick={handleIndustryClick}>Cryptocurrency and Blockchain</p>
+                        <p className="Industry" data-value="AeroSpace-SpaceExploration" onClick={handleIndustryClick}>Aerospace and Space Exploration</p>
+                        <p className="Industry" data-value="Nanotechnology" onClick={handleIndustryClick}>Nanotechnology</p>
+
                     </div>
                     }
                 </div>
@@ -48,14 +108,14 @@ function ProfileCompletionTwo() {
                     </button>
                     {openSkills &&
                     <div className="skill-dropdown-content">
-                        <p className="Skill" data-value="IT">Programming</p>
-                        <p className="Skill" data-value="Healthcare">Web Development</p>
-                        <p className="Skill" data-value="Finance">Database Management</p>
-                        <p className="Skill" data-value="Education">Software Development</p>
-                        <p className="Skill" data-value="Retail">Networking</p>
-                        <p className="Skill" data-value="Travel">Cybersecurity</p>
-                        <p className="Skill" data-value="Automotive">Cloud Computing</p>
-                        <p className="Skill" data-value="Food">DevOps</p>
+                        <p className="Skill" data-value="IT" onClick={handleSkillClick}>Programming</p>
+                        <p className="Skill" data-value="Healthcare" onClick={handleSkillClick}>Web Development</p>
+                        <p className="Skill" data-value="Finance" onClick={handleSkillClick}>Database Management</p>
+                        <p className="Skill" data-value="Education" onClick={handleSkillClick}>Software Development</p>
+                        <p className="Skill" data-value="Retail" onClick={handleSkillClick}>Networking</p>
+                        <p className="Skill" data-value="Travel" onClick={handleSkillClick}>Cybersecurity</p>
+                        <p className="Skill" data-value="Automotive" onClick={handleSkillClick}>Cloud Computing</p>
+                        <p className="Skill" data-value="Food" onClick={handleSkillClick}>DevOps</p>
                     </div>
                     }
                 </div>
