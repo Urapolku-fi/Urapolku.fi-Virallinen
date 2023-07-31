@@ -51,6 +51,12 @@
     display: flex;
     float: right;
 }
+.Profile-completion-two-content .Expand-more.up {
+    display: flex;
+    float: right;
+    transform: rotate(180deg);
+  }
+
 .Profile-completion-two-content .Industry-dropdown-content, .skill-dropdown-content {
     display: flex;
     flex-direction: column;
@@ -62,9 +68,7 @@
     height: 250px;
     overflow-y: scroll;
     padding-top: 10px;
-}
-.skill-dropdown-content {
-    animation: fadeInDown 1s;
+    animation: fadeInDown 1.5s;
 }
 .Profile-completion-two-content .Industry-dropdown-content::-webkit-scrollbar,.skill-dropdown-content::-webkit-scrollbar  {
     padding: 0px;
@@ -77,7 +81,6 @@
 .Profile-completion-two-content .Industry-dropdown-content p, .skill-dropdown-content p {
     color: #000;
     font-feature-settings: 'clig' off, 'liga' off;
-    font-family: Montserrat;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -85,7 +88,8 @@
     text-decoration: none;
     margin-bottom: 5px;
     margin-left: 10px;
-    padding-bottom: 5px;
+    padding: 7.5px;
+    border-radius: 10px;
 }
 .Profile-completion-two-content .Industry-dropdown-content p:hover, .skill-dropdown-content p:hover {
     cursor: pointer;
@@ -94,6 +98,14 @@
 .Profile-completion-two-content .Bottom {
     gap: 5px;
 }
+.Skill {
+    background-color: #fff;
+    color: #120A2F;
+  }
+  .Skill.active {
+    background-color: #120A2F;
+    color: #fff;
+  }
 /* Dropdown animation */
 @keyframes fadeInDown {
     from {
