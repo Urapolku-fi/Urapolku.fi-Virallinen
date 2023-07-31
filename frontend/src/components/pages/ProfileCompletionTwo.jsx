@@ -115,7 +115,32 @@ function ProfileCompletionTwo() {
                         <p className="Skill" data-value="Retail" onClick={handleSkillClick}>Networking</p>
                         <p className="Skill" data-value="Travel" onClick={handleSkillClick}>Cybersecurity</p>
                         <p className="Skill" data-value="Automotive" onClick={handleSkillClick}>Cloud Computing</p>
-                        <p className="Skill" data-value="Food" onClick={handleSkillClick}>DevOps</p>
+                        <p className="Skill" data-value="DevOps" onClick={handleSkillClick}>DevOps</p>
+                        <p className="Skill" data-value="DataAnalysis-DataScience" onClick={handleSkillClick}>Data Analysis and Data Science</p>
+                        <p className="Skill" data-value="IT-Support" onClick={handleSkillClick}>IT Support</p>
+                        <p className="Skill" data-value="MobileAppDevelopment" onClick={handleSkillClick}>Mobile App Development</p>
+                        <p className="Skill" data-value="Agile-Methodology" onClick={handleSkillClick}>Agile Methodology</p>
+                        <p className="Skill" data-value="ProjectManagement" onClick={handleSkillClick}>Project Management</p>
+                        <p className="Skill" data-value="DigitalMarketing" onClick={handleSkillClick}>Digital Marketing</p>
+                        <p className="Skill" data-value="Sales-BusinessDevelopment" onClick={handleSkillClick}>Sales and Business Development:</p>
+                        <p className="Skill" data-value="CustomerService" onClick={handleSkillClick}>Customer Service</p>
+                        <p className="Skill" data-value="CommunicationSkills" onClick={handleSkillClick}>Communication Skills</p>
+                        <p className="Skill" data-value="ProblemSolving" onClick={handleSkillClick}>Problem Solving</p>
+                        <p className="Skill" data-value="Creativity" onClick={handleSkillClick}>Creativity</p>
+                        <p className="Skill" data-value="Financial-Literacy" onClick={handleSkillClick}>Financial Literacy</p>
+                        <p className="Skill" data-value="DataVisualization" onClick={handleSkillClick}>Data Visualization</p>
+                        <p className="Skill" data-value="Content-Creation" onClick={handleSkillClick}>Content Creation</p>
+                        <p className="Skill" data-value="ForeignLanguageProficiency" onClick={handleSkillClick}>Foreign Language Proficiency</p>
+                        <p className="Skill" data-value="PublicSpeaking" onClick={handleSkillClick}>Public Speaking</p>
+                        <p className="Skill" data-value="EmotionalIntelligence" onClick={handleSkillClick}>Emotional Intelligence</p>
+                        <p className="Skill" data-value="Negotiation" onClick={handleSkillClick}>Negotiation</p>
+                        <p className="Skill" data-value="CriticalThinking" onClick={handleSkillClick}>Critical Thinking</p>
+                        <p className="Skill" data-value="TimeManagement" onClick={handleSkillClick}>Time Management</p>
+                        <p className="Skill" data-value="QualityAssurance-Testing" onClick={handleSkillClick}>Quality Assurance and Testing</p>
+                        <p className="Skill" data-value="MarketResearch" onClick={handleSkillClick}>Market Research</p>
+                        <p className="Skill" data-value="HumanResources" onClick={handleSkillClick}>Human Resources</p>
+
+
                     </div>
                     }
                 </div>
