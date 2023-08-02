@@ -1,30 +1,40 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { useFetch } from "../api/user";
 
 const CallbackPage = () => {
   const { isLoading, user } = useAuth0();
-  const { postWAuth } = useFetch();
+  const { postWAuth, getWAuth } = useFetch();
+  const [redirectPage, setRedirectPage] = useState();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (user) {
-      const dbUserData = {
-        email: user.email,
-        name: user.name,
-        picture: user.picture,
+      const addUser = async () => {
+        const dbUserData = {
+          email: user.email,
+          name: user.name,
+          picture: user.picture,
+        };
+        //send userinfo to backend and get userid back
+        postWAuth("/user/create", dbUserData).then(({ status, json }) => {
+          if (status === 200) setRedirectPage("/profile");
+          else if (status === 201) setRedirectPage("/landing");
+          user.userId = json.userId;
+          setLoading(false);
+        });
       };
-
-      postWAuth("/user/create", dbUserData);
+      addUser();
     }
-  }, [user, postWAuth]);
+  }, [user, postWAuth, getWAuth, setRedirectPage]);
 
   return (
     <>
-      {isLoading ? (
+      {loading && isLoading ? (
         <div>Loading...</div>
       ) : (
-        <Navigate to="/landing" replace={true} />
+        <Navigate to={redirectPage} replace={true} />
       )}
     </>
   );
