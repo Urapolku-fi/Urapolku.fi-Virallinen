@@ -8,7 +8,7 @@ import { useState } from "react"
 function ProfileCompletionTwo() {
     const [openIndustry, setOpenIndustry] = useState(false)
     const [openSkills, setOpenSkills] = useState(false)
-    const clickedSkills = []
+    const [clickedSkills, setClickedSkills] = useState([]);
 
     const handleIndustryClick = (event) => {
         // This gets the text-content when industry children is clicked
@@ -19,18 +19,15 @@ function ProfileCompletionTwo() {
         setOpenIndustry(false)
     }
     const handleSkillClick = (event) => {
-        const SkillDataValue = event.currentTarget;
-        if (clickedSkills.includes(SkillDataValue.textContent)) {
-            const index = clickedSkills.indexOf(SkillDataValue.textContent)
-            clickedSkills.splice(index)
-            SkillDataValue.classList.toggle('active');
-            console.log(clickedSkills)
-        }
-        else if(clickedSkills.length >= 4) {
-        }
-         else {
-            clickedSkills.push(SkillDataValue.textContent)
-            SkillDataValue.classList.toggle('active');
+        const skillDataValue = event.currentTarget.getAttribute('data-value');
+      
+        if (clickedSkills.includes(skillDataValue)) {
+          const updatedSkills = clickedSkills.filter((skill) => skill !== skillDataValue);
+          setClickedSkills(updatedSkills);
+        } else if (clickedSkills.length >= 4) {
+          // You can add a message here to inform the user that they cannot select more than 4 skills.
+        } else {
+          setClickedSkills((prevSkills) => [...prevSkills, skillDataValue]);
         }
       };
 
@@ -43,6 +40,10 @@ function ProfileCompletionTwo() {
         setOpenSkills(!openSkills);
         setOpenIndustry(false);
       };
+      const nextPage = () => {
+        console.log("Hello")
+        
+      }
       const industries = [
         { value: 'IT', label: 'Information Technology (IT)' },
         { value: 'Healthcare-Medicine', label: 'Healthcare and Medicine' },
@@ -164,7 +165,7 @@ function ProfileCompletionTwo() {
                                 {skills.map((skill) => (
                                     <p
                                     key={skill.value}
-                                    className="Skill"
+                                    className={`Skill ${clickedSkills.includes(skill.value) ? 'active' : ''}`}
                                     data-value={skill.value}
                                     onClick={handleSkillClick}
                                     >
@@ -176,7 +177,7 @@ function ProfileCompletionTwo() {
                         }
                     </div>
                     <div className="Bottom">
-                        <NextButton />
+                        <NextButton onClick={nextPage}/>
                         <ProgressBar />
                     </div>
                 </div>
