@@ -6,18 +6,17 @@ import { NavBarLayout } from "./components/NavLayout";
 import ProfileCompletionOne from "./components/pages/ProfileCompletionOne";
 import ProfileCompletionTwo from "./components/pages/ProfileCompletionTwo";
 
+
 function App() {
   return (
     <BrowserRouter>
-      <NavBarLayout>
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Signup />} />
-          <Route path="/profileone" element={<ProfileCompletionOne />} />
-          <Route path="/profiletwo" element={<ProfileCompletionTwo />} />
-        </Routes>
-      </NavBarLayout>
+      <Routes>
+        <Route path="/" element={<NavBarLayout><Home /></NavBarLayout>} />
+        <Route path="/login" element={<NavBarLayout><Login /></NavBarLayout>} />
+        <Route path="/register" element={<NavBarLayout><Signup /></NavBarLayout>} />
+        <Route path="/profileone" element={<ProfileCompletionOne />} />
+        <Route path="/profiletwo" element={<ProfileCompletionTwo />} />
+      </Routes>
     </BrowserRouter>
   );
 }
