@@ -4,7 +4,19 @@ import NextButton from "../ProfileCompletion/nextButton"
 import ProgressBar from "../ProfileCompletion/progressBar"
 import UrapolkuLogo from "../ProfileCompletion/UrapolkuLogoText"
 import "../css/ProfileCompletionThree.css"
+import { useState } from "react"
 function ProfileCompletionTwo() {
+    const [openEmployment, setOpenEmployment] = useState(false)
+    const [openLocationType, setOpenLocationType] = useState(false)
+    const handleEmploymentType = () => {
+        setOpenEmployment(!openEmployment);
+        setOpenLocationType(false);
+
+    }
+    const handleLocationType = () => {
+        setOpenLocationType(!openLocationType);
+        setOpenEmployment(false);
+    }
     return (
         <div id="ProfileCompletion-Wrapper">
             <LeftBar />
@@ -23,10 +35,11 @@ function ProfileCompletionTwo() {
                         </div>
                         <div className="Employment-type-dropdown">
                             <p>Employment type</p>
-                                <button>
+                            <button onClick={handleEmploymentType}>
                                     <p>Please select</p>
                                     <img className="Expand-more" src="pictures/expand-more.png" alt="" />
                                 </button>
+                                {openEmployment && 
                                 <div className="Employment-type-content">
                                     <p className="Employment-type">Full-time</p>
                                     <p className="Employment-type">Part-time</p>
@@ -35,6 +48,7 @@ function ProfileCompletionTwo() {
                                     <p className="Employment-type">Self-employed</p>
                                     <p className="Employment-type">Internship</p>
                                 </div>
+                            }
                         </div>
                         <div className="Location">
                             <p>Location</p>
@@ -42,15 +56,17 @@ function ProfileCompletionTwo() {
                         </div>
                         <div className="Location-type-dropdown">
                             <p>Location type</p>
-                            <button>
+                            <button onClick={handleLocationType}>
                                 <p>Please select</p>
                                 <img className="Expand-more" src="pictures/expand-more.png" alt="" />
                             </button>
+                            {openLocationType && 
                             <div className="Location-type-content">
                                 <p>On-site</p>
                                 <p>Hybrid</p>
                                 <p>Remote</p>
                             </div>
+                            }
                         </div>
                         <div className="Currently-working">
                             <input className="checkbox" type="checkbox" name="" id="" />
