@@ -66,7 +66,7 @@
     height: 10px;
     border-radius: 50%;
 }
-.Profile-completion-one-content .Bottom .Next-Button{
+.Profile-completion-one-content .Bottom .Next-Button button{
     color: #FFF;
     font-size: 50px;
     font-style: normal;
@@ -117,7 +117,7 @@
 @media screen and (max-width: 800px) {
     .Profile-completion-one-content {
         margin: 5% 10% 5% 5%;
-        width: 100%;
+        width: 90%;
 
     }
     .Profile-completion-one-content .Description textarea {
@@ -128,7 +128,7 @@
     }
 
 }
-@media  screen and (max-width: 380px) {
+@media  screen and (max-width: 400px) {
     .Profile-completion-one-right .Header-text h3 {
         text-align: center;
         font-size: 30px;
@@ -144,5 +144,8 @@
     }
     .Profile-completion-one-content .User-photos, .Description, .Bottom {
         margin-left: 5%;
+    }
+    .Profile-completion-one-content .Bottom .Proggress-bar {
+        margin-right: 0px;
     }
 }
