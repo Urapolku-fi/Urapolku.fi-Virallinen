@@ -8,6 +8,7 @@ import { useState } from "react"
 function ProfileCompletionTwo() {
     const [openIndustry, setOpenIndustry] = useState(false)
     const [openSkills, setOpenSkills] = useState(false)
+    const clickedSkills = []
 
     const handleIndustryClick = (event) => {
         // This gets the text-content when industry children is clicked
@@ -19,7 +20,18 @@ function ProfileCompletionTwo() {
     }
     const handleSkillClick = (event) => {
         const SkillDataValue = event.currentTarget;
-        SkillDataValue.classList.toggle('active');
+        if (clickedSkills.includes(SkillDataValue.textContent)) {
+            const index = clickedSkills.indexOf(SkillDataValue.textContent)
+            clickedSkills.splice(index)
+            SkillDataValue.classList.toggle('active');
+            console.log(clickedSkills)
+        }
+        else if(clickedSkills.length >= 4) {
+        }
+         else {
+            clickedSkills.push(SkillDataValue.textContent)
+            SkillDataValue.classList.toggle('active');
+        }
       };
 
     const handleIndustryDropdownClick = () => {
@@ -31,6 +43,80 @@ function ProfileCompletionTwo() {
         setOpenSkills(!openSkills);
         setOpenIndustry(false);
       };
+      const industries = [
+        { value: 'IT', label: 'Information Technology (IT)' },
+        { value: 'Healthcare-Medicine', label: 'Healthcare and Medicine' },
+        { value: 'Finance-Banking', label: 'Finance and Banking' },
+        { value: 'Education-ELearning', label: 'Education and E-Learning' },
+        { value: 'Retail-Ecommerce', label: 'Retail and E-commerce' },
+        { value: 'Travel-Tourism', label: 'Travel and Tourism' },
+        { value: 'Automotive-Transportation', label: 'Automotive and Transportation' },
+        { value: 'Entertainment-Media', label: 'Entertainment and Media' },
+        { value: 'RealEstate-Property', label: 'Real estate and property' },
+        { value: 'Fashion-Apparel', label: 'Fashion and apparel' },
+        { value: 'Energy-Utilities', label: 'Energy and Utilities' },
+        { value: 'Manufacturing-Production', label: 'Manufacturing and Production' },
+        { value: 'Agriculture-Farming', label: 'Agriculture and Farming' },
+        { value: 'Hospitality-Events', label: 'Hospitality and Events' },
+        { value: 'Environment-Sustainability', label: 'Environmental and Sustainability' },
+        { value: 'Gaming-InteractiveMedia', label: 'Gaming and Interactive Media' },
+        { value: 'Sports-Fitness', label: 'Sports and Fitness' },
+        { value: 'Marketing-Advertising', label: 'Marketing and Advertising' },
+        { value: 'NonProfit-SocialServices', label: 'Non-profit and Social Services' },
+        { value: 'Aerospace-Aviation', label: 'Aerospace and Aviation' },
+        { value: 'Biotechnology-Pharmaceuticals', label: 'Biotechnology and Pharmaceuticals' },
+        { value: 'Construction-Architecture', label: 'Construction and Architecture' },
+        { value: 'Telecommunication-Networking', label: 'Telecommunications and Networking' },
+        { value: 'Art-Design', label: 'Art and Design' },
+        { value: 'Legal-LawServices', label: 'Legal and Law Services' },
+        { value: 'Insurance', label: 'Insurance' },
+        { value: 'Logistics-SupplyChain', label: 'Logistics and Supply Chain' },
+        { value: 'RenewableEnergy', label: 'Renewable Energy' },
+        { value: 'Mining-NaturalResources', label: 'Mining and Natural Resources' },
+        { value: 'Publishing-Printing', label: 'Publishing and Printing' },
+        { value: 'Music-AudioProduction', label: 'Music and Audio Production' },
+        { value: 'EDTech', label: 'Education Technology (EdTech)' },
+        { value: 'FitTech', label: 'Fitness Technology (FitTech)' },
+        { value: 'Robotics-Automation', label: 'Robotics and Automation' },
+        { value: 'Virtual-AugmentedReality', label: 'Virtual and Augmented Reality' },
+        { value: 'InteriorDesing-HomeDecor', label: 'Interior Design and Home Decor' },
+        { value: 'Crypto-Blockchain', label: 'Cryptocurrency and Blockchain' },
+        { value: 'AeroSpace-SpaceExploration', label: 'Aerospace and Space Exploration' },
+        { value: 'Nanotechnology', label: 'Nanotechnology' },
+      ];
+      const skills = [
+        { value: 'IT', label: 'Programming' },
+        { value: 'Healthcare', label: 'Web Development' },
+        { value: 'Finance', label: 'Database Management' },
+        { value: 'Education', label: 'Software Development' },
+        { value: 'Retail', label: 'Networking' },
+        { value: 'Travel', label: 'Cybersecurity' },
+        { value: 'Automotive', label: 'Cloud Computing' },
+        { value: 'DevOps', label: 'DevOps' },
+        { value: 'DataAnalysis-DataScience', label: 'Data Analysis and Data Science' },
+        { value: 'IT-Support', label: 'IT Support' },
+        { value: 'MobileAppDevelopment', label: 'Mobile App Development' },
+        { value: 'Agile-Methodology', label: 'Agile Methodology' },
+        { value: 'ProjectManagement', label: 'Project Management' },
+        { value: 'DigitalMarketing', label: 'Digital Marketing' },
+        { value: 'Sales-BusinessDevelopment', label: 'Sales and Business Development' },
+        { value: 'CustomerService', label: 'Customer Service' },
+        { value: 'CommunicationSkills', label: 'Communication Skills' },
+        { value: 'ProblemSolving', label: 'Problem Solving' },
+        { value: 'Creativity', label: 'Creativity' },
+        { value: 'Financial-Literacy', label: 'Financial Literacy' },
+        { value: 'DataVisualization', label: 'Data Visualization' },
+        { value: 'Content-Creation', label: 'Content Creation' },
+        { value: 'ForeignLanguageProficiency', label: 'Foreign Language Proficiency' },
+        { value: 'PublicSpeaking', label: 'Public Speaking' },
+        { value: 'EmotionalIntelligence', label: 'Emotional Intelligence' },
+        { value: 'Negotiation', label: 'Negotiation' },
+        { value: 'CriticalThinking', label: 'Critical Thinking' },
+        { value: 'TimeManagement', label: 'Time Management' },
+        { value: 'QualityAssurance-Testing', label: 'Quality Assurance and Testing' },
+        { value: 'MarketResearch', label: 'Market Research' },
+        { value: 'HumanResources', label: 'Human Resources' },
+      ];
 
 
     return (
@@ -53,45 +139,16 @@ function ProfileCompletionTwo() {
                         </button>
                         {openIndustry && 
                             <div className="Industry-dropdown-content">
-                                <p className="Industry" data-value="IT" onClick={handleIndustryClick}>Information Technology (IT)</p>
-                                <p className="Industry" data-value="Healthcare-Medicine" onClick={handleIndustryClick}>Healthcare and Medicine</p>
-                                <p className="Industry" data-value="Finance-Banking" onClick={handleIndustryClick}>Finance and Banking</p>
-                                <p className="Industry" data-value="Education-ELearning" onClick={handleIndustryClick}>Education and E-Learning</p>
-                                <p className="Industry" data-value="Retail-Ecommerce" onClick={handleIndustryClick}>Retail and E-commerce</p>
-                                <p className="Industry" data-value="Travel-Tourism" onClick={handleIndustryClick}>Travel and Tourism</p>
-                                <p className="Industry" data-value="Automotive-Transportation" onClick={handleIndustryClick}>Automotive and Transportation</p>
-                                <p className="Industry" data-value="Entertainment-Media" onClick={handleIndustryClick}>Entertainment and media</p>
-                                <p className="Industry" data-value="RealEstate-Property" onClick={handleIndustryClick}>Real estate and property</p>
-                                <p className="Industry" data-value="Fashion-Apparel" onClick={handleIndustryClick}>Fashion and apparel</p>
-                                <p className="Industry" data-value="Energy-Utilities" onClick={handleIndustryClick}>Energy and Utilities</p>
-                                <p className="Industry" data-value="Manufacturing-Production" onClick={handleIndustryClick}>Manufacturing and Production</p>
-                                <p className="Industry" data-value="Agriculture-Farming" onClick={handleIndustryClick}>Agriculture and Farming</p>
-                                <p className="Industry" data-value="Hospitality-Events" onClick={handleIndustryClick}>Hospitality and Events</p>
-                                <p className="Industry" data-value="Environment-Sustainability" onClick={handleIndustryClick}>Environmental and Sustainability</p>
-                                <p className="Industry" data-value="Gaming-InteractiveMedia" onClick={handleIndustryClick}>Gaming and Interactive Media</p>
-                                <p className="Industry" data-value="Sports-Fitness" onClick={handleIndustryClick}>Sports and Fitness</p>
-                                <p className="Industry" data-value="Marketing-Advertising" onClick={handleIndustryClick}>Marketing and Advertising</p>
-                                <p className="Industry" data-value="NonProfit-SocialServices" onClick={handleIndustryClick}>Non-profit and Social Services</p>
-                                <p className="Industry" data-value="Aerospace-Aviation" onClick={handleIndustryClick}>Aerospace and aviation)</p>
-                                <p className="Industry" data-value="Biotechnology-Pharmaceuticals" onClick={handleIndustryClick}>Biotechnology and Pharmaceuticals</p>
-                                <p className="Industry" data-value="Construction-Architecture" onClick={handleIndustryClick}>Construction and Architecture</p>
-                                <p className="Industry" data-value="Telecommunication-Networking" onClick={handleIndustryClick}>Telecommunications and Networking</p>
-                                <p className="Industry" data-value="Art-Design" onClick={handleIndustryClick}>Art and Design</p>
-                                <p className="Industry" data-value="Legal-LawServices" onClick={handleIndustryClick}>Legal and Law Services</p>
-                                <p className="Industry" data-value="Insurance" onClick={handleIndustryClick}>Insurance</p>
-                                <p className="Industry" data-value="Logistics-SupplyChain" onClick={handleIndustryClick}>Logistics and Supply Chain</p>
-                                <p className="Industry" data-value="RenewableEnergy" onClick={handleIndustryClick}>Renewable Energy</p>
-                                <p className="Industry" data-value="Mining-NaturalResources" onClick={handleIndustryClick}>Mining and Natural Resources</p>
-                                <p className="Industry" data-value="Publishing-Printing" onClick={handleIndustryClick}>Publishing and Printing</p>
-                                <p className="Industry" data-value="Music-AudioProduction" onClick={handleIndustryClick}>Music and Audio Production</p>
-                                <p className="Industry" data-value="EDTech" onClick={handleIndustryClick}>Education Technology (EdTech)</p>
-                                <p className="Industry" data-value="FitTech" onClick={handleIndustryClick}>Fitness Technology (FitTech)</p>
-                                <p className="Industry" data-value="Robotics-Automation" onClick={handleIndustryClick}>Robotics and Automation</p>
-                                <p className="Industry" data-value="Virtual-AugmentedReality" onClick={handleIndustryClick}>Virtual and Augmented Reality</p>
-                                <p className="Industry" data-value="InteriorDesing-HomeDecor" onClick={handleIndustryClick}>Interior Design and Home Decor</p>
-                                <p className="Industry" data-value="Crypto-Blockhain" onClick={handleIndustryClick}>Cryptocurrency and Blockchain</p>
-                                <p className="Industry" data-value="AeroSpace-SpaceExploration" onClick={handleIndustryClick}>Aerospace and Space Exploration</p>
-                                <p className="Industry" data-value="Nanotechnology" onClick={handleIndustryClick}>Nanotechnology</p>
+                                {industries.map((industry) => (
+                                    <p
+                                    key={industry.value}
+                                    className="Industry"
+                                    data-value={industry.value}
+                                    onClick={handleIndustryClick}
+                                    >
+                                    {industry.label}
+                                    </p>
+                                ))};
 
                             </div>
                         }
@@ -99,42 +156,22 @@ function ProfileCompletionTwo() {
                     <div className="skill-dropdown">
                         <p>Skills</p>
                         <button className="skill-dropdown-button" onClick={handleSkillDropdownClick}>
-                            <p>Select skills</p>
+                            <p>Select up to 4 skills</p>
                             <img className={`Expand-more ${openSkills ? 'up' : ''}`} src="pictures/expand-more.png" alt="" />
                         </button>
                         {openSkills &&
                             <div className="skill-dropdown-content">
-                                <p className="Skill" data-value="IT" onClick={handleSkillClick}>Programming</p>
-                                <p className="Skill" data-value="Healthcare" onClick={handleSkillClick}>Web Development</p>
-                                <p className="Skill" data-value="Finance" onClick={handleSkillClick}>Database Management</p>
-                                <p className="Skill" data-value="Education" onClick={handleSkillClick}>Software Development</p>
-                                <p className="Skill" data-value="Retail" onClick={handleSkillClick}>Networking</p>
-                                <p className="Skill" data-value="Travel" onClick={handleSkillClick}>Cybersecurity</p>
-                                <p className="Skill" data-value="Automotive" onClick={handleSkillClick}>Cloud Computing</p>
-                                <p className="Skill" data-value="DevOps" onClick={handleSkillClick}>DevOps</p>
-                                <p className="Skill" data-value="DataAnalysis-DataScience" onClick={handleSkillClick}>Data Analysis and Data Science</p>
-                                <p className="Skill" data-value="IT-Support" onClick={handleSkillClick}>IT Support</p>
-                                <p className="Skill" data-value="MobileAppDevelopment" onClick={handleSkillClick}>Mobile App Development</p>
-                                <p className="Skill" data-value="Agile-Methodology" onClick={handleSkillClick}>Agile Methodology</p>
-                                <p className="Skill" data-value="ProjectManagement" onClick={handleSkillClick}>Project Management</p>
-                                <p className="Skill" data-value="DigitalMarketing" onClick={handleSkillClick}>Digital Marketing</p>
-                                <p className="Skill" data-value="Sales-BusinessDevelopment" onClick={handleSkillClick}>Sales and Business Development:</p>
-                                <p className="Skill" data-value="CustomerService" onClick={handleSkillClick}>Customer Service</p>
-                                <p className="Skill" data-value="CommunicationSkills" onClick={handleSkillClick}>Communication Skills</p>
-                                <p className="Skill" data-value="ProblemSolving" onClick={handleSkillClick}>Problem Solving</p>
-                                <p className="Skill" data-value="Creativity" onClick={handleSkillClick}>Creativity</p>
-                                <p className="Skill" data-value="Financial-Literacy" onClick={handleSkillClick}>Financial Literacy</p>
-                                <p className="Skill" data-value="DataVisualization" onClick={handleSkillClick}>Data Visualization</p>
-                                <p className="Skill" data-value="Content-Creation" onClick={handleSkillClick}>Content Creation</p>
-                                <p className="Skill" data-value="ForeignLanguageProficiency" onClick={handleSkillClick}>Foreign Language Proficiency</p>
-                                <p className="Skill" data-value="PublicSpeaking" onClick={handleSkillClick}>Public Speaking</p>
-                                <p className="Skill" data-value="EmotionalIntelligence" onClick={handleSkillClick}>Emotional Intelligence</p>
-                                <p className="Skill" data-value="Negotiation" onClick={handleSkillClick}>Negotiation</p>
-                                <p className="Skill" data-value="CriticalThinking" onClick={handleSkillClick}>Critical Thinking</p>
-                                <p className="Skill" data-value="TimeManagement" onClick={handleSkillClick}>Time Management</p>
-                                <p className="Skill" data-value="QualityAssurance-Testing" onClick={handleSkillClick}>Quality Assurance and Testing</p>
-                                <p className="Skill" data-value="MarketResearch" onClick={handleSkillClick}>Market Research</p>
-                                <p className="Skill" data-value="HumanResources" onClick={handleSkillClick}>Human Resources</p>
+                                {skills.map((skill) => (
+                                    <p
+                                    key={skill.value}
+                                    className="Skill"
+                                    data-value={skill.value}
+                                    onClick={handleSkillClick}
+                                    >
+                                    {skill.label}
+                                    </p>
+                                ))};
+
                             </div>
                         }
                     </div>
@@ -142,7 +179,6 @@ function ProfileCompletionTwo() {
                         <NextButton />
                         <ProgressBar />
                     </div>
-
                 </div>
             </div>
         </div>
