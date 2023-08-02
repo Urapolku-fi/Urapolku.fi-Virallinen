@@ -101,8 +101,7 @@ const NavBarLayout = (props) => {
     >
       <header className="navbar">
         <div className="nav-logo-wrapper" onClick={() => navigate("/")}>
-          <img className="nav-logo" src={"/pictures/urapolku.png"} />ä
-          <p>Urapolku</p>
+          <img className="nav-logo" src={"/pictures/urapolku.png"} />
         </div>
         <div className="nav-items-wrapper">
           {navbarMenuItems.map((item) => (
