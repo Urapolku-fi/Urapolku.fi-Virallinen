@@ -5,6 +5,7 @@ import Signup from "./components/pages/Signup"
 import { NavBarLayout } from "./components/NavLayout";
 import ProfileCompletionOne from "./components/pages/ProfileCompletionOne";
 import ProfileCompletionTwo from "./components/pages/ProfileCompletionTwo";
+import ProfileCompletionThree from "./components/pages/ProfileCompletionThree";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/register" element={<NavBarLayout><Signup /></NavBarLayout>} />
         <Route path="/profileone" element={<ProfileCompletionOne />} />
         <Route path="/profiletwo" element={<ProfileCompletionTwo />} />
+        <Route path="/profilethree" element={<ProfileCompletionThree />} />
       </Routes>
     </BrowserRouter>
   );
