@@ -106,12 +106,12 @@ h3 {
   align-items: center;
   border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  padding-left: 15px;
+  padding-left: 5%;
   background-color: white;
 }
 .Month,
 .Year {
-  width: 47.5%;
+  width: 50%;
 }
 .Month button,
 .Year button {
