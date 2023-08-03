@@ -105,6 +105,10 @@ function ProfileCompletionTwo() {
     setOpenEndYear(false);
   };
 
+  const nextPage = () => {
+    window.location.href = "/profilethree";
+  };
+
   return (
     <div id="ProfileCompletion-Wrapper">
       <LeftBar />
@@ -302,7 +306,9 @@ function ProfileCompletionTwo() {
             </div>
           )}
           <div className="Bottom">
-            <NextButton />
+            <div className="Next-Button-Wrapper" onClick={nextPage}>
+              <NextButton />
+            </div>
             <ProgressBar />
           </div>
         </div>

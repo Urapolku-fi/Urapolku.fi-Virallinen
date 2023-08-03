@@ -21,13 +21,15 @@ function ProfileCompletionTwo() {
   const handleSkillClick = (event) => {
     const skillDataValue = event.currentTarget.getAttribute("data-value");
 
+    // If clicked skills list already contains clicked skill it removes it
     if (clickedSkills.includes(skillDataValue)) {
       const updatedSkills = clickedSkills.filter(
         (skill) => skill !== skillDataValue
       );
+
+      // If skills list contains 4 skills, cant add more!
       setClickedSkills(updatedSkills);
     } else if (clickedSkills.length >= 4) {
-      // You can add a message here to inform the user that they cannot select more than 4 skills.
     } else {
       setClickedSkills((prevSkills) => [...prevSkills, skillDataValue]);
     }
@@ -43,7 +45,7 @@ function ProfileCompletionTwo() {
     setOpenIndustry(false);
   };
   const nextPage = () => {
-    console.log("Hello");
+    window.location.href = "/profilethree";
   };
   const industries = [
     { value: "IT", label: "Information Technology (IT)" },
@@ -235,7 +237,9 @@ function ProfileCompletionTwo() {
             )}
           </div>
           <div className="Bottom">
-            <NextButton onClick={nextPage} />
+            <div className="Next-button-wrapper" onClick={nextPage}>
+              <NextButton />
+            </div>
             <ProgressBar />
           </div>
         </div>
