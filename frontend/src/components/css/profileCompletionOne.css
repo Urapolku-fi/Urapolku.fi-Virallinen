@@ -1,151 +1,142 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap");
 
 /* These are changes for this site only elements */
 #ProfileCompletion-Wrapper {
-    height: 100%;
-    display: flex;
-
+  height: 100%;
+  display: flex;
 }
-#ProfileCompletion-wrapper p, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
+#ProfileCompletion-wrapper p,
+h2,
+h3 {
+  font-family: "Montserrat", sans-serif;
 }
 .Profile-completion-one-right {
-    width: 100%;
-    height: 100vh;
-    background-color: white;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
 }
 .Profile-completion-one-content {
-    margin-top: 100px;
-    display: flex;
-    flex-direction: column;
-    margin: 5% 20% 0% 10%;
-    gap: 55px;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  margin: 5% 20% 0% 10%;
+  gap: 55px;
+  width: 50%;
+  min-width: 50%;
 }
 .Profile-completion-one-right .Header-text {
-    color: #000;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: normal;
+  color: #000;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
 }
 .Profile-completion-one-content .Description {
-    max-width: 100%;
-    
+  max-width: 100%;
 }
 .Profile-completion-one-content .Description textarea {
-    resize: none;
-    padding: 10px;
-    border-radius: 8px;
-    width: 60%;
-    min-width: 400px;
+  resize: none;
+  padding: 1%;
+  border-radius: 8px;
+  width: 98%;
 }
 .Profile-completion-one-content .Description textarea::placeholder {
-    color: rgba(0, 0, 0, 0.40);
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 .Profile-completion-one-content .Bottom {
-    gap: 5px;
+  gap: 5px;
 }
 /* These are changes for the components */
 .Profile-completion-one-content .Bottom .Proggress-bar {
-    margin-top: 22.5px;
+  margin-top: 22.5px;
 }
 
 .Profile-completion-one-content .Bottom .Proggress-bar .First {
-    background: #120A2F;
-    width: 42px;
-    height: 10px;
-    border-radius: 20px;
+  background: #120a2f;
+  width: 42px;
+  height: 10px;
+  border-radius: 20px;
 }
-.Profile-completion-one-content .Bottom .Proggress-bar .Second, .Third {
-    background-color: #D9D9D9;;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
+.Profile-completion-one-content .Bottom .Proggress-bar .Second,
+.Third {
+  background-color: #d9d9d9;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
 }
-.Profile-completion-one-content .Bottom .Next-Button button{
-    color: #FFF;
-    font-size: 50px;
-    font-style: normal;
-    line-height: normal;
-    padding: 16px 43px;
-
+.Profile-completion-one-content .Bottom .Next-Button button {
+  color: #fff;
+  font-size: 50px;
+  font-style: normal;
+  line-height: normal;
+  padding: 16px 43px;
 }
 .Profile-completion-one-content .Bottom .Next-Button p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
-    font-style: normal;
-    line-height: normal;
-    margin: 0px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  line-height: normal;
+  margin: 0px;
 }
 .Profile-completion-one-right .skipButton p {
-    color: #000;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
-    font-style: normal;
-    line-height: normal;
-    margin: 0px;
+  color: #000;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  line-height: normal;
+  margin: 0px;
 }
-.Profile-completion-one-right .Header-logo h2{
-    color: #000;
+.Profile-completion-one-right .Header-logo h2 {
+  color: #000;
 }
-.Profile-completion-one-right .Header-logo{
-    display: none;
+.Profile-completion-one-right .Header-logo {
+  display: none;
 }
 .Profile-completion-one-right .skipButton button {
-    padding: 21px 45px;
+  padding: 21px 45px;
 }
 
 /* Media queries */
 @media screen and (max-width: 1000px) {
-    .Profile-completion-one-right .Header-logo{
-        display: block;
-        margin-left: 5%;
-    }
-    .Profile-completion-one-content {
-        margin: 5%;
-        width: 90%;
-
-    }
-    .Profile-completion-one-content .Bottom .Proggress-bar {
-        margin-right: 50px;
-    }
+  .Profile-completion-one-right .Header-logo {
+    display: block;
+    margin-left: 5%;
+  }
+  .Profile-completion-one-content {
+    width: 70%;
+    justify-content: left;
+    margin: 5% 10% 5% 5%;
+  }
 }
 @media screen and (max-width: 800px) {
-    .Profile-completion-one-content {
-        margin: 5% 10% 5% 5%;
-        width: 90%;
-
-    }
-    .Profile-completion-one-content .Description textarea {
-        min-width: 300px;
-    }
-    .Profile-completion-one-content .Bottom .Proggress-bar {
-        margin-right: 50px;
-    }
-
+  .Profile-completion-one-content {
+    margin: 5% 10% 5% 5%;
+    width: 80%;
+    min-width: 350px;
+  }
+  .Profile-completion-one-content .Description textarea {
+    min-width: 300px;
+  }
 }
-@media  screen and (max-width: 400px) {
-    .Profile-completion-one-right .Header-text h3 {
-        text-align: center;
-        font-size: 30px;
-    }
-    .Profile-completion-one-right {
-        margin-left: 0px;
-    }
-    .Profile-completion-one-content {
-        margin: 0%
-    }
-    .Profile-completion-one-right .skipButton button {
-        padding: 7px 26px;
-    }
-    .Profile-completion-one-content .User-photos, .Description, .Bottom {
-        margin-left: 5%;
-    }
-    .Profile-completion-one-content .Bottom .Proggress-bar {
-        margin-right: 0px;
-    }
+@media screen and (max-width: 400px) {
+  .Profile-completion-one-right .Header-text h3 {
+    text-align: center;
+    font-size: 30px;
+  }
+  .Profile-completion-one-content {
+    min-width: 90%;
+  }
+  .Profile-completion-one-content .Description textarea {
+    min-width: 0px;
+  }
+  .Profile-completion-one-right .skipButton button {
+    padding: 7px 26px;
+  }
+  .Profile-completion-one-content .Bottom .Proggress-bar {
+    margin-right: 0px;
+  }
 }
