@@ -215,12 +215,12 @@ h3 {
 @media screen and (max-width: 1000px) {
   .Profile-completion-three-content {
     width: 60%;
-    margin-top: 10%;
+    margin-top: 12.5%;
   }
   .Profile-completion-three-right .Header-logo {
     display: block;
-    margin-left: 2%;
-    margin-bottom: 0px;
+    margin-top: 25px;
+    margin-left: 50px;
   }
 }
 @media screen and (max-width: 800px) {
@@ -248,7 +248,9 @@ h3 {
   .Profile-completion-three-content .Header-text h3 {
     text-align: center;
   }
-  .Header-logo {
-    margin-top: 5px;
+  .Profile-completion-three-right .Header-logo {
+    display: flex;
+    margin-left: 5%;
+    margin-top: 2%;
   }
 }
