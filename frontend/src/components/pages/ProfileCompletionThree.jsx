@@ -28,15 +28,29 @@ function ProfileCompletionTwo() {
   };
   const handleStartMonth = () => {
     setOpenStartMonth(!openStartMonth);
+    setOpenEndYear(false);
+    setOpenEndMonth(false);
+    setOpenStartYear(false);
+    setOpenLocationType(false);
   };
   const handleEndMonth = () => {
     setOpenEndMonth(!openEndMonth);
+    setOpenEndYear(false);
+    setOpenStartMonth(false);
+    setOpenStartYear(false);
+    setOpenLocationType(false);
   };
   const handleStartYear = () => {
     setOpenStartYear(!openStartYear);
+    setOpenEndYear(false);
+    setOpenEndMonth(false);
+    setOpenStartMonth(false);
   };
   const handleEndYear = () => {
     setOpenEndYear(!openEndYear);
+    setOpenEndMonth(false);
+    setOpenStartMonth(false);
+    setOpenStartYear(false);
   };
   const Months = [
     "January",

@@ -23,6 +23,7 @@ h3 {
   margin: 2.5% 20% 0% 10%;
   gap: 10px;
   width: 45%;
+  min-width: 400px;
 }
 .Profile-completion-three-content .Title,
 .Location {
@@ -210,4 +211,44 @@ h3 {
 }
 .Profile-completion-three-right .skipButton button {
   padding: 21px 45px;
+}
+@media screen and (max-width: 1000px) {
+  .Profile-completion-three-content {
+    width: 60%;
+    margin-top: 10%;
+  }
+  .Profile-completion-three-right .Header-logo {
+    display: block;
+    margin-left: 2%;
+    margin-bottom: 0px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .Profile-completion-three-right .Header-text h3 {
+    font-size: 30px;
+  }
+  .Profile-completion-three-content {
+    margin-top: 15%;
+    width: 80%;
+    min-width: 0px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .Profile-completion-three-content {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .Bottom {
+    margin-left: 0px;
+  }
+  .Profile-completion-three-right .skipButton button {
+    padding: 7px 26px;
+  }
+  .Profile-completion-three-content .Header-text h3 {
+    text-align: center;
+  }
+  .Header-logo {
+    margin-top: 5px;
+  }
 }
