@@ -4,6 +4,9 @@ import NextButton from "../ProfileCompletion/nextButton";
 import ProgressBar from "../ProfileCompletion/progressBar";
 import UrapolkuLogo from "../ProfileCompletion/UrapolkuLogoText";
 import "../css/ProfileCompletionOne.css";
+const nextPage = () => {
+  window.location.href = "/profiletwo";
+};
 function ProfileCompletionOne() {
   return (
     <div id="ProfileCompletion-Wrapper">
@@ -36,7 +39,9 @@ function ProfileCompletionOne() {
             </div>
           </div>
           <div className="Bottom">
-            <NextButton />
+            <div className="Next-button-wrapper" onClick={nextPage}>
+              <NextButton />
+            </div>
             <ProgressBar />
           </div>
         </div>
