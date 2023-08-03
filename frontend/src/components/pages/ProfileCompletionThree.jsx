@@ -8,11 +8,13 @@ import { useState } from "react";
 function ProfileCompletionTwo() {
   const [openEmployment, setOpenEmployment] = useState(false);
   const [openLocationType, setOpenLocationType] = useState(false);
-
+  const [endDateVisible, setEndDateVisible] = useState(true);
   const [openStartMonth, setOpenStartMonth] = useState(false);
   const [openEndMonth, setOpenEndMonth] = useState(false);
   const [openStartYear, setOpenStartYear] = useState(false);
   const [openEndYear, setOpenEndYear] = useState(false);
+
+  // All setOpens
   const handleEmploymentType = () => {
     setOpenEmployment(!openEmployment);
     setOpenLocationType(false);
@@ -20,6 +22,9 @@ function ProfileCompletionTwo() {
   const handleLocationType = () => {
     setOpenLocationType(!openLocationType);
     setOpenEmployment(false);
+  };
+  const handleToggleEndDate = () => {
+    setEndDateVisible(!endDateVisible);
   };
   const handleStartMonth = () => {
     setOpenStartMonth(!openStartMonth);
@@ -47,12 +52,59 @@ function ProfileCompletionTwo() {
     "November",
     "December",
   ];
+
+  // Pushes every year from 1930 to 2023 to years list
   const Years = [];
   const max = 2023;
   const min = 1930;
   for (let i = max; i >= min; i--) {
     Years.push(i);
   }
+
+  // These functions gets the text-content when element children is clicked
+  // It stores the value into DataValue
+
+  const handleEmploymentClick = (event) => {
+    const EmploymentDataValue = event.currentTarget.textContent;
+    const select = document.querySelector(".Employment-type-text");
+    select.textContent = EmploymentDataValue;
+    setOpenEmployment(false);
+  };
+
+  const handleLocationClick = (event) => {
+    const LocationDataValue = event.currentTarget.textContent;
+    const select = document.querySelector(".Location-text");
+    select.textContent = LocationDataValue;
+    setOpenLocationType(false);
+  };
+
+  const handleStartMonthClick = (event) => {
+    const StartMonthDataValue = event.currentTarget.textContent;
+    const select = document.querySelector(".Start-Month");
+    select.textContent = StartMonthDataValue;
+    setOpenStartMonth(false);
+  };
+
+  const handleStartYearClick = (event) => {
+    const StartYearDataValue = event.currentTarget.textContent;
+    const select = document.querySelector(".Start-Year");
+    select.textContent = StartYearDataValue;
+    setOpenStartYear(false);
+  };
+  const handleEndMonthClick = (event) => {
+    const EndMonthtDataValue = event.currentTarget.textContent;
+    const select = document.querySelector(".End-Month");
+    select.textContent = EndMonthtDataValue;
+    setOpenEndMonth(false);
+  };
+
+  const handleEndYearClick = (event) => {
+    const EndYearDataValue = event.currentTarget.textContent;
+    const select = document.querySelector(".End-Year");
+    select.textContent = EndYearDataValue;
+    setOpenEndYear(false);
+  };
+
   return (
     <div id="ProfileCompletion-Wrapper">
       <LeftBar />
@@ -77,7 +129,7 @@ function ProfileCompletionTwo() {
           <div className="Employment-type-dropdown">
             <p>Employment type</p>
             <button onClick={handleEmploymentType}>
-              <p>Please select</p>
+              <p className="Employment-type-text">Please select</p>
               <img
                 className="Expand-more"
                 src="pictures/expand-more.png"
@@ -86,12 +138,24 @@ function ProfileCompletionTwo() {
             </button>
             {openEmployment && (
               <div className="Employment-type-content">
-                <p className="Employment-type">Full-time</p>
-                <p className="Employment-type">Part-time</p>
-                <p className="Employment-type">Freelance</p>
-                <p className="Employment-type">Contract</p>
-                <p className="Employment-type">Self-employed</p>
-                <p className="Employment-type">Internship</p>
+                <p className="Employment-type" onClick={handleEmploymentClick}>
+                  Full-time
+                </p>
+                <p className="Employment-type" onClick={handleEmploymentClick}>
+                  Part-time{" "}
+                </p>
+                <p className="Employment-type" onClick={handleEmploymentClick}>
+                  Freelance
+                </p>
+                <p className="Employment-type" onClick={handleEmploymentClick}>
+                  Contract
+                </p>
+                <p className="Employment-type" onClick={handleEmploymentClick}>
+                  Self-employed
+                </p>
+                <p className="Employment-type" onClick={handleEmploymentClick}>
+                  Internship
+                </p>
               </div>
             )}
           </div>
@@ -102,7 +166,7 @@ function ProfileCompletionTwo() {
           <div className="Location-type-dropdown">
             <p>Location type</p>
             <button onClick={handleLocationType}>
-              <p>Please select</p>
+              <p className="Location-text">Please select</p>
               <img
                 className="Expand-more"
                 src="pictures/expand-more.png"
@@ -111,14 +175,25 @@ function ProfileCompletionTwo() {
             </button>
             {openLocationType && (
               <div className="Location-type-content">
-                <p>On-site</p>
-                <p>Hybrid</p>
-                <p>Remote</p>
+                <p className="Location-type" onClick={handleLocationClick}>
+                  On-site
+                </p>
+                <p className="Location-type" onClick={handleLocationClick}>
+                  Hybrid
+                </p>
+                <p className="Location-type" onClick={handleLocationClick}>
+                  Remote
+                </p>
               </div>
             )}
           </div>
           <div className="Currently-working">
-            <input className="checkbox" type="checkbox" name="" id="" />
+            <input
+              className="checkbox"
+              type="checkbox"
+              name=""
+              onChange={handleToggleEndDate}
+            />
             <p>I am currently working on this role </p>
           </div>
 
@@ -127,7 +202,7 @@ function ProfileCompletionTwo() {
             <div className="Start-date-buttons">
               <div className="Month">
                 <button className="" onClick={handleStartMonth}>
-                  <p>Month</p>
+                  <p className="Start-Month">Month</p>
                   <img
                     className="Expand-more"
                     src="pictures/expand-more.png"
@@ -137,7 +212,11 @@ function ProfileCompletionTwo() {
                 {openStartMonth && (
                   <div className="Month-content">
                     {Months.map((month) => (
-                      <p key={month} data-value={month}>
+                      <p
+                        key={month}
+                        data-value={month}
+                        onClick={handleStartMonthClick}
+                      >
                         {month}
                       </p>
                     ))}
@@ -146,7 +225,7 @@ function ProfileCompletionTwo() {
               </div>
               <div className="Year">
                 <button onClick={handleStartYear}>
-                  <p>Year</p>
+                  <p className="Start-Year">Year</p>
                   <img
                     className="Expand-more"
                     src="pictures/expand-more.png"
@@ -156,7 +235,11 @@ function ProfileCompletionTwo() {
                 {openStartYear && (
                   <div className="Year-content">
                     {Years.map((Year) => (
-                      <p key={Year} data-value={Year}>
+                      <p
+                        key={Year}
+                        data-value={Year}
+                        onClick={handleStartYearClick}
+                      >
                         {Year}
                       </p>
                     ))}
@@ -165,50 +248,59 @@ function ProfileCompletionTwo() {
               </div>
             </div>
           </div>
-
-          <div className="End-date">
-            <p>End-date</p>
-            <div className="End-date-buttons">
-              <div className="Month">
-                <button onClick={handleEndMonth}>
-                  <p>Month</p>
-                  <img
-                    className="Expand-more"
-                    src="pictures/expand-more.png"
-                    alt=""
-                  />
-                </button>
-                {openEndMonth && (
-                  <div className="Month-content">
-                    {Months.map((month) => (
-                      <p key={month} data-value={month}>
-                        {month}
-                      </p>
-                    ))}
-                  </div>
-                )}
-              </div>
-              <div className="Year">
-                <button onClick={handleEndYear}>
-                  <p>Year</p>
-                  <img
-                    className="Expand-more"
-                    src="pictures/expand-more.png"
-                    alt=""
-                  />
-                </button>
-                {openEndYear && (
-                  <div className="Year-content">
-                    {Years.map((Year) => (
-                      <p key={Year} data-value={Year}>
-                        {Year}
-                      </p>
-                    ))}
-                  </div>
-                )}
+          {endDateVisible && (
+            <div className="End-date">
+              <p>End-date</p>
+              <div className="End-date-buttons">
+                <div className="Month">
+                  <button onClick={handleEndMonth}>
+                    <p className="End-Month">Month</p>
+                    <img
+                      className="Expand-more"
+                      src="pictures/expand-more.png"
+                      alt=""
+                    />
+                  </button>
+                  {openEndMonth && (
+                    <div className="Month-content">
+                      {Months.map((month) => (
+                        <p
+                          key={month}
+                          data-value={month}
+                          onClick={handleEndMonthClick}
+                        >
+                          {month}
+                        </p>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                <div className="Year">
+                  <button onClick={handleEndYear}>
+                    <p className="End-Year">Year</p>
+                    <img
+                      className="Expand-more"
+                      src="pictures/expand-more.png"
+                      alt=""
+                    />
+                  </button>
+                  {openEndYear && (
+                    <div className="Year-content">
+                      {Years.map((Year) => (
+                        <p
+                          key={Year}
+                          data-value={Year}
+                          onClick={handleEndYearClick}
+                        >
+                          {Year}
+                        </p>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
+          )}
           <div className="Bottom">
             <NextButton />
             <ProgressBar />
