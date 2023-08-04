@@ -1,8 +1,8 @@
-import { useState, createContext, useContext } from "react";
+import { useState, createContext, useContext, useEffect } from "react";
 import MenuIcon from "../assets/menu.svg";
 import MenuCloseIcon from "../assets/close-menu.svg";
 import "./css/navLayout.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const NavMenuContext = createContext(undefined);
@@ -21,6 +21,8 @@ const navbarMenuItems = [
     link: "/favorites",
   },
 ];
+
+const blacklistAddr = ["/landing", "/login"];
 
 const MenuButton = () => {
   const vizContext = useContext(NavMenuContext);
@@ -56,6 +58,7 @@ const NavLink = ({ styling = "", ...props }) => {
   );
 };
 
+//not used for anything but useful for mobile menu when maximized
 const SideBar = () => {
   const vizContext = useContext(NavMenuContext);
 
@@ -81,8 +84,15 @@ const SideBar = () => {
 
 const NavBarLayout = (props) => {
   const [sideBarVisible, setSideBarVisible] = useState(false);
+  const [navbarVisible, setNavbarVisible] = useState(true);
   const navigate = useNavigate();
   const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (blacklistAddr.includes(location.pathname)) setNavbarVisible(false);
+    else setNavbarVisible(true);
+  }, [location]);
 
   return (
     <NavMenuContext.Provider
@@ -91,45 +101,47 @@ const NavBarLayout = (props) => {
         setSideBarVisible: setSideBarVisible,
       }}
     >
-      <header className="navbar">
-        <div className="nav-logo-wrapper" onClick={() => navigate("/")}>
-          <img className="nav-logo" src={"/pictures/urapolku.png"} />ä
-          <p>Urapolku</p>
-        </div>
-        <div className="nav-items-wrapper">
-          {navbarMenuItems.map((item) => (
-            <NavLink
-              key={item.link}
-              link={item.link}
-              text={item.text}
-              styling={item.styling}
-            />
-          ))}
+      {navbarVisible && (
+        <header className="navbar">
+          <div className="nav-logo-wrapper" onClick={() => navigate("/")}>
+            <img className="nav-logo" src={"/pictures/urapolku.png"} />ä
+            <p>Urapolku</p>
+          </div>
+          <div className="nav-items-wrapper">
+            {navbarMenuItems.map((item) => (
+              <NavLink
+                key={item.link}
+                link={item.link}
+                text={item.text}
+                styling={item.styling}
+              />
+            ))}
 
-          {isAuthenticated ? (
-            <button
-              className="nav-link button-filled"
-              onClick={() =>
-                logout({
-                  logoutParams: {
-                    returnTo: "https://localhost:5173/",
-                  },
-                })
-              }
-            >
-              Kirjaudu ulos
-            </button>
-          ) : (
-            <button
-              className="nav-link button-hollow"
-              onClick={() => loginWithRedirect()}
-            >
-              Kirjaudu
-            </button>
-          )}
-        </div>
-        <MenuButton />
-      </header>
+            {isAuthenticated ? (
+              <button
+                className="nav-link button-filled"
+                onClick={() =>
+                  logout({
+                    logoutParams: {
+                      returnTo: "https://localhost:5173/",
+                    },
+                  })
+                }
+              >
+                Kirjaudu ulos
+              </button>
+            ) : (
+              <button
+                className="nav-link button-hollow"
+                onClick={() => loginWithRedirect()}
+              >
+                Kirjaudu
+              </button>
+            )}
+          </div>
+          <MenuButton />
+        </header>
+      )}
       {/*<SideBar />*/}
       {props.children}
     </NavMenuContext.Provider>
