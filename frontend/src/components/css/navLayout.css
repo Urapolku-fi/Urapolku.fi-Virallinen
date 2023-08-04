@@ -2,7 +2,7 @@
   background-color: #0B0121;
   display: flex;
   gap: 2rem;
-  padding: 1rem;
+  padding: 1rem 2rem;
   align-items: center;
 }
 
@@ -19,13 +19,12 @@
 }
 
 .nav-logo {
-  height: 2rem;
-  padding: 0 .5rem;
+  height: 1.5rem;
 }
 
 .menu-burger-button {
-  height: 3rem;
-  width: 3rem;
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 .nav-items-wrapper {
