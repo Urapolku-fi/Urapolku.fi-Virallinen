@@ -5,12 +5,12 @@ import { useFetch } from "../api/user";
 
 const CallbackPage = () => {
   const { isLoading, user } = useAuth0();
-  const { postWAuth, getWAuth } = useFetch();
+  const { postWAuth } = useFetch();
   const [redirectPage, setRedirectPage] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (user) {
+    if (user && user.userId === undefined) {
       const addUser = async () => {
         const dbUserData = {
           email: user.email,
@@ -27,7 +27,7 @@ const CallbackPage = () => {
       };
       addUser();
     }
-  }, [user, postWAuth, getWAuth, setRedirectPage]);
+  }, [user, postWAuth]);
 
   return (
     <>

@@ -1,4 +1,4 @@
-import { useState, createContext, useContext, useEffect } from "react";
+import { useState, createContext, useContext } from "react";
 import MenuIcon from "../assets/menu.svg";
 import MenuCloseIcon from "../assets/close-menu.svg";
 import "./css/navLayout.css";
