@@ -1,8 +1,13 @@
-# React + Vite
+# Urapolku frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Environment variables
 
-Currently, two official plugins are available:
+Create file called .env.local and fill in the following variables:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```
+VITE_AUTH0_CALLBACK_URL=
+VITE_AUTH0_DOMAIN=
+VITE_AUTH0_CLIENTID=
+VITE_AUTH0_AUDIENCE=
+VITE_BACKEND_URL=
+```
