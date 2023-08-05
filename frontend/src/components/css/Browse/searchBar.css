@@ -1,0 +1,115 @@
+.search-bar-left {
+  position: absolute;
+  height: 100%;
+  width: 86.5%;
+  right: 13.5%;
+  bottom: 0%;
+  left: 0%;
+  border-radius: 30px 0px 0px 30px;
+  border: 1px solid #ececec;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.search-for-a {
+  width: 20vw;
+  outline: none;
+  color: #A39BB4;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 25%;
+  left: 2.08%;
+  line-height: 150%;
+}
+.search-for-a:focus {
+  color: white;
+}
+.experience {
+  position: relative;
+  line-height: 150%;
+}
+.search-bar-expand-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.frame-item {
+  position: relative;
+  top: 1px;
+  border-right: 1px solid #ececec;
+  box-sizing: border-box;
+  width: 1px;
+  height: 48px;
+}
+.color-icon {
+  position: relative;
+  width: 12.63px;
+  height: 16.92px;
+}
+.color-parent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 9px;
+}
+.line-parent {
+  position: absolute;
+  height: 99.04%;
+  width: 26%;
+  top: 0%;
+  right: 34.34%;
+  bottom: 0.96%;
+  left: 39.66%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+}
+.frame-inner {
+  position: relative;
+  border-radius: 0px 30px 30px 0px;
+  background-color: #ececec;
+  width: 126px;
+  height: 48px;
+  overflow: hidden;
+  flex-shrink: 0;
+  z-index: 0;
+}
+.search {
+  position: absolute;
+  top: 12.5px; /*12.5*/
+  left: 35.68px;
+  line-height: 150%;
+  z-index: 1;
+}
+.frame-parent {
+  position: absolute;
+  height: 100%;
+  width: 13.5%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 86.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+  text-align: center;
+  color: #0b081c;
+}
+.search-bar {
+  position: relative;
+  top: 80px;
+  width: 64.56%;
+  margin-left: 17.72%;
+  height: 48px;
+  text-align: left;
+  font-size: 16px;
+  color: #a39bb4;
+  font-family: Montserrat;
+}

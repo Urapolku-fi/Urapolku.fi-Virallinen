@@ -1,0 +1,154 @@
+.contact {
+    align-self: stretch;
+    position: relative;
+    letter-spacing: -0.01em;
+    font-weight: 500;
+}
+.work-inquires-workvaultflow {
+    align-self: stretch;
+    position: relative;
+    letter-spacing: -0.01em;
+    font-weight: 300;
+}
+.footer-links {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 6px;
+    font-size: 18px;
+}
+.footer-links-wrapper {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px;
+}
+.careers {
+    position: relative;
+    letter-spacing: -0.01em;
+    font-weight: 500;
+}
+.careersvaultflowcom {
+    position: relative;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+    font-weight: 300;
+}
+.footer-links-wrapper1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px;
+}
+.vaultflow-all-rights {
+    position: relative;
+    font-size: 16px;
+    letter-spacing: -0.01em;
+    font-weight: 300;
+    color: #939393;
+}
+.column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 40px;
+}
+.th-street-floor {
+    margin: 0;
+}
+.th-street-floor-container {
+    flex: 1;
+    position: relative;
+    letter-spacing: -0.01em;
+    font-weight: 300;
+}
+.address-wrapper {
+    width: 210px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 18px;
+}
+.twitter {
+    position: relative;
+    letter-spacing: -0.01em;
+    font-weight: 300;
+}
+.valtflow-icon {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: cover;
+}
+.urapolku {
+    position: absolute;
+    top: 0px;
+    left: 32px;
+    letter-spacing: -0.03em;
+    line-height: 100%;
+}
+.logo {
+    position: relative;
+    width: 133px;
+    height: 22px;
+}
+.logo-wrapper {
+    width: 138px;
+    height: 22px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.column2 {
+    align-self: stretch;
+    width: 180px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-size: 22px;
+    color: #ececec;
+}
+.columns {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 24px;
+}
+.container {
+    position: absolute;
+    width: 83.86%;
+    top: 64px;
+    right: 7.76%;
+    left: 8.39%;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    box-sizing: border-box;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.footer {
+    position: relative;
+    width: 100%;
+    height: 466px;
+    text-align: left;
+    font-size: 24px;
+    color: #FFFFFF;
+    font-family: Montserrat;
+}
+
