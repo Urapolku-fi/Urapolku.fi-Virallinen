@@ -39,13 +39,15 @@
   position: relative;
   margin-bottom: 5%;
 }
-.Profile-completion-one-content .User-photos button {
+.Profile-completion-one-content .User-photos .Banner-button {
   width: 100%;
   height: 156px;
   border-radius: 8px;
   background: rgba(217, 217, 217, 0.38);
+  padding: 0px;
 }
-.Profile-completion-one-content #upload-image {
+.Profile-completion-one-content #upload-profile,
+#upload-banner {
   display: none;
 }
 .Profile-completion-one-content .Circle {
@@ -58,6 +60,7 @@
   position: absolute;
   top: 72.5%;
   left: 2.5%;
+  padding: 0px;
 }
 .Profile-completion-one-content .Circle.centered {
   justify-content: center;

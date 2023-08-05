@@ -7,22 +7,37 @@ import React, { useState } from "react";
 import "../css/ProfileCompletionOne.css";
 
 function ProfileCompletionOne() {
-  const [imageUrl, setImageUrl] = useState("/pictures/Camera-alt.png");
+  const [BannerImageUrl, setBannerUrl] = useState("/pictures/Camera-alt.png");
+  const [ProfileImageUrl, setProfileUrl] = useState("/pictures/Camera-alt.png");
 
-  const handleImageChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
+  const handleBannerChange = (event) => {
+    const banner = event.target.files[0];
+    if (banner) {
       const reader = new FileReader();
       reader.onload = () => {
-        setImageUrl(reader.result);
+        setBannerUrl(reader.result);
       };
-      reader.readAsDataURL(file);
+      reader.readAsDataURL(banner);
+    }
+  };
+  const handleProfileChange = (event) => {
+    const profile = event.target.files[0];
+    if (profile) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setProfileUrl(reader.result);
+      };
+      reader.readAsDataURL(profile);
     }
   };
 
-  const clickImageButton = () => {
+  const clickBannerButton = () => {
     // Trigger the hidden input file when the button is clicked
-    document.getElementById("upload-image").click();
+    document.getElementById("upload-banner").click();
+  };
+  const clickProfileButton = () => {
+    // Trigger the hidden input file when the button is clicked
+    document.getElementById("upload-profile").click();
   };
   const nextPage = () => {
     // User placed data will save and move to next page
@@ -50,22 +65,11 @@ function ProfileCompletionOne() {
           <div className="Main-wrapper">
             <div className="User-photos">
               <p>Upload your photos</p>
-              <button onClick={clickImageButton}>
-                <img src={"pictures/Camera-alt.png"} alt="" />
-                <input
-                  type="file"
-                  id="upload-image"
-                  onChange={handleImageChange}
-                />
-              </button>
-              <div
-                className={`Circle ${
-                  imageUrl === "/pictures/Camera-alt.png" ? "centered" : ""
-                }`}
-              >
-                {imageUrl === "/pictures/Camera-alt.png" ? (
+              <button className="Banner-button" onClick={clickBannerButton}>
+                {BannerImageUrl === "/pictures/Camera-alt.png" ? "" : ""}
+                {BannerImageUrl === "/pictures/Camera-alt.png" ? (
                   <img
-                    src={imageUrl}
+                    src={BannerImageUrl}
                     alt=""
                     id="User-uploaded-photo"
                     style={{
@@ -75,13 +79,52 @@ function ProfileCompletionOne() {
                   />
                 ) : (
                   <img
-                    src={imageUrl}
+                    src={BannerImageUrl}
                     alt=""
                     id="User-uploaded-photo"
                     style={{ width: "100%", height: "100%", border: "none" }}
                   />
                 )}
-              </div>
+                <input
+                  type="file"
+                  id="upload-banner"
+                  onChange={handleBannerChange}
+                  accept="image/*"
+                />
+              </button>
+              <button
+                className={`Circle ${
+                  ProfileImageUrl === "/pictures/Camera-alt.png"
+                    ? "centered"
+                    : ""
+                }`}
+                onClick={clickProfileButton}
+              >
+                {ProfileImageUrl === "/pictures/Camera-alt.png" ? (
+                  <img
+                    src={ProfileImageUrl}
+                    alt=""
+                    id="User-uploaded-photo"
+                    style={{
+                      width: "50px",
+                      height: "50px",
+                    }}
+                  />
+                ) : (
+                  <img
+                    src={ProfileImageUrl}
+                    alt=""
+                    id="User-uploaded-photo"
+                    style={{ width: "100%", height: "100%", border: "none" }}
+                  />
+                )}
+                <input
+                  type="file"
+                  id="upload-profile"
+                  onChange={handleProfileChange}
+                  accept="image/*"
+                />
+              </button>
             </div>
           </div>
           <div className="Description">
@@ -96,11 +139,7 @@ function ProfileCompletionOne() {
             </div>
           </div>
           <div className="Bottom">
-            <div
-              className="Next-button-wrapper"
-              onClick={nextPage}
-              onChange={handleImageChange}
-            >
+            <div className="Next-button-wrapper" onClick={nextPage}>
               <NextButton />
             </div>
             <ProgressBar />
