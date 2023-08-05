@@ -1,13 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap");
-
 /* These are changes for this site only elements */
 #ProfileCompletion-Wrapper {
   height: 100%;
   display: flex;
-}
-#ProfileCompletion-wrapper p,
-h2,
-h3 {
   font-family: "Montserrat", sans-serif;
 }
 .Profile-completion-three-right {
@@ -24,6 +19,10 @@ h3 {
   gap: 10px;
   width: 45%;
   min-width: 400px;
+}
+.Profile-completion-three-content p,
+input {
+  font-family: "Montserrat", sans-serif;
 }
 .Profile-completion-three-content .Title,
 .Location {
@@ -53,7 +52,6 @@ h3 {
 .Profile-completion-three-content .title p {
   margin-bottom: 0px;
   color: #000;
-  font-family: Montserrat;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -181,14 +179,13 @@ h3 {
   height: 10px;
   border-radius: 50%;
 }
-.Profile-completion-three-content .Bottom .Next-Button button {
+.Profile-completion-three-content .Bottom .Finish-button button {
   color: #fff;
-  font-size: 50px;
   font-style: normal;
   line-height: normal;
   padding: 16px 43px;
 }
-.Profile-completion-three-content .Bottom .Next-Button p {
+.Profile-completion-three-content .Bottom .Finish-button p {
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
   font-style: normal;
