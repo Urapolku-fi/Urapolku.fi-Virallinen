@@ -1,8 +1,8 @@
-import LeftBar from "../ProfileCompletion/LeftBarProfile";
-import SkipButton from "../ProfileCompletion/SkipButton";
-import NextButton from "../ProfileCompletion/nextButton";
-import ProgressBar from "../ProfileCompletion/progressBar";
-import UrapolkuLogo from "../ProfileCompletion/UrapolkuLogoText";
+import LeftBar from "./ProfileCompletion/LeftBarProfile";
+import SkipButton from "./ProfileCompletion/SkipButton";
+import NextButton from "./ProfileCompletion/nextButton";
+import ProgressBar from "./ProfileCompletion/progressBar";
+import UrapolkuLogo from "./ProfileCompletion/UrapolkuLogoText";
 import "../css/ProfileCompletionTwo.css";
 import { useState } from "react";
 function ProfileCompletionTwo() {
@@ -45,6 +45,11 @@ function ProfileCompletionTwo() {
     setOpenIndustry(false);
   };
   const nextPage = () => {
+    // User placed data will save and move to next-page
+    window.location.href = "/profilethree";
+  };
+  const skipPage = () => {
+    // No data saved, just skipped
     window.location.href = "/profilethree";
   };
   const industries = [
@@ -168,7 +173,9 @@ function ProfileCompletionTwo() {
     <div id="ProfileCompletion-Wrapper">
       <LeftBar />
       <div className="Profile-completion-two-right">
-        <SkipButton />
+        <div className="Skipbutton-wrapper" onClick={skipPage}>
+          <SkipButton />
+        </div>
         <div className="Header-logo">
           <UrapolkuLogo />
         </div>

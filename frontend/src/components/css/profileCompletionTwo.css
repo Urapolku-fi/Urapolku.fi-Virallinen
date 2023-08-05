@@ -184,7 +184,7 @@ h3 {
 }
 @media screen and (max-width: 1000px) and (min-width: 800px) {
   .Profile-completion-two-right .Profile-completion-two-content {
-    width: 50%;
+    width: 70%;
     margin-top: 12.5;
   }
   .Profile-completion-two-content .Industry-dropdown-button,

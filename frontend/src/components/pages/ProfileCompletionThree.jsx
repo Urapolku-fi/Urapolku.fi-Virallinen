@@ -1,11 +1,11 @@
-import LeftBar from "../ProfileCompletion/LeftBarProfile";
-import SkipButton from "../ProfileCompletion/SkipButton";
-import NextButton from "../ProfileCompletion/nextButton";
-import ProgressBar from "../ProfileCompletion/progressBar";
-import UrapolkuLogo from "../ProfileCompletion/UrapolkuLogoText";
+import LeftBar from "./ProfileCompletion/LeftBarProfile";
+import SkipButton from "./ProfileCompletion/SkipButton";
+import CompleteButton from "./ProfileCompletion/CompleteButton";
+import ProgressBar from "./ProfileCompletion/progressBar";
+import UrapolkuLogo from "./ProfileCompletion/UrapolkuLogoText";
 import "../css/ProfileCompletionThree.css";
 import { useState } from "react";
-function ProfileCompletionTwo() {
+function ProfileCreateThree() {
   const [openEmployment, setOpenEmployment] = useState(false);
   const [openLocationType, setOpenLocationType] = useState(false);
   const [endDateVisible, setEndDateVisible] = useState(true);
@@ -120,6 +120,11 @@ function ProfileCompletionTwo() {
   };
 
   const nextPage = () => {
+    // User placed data will save and move to next page
+    window.location.href = "/profilethree";
+  };
+  const skipPage = () => {
+    // No data saved, just skipped
     window.location.href = "/profilethree";
   };
 
@@ -127,7 +132,9 @@ function ProfileCompletionTwo() {
     <div id="ProfileCompletion-Wrapper">
       <LeftBar />
       <div className="Profile-completion-three-right">
-        <SkipButton />
+        <div className="Skipbutton-wrapper" onClick={skipPage}>
+          <SkipButton />
+        </div>
         <div className="Header-logo">
           <UrapolkuLogo />
         </div>
@@ -320,8 +327,8 @@ function ProfileCompletionTwo() {
             </div>
           )}
           <div className="Bottom">
-            <div className="Next-Button-Wrapper" onClick={nextPage}>
-              <NextButton />
+            <div className="Finish-button-wrapper" onClick={nextPage}>
+              <CompleteButton />
             </div>
             <ProgressBar />
           </div>
@@ -330,4 +337,4 @@ function ProfileCompletionTwo() {
     </div>
   );
 }
-export default ProfileCompletionTwo;
+export default ProfileCreateThree;
