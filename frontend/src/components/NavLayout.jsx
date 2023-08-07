@@ -2,7 +2,8 @@ import { useState, createContext, useContext, useEffect } from "react";
 import MenuIcon from "../assets/menu.svg";
 import MenuCloseIcon from "../assets/close-menu.svg";
 import "./css/navLayout.css";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const NavMenuContext = createContext(undefined);
 
@@ -18,16 +19,6 @@ const navbarMenuItems = [
   {
     text: "Suosikit",
     link: "/favorites",
-  },
-  {
-    text: "Rekisteröidy",
-    link: "/register",
-    styling: " button-filled",
-  },
-  {
-    text: "Kirjaudu",
-    link: "/login",
-    styling: " button-hollow",
   },
 ];
 
@@ -95,6 +86,7 @@ const NavBarLayout = (props) => {
   const [sideBarVisible, setSideBarVisible] = useState(false);
   const [navbarVisible, setNavbarVisible] = useState(true);
   const navigate = useNavigate();
+  const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
   const location = useLocation();
 
   useEffect(() => {
@@ -112,7 +104,8 @@ const NavBarLayout = (props) => {
       {navbarVisible && (
         <header className="navbar">
           <div className="nav-logo-wrapper" onClick={() => navigate("/")}>
-            <img className="nav-logo" src={"/pictures/urapolku.png"} />
+            <img className="nav-logo" src={"/pictures/urapolku.png"} />ä
+            <p>Urapolku</p>
           </div>
           <div className="nav-items-wrapper">
             {navbarMenuItems.map((item) => (
@@ -123,8 +116,29 @@ const NavBarLayout = (props) => {
                 styling={item.styling}
               />
             ))}
-          </div>
 
+            {isAuthenticated ? (
+              <button
+                className="nav-link button-filled"
+                onClick={() =>
+                  logout({
+                    logoutParams: {
+                      returnTo: "https://localhost:5173/",
+                    },
+                  })
+                }
+              >
+                Kirjaudu ulos
+              </button>
+            ) : (
+              <button
+                className="nav-link button-hollow"
+                onClick={() => loginWithRedirect()}
+              >
+                Kirjaudu
+              </button>
+            )}
+          </div>
           <MenuButton />
         </header>
       )}

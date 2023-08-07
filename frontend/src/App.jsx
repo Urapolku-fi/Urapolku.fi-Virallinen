@@ -1,25 +1,42 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/pages/Home";
-import Login from "./components/pages/Login";
-import Signup from "./components/pages/Signup"
 import { NavBarLayout } from "./components/NavLayout";
-import ProfileCompletionOne from "./components/pages/ProfileCompletionOne";
+import LandingPage from "./components/pages/ProfileCompletionOne";
 import ProfileCompletionTwo from "./components/pages/ProfileCompletionTwo";
 import ProfileCompletionThree from "./components/pages/ProfileCompletionThree";
-
+import {
+  Auth0Provider,
+  withAuthenticationRequired as withAuth,
+} from "@auth0/auth0-react";
+import CallbackPage from "./components/Auth0Callback";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<NavBarLayout><Home /></NavBarLayout>} />
-        <Route path="/login" element={<NavBarLayout><Login /></NavBarLayout>} />
-        <Route path="/register" element={<NavBarLayout><Signup /></NavBarLayout>} />
-        <Route path="/profileone" element={<ProfileCompletionOne />} />
-        <Route path="/profiletwo" element={<ProfileCompletionTwo />} />
-        <Route path="/profilethree" element={<ProfileCompletionThree />} />
-      </Routes>
-    </BrowserRouter>
+    <Auth0Provider
+      domain={import.meta.env.VITE_AUTH0_DOMAIN}
+      clientId={import.meta.env.VITE_AUTH0_CLIENTID}
+      authorizationParams={{
+        redirect_uri: import.meta.env.VITE_AUTH0_CALLBACK_URL,
+        audience: import.meta.env.VITE_AUTH0_AUDIENCE,
+      }}
+      useRefreshTokens={true}
+      cacheLocation="localstorage"
+    >
+      <BrowserRouter>
+        <NavBarLayout>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/callback" element={<CallbackPage />} />
+            <Route path="/profiletwo" element={<ProfileCompletionTwo />} />
+            <Route path="/profilethree" element={<ProfileCompletionThree />} />
+            <Route
+              path="/landing"
+              Component={withAuth(LandingPage, { returnTo: "/" })}
+            />
+          </Routes>
+        </NavBarLayout>
+      </BrowserRouter>
+    </Auth0Provider>
   );
 }
 
