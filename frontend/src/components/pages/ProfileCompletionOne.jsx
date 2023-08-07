@@ -66,7 +66,6 @@ function ProfileCompletionOne() {
             <div className="User-photos">
               <p>Upload your photos</p>
               <button className="Banner-button" onClick={clickBannerButton}>
-                {BannerImageUrl === "/pictures/Camera-alt.png" ? "" : ""}
                 {BannerImageUrl === "/pictures/Camera-alt.png" ? (
                   <img
                     src={BannerImageUrl}

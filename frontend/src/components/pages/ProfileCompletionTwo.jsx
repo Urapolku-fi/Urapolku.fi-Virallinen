@@ -4,46 +4,39 @@ import NextButton from "./ProfileCompletion/nextButton";
 import ProgressBar from "./ProfileCompletion/progressBar";
 import UrapolkuLogo from "./ProfileCompletion/UrapolkuLogoText";
 import "../css/ProfileCompletionTwo.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
 function ProfileCompletionTwo() {
   const [openIndustry, setOpenIndustry] = useState(false);
   const [openSkills, setOpenSkills] = useState(false);
   const [clickedSkills, setClickedSkills] = useState([]);
+  const IndustrySelectRef = useRef();
+
+  const openFuncs = [setOpenSkills, setOpenIndustry];
 
   const handleIndustryClick = (event) => {
-    // This gets the text-content when industry children is clicked
-    // It stores the value into IndustryDataValue
     const IndustryDataValue = event.currentTarget.textContent;
-    const select = document.querySelector(".Industry-select-text");
-    select.textContent = IndustryDataValue;
+    IndustrySelectRef.current.textContent = IndustryDataValue; // Check if IndustrySelectRef.current is not null before setting textContent
     setOpenIndustry(false);
   };
   const handleSkillClick = (event) => {
     const skillDataValue = event.currentTarget.getAttribute("data-value");
-
-    // If clicked skills list already contains clicked skill it removes it
+    // If 4 skills clicked do nothing
+    // If clickedskills list contains user clicked skill it removes it from the list
     if (clickedSkills.includes(skillDataValue)) {
       const updatedSkills = clickedSkills.filter(
         (skill) => skill !== skillDataValue
       );
-
-      // If skills list contains 4 skills, cant add more!
       setClickedSkills(updatedSkills);
-    } else if (clickedSkills.length >= 4) {
-    } else {
+    } else if (clickedSkills.length < 4) {
       setClickedSkills((prevSkills) => [...prevSkills, skillDataValue]);
     }
   };
 
-  const handleIndustryDropdownClick = () => {
-    setOpenIndustry(!openIndustry);
-    setOpenSkills(false);
+  const handleOpen = (opener) => {
+    opener((prevState) => !prevState); // Toggle the state
+    openFuncs.filter((func) => func !== opener).forEach((func) => func(false)); // Close other states
   };
 
-  const handleSkillDropdownClick = () => {
-    setOpenSkills(!openSkills);
-    setOpenIndustry(false);
-  };
   const nextPage = () => {
     // User placed data will save and move to next-page
     window.location.href = "/profilethree";
@@ -187,9 +180,11 @@ function ProfileCompletionTwo() {
             <p className="Industry-text">Industry</p>
             <button
               className="Industry-dropdown-button"
-              onClick={handleIndustryDropdownClick}
+              onClick={() => handleOpen(setOpenIndustry)}
             >
-              <p className="Industry-select-text">Select an industry</p>
+              <p ref={IndustrySelectRef} className="Industry-select-text">
+                Select an industry
+              </p>
               <img
                 className={`Expand-more ${openIndustry ? "up" : ""}`}
                 src="pictures/expand-more.png"
@@ -216,7 +211,7 @@ function ProfileCompletionTwo() {
             <p>Skills</p>
             <button
               className="skill-dropdown-button"
-              onClick={handleSkillDropdownClick}
+              onClick={() => handleOpen(setOpenSkills)}
             >
               <p>Select up to 4 skills</p>
               <img
