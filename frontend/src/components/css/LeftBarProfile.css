@@ -1,0 +1,16 @@
+#Profile-completion-sidebar {
+  width: 380px;
+  padding: 30px 30px 0px 30px;
+  background: #120a2f;
+}
+.Profile-completion-image-frame {
+  padding-top: 15%;
+}
+.Profile-completion-image-frame img {
+  border-radius: 0px 29.324px;
+}
+@media screen and (max-width: 1000px) {
+  #Profile-completion-sidebar {
+    display: none;
+  }
+}
