@@ -62,6 +62,11 @@ input {
   float: right;
   margin-top: 10px;
 }
+.Profile-completion-three-content .Expand-more.up {
+  display: flex;
+  float: right;
+  transform: rotate(180deg);
+}
 .Profile-completion-three-content p {
   display: flex;
   float: left;
@@ -208,6 +213,14 @@ input {
 }
 .Profile-completion-three-right .skipButton button {
   padding: 21px 45px;
+}
+@keyframes slideLeftToRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 @media screen and (max-width: 1000px) {
   .Profile-completion-three-content {

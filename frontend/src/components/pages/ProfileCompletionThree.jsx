@@ -15,42 +15,18 @@ function ProfileCreateThree() {
   const [openEndYear, setOpenEndYear] = useState(false);
 
   // All setOpens
-  const handleEmploymentType = () => {
-    setOpenEmployment(!openEmployment);
-    setOpenLocationType(false);
-  };
-  const handleLocationType = () => {
-    setOpenLocationType(!openLocationType);
-    setOpenEmployment(false);
-  };
-  const handleToggleEndDate = () => {
-    setEndDateVisible(!endDateVisible);
-  };
-  const handleStartMonth = () => {
-    setOpenStartMonth(!openStartMonth);
-    setOpenEndYear(false);
-    setOpenEndMonth(false);
-    setOpenStartYear(false);
-    setOpenLocationType(false);
-  };
-  const handleEndMonth = () => {
-    setOpenEndMonth(!openEndMonth);
-    setOpenEndYear(false);
-    setOpenStartMonth(false);
-    setOpenStartYear(false);
-    setOpenLocationType(false);
-  };
-  const handleStartYear = () => {
-    setOpenStartYear(!openStartYear);
-    setOpenEndYear(false);
-    setOpenEndMonth(false);
-    setOpenStartMonth(false);
-  };
-  const handleEndYear = () => {
-    setOpenEndYear(!openEndYear);
-    setOpenEndMonth(false);
-    setOpenStartMonth(false);
-    setOpenStartYear(false);
+  const openFuncs = [
+    setOpenStartYear,
+    setOpenEndYear,
+    setOpenEndMonth,
+    setOpenStartMonth,
+    setOpenEmployment,
+    setOpenLocationType,
+  ];
+
+  const handleOpen = (opener) => {
+    opener((prevState) => !prevState); // Toggle the state
+    openFuncs.filter((func) => func !== opener).forEach((func) => func(false)); // Close other states
   };
   const Months = [
     "January",
@@ -78,45 +54,13 @@ function ProfileCreateThree() {
   // These functions gets the text-content when element children is clicked
   // It stores the value into DataValue
 
-  const handleEmploymentClick = (event) => {
-    const EmploymentDataValue = event.currentTarget.textContent;
-    const select = document.querySelector(".Employment-type-text");
-    select.textContent = EmploymentDataValue;
-    setOpenEmployment(false);
-  };
-
-  const handleLocationClick = (event) => {
-    const LocationDataValue = event.currentTarget.textContent;
-    const select = document.querySelector(".Location-text");
-    select.textContent = LocationDataValue;
-    setOpenLocationType(false);
-  };
-
-  const handleStartMonthClick = (event) => {
-    const StartMonthDataValue = event.currentTarget.textContent;
-    const select = document.querySelector(".Start-Month");
-    select.textContent = StartMonthDataValue;
-    setOpenStartMonth(false);
-  };
-
-  const handleStartYearClick = (event) => {
-    const StartYearDataValue = event.currentTarget.textContent;
-    const select = document.querySelector(".Start-Year");
-    select.textContent = StartYearDataValue;
-    setOpenStartYear(false);
-  };
-  const handleEndMonthClick = (event) => {
-    const EndMonthtDataValue = event.currentTarget.textContent;
-    const select = document.querySelector(".End-Month");
-    select.textContent = EndMonthtDataValue;
-    setOpenEndMonth(false);
-  };
-
-  const handleEndYearClick = (event) => {
-    const EndYearDataValue = event.currentTarget.textContent;
-    const select = document.querySelector(".End-Year");
-    select.textContent = EndYearDataValue;
-    setOpenEndYear(false);
+  const handleSelectClick = (event, targetClassName, setOpenState) => {
+    const dataValue = event.currentTarget.textContent;
+    console.log(dataValue);
+    const select = document.querySelector(`.${targetClassName}`);
+    console.log();
+    select.textContent = dataValue;
+    setOpenState(false);
   };
 
   const nextPage = () => {
@@ -153,32 +97,86 @@ function ProfileCreateThree() {
           </div>
           <div className="Employment-type-dropdown">
             <p>Employment type</p>
-            <button onClick={handleEmploymentType}>
+            <button onClick={() => handleOpen(setOpenEmployment)}>
               <p className="Employment-type-text">Please select</p>
               <img
-                className="Expand-more"
+                className={`Expand-more ${openEmployment ? "up" : ""}`}
                 src="pictures/expand-more.png"
                 alt=""
               />
             </button>
             {openEmployment && (
               <div className="Employment-type-content">
-                <p className="Employment-type" onClick={handleEmploymentClick}>
+                <p
+                  className="Employment-type"
+                  onClick={(event) =>
+                    handleSelectClick(
+                      event,
+                      "Employment-type-text",
+                      setOpenEmployment
+                    )
+                  }
+                >
                   Full-time
                 </p>
-                <p className="Employment-type" onClick={handleEmploymentClick}>
-                  Part-time{" "}
+                <p
+                  className="Employment-type"
+                  onClick={(event) =>
+                    handleSelectClick(
+                      event,
+                      "Employment-type-text",
+                      setOpenEmployment
+                    )
+                  }
+                >
+                  Part-time
                 </p>
-                <p className="Employment-type" onClick={handleEmploymentClick}>
+                <p
+                  className="Employment-type"
+                  onClick={(event) =>
+                    handleSelectClick(
+                      event,
+                      "Employment-type-text",
+                      setOpenEmployment
+                    )
+                  }
+                >
                   Freelance
                 </p>
-                <p className="Employment-type" onClick={handleEmploymentClick}>
+                <p
+                  className="Employment-type"
+                  onClick={(event) =>
+                    handleSelectClick(
+                      event,
+                      "Employment-type-text",
+                      setOpenEmployment
+                    )
+                  }
+                >
                   Contract
                 </p>
-                <p className="Employment-type" onClick={handleEmploymentClick}>
+                <p
+                  className="Employment-type"
+                  onClick={(event) =>
+                    handleSelectClick(
+                      event,
+                      "Employment-type-text",
+                      setOpenEmployment
+                    )
+                  }
+                >
                   Self-employed
                 </p>
-                <p className="Employment-type" onClick={handleEmploymentClick}>
+                <p
+                  className="Employment-type"
+                  onClick={(event) =>
+                    handleSelectClick(
+                      event,
+                      "Employment-type-text",
+                      setOpenEmployment
+                    )
+                  }
+                >
                   Internship
                 </p>
               </div>
@@ -190,23 +188,50 @@ function ProfileCreateThree() {
           </div>
           <div className="Location-type-dropdown">
             <p>Location type</p>
-            <button onClick={handleLocationType}>
+            <button onClick={() => handleOpen(setOpenLocationType)}>
               <p className="Location-text">Please select</p>
               <img
-                className="Expand-more"
+                className={`Expand-more ${openLocationType ? "up" : ""}`}
                 src="pictures/expand-more.png"
                 alt=""
               />
             </button>
             {openLocationType && (
               <div className="Location-type-content">
-                <p className="Location-type" onClick={handleLocationClick}>
+                <p
+                  className="Location-type"
+                  onClick={(event) =>
+                    handleSelectClick(
+                      event,
+                      "Location-text",
+                      setOpenLocationType
+                    )
+                  }
+                >
                   On-site
                 </p>
-                <p className="Location-type" onClick={handleLocationClick}>
+                <p
+                  className="Location-type"
+                  onClick={(event) =>
+                    handleSelectClick(
+                      event,
+                      "Location-text",
+                      setOpenLocationType
+                    )
+                  }
+                >
                   Hybrid
                 </p>
-                <p className="Location-type" onClick={handleLocationClick}>
+                <p
+                  className="Location-type"
+                  onClick={(event) =>
+                    handleSelectClick(
+                      event,
+                      "Location-text",
+                      setOpenLocationType
+                    )
+                  }
+                >
                   Remote
                 </p>
               </div>
@@ -217,7 +242,7 @@ function ProfileCreateThree() {
               className="checkbox"
               type="checkbox"
               name=""
-              onChange={handleToggleEndDate}
+              onChange={() => handleOpen(setEndDateVisible)}
             />
             <p>I am currently working on this role </p>
           </div>
@@ -226,10 +251,13 @@ function ProfileCreateThree() {
             <p>Start-date</p>
             <div className="Start-date-buttons">
               <div className="Month">
-                <button className="" onClick={handleStartMonth}>
+                <button
+                  className=""
+                  onClick={() => handleOpen(setOpenStartMonth)}
+                >
                   <p className="Start-Month">Month</p>
                   <img
-                    className="Expand-more"
+                    className={`Expand-more ${openStartMonth ? "up" : ""}`}
                     src="pictures/expand-more.png"
                     alt=""
                   />
@@ -240,7 +268,13 @@ function ProfileCreateThree() {
                       <p
                         key={month}
                         data-value={month}
-                        onClick={handleStartMonthClick}
+                        onClick={(event) =>
+                          handleSelectClick(
+                            event,
+                            "Start-Month",
+                            setOpenStartMonth
+                          )
+                        }
                       >
                         {month}
                       </p>
@@ -249,10 +283,10 @@ function ProfileCreateThree() {
                 )}
               </div>
               <div className="Year">
-                <button onClick={handleStartYear}>
+                <button onClick={() => handleOpen(setOpenStartYear)}>
                   <p className="Start-Year">Year</p>
                   <img
-                    className="Expand-more"
+                    className={`Expand-more ${openStartYear ? "up" : ""}`}
                     src="pictures/expand-more.png"
                     alt=""
                   />
@@ -263,7 +297,13 @@ function ProfileCreateThree() {
                       <p
                         key={Year}
                         data-value={Year}
-                        onClick={handleStartYearClick}
+                        onClick={(event) =>
+                          handleSelectClick(
+                            event,
+                            "Start-Year",
+                            setOpenStartYear
+                          )
+                        }
                       >
                         {Year}
                       </p>
@@ -278,10 +318,10 @@ function ProfileCreateThree() {
               <p>End-date</p>
               <div className="End-date-buttons">
                 <div className="Month">
-                  <button onClick={handleEndMonth}>
+                  <button onClick={() => handleOpen(setOpenEndMonth)}>
                     <p className="End-Month">Month</p>
                     <img
-                      className="Expand-more"
+                      className={`Expand-more ${openEndMonth ? "up" : ""}`}
                       src="pictures/expand-more.png"
                       alt=""
                     />
@@ -292,7 +332,13 @@ function ProfileCreateThree() {
                         <p
                           key={month}
                           data-value={month}
-                          onClick={handleEndMonthClick}
+                          onClick={(event) =>
+                            handleSelectClick(
+                              event,
+                              "End-Month",
+                              setOpenEndMonth
+                            )
+                          }
                         >
                           {month}
                         </p>
@@ -301,10 +347,10 @@ function ProfileCreateThree() {
                   )}
                 </div>
                 <div className="Year">
-                  <button onClick={handleEndYear}>
+                  <button onClick={() => handleOpen(setOpenEndYear)}>
                     <p className="End-Year">Year</p>
                     <img
-                      className="Expand-more"
+                      className={`Expand-more ${openEndYear ? "up" : ""}`}
                       src="pictures/expand-more.png"
                       alt=""
                     />
@@ -315,7 +361,9 @@ function ProfileCreateThree() {
                         <p
                           key={Year}
                           data-value={Year}
-                          onClick={handleEndYearClick}
+                          onClick={(event) =>
+                            handleSelectClick(event, "End-Year", setOpenEndYear)
+                          }
                         >
                           {Year}
                         </p>
