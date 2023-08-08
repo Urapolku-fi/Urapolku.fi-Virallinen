@@ -3,7 +3,7 @@ import SkipButton from "./ProfileCompletion/SkipButton";
 import CompleteButton from "./ProfileCompletion/CompleteButton";
 import ProgressBar from "./ProfileCompletion/progressBar";
 import UrapolkuLogo from "./ProfileCompletion/UrapolkuLogoText";
-import "../css/ProfileCompletionThree.css";
+import "../css/profileCompletionThree.css";
 import { useState } from "react";
 function ProfileCreateThree() {
   const [openEmployment, setOpenEmployment] = useState(false);

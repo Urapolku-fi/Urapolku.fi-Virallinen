@@ -3,7 +3,7 @@ import SkipButton from "./ProfileCompletion/SkipButton";
 import NextButton from "./ProfileCompletion/nextButton";
 import ProgressBar from "./ProfileCompletion/progressBar";
 import UrapolkuLogo from "./ProfileCompletion/UrapolkuLogoText";
-import "../css/ProfileCompletionTwo.css";
+import "../css/profileCompletionTwo.css";
 import { useState, useRef } from "react";
 function ProfileCompletionTwo() {
   const [openIndustry, setOpenIndustry] = useState(false);
