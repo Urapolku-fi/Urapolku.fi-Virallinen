@@ -3,8 +3,8 @@ import SkipButton from "./ProfileCompletion/SkipButton";
 import NextButton from "./ProfileCompletion/nextButton";
 import ProgressBar from "./ProfileCompletion/progressBar";
 import UrapolkuLogo from "./ProfileCompletion/UrapolkuLogoText";
-import React, { useState } from "react";
-import "../css/ProfileCompletionOne.css";
+import { useState } from "react";
+import "../css/profileCompletionOne.css";
 
 function ProfileCompletionOne() {
   const [BannerImageUrl, setBannerUrl] = useState("/pictures/Camera-alt.png");
