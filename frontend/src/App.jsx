@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/pages/Home";
 import { NavBarLayout } from "./components/NavLayout";
-import LandingPage from "./components/pages/ProfileCompletionOne";
+import ProfileCompletionOne from "./components/pages/ProfileCompletionOne";
 import ProfileCompletionTwo from "./components/pages/ProfileCompletionTwo";
 import ProfileCompletionThree from "./components/pages/ProfileCompletionThree";
 import {
@@ -27,11 +27,17 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/callback" element={<CallbackPage />} />
-            <Route path="/profiletwo" element={<ProfileCompletionTwo />} />
-            <Route path="/profilethree" element={<ProfileCompletionThree />} />
             <Route
-              path="/landing"
-              Component={withAuth(LandingPage, { returnTo: "/" })}
+              path="/profileone"
+              Component={withAuth(ProfileCompletionOne)}
+            />
+            <Route
+              path="/profiletwo"
+              Component={withAuth(ProfileCompletionTwo)}
+            />
+            <Route
+              path="/profilethree"
+              Component={withAuth(ProfileCompletionThree)}
             />
           </Routes>
         </NavBarLayout>
