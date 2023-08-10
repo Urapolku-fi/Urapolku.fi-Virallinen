@@ -1,7 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
-import { useFetch } from "../api/user";
+import { useFetch } from "../api/requestHooks";
 
 const CallbackPage = () => {
   const { isLoading, user } = useAuth0();
