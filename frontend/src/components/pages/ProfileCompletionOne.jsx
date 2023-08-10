@@ -59,9 +59,8 @@ function ProfileCompletionOne() {
       description: description,
     };
 
-    withAuth
-      .patch(`/user/${localStorage.getItem("userId")}?landing=1`, profileData)
-      .then(() => navigate("/profiletwo"));
+    withAuth.patch(`/user/${localStorage.getItem("userId")}`, profileData);
+    navigate("/profiletwo");
   };
 
   const skipPage = () => {

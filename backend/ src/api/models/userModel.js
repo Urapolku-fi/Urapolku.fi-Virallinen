@@ -8,6 +8,8 @@ const UserSchema = new Schema({
   profilePicture: { type: String },
   bannerPicture: { type: String },
   description: { type: String },
+  industry: { type: String },
+  skills: { type: [{ type: String }] },
 });
 
 // Export model

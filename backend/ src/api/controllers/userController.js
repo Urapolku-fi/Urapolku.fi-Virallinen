@@ -21,6 +21,8 @@ const userController = {
           });
         });
     }
+
+    res.send();
   },
 
   fetchUser: async (req, res) => {
@@ -30,16 +32,12 @@ const userController = {
   },
 
   updateUser: async (req, res) => {
-    const landing = req.query.landing;
     const userId = req.params.id;
     const data = req.body;
 
-    console.log(data);
-
-    if (landing) {
-      await User.updateOne({ userId: userId }, data);
-    }
-    res.body = "test";
+    await User.updateOne({ userId: userId }, data);
+    res.status(200);
+    res.send();
   },
 };
 
