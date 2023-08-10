@@ -22,7 +22,7 @@ export const useFetch = () => {
       }
 
       return {
-        json: response.json(),
+        json: await response.json(),
         status: response.status,
         params: response.params,
       };

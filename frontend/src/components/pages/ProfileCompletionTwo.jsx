@@ -28,6 +28,8 @@ function ProfileCompletionTwo() {
 
   const handleSkillClick = (event) => {
     const skillDataValue = event.currentTarget.getAttribute("data-value");
+    console.log(skillDataValue);
+
     // If 4 skills clicked do nothing
     // If skills list contains user clicked skill it removes it from the list
     if (skills.includes(skillDataValue)) {
@@ -131,13 +133,13 @@ function ProfileCompletionTwo() {
     { value: "Nanotechnology", label: "Nanotechnology" },
   ];
   const skillsData = [
-    { value: "IT", label: "Programming" },
-    { value: "Healthcare", label: "Web Development" },
-    { value: "Finance", label: "Database Management" },
-    { value: "Education", label: "Software Development" },
-    { value: "Retail", label: "Networking" },
-    { value: "Travel", label: "Cybersecurity" },
-    { value: "Automotive", label: "Cloud Computing" },
+    { value: "Programming", label: "Programming" },
+    { value: "Web-Devolopment", label: "Web Development" },
+    { value: "Database-Management", label: "Database Management" },
+    { value: "Software-Development", label: "Software Development" },
+    { value: "Networking", label: "Networking" },
+    { value: "Cybersecurity", label: "Cybersecurity" },
+    { value: "Cloud-Computing", label: "Cloud Computing" },
     { value: "DevOps", label: "DevOps" },
     {
       value: "DataAnalysis-DataScience",
