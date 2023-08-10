@@ -5,7 +5,7 @@ import { useFetch } from "../api/requestHooks";
 
 const CallbackPage = () => {
   const { isLoading, user } = useAuth0();
-  const { postWAuth } = useFetch();
+  const withAuth = useFetch();
   const [redirectPage, setRedirectPage] = useState();
   const [loading, setLoading] = useState(true);
 
@@ -18,7 +18,7 @@ const CallbackPage = () => {
           picture: user.picture,
         };
         //send userinfo to backend and get userid back
-        postWAuth("/user/create", dbUserData).then(({ status, json }) => {
+        withAuth.post("/user/create", dbUserData).then(({ status, json }) => {
           if (status === 200) setRedirectPage("/profile");
           else if (status === 201) setRedirectPage("/profileone");
           localStorage.setItem("userId", json.userId);
@@ -27,7 +27,7 @@ const CallbackPage = () => {
       };
       addUser();
     }
-  }, [user, postWAuth]);
+  }, [user, withAuth]);
 
   return (
     <>

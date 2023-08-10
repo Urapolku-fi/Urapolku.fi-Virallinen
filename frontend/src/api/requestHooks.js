@@ -5,52 +5,79 @@ let backend = import.meta.env.VITE_BACKEND_URL + "api";
 export const useFetch = () => {
   const { getAccessTokenSilently } = useAuth0();
 
-  const getWAuth = async (url, options = {}) => {
-    const token = await getAccessTokenSilently();
-    const response = await fetch(backend + url, {
-      ...options,
-      mode: "cors",
-      headers: {
-        ...options.headers,
-        Authorization: `Bearer ${token}`,
-      },
-    });
+  const withAuth = {
+    get: async (url, options = {}) => {
+      const token = await getAccessTokenSilently();
+      const response = await fetch(backend + url, {
+        ...options,
+        mode: "cors",
+        headers: {
+          ...options.headers,
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
 
-    return {
-      json: response.json(),
-      status: response.status,
-      params: response.params,
-    };
+      return {
+        json: response.json(),
+        status: response.status,
+        params: response.params,
+      };
+    },
+
+    post: async (url, body, options = {}) => {
+      const token = await getAccessTokenSilently();
+      const response = await fetch(backend + url, {
+        method: "POST",
+        ...options,
+        mode: "cors",
+        headers: {
+          ...options.headers,
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(body),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      return {
+        json: await response.json(),
+        status: response.status,
+        params: response.params,
+      };
+    },
+
+    patch: async (url, body, options = {}) => {
+      const token = await getAccessTokenSilently();
+      const response = await fetch(backend + url, {
+        method: "PATCH",
+        ...options,
+        mode: "cors",
+        headers: {
+          ...options.headers,
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(body),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      return {
+        json: await response.json(),
+        status: response.status,
+        params: response.params,
+      };
+    },
   };
 
-  const postWAuth = async (url, body, method = "POST", options = {}) => {
-    const token = await getAccessTokenSilently();
-    const response = await fetch(backend + url, {
-      method: method,
-      ...options,
-      mode: "cors",
-      headers: {
-        ...options.headers,
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify(body),
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    return {
-      json: await response.json(),
-      status: response.status,
-      params: response.params,
-    };
-  };
-
-  return { getWAuth, postWAuth };
+  return withAuth;
 };
