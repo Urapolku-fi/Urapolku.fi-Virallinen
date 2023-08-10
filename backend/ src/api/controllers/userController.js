@@ -28,6 +28,19 @@ const userController = {
 
     res.body = await User.find({ userId: userId });
   },
+
+  updateUser: async (req, res) => {
+    const landing = req.query.landing;
+    const userId = req.params.id;
+    const data = req.body;
+
+    console.log(data);
+
+    if (landing) {
+      await User.updateOne({ userId: userId }, data);
+    }
+    res.body = "test";
+  },
 };
 
 module.exports = userController;

@@ -5,29 +5,39 @@ import ProgressBar from "./ProfileCompletion/progressBar";
 import UrapolkuLogo from "./ProfileCompletion/UrapolkuLogoText";
 import { useState } from "react";
 import "../css/profileCompletionOne.css";
+import { useS3 } from "../../api/s3Hooks";
+import { useNavigate } from "react-router-dom";
+import { useFetch } from "../../api/requestHooks";
 
 function ProfileCompletionOne() {
-  const [BannerImageUrl, setBannerUrl] = useState("/pictures/Camera-alt.png");
-  const [ProfileImageUrl, setProfileUrl] = useState("/pictures/Camera-alt.png");
+  const [bannerImageUrl, setBannerUrl] = useState("/pictures/Camera-alt.png");
+  const [profileImageUrl, setProfileUrl] = useState("/pictures/Camera-alt.png");
+  const [description, setDescription] = useState("");
+  const navigate = useNavigate();
+  const withAuth = useFetch();
+  //const { uploadObject } = useS3();
 
   const handleBannerChange = (event) => {
     const banner = event.target.files[0];
     if (banner) {
       const reader = new FileReader();
       reader.onload = () => {
-        setBannerUrl(reader.result);
+        setBannerUrl("test-profile-banner.png");
       };
       reader.readAsDataURL(banner);
     }
   };
+
   const handleProfileChange = (event) => {
     const profile = event.target.files[0];
     if (profile) {
       const reader = new FileReader();
       reader.onload = () => {
-        setProfileUrl(reader.result);
+        //uploadObject("profile-picture", user.email, reader.result);
+        //setProfileUrl(reader.result);
+        setProfileUrl("test-profile-picture.png");
       };
-      reader.readAsDataURL(profile);
+      reader.readAsArrayBuffer(profile);
     }
   };
 
@@ -35,18 +45,30 @@ function ProfileCompletionOne() {
     // Trigger the hidden input file when the button is clicked
     document.getElementById("upload-banner").click();
   };
+
   const clickProfileButton = () => {
     // Trigger the hidden input file when the button is clicked
     document.getElementById("upload-profile").click();
   };
+
   const nextPage = () => {
     // User placed data will save and move to next page
-    window.location.href = "/profiletwo";
+    const profileData = {
+      profilePicture: profileImageUrl,
+      bannerPicture: bannerImageUrl,
+      description: description,
+    };
+
+    withAuth
+      .patch(`/user/${localStorage.getItem("userId")}?landing=1`, profileData)
+      .then(() => navigate("/profiletwo"));
   };
+
   const skipPage = () => {
     // No data saved, just skipped
-    window.location.href = "/profiletwo";
+    navigate("/profiletwo");
   };
+
   return (
     <div id="ProfileCompletion-Wrapper">
       <LeftBar />
@@ -66,9 +88,9 @@ function ProfileCompletionOne() {
             <div className="User-photos">
               <p>Upload your photos</p>
               <button className="Banner-button" onClick={clickBannerButton}>
-                {BannerImageUrl === "/pictures/Camera-alt.png" ? (
+                {bannerImageUrl === "/pictures/Camera-alt.png" ? (
                   <img
-                    src={BannerImageUrl}
+                    src={bannerImageUrl}
                     alt=""
                     id="User-uploaded-photo"
                     style={{
@@ -78,7 +100,7 @@ function ProfileCompletionOne() {
                   />
                 ) : (
                   <img
-                    src={BannerImageUrl}
+                    src={bannerImageUrl}
                     alt=""
                     id="User-uploaded-photo"
                     style={{ width: "100%", height: "100%", border: "none" }}
@@ -93,15 +115,15 @@ function ProfileCompletionOne() {
               </button>
               <button
                 className={`Circle ${
-                  ProfileImageUrl === "/pictures/Camera-alt.png"
+                  profileImageUrl === "/pictures/Camera-alt.png"
                     ? "centered"
                     : ""
                 }`}
                 onClick={clickProfileButton}
               >
-                {ProfileImageUrl === "/pictures/Camera-alt.png" ? (
+                {profileImageUrl === "/pictures/Camera-alt.png" ? (
                   <img
-                    src={ProfileImageUrl}
+                    src={profileImageUrl}
                     alt=""
                     id="User-uploaded-photo"
                     style={{
@@ -111,7 +133,7 @@ function ProfileCompletionOne() {
                   />
                 ) : (
                   <img
-                    src={ProfileImageUrl}
+                    src={profileImageUrl}
                     alt=""
                     id="User-uploaded-photo"
                     style={{ width: "100%", height: "100%", border: "none" }}
@@ -134,6 +156,8 @@ function ProfileCompletionOne() {
                 cols="30"
                 rows="10"
                 placeholder="Write a brief description of yourself..."
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
               ></textarea>
             </div>
           </div>
