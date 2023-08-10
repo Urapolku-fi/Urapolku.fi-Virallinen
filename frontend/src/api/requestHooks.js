@@ -27,10 +27,10 @@ export const useFetch = () => {
     };
   };
 
-  const postWAuth = async (url, body, options = {}) => {
+  const postWAuth = async (url, body, method = "POST", options = {}) => {
     const token = await getAccessTokenSilently();
     const response = await fetch(backend + url, {
-      method: "POST",
+      method: method,
       ...options,
       mode: "cors",
       headers: {
@@ -46,7 +46,7 @@ export const useFetch = () => {
     }
 
     return {
-      json: response.json(),
+      json: await response.json(),
       status: response.status,
       params: response.params,
     };

@@ -21,7 +21,7 @@ const CallbackPage = () => {
         postWAuth("/user/create", dbUserData).then(({ status, json }) => {
           if (status === 200) setRedirectPage("/profile");
           else if (status === 201) setRedirectPage("/profileone");
-          user.userId = json.userId;
+          localStorage.setItem("userId", json.userId);
           setLoading(false);
         });
       };
