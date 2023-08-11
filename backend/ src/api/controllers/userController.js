@@ -8,21 +8,22 @@ const userController = {
     if (existingUser.length) {
       res.status(200);
       res.json({ userId: existingUser[0].userId });
+      res.send();
     } else {
       const user = { userId: uuidv4(), ...req.body };
       User.create(user)
         .then((newUser) => {
           res.status(201);
           res.json({ userId: newUser.userId });
+          res.send();
         })
         .catch((errors) => {
           res.status(500).json({
             errors,
           });
+          res.send();
         });
     }
-
-    res.send();
   },
 
   fetchUser: async (req, res) => {

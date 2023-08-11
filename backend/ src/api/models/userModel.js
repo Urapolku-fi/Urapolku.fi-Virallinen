@@ -10,6 +10,12 @@ const UserSchema = new Schema({
   description: { type: String },
   industry: { type: String },
   skills: { type: [{ type: String }] },
+  title: { type: String },
+  employmentType: { type: String },
+  location: { type: String },
+  locationType: { type: String },
+  startDate: { type: String },
+  endDate: { type: String },
 });
 
 // Export model

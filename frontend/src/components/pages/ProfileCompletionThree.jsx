@@ -4,8 +4,12 @@ import CompleteButton from "./ProfileCompletion/CompleteButton";
 import ProgressBar from "./ProfileCompletion/progressBar";
 import UrapolkuLogo from "./ProfileCompletion/UrapolkuLogoText";
 import "../css/profileCompletionThree.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useFetch } from "../../api/requestHooks";
+
 function ProfileCreateThree() {
+  //really need to get rid of these
   const [openEmployment, setOpenEmployment] = useState(false);
   const [openLocationType, setOpenLocationType] = useState(false);
   const [endDateVisible, setEndDateVisible] = useState(true);
@@ -13,6 +17,16 @@ function ProfileCreateThree() {
   const [openEndMonth, setOpenEndMonth] = useState(false);
   const [openStartYear, setOpenStartYear] = useState(false);
   const [openEndYear, setOpenEndYear] = useState(false);
+  const [employmentInfo, setEmploymentInfo] = useState({
+    title: "",
+    employmentType: "",
+    location: "",
+    locationType: "",
+    startDate: "MM YY",
+    endDate: "MM YY",
+  });
+  const navigate = useNavigate();
+  const withAuth = useFetch();
 
   // All setOpens
   const openFuncs = [
@@ -28,6 +42,7 @@ function ProfileCreateThree() {
     opener((prevState) => !prevState); // Toggle the state
     openFuncs.filter((func) => func !== opener).forEach((func) => func(false)); // Close other states
   };
+
   const Months = [
     "January",
     "February",
@@ -54,23 +69,63 @@ function ProfileCreateThree() {
   // These functions gets the text-content when element children is clicked
   // It stores the value into DataValue
 
-  const handleSelectClick = (event, targetClassName, setOpenState) => {
-    const dataValue = event.currentTarget.textContent;
-    console.log(dataValue);
+  const handleSelectClick = (
+    event,
+    targetClassName,
+    setOpenState,
+    valueName
+  ) => {
+    let dataValue = event.currentTarget.textContent;
     const select = document.querySelector(`.${targetClassName}`);
-    console.log();
     select.textContent = dataValue;
+
+    switch (targetClassName) {
+      case "Start-Month":
+        dataValue = `${dataValue} ${employmentInfo.startDate.split(" ")[1]}`;
+        break;
+      case "Start-Year":
+        dataValue = `${employmentInfo.startDate.split(" ")[0]} ${dataValue}`;
+        break;
+      case "End-Month":
+        dataValue = `${dataValue} ${employmentInfo.endDate.split(" ")[1]}`;
+        break;
+      case "End-Year":
+        dataValue = `${employmentInfo.endDate.split(" ")[0]} ${dataValue}`;
+        break;
+    }
+
+    setEmploymentInfo({ ...employmentInfo, [valueName]: dataValue });
     setOpenState(false);
   };
 
   const nextPage = () => {
     // User placed data will save and move to next page
-    window.location.href = "/profilethree";
+    const profileData = {
+      title: employmentInfo.title,
+      employmentType: employmentInfo.employmentType,
+      location: employmentInfo.location,
+      locationType: employmentInfo.locationType,
+      startDate: employmentInfo.startDate,
+      endDate: employmentInfo.endDate,
+    };
+
+    withAuth.patch(`/user/${localStorage.getItem("userId")}`, profileData);
+    navigate("/profile");
   };
+
   const skipPage = () => {
     // No data saved, just skipped
-    window.location.href = "/profilethree";
+    navigate("/profile");
   };
+
+  const employmentTypes = [
+    "Full time",
+    "Part time",
+    "Freelance",
+    "Contract",
+    "Self-employed",
+    "Internship",
+  ];
 
   return (
     <div id="ProfileCompletion-Wrapper">
@@ -93,6 +148,10 @@ function ProfileCreateThree() {
               name=""
               id=""
               placeholder="Ex. Project Manager"
+              value={employmentInfo.title}
+              onChange={(e) =>
+                setEmploymentInfo({ ...employmentInfo, title: e.target.value })
+              }
             />
           </div>
           <div className="Employment-type-dropdown">
@@ -107,84 +166,38 @@ function ProfileCreateThree() {
             </button>
             {openEmployment && (
               <div className="Employment-type-content">
-                <p
-                  className="Employment-type"
-                  onClick={(event) =>
-                    handleSelectClick(
-                      event,
-                      "Employment-type-text",
-                      setOpenEmployment
-                    )
-                  }
-                >
-                  Full-time
-                </p>
-                <p
-                  className="Employment-type"
-                  onClick={(event) =>
-                    handleSelectClick(
-                      event,
-                      "Employment-type-text",
-                      setOpenEmployment
-                    )
-                  }
-                >
-                  Part-time
-                </p>
-                <p
-                  className="Employment-type"
-                  onClick={(event) =>
-                    handleSelectClick(
-                      event,
-                      "Employment-type-text",
-                      setOpenEmployment
-                    )
-                  }
-                >
-                  Freelance
-                </p>
-                <p
-                  className="Employment-type"
-                  onClick={(event) =>
-                    handleSelectClick(
-                      event,
-                      "Employment-type-text",
-                      setOpenEmployment
-                    )
-                  }
-                >
-                  Contract
-                </p>
-                <p
-                  className="Employment-type"
-                  onClick={(event) =>
-                    handleSelectClick(
-                      event,
-                      "Employment-type-text",
-                      setOpenEmployment
-                    )
-                  }
-                >
-                  Self-employed
-                </p>
-                <p
-                  className="Employment-type"
-                  onClick={(event) =>
-                    handleSelectClick(
-                      event,
-                      "Employment-type-text",
-                      setOpenEmployment
-                    )
-                  }
-                >
-                  Internship
-                </p>
+                {employmentTypes.map((type, i) => (
+                  <p
+                    key={i}
+                    className="Employment-type"
+                    onClick={(event) =>
+                      handleSelectClick(
+                        event,
+                        "Employment-type-text",
+                        setOpenEmployment,
+                        "employmentType"
+                      )
+                    }
+                  >
+                    {type}
+                  </p>
+                ))}
               </div>
             )}
           </div>
           <div className="Location">
             <p>Location</p>
-            <input type="text" name="" id="" placeholder="Ex. Helsinki" />
+            <input
+              type="text"
+              placeholder="Ex. Helsinki"
+              value={employmentInfo.location}
+              onChange={(e) =>
+                setEmploymentInfo({
+                  ...employmentInfo,
+                  location: e.target.value,
+                })
+              }
+            />
           </div>
           <div className="Location-type-dropdown">
             <p>Location type</p>
@@ -198,42 +211,22 @@ function ProfileCreateThree() {
             </button>
             {openLocationType && (
               <div className="Location-type-content">
-                <p
-                  className="Location-type"
-                  onClick={(event) =>
-                    handleSelectClick(
-                      event,
-                      "Location-text",
-                      setOpenLocationType
-                    )
-                  }
-                >
-                  On-site
-                </p>
-                <p
-                  className="Location-type"
-                  onClick={(event) =>
-                    handleSelectClick(
-                      event,
-                      "Location-text",
-                      setOpenLocationType
-                    )
-                  }
-                >
-                  Hybrid
-                </p>
-                <p
-                  className="Location-type"
-                  onClick={(event) =>
-                    handleSelectClick(
-                      event,
-                      "Location-text",
-                      setOpenLocationType
-                    )
-                  }
-                >
-                  Remote
-                </p>
+                {["On-site", "Hybrid", "Remote"].map((type, i) => (
+                  <p
+                    key={i}
+                    className="Location-type"
+                    onClick={(event) =>
+                      handleSelectClick(
+                        event,
+                        "Location-text",
+                        setOpenLocationType,
+                        "locationType"
+                      )
+                    }
+                  >
+                    {type}
+                  </p>
+                ))}
               </div>
             )}
           </div>
@@ -241,7 +234,7 @@ function ProfileCreateThree() {
             <input
               className="checkbox"
               type="checkbox"
-              name=""
+              value={endDateVisible}
               onChange={() => handleOpen(setEndDateVisible)}
             />
             <p>I am currently working on this role </p>
@@ -251,10 +244,7 @@ function ProfileCreateThree() {
             <p>Start-date</p>
             <div className="Start-date-buttons">
               <div className="Month">
-                <button
-                  className=""
-                  onClick={() => handleOpen(setOpenStartMonth)}
-                >
+                <button onClick={() => handleOpen(setOpenStartMonth)}>
                   <p className="Start-Month">Month</p>
                   <img
                     className={`Expand-more ${openStartMonth ? "up" : ""}`}
@@ -272,7 +262,8 @@ function ProfileCreateThree() {
                           handleSelectClick(
                             event,
                             "Start-Month",
-                            setOpenStartMonth
+                            setOpenStartMonth,
+                            "startDate"
                           )
                         }
                       >
@@ -301,7 +292,8 @@ function ProfileCreateThree() {
                           handleSelectClick(
                             event,
                             "Start-Year",
-                            setOpenStartYear
+                            setOpenStartYear,
+                            "startDate"
                           )
                         }
                       >
@@ -336,7 +328,8 @@ function ProfileCreateThree() {
                             handleSelectClick(
                               event,
                               "End-Month",
-                              setOpenEndMonth
+                              setOpenEndMonth,
+                              "endDate"
                             )
                           }
                         >
@@ -362,7 +355,12 @@ function ProfileCreateThree() {
                           key={Year}
                           data-value={Year}
                           onClick={(event) =>
-                            handleSelectClick(event, "End-Year", setOpenEndYear)
+                            handleSelectClick(
+                              event,
+                              "End-Year",
+                              setOpenEndYear,
+                              "endDate"
+                            )
                           }
                         >
                           {Year}
