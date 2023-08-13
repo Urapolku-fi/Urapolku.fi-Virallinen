@@ -35,9 +35,10 @@ function ProfileCompletionOne() {
         const bucket = import.meta.env.VITE_S3_BUCKET; // Bucket name is going to be Urapolku
         const userId = localStorage.getItem('userId'); // Fetch the user ID from localstorage
         const folderAndFile = `profile-banners/${userId}.` + fileExtension; // Store the file inside the profile-pictures/userid.ext where ext is the uploaded file extension
-        await uploadObject(bucket, folderAndFile, reader.result, 'public-read'); // Upload the file to the right place with the public read permissions
-        setBannerUrl(import.meta.env.VITE_S3_FULL_ENDPOINT + `/profile-banners/${userId}.` + fileExtension); // Reference the file in the profile pic url
-        localStorage.setItem('bannerImage', import.meta.env.VITE_S3_FULL_ENDPOINT + `/profile-banners/${userId}.` + fileExtension);
+        if (await uploadObject(bucket, folderAndFile, reader.result, 'public-read') === 200) {
+          setBannerUrl(import.meta.env.VITE_S3_FULL_ENDPOINT + `profile-banners/${userId}.` + fileExtension); // Reference the file in the profile pic url
+          localStorage.setItem('bannerImage', import.meta.env.VITE_S3_FULL_ENDPOINT + `profile-banners/${userId}.` + fileExtension);
+        }
       };
       reader.readAsArrayBuffer(profile);
     }
@@ -53,9 +54,10 @@ function ProfileCompletionOne() {
         const bucket = import.meta.env.VITE_S3_BUCKET; // Bucket name is going to be Urapolku
         const userId = localStorage.getItem('userId'); // Fetch the user ID from localstorage
         const folderAndFile = `profile-pictures/${userId}.` + fileExtension; // Store the file inside the profile-pictures/userid.ext where ext is the uploaded file extension
-        await uploadObject(bucket, folderAndFile, reader.result, 'public-read'); // Upload the file to the right place with the public read permissions
-        setProfileUrl(import.meta.env.VITE_S3_FULL_ENDPOINT + `/profile-pictures/${userId}.` + fileExtension); // Reference the file in the profile pic url
-        localStorage.setItem('profileImage', import.meta.env.VITE_S3_FULL_ENDPOINT + `/profile-pictures/${userId}.` + fileExtension);
+        if (await uploadObject(bucket, folderAndFile, reader.result, 'public-read') === 200) {
+          setProfileUrl(import.meta.env.VITE_S3_FULL_ENDPOINT + `profile-pictures/${userId}.` + fileExtension); // Reference the file in the profile pic url
+          localStorage.setItem('profileImage', import.meta.env.VITE_S3_FULL_ENDPOINT + `profile-pictures/${userId}.` + fileExtension);
+        } // Upload the file to the right place with the public read permissions
       };
       reader.readAsArrayBuffer(profile);
     }

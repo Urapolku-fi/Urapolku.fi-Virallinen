@@ -7,11 +7,11 @@ export const useS3 = () => {
       const data = await s3Client.send(
         new PutObjectCommand({ Bucket: bucket, Key: key, Body: body , ACL: acl})
       );
-      console.log("Successfully uploaded object");
-      return data;
+      return data.$metadata.httpStatusCode
     } catch (err) {
-      console.log("Error", err);
+      console.error("Error", err);
     }
+
   };
 
   return { uploadObject };
