@@ -16,11 +16,15 @@ const CallbackPage = () => {
           email: user.email,
           name: user.name,
           picture: user.picture,
+          onBoardingFinished: false,
         };
         //send userinfo to backend and get userid back
         withAuth.post("/user/create", dbUserData).then(({ status, json }) => {
-          if (status === 200) setRedirectPage("/profile");
-          else if (status === 201) setRedirectPage("/profileone");
+          //user exists
+          if (status === 200) {
+            if (json.onBoardingFinished) setRedirectPage("/browse");
+            else setRedirectPage("/profileone");
+          } else if (status === 201) setRedirectPage("/profileone"); //user didn't exist
           localStorage.setItem("userId", json.userId);
           setLoading(false);
         });

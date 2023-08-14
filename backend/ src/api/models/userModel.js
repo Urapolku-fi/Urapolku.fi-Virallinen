@@ -16,6 +16,7 @@ const UserSchema = new Schema({
   locationType: { type: String },
   startDate: { type: String },
   endDate: { type: String },
+  onBoardingFinished: { type: Boolean },
 });
 
 // Export model

@@ -5,6 +5,7 @@ const checkJwt = require("../../middleware/jwt");
 
 router.post("/create", checkJwt, userController.createUser);
 router
+  .use(checkJwt)
   .route("/:id")
   .get(userController.fetchUser)
   .patch(userController.updateUser);

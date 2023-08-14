@@ -107,15 +107,19 @@ function ProfileCreateThree() {
       locationType: employmentInfo.locationType,
       startDate: employmentInfo.startDate,
       endDate: employmentInfo.endDate,
+      onBoardingFinished: true,
     };
 
     withAuth.patch(`/user/${localStorage.getItem("userId")}`, profileData);
-    navigate("/profile");
+    navigate("/browse");
   };
 
   const skipPage = () => {
     // No data saved, just skipped
-    navigate("/profile");
+    withAuth.patch(`/user/${localStorage.getItem("userId")}`, {
+      onBoardingFinished: true,
+    });
+    navigate("/browse");
   };
 
   const employmentTypes = [
