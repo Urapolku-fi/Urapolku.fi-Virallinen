@@ -7,18 +7,28 @@ const userController = {
 
     if (existingUser.length) {
       res.status(200);
-      res.json({ userId: existingUser[0].userId });
+      const user = existingUser[0];
+      res.json({
+        userId: user.userId,
+        onBoardingFinished: user.onBoardingFinished,
+      });
+      res.send();
     } else {
-      const user = { userId: uuidv4(), ...req.body };
+      const user = { userId: uuidv4(), ...req.body }; //should check whether this gives already existing id but eh...
       User.create(user)
         .then((newUser) => {
           res.status(201);
-          res.json({ userId: newUser.userId });
+          res.json({
+            userId: newUser.userId,
+            onBoardingFinished: newUser.onBoardingFinished,
+          });
+          res.send();
         })
         .catch((errors) => {
           res.status(500).json({
             errors,
           });
+          res.send();
         });
     }
   },
@@ -27,6 +37,15 @@ const userController = {
     const userId = req.params.userId;
 
     res.body = await User.find({ userId: userId });
+  },
+
+  updateUser: async (req, res) => {
+    const userId = req.params.id;
+    const data = req.body;
+
+    await User.updateOne({ userId: userId }, data);
+    res.status(200);
+    res.send();
   },
 };
 

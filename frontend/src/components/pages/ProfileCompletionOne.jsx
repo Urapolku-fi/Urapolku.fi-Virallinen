@@ -3,31 +3,63 @@ import SkipButton from "./ProfileCompletion/SkipButton";
 import NextButton from "./ProfileCompletion/nextButton";
 import ProgressBar from "./ProfileCompletion/progressBar";
 import UrapolkuLogo from "./ProfileCompletion/UrapolkuLogoText";
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import "../css/profileCompletionOne.css";
+import { useS3 } from "../../api/s3Hooks";
+import { useNavigate } from "react-router-dom";
+import { useFetch } from "../../api/requestHooks";
 
 function ProfileCompletionOne() {
-  const [BannerImageUrl, setBannerUrl] = useState("/pictures/Camera-alt.png");
-  const [ProfileImageUrl, setProfileUrl] = useState("/pictures/Camera-alt.png");
+  const [bannerImageUrl, setBannerUrl] = useState("/pictures/Camera-alt.png");
+  const [profileImageUrl, setProfileUrl] = useState("/pictures/Camera-alt.png");
+  const [description, setDescription] = useState("");
+  const navigate = useNavigate();
+  const withAuth = useFetch();
+  const { uploadObject } = useS3();
 
+  useEffect(()=>{
+    if ("profileImage" in localStorage) {
+      setProfileUrl(localStorage.getItem('profileImage'));
+    }
+    if ("bannerImage" in localStorage) {
+      setBannerUrl(localStorage.getItem('bannerImage'));
+    }
+  },[]);
   const handleBannerChange = (event) => {
-    const banner = event.target.files[0];
-    if (banner) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        setBannerUrl(reader.result);
+    const profile = event.target.files[0];
+    if (profile) {
+      const fileName = profile.name; //Get the file name
+      const fileExtension = fileName.split('.').pop(); //Get the file name extension
+      const reader = new FileReader(); // Read the file
+      reader.onload = async () => {
+        const bucket = import.meta.env.VITE_S3_BUCKET; // Bucket name is going to be Urapolku
+        const userId = localStorage.getItem('userId'); // Fetch the user ID from localstorage
+        const folderAndFile = `profile-banners/${userId}.` + fileExtension; // Store the file inside the profile-pictures/userid.ext where ext is the uploaded file extension
+        if (await uploadObject(bucket, folderAndFile, reader.result, 'public-read') === 200) {
+          setBannerUrl(import.meta.env.VITE_S3_FULL_ENDPOINT + `profile-banners/${userId}.` + fileExtension); // Reference the file in the profile pic url
+          localStorage.setItem('bannerImage', import.meta.env.VITE_S3_FULL_ENDPOINT + `profile-banners/${userId}.` + fileExtension);
+        }
       };
-      reader.readAsDataURL(banner);
+      reader.readAsArrayBuffer(profile);
     }
   };
+
   const handleProfileChange = (event) => {
     const profile = event.target.files[0];
     if (profile) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        setProfileUrl(reader.result);
+      const fileName = profile.name; //Get the file name
+      const fileExtension = fileName.split('.').pop(); //Get the file name extension
+      const reader = new FileReader(); // Read the file
+      reader.onload = async () => {
+        const bucket = import.meta.env.VITE_S3_BUCKET; // Bucket name is going to be Urapolku
+        const userId = localStorage.getItem('userId'); // Fetch the user ID from localstorage
+        const folderAndFile = `profile-pictures/${userId}.` + fileExtension; // Store the file inside the profile-pictures/userid.ext where ext is the uploaded file extension
+        if (await uploadObject(bucket, folderAndFile, reader.result, 'public-read') === 200) {
+          setProfileUrl(import.meta.env.VITE_S3_FULL_ENDPOINT + `profile-pictures/${userId}.` + fileExtension); // Reference the file in the profile pic url
+          localStorage.setItem('profileImage', import.meta.env.VITE_S3_FULL_ENDPOINT + `profile-pictures/${userId}.` + fileExtension);
+        } // Upload the file to the right place with the public read permissions
       };
-      reader.readAsDataURL(profile);
+      reader.readAsArrayBuffer(profile);
     }
   };
 
@@ -35,18 +67,29 @@ function ProfileCompletionOne() {
     // Trigger the hidden input file when the button is clicked
     document.getElementById("upload-banner").click();
   };
+
   const clickProfileButton = () => {
     // Trigger the hidden input file when the button is clicked
     document.getElementById("upload-profile").click();
   };
+
   const nextPage = () => {
     // User placed data will save and move to next page
-    window.location.href = "/profiletwo";
+    const profileData = {
+      profilePicture: profileImageUrl,
+      bannerPicture: bannerImageUrl,
+      description: description,
+    };
+
+    withAuth.patch(`/user/${localStorage.getItem("userId")}`, profileData);
+    navigate("/profiletwo");
   };
+
   const skipPage = () => {
     // No data saved, just skipped
-    window.location.href = "/profiletwo";
+    navigate("/profiletwo");
   };
+
   return (
     <div id="ProfileCompletion-Wrapper">
       <LeftBar />
@@ -66,9 +109,9 @@ function ProfileCompletionOne() {
             <div className="User-photos">
               <p>Upload your photos</p>
               <button className="Banner-button" onClick={clickBannerButton}>
-                {BannerImageUrl === "/pictures/Camera-alt.png" ? (
+                {bannerImageUrl === "/pictures/Camera-alt.png" ? (
                   <img
-                    src={BannerImageUrl}
+                    src={bannerImageUrl}
                     alt=""
                     id="User-uploaded-photo"
                     style={{
@@ -78,7 +121,7 @@ function ProfileCompletionOne() {
                   />
                 ) : (
                   <img
-                    src={BannerImageUrl}
+                    src={bannerImageUrl}
                     alt=""
                     id="User-uploaded-photo"
                     style={{ width: "100%", height: "100%", border: "none" }}
@@ -93,15 +136,15 @@ function ProfileCompletionOne() {
               </button>
               <button
                 className={`Circle ${
-                  ProfileImageUrl === "/pictures/Camera-alt.png"
+                  profileImageUrl === "/pictures/Camera-alt.png"
                     ? "centered"
                     : ""
                 }`}
                 onClick={clickProfileButton}
               >
-                {ProfileImageUrl === "/pictures/Camera-alt.png" ? (
+                {profileImageUrl === "/pictures/Camera-alt.png" ? (
                   <img
-                    src={ProfileImageUrl}
+                    src={profileImageUrl}
                     alt=""
                     id="User-uploaded-photo"
                     style={{
@@ -111,7 +154,7 @@ function ProfileCompletionOne() {
                   />
                 ) : (
                   <img
-                    src={ProfileImageUrl}
+                    src={profileImageUrl}
                     alt=""
                     id="User-uploaded-photo"
                     style={{ width: "100%", height: "100%", border: "none" }}
@@ -134,6 +177,8 @@ function ProfileCompletionOne() {
                 cols="30"
                 rows="10"
                 placeholder="Write a brief description of yourself..."
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
               ></textarea>
             </div>
           </div>

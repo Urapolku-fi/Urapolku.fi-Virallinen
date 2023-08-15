@@ -5,30 +5,38 @@ import ProgressBar from "./ProfileCompletion/progressBar";
 import UrapolkuLogo from "./ProfileCompletion/UrapolkuLogoText";
 import "../css/profileCompletionTwo.css";
 import { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { useFetch } from "../../api/requestHooks";
+
 function ProfileCompletionTwo() {
   const [openIndustry, setOpenIndustry] = useState(false);
   const [openSkills, setOpenSkills] = useState(false);
-  const [clickedSkills, setClickedSkills] = useState([]);
+  const [skills, setSkills] = useState([]);
+  const [industry, setIndustry] = useState("");
   const IndustrySelectRef = useRef();
+  const navigate = useNavigate();
+  const withAuth = useFetch();
 
   const openFuncs = [setOpenSkills, setOpenIndustry];
 
   const handleIndustryClick = (event) => {
     const IndustryDataValue = event.currentTarget.textContent;
     IndustrySelectRef.current.textContent = IndustryDataValue; // Check if IndustrySelectRef.current is not null before setting textContent
+    setIndustry(IndustryDataValue);
     setOpenIndustry(false);
   };
+
   const handleSkillClick = (event) => {
     const skillDataValue = event.currentTarget.getAttribute("data-value");
+    console.log(skillDataValue);
+
     // If 4 skills clicked do nothing
-    // If clickedskills list contains user clicked skill it removes it from the list
-    if (clickedSkills.includes(skillDataValue)) {
-      const updatedSkills = clickedSkills.filter(
-        (skill) => skill !== skillDataValue
-      );
-      setClickedSkills(updatedSkills);
-    } else if (clickedSkills.length < 4) {
-      setClickedSkills((prevSkills) => [...prevSkills, skillDataValue]);
+    // If skills list contains user clicked skill it removes it from the list
+    if (skills.includes(skillDataValue)) {
+      const updatedSkills = skills.filter((skill) => skill !== skillDataValue);
+      setSkills(updatedSkills);
+    } else if (skills.length < 4) {
+      setSkills((prevSkills) => [...prevSkills, skillDataValue]);
     }
   };
 
@@ -39,12 +47,20 @@ function ProfileCompletionTwo() {
 
   const nextPage = () => {
     // User placed data will save and move to next-page
-    window.location.href = "/profilethree";
+    const profileData = {
+      industry: industry,
+      skills: skills,
+    };
+
+    withAuth.patch(`/user/${localStorage.getItem("userId")}`, profileData);
+    navigate("/profilethree");
   };
+
   const skipPage = () => {
     // No data saved, just skipped
-    window.location.href = "/profilethree";
+    navigate("/profilethree");
   };
+
   const industries = [
     { value: "IT", label: "Information Technology (IT)" },
     { value: "Healthcare-Medicine", label: "Healthcare and Medicine" },
@@ -116,14 +132,14 @@ function ProfileCompletionTwo() {
     },
     { value: "Nanotechnology", label: "Nanotechnology" },
   ];
-  const skills = [
-    { value: "IT", label: "Programming" },
-    { value: "Healthcare", label: "Web Development" },
-    { value: "Finance", label: "Database Management" },
-    { value: "Education", label: "Software Development" },
-    { value: "Retail", label: "Networking" },
-    { value: "Travel", label: "Cybersecurity" },
-    { value: "Automotive", label: "Cloud Computing" },
+  const skillsData = [
+    { value: "Programming", label: "Programming" },
+    { value: "Web-Devolopment", label: "Web Development" },
+    { value: "Database-Management", label: "Database Management" },
+    { value: "Software-Development", label: "Software Development" },
+    { value: "Networking", label: "Networking" },
+    { value: "Cybersecurity", label: "Cybersecurity" },
+    { value: "Cloud-Computing", label: "Cloud Computing" },
     { value: "DevOps", label: "DevOps" },
     {
       value: "DataAnalysis-DataScience",
@@ -222,11 +238,11 @@ function ProfileCompletionTwo() {
             </button>
             {openSkills && (
               <div className="skill-dropdown-content">
-                {skills.map((skill) => (
+                {skillsData.map((skill) => (
                   <p
                     key={skill.value}
                     className={`Skill ${
-                      clickedSkills.includes(skill.value) ? "active" : ""
+                      skills.includes(skill.value) ? "active" : ""
                     }`}
                     data-value={skill.value}
                     onClick={handleSkillClick}
@@ -249,4 +265,5 @@ function ProfileCompletionTwo() {
     </div>
   );
 }
+
 export default ProfileCompletionTwo;

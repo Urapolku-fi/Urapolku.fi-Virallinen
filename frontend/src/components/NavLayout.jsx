@@ -120,13 +120,14 @@ const NavBarLayout = (props) => {
             {isAuthenticated ? (
               <button
                 className="nav-link button-filled"
-                onClick={() =>
+                onClick={() => {
                   logout({
                     logoutParams: {
                       returnTo: "https://localhost:5173/",
                     },
-                  })
-                }
+                  });
+                  localStorage.removeItem("userId");
+                }}
               >
                 Kirjaudu ulos
               </button>
