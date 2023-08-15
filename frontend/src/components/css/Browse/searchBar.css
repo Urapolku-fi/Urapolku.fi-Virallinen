@@ -81,7 +81,7 @@
 }
 .search {
   position: absolute;
-  top: 12.5px; /*12.5*/
+  top: 12.5px;
   left: 35.68px;
   line-height: 150%;
   z-index: 1;
@@ -105,8 +105,8 @@
 .search-bar {
   position: relative;
   top: 80px;
-  width: 64.56%;
-  margin-left: 17.72%;
+  width: 65vw;
+  margin-left: 17.72vw;
   height: 48px;
   text-align: left;
   font-size: 16px;

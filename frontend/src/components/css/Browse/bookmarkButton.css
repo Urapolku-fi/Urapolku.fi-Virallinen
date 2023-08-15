@@ -1,0 +1,15 @@
+.bookmark-button {
+  position: absolute;
+  height: 44px;
+  width: 44px;
+  top: 83.09%;
+  right: 5.59%;
+  bottom: 5.08%;
+  left: 79.08%;
+  max-width: 44px;
+  max-height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  overflow: hidden;
+  cursor: pointer;
+}
