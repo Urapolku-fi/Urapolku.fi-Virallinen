@@ -46,4 +46,11 @@
 .for-compare-box {
   background-color: white;
   width: 120px;
+  height: 30px;
+  padding: 10px 16px 5px;
+}
+
+.for-compare-box > .inner-text,  .for-compare-box > .inner-text-toggled {
+  position: relative;
+  transform: translate();
 }

@@ -1,6 +1,6 @@
 import "../../css/Browse/CompareJobCard.css";
 
-const CompareJobCard = ({ empty = false }) => {
+const CompareJobCard = ({ data, empty = false }) => {
   return (
     <>
       {empty ? (
@@ -13,11 +13,11 @@ const CompareJobCard = ({ empty = false }) => {
             alt=""
             src={"/pictures/job-example-image.png"}
           />
-          <div className="nurse">Nurse</div>
+          <div className="nurse">{data.title}</div>
           <div className="full-time-container">
             <span className="full-time-container1">
-              <p className="full-time">Full time | On Site</p>
-              <p className="full-time">Espoo</p>
+              <p className="full-time">{data.type}</p>
+              <p className="full-time">{data.location}</p>
             </span>
           </div>
           <div className="compare-job-card-inner" />

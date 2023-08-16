@@ -3,7 +3,7 @@ import "../../css/Browse/jobCard.css";
 import CheckBox from "./CheckBox";
 import BookmarkButton from "./BookmarkButton";
 
-const JobCard = () => {
+const JobCard = ({ data }) => {
   const [compareToggled, setCompareToggled] = useState(false);
 
   const toggleCompareToggled = () => {
@@ -11,21 +11,21 @@ const JobCard = () => {
   }
 
   return (
-    <div className="jobcard">
+    <div className="jobcard" key={data.id}>
       <div className="jobcard-child" />
-      <div className="nurse">Nurse</div>
+      <div className="nurse">{data.title}</div>
       <div className="jobcard-info-welfare-container">
         <span className="jobcard-info-welfare-container1">
           <p className="jobcard-info">{`Western Uusimaa`}</p>
-          <p className="jobcard-info">Welfare Area</p>
+          <p className="jobcard-info">{data.area}</p>
         </span>
       </div>
       <div className="health-care-full-container">
         <span className="jobcard-info-welfare-container1">
-          <p className="jobcard-info">Health Care</p>
-          <p className="jobcard-info">Full time | On Site</p>
-          <p className="jobcard-info">€35,000 annually</p>
-          <p className="jobcard-info">Espoo</p>
+          <p className="jobcard-info">{data.field}</p>
+          <p className="jobcard-info">{data.type}</p>
+          <p className="jobcard-info">{data.salary}</p>
+          <p className="jobcard-info">{data.location}</p>
         </span>
       </div>
       <div className="see-details-wrapper">
