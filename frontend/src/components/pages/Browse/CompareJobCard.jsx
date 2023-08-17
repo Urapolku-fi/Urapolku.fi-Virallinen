@@ -1,6 +1,6 @@
 import "../../css/Browse/CompareJobCard.css";
 
-const CompareJobCard = ({ data, empty = false }) => {
+const CompareJobCard = ({ data = null, empty = false }) => {
   return (
     <>
       {empty ? (

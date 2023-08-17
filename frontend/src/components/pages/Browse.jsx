@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../css/browse.css";
 import SearchBar from "./Browse/SearchBar";
 import Footer from "./Browse/Footer";
@@ -10,7 +10,13 @@ import AdCard from "./Browse/AdCard";
 const Browse = () => {
   const [searchInput, setSearchInput] = useState("");
 
-  const [copmaredJobs, setComparedJobs] = useState([])
+  const [comparedJobs, setComparedJobs] = useState([])
+
+  useEffect(() => {
+    if (comparedJobs.length > 4) {
+      setComparedJobs(comparedJobs.slice(1, 3))
+    }
+  }, [comparedJobs]);
 
   const handleChange = (event) => {
     event.preventDefault();
@@ -55,16 +61,16 @@ const Browse = () => {
       <div className="job-and-filter-container">
         <Filter />
         <div className="job-container">
-          <JobCard data={{...exampleData, id: 1}} />
-          <JobCard data={{...exampleData, id: 2}} />
+          <JobCard data={{...exampleData, id: 1}} comparedJobs={comparedJobs} setComparedJobs={setComparedJobs} />
+          <JobCard data={{...exampleData, id: 2}} comparedJobs={comparedJobs} setComparedJobs={setComparedJobs} />
           <AdCard text="Näillä kymmenellä alalla on eniten töitä tällä hetkellä." />
-          <JobCard data={{...exampleData, id: 3}} />
-          <JobCard data={{...exampleData, id: 4}} />
-          <JobCard data={{...exampleData, id: 5}} />
+          <JobCard data={{...exampleData, id: 3}} comparedJobs={comparedJobs} setComparedJobs={setComparedJobs} />
+          <JobCard data={{...exampleData, id: 4}} comparedJobs={comparedJobs} setComparedJobs={setComparedJobs} />
+          <JobCard data={{...exampleData, id: 5}} comparedJobs={comparedJobs} setComparedJobs={setComparedJobs} />
         </div>
       </div>
       <Footer />
-      <CompareBox comparables={[]} />
+      <CompareBox comparables={comparedJobs} />
     </div>
   );
 };

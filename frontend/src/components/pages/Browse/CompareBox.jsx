@@ -3,7 +3,7 @@ import CompareJobCardSeperator from "./CompareCardSeperator";
 import CompareJobCard from "./CompareJobCard";
 import ToggleButton from "./ToggleButton";
 
-const CompareBox = () => {
+const CompareBox = ({ comparables }) => {
   const exampleData = {
     title: "Nurse",
     area: "Welfare Area",
@@ -15,11 +15,23 @@ const CompareBox = () => {
 
   return (
     <div className="compare-box">
-      <CompareJobCard data={exampleData} />
+      {comparables.length > 0 ? (
+        <CompareJobCard data={comparables[0]} />
+      ) : (
+        <CompareJobCard empty />
+      )}
       <CompareJobCardSeperator />
-      <CompareJobCard empty />
+      {comparables.length > 1 ? (
+        <CompareJobCard data={comparables[1]} />
+      ) : (
+        <CompareJobCard empty />
+      )}
       <CompareJobCardSeperator />
-      <CompareJobCard data={exampleData} />
+      {comparables.length > 2 ? (
+        <CompareJobCard data={comparables[2]} />
+      ) : (
+        <CompareJobCard empty />
+      )}
       <ToggleButton text="vertaile" selected forCompareBox />
       <div className="close-button-text">Sulje</div>
     </div>
