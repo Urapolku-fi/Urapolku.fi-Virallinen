@@ -4,15 +4,6 @@ import CompareJobCard from "./CompareJobCard";
 import ToggleButton from "./ToggleButton";
 
 const CompareBox = ({ comparables }) => {
-  const exampleData = {
-    title: "Nurse",
-    area: "Welfare Area",
-    field: "Health Care",
-    type: "Full time | On Site",
-    salary: "€35,000 annually",
-    location: "Espoo",
-  };
-
   return (
     <div className="compare-box">
       {comparables.length > 0 ? (

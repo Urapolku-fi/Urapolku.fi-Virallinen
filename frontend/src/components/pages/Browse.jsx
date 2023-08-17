@@ -14,7 +14,7 @@ const Browse = () => {
 
   useEffect(() => {
     if (comparedJobs.length > 4) {
-      setComparedJobs(comparedJobs.slice(1, 3))
+      setComparedJobs([...comparedJobs].slice(1, 4))
     }
   }, [comparedJobs]);
 

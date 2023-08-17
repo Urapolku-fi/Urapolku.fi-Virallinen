@@ -8,17 +8,16 @@ const JobCard = ({ data, comparedJobs, setComparedJobs }) => {
   const [compareToggled, setCompareToggled] = useState(false);
 
   const toggleCompareToggled = () => {
-    console.log(data);
-    setCompareToggled(!compareToggled);
-    if (!compareToggled) {
+    const newCompareToggled = !compareToggled;
+    if (newCompareToggled) {
+      if (comparedJobs.length > 2) {
+        return;
+      }
       setComparedJobs([...comparedJobs, data]);
     } else {
-      setComparedJobs(
-        comparedJobs.filter((e) => {
-          !objectShallowEqual(e, data);
-        })
-      );
+      setComparedJobs(comparedJobs.filter((e) => !objectShallowEqual(e, data)));
     }
+    setCompareToggled(newCompareToggled);
   };
 
   return (
