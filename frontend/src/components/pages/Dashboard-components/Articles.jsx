@@ -6,7 +6,12 @@ const Articles = () => {
         <h2 className="Text">Articles</h2>
         <div className="View-all">
           <p>View-all</p>
-          <img src="" alt="" />
+          <img
+            src="/pictures/Arrow-right-alt.png"
+            alt=""
+            width="24px"
+            height="24px"
+          />
         </div>
       </div>
       <div className="Article-cards">

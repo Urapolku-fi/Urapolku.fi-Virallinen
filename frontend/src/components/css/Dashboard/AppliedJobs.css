@@ -1,4 +1,4 @@
-.Recommends-frame {
+.AppliedJobs-frame {
   color: #fff;
   font-style: normal;
   border-radius: 20px;
@@ -13,41 +13,42 @@
   display: flex;
   flex-direction: column;
   width: 400px;
-  margin-bottom: 20%;
+  position: sticky;
+  top: 2.5%;
 }
-.Recommends-frame .Recommends-Card {
+.AppliedJobs-frame .AppliedJobs-Card {
   display: flex;
   margin: 5%;
   gap: 5%;
 }
-.Recommends-title,
-.Recommends-footer-title {
+.AppliedJobs-title,
+.AppliedJobs-footer-title {
   text-align: center;
 }
-.Recommends-circle-image {
+.AppliedJobs-circle-image {
   margin-top: 5%;
 }
-.Recommends-card-image {
+.AppliedJobs-card-image {
   display: flex;
   width: 78px;
   height: 74px;
   border-radius: 50%;
 }
-.Recommends-card-title {
+.AppliedJobs-card-title {
   font-size: 16px;
   font-style: normal;
   font-weight: 550;
   line-height: normal;
   letter-spacing: -0.16px;
 }
-.Recommends-frame p {
+.AppliedJobs-frame p {
   font-size: 13px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   letter-spacing: -0.13px;
 }
-.Recommends-card-location {
+.AppliedJobs-card-location {
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -55,21 +56,21 @@
   letter-spacing: -0.12px;
   opacity: 80%;
 }
-.Recommends-title {
+.AppliedJobs-title {
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
   letter-spacing: -0.24px;
 }
-.Recommends-footer-title {
+.AppliedJobs-footer-title {
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
   letter-spacing: -0.16px;
 }
-.Recommends-View-all-recommendations {
+.AppliedJobs-View-all-recommendations {
   display: flex;
   flex-direction: row;
   align-items: center;

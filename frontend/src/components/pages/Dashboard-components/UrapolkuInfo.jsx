@@ -1,3 +1,4 @@
+import "../../css/Dashboard/UrapolkuInfo.css";
 const UrapolkuInfo = () => {
   return (
     <section className="Urapolku-info-container">
@@ -10,7 +11,9 @@ const UrapolkuInfo = () => {
         valikoiman avoimia työpaikkoja, parhaat vinkit työnhakuun ja
         kiehtovimmat tarinat työelämän koukeroista.
       </p>
-      <button>Rekisteröidy</button>
+      <div className="Urapolku-info-register-button">
+        <button>Rekisteröidy</button>
+      </div>
     </section>
   );
 };

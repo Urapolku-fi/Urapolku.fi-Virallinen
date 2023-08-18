@@ -6,7 +6,12 @@ const News = () => {
         <h2 className="Text">News</h2>
         <div className="View-all">
           <p>View-all</p>
-          <img src="" alt="" />
+          <img
+            src="/pictures/Arrow-right-alt.png"
+            alt=""
+            height="24px"
+            width="24px"
+          />
         </div>
       </div>
       <div className="News-items">
