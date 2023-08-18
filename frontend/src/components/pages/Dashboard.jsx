@@ -5,6 +5,7 @@ import Recommends from "./Dashboard-components/Recommends";
 import UrapolkuAi from "./Dashboard-components/UrapolkuAi";
 import UrapolkuInfo from "./Dashboard-components/UrapolkuInfo";
 import UrapolkuTitle from "./Dashboard-components/UrapolkuTitle";
+import AppliedJobs from "./Dashboard-components/AppliedJobs";
 import "../css/dashboard.css";
 function Dashboard() {
   return (
@@ -17,8 +18,11 @@ function Dashboard() {
       </div>
       <div className="Dashboard-content-section">
         <div id="Dashboard-content">
-          <div className="Urapolku-recommends">
-            <Recommends />
+          <div className="Dashboard-left-bar">
+            <div className="Sticky-left-bar">
+              <Recommends />
+              <AppliedJobs />
+            </div>
           </div>
           <div className="Urapolku-cards">
             <div className="Dashboard-daily-picks">

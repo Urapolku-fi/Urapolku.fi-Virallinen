@@ -62,6 +62,12 @@ const Recommends = () => {
         </div>
       </div>
       <div className="Recommends-View-all-recommendations">
+        <img
+          src="/pictures/Arrow-left-alt.png"
+          alt=""
+          width="16px"
+          height="8px"
+        />
         <h2 className="Recommends-footer-title">View all recommendations</h2>
       </div>
     </section>

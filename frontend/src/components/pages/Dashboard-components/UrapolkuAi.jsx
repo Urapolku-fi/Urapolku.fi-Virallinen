@@ -7,7 +7,12 @@ const UrapolkuAi = () => {
         <div className="Card-content">
           <div className="First-two-cards">
             <div className="Career">
-              <img src="" alt="" />
+              <img
+                src="\pictures\Urapolku_AI_logo.png"
+                alt=""
+                height="48px"
+                width="48px"
+              />
               <div className="Career-text-content">
                 <h2>Career quide</h2>
                 <p className="UrapolkuAI-description">
@@ -20,11 +25,18 @@ const UrapolkuAi = () => {
                   discover suitable career options aligned with their interests,
                   skills, and aspirations.
                 </p>
+              </div>
+              <div className="Urapolku-link">
                 <p className="UrapolkuAI-link">Read more</p>
               </div>
             </div>
             <div className="Digital">
-              <img src="" alt="" />
+              <img
+                src="/pictures/Digital-image.png"
+                alt=""
+                height="48px"
+                width="48px"
+              />
               <div className="Digital-text-content">
                 <h2>Digital credit tokens</h2>
                 <p className="UrapolkuAI-description">
@@ -33,13 +45,20 @@ const UrapolkuAi = () => {
                   to match your branding, and are a flexible and scalable way to
                   drive customer loyalty and encourage repeat business.
                 </p>
+              </div>
+              <div className="Urapolku-link">
                 <p className="UrapolkuAI-link">View tokens</p>
               </div>
             </div>
           </div>
         </div>
         <div className="Code-collab">
-          <img src="" alt="" />
+          <img
+            src="/pictures/code-collab-logo.png"
+            alt=""
+            height="48px"
+            width="48px"
+          />
           <div className="Code-collab-content">
             <div className="Code-collab-text-content">
               <h2>Code collaboration</h2>
@@ -51,7 +70,9 @@ const UrapolkuAi = () => {
                 synchronization technology makes it easy to collaborate and
                 ensure that your data is consistent and reliable.
               </p>
-              <p className="UrapolkuAI-link">View code collaboration</p>
+              <div className="Urapolku-link">
+                <p className="UrapolkuAI-link">View code collaboration</p>
+              </div>
             </div>
             <div className="code-collab-image">
               <img src="/pictures/code-collab.png" alt="" />
