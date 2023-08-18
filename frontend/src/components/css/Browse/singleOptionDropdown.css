@@ -8,9 +8,11 @@
   width: 134px;
   cursor: pointer;
 }
+
 .selected-option {
   font-weight: 600;
 }
+
 .education-list {
   width: min-content;
   height: 163px;
@@ -33,6 +35,12 @@
   opacity: 1;
   transition: opacity 0.25s ease-in, height 0.5s step-start;
 }
+
+.for-sort {
+  height: 92px;
+  transform: translateY(20px);
+}
+
 .hide {
   opacity: 0;
   height: 0;

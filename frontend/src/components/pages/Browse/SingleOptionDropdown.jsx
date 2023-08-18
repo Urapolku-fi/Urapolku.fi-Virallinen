@@ -11,7 +11,8 @@ import "../../css/Browse/singleOptionDropdown.css";
 //   "€10,000 +",
 // ]
 // childComponent is the component that should open the dropdown
-const SingleOptionDropdown = ({ options, childComponent }) => {
+
+const SingleOptionDropdown = ({ options, childComponent, forSort }) => {
   const [value, setValue] = useState(options[0]);
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -29,8 +30,18 @@ const SingleOptionDropdown = ({ options, childComponent }) => {
 
   return (
     <>
-      <span onClick={toggleDropdown}>{childComponent}</span>
-      <div className={showDropdown ? "education-list" : "education-list hide"}>
+      <div onClick={toggleDropdown}>{childComponent}</div>
+      <div
+        className={
+          showDropdown
+            ? forSort
+              ? "education-list for-sort"
+              : "education-list"
+            : forSort
+            ? "education-list for-sort hide"
+            : "education-list hide"
+        }
+      >
         {options.map((item) => (
           <div
             value={item}

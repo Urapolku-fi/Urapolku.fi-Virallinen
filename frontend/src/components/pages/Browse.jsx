@@ -6,6 +6,7 @@ import JobCard from "./Browse/JobCard";
 import Filter from "./Browse/Filter";
 import CompareBox from "./Browse/CompareBox";
 import AdCard from "./Browse/AdCard";
+import SingleOptionDropdown from "./Browse/SingleOptionDropdown";
 
 const Browse = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -58,14 +59,21 @@ const Browse = () => {
         <div className="text-job-count">
           Näytetään 500 työtä alalla terveydenhuolto
         </div>
-        <div className="button-sort">
-          Järjestä{" "}
-          <img
-            className="sort-dropdown-arrow"
-            src={"/pictures/expand-arrow.png"}
-          />
-        </div>
+        <SingleOptionDropdown
+          options={["päiväys", "osuvuus"]}
+          forSort
+          childComponent={
+            <div className="button-sort">
+              Järjestä{" "}
+              <img
+                className="sort-dropdown-arrow"
+                src={"/pictures/expand-arrow.png"}
+              />
+            </div>
+          }
+        />
       </div>
+
       <div className="job-and-filter-container">
         <Filter />
         <div className="job-container">

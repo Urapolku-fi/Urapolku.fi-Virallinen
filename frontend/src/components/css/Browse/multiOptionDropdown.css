@@ -18,11 +18,13 @@
   opacity: 1;
   transition: opacity 0.25s ease-in, height 0.5s step-start;
 }
+
 .hide {
   opacity: 0;
   height: 0;
   transition-timing-function: linear, step-end;
 }
+
 .sticky-dropdown-controls {
   position: relative;
   top: 500px;
@@ -34,31 +36,37 @@
   z-index: 999;
   transition: opacity 0.25s ease-in, height 0.5s step-start;
 }
+
 .whitespace-under-dropdown-controls {
   height: 10px;
   background-color: #0b0121;
 }
+
 .dropdown-controls-container {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
 }
+
 .dropdown-flex-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
+
 .filter-label-container {
   width: 80%;
   margin-top: 20px;
   margin-bottom: 5px;
   margin-left: 23px;
 }
+
 .multi-option-dropdown-togglebutton-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
+
 .dropdown-container {
   max-height: 20px;
 }

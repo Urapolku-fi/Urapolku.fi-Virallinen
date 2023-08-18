@@ -16,6 +16,7 @@
     0px -2px 40px rgba(187, 155, 255, 0.15),
     0px 0.5px 0px rgba(255, 255, 255, 0.5) inset;
 }
+
 .nurse {
   position: absolute;
   height: 8.07%;
@@ -26,13 +27,16 @@
   line-height: 150%;
   font-weight: 600;
 }
+
 .jobcard-info {
   margin: 0;
 }
+
 .jobcard-info-welfare-container1 {
   line-break: anywhere;
   width: 100%;
 }
+
 .jobcard-info-welfare-container {
   position: absolute;
   height: 11.29%;
@@ -43,6 +47,7 @@
   display: flex;
   align-items: center;
 }
+
 .health-care-full-container {
   position: absolute;
   height: 25.82%;
@@ -54,6 +59,7 @@
   display: flex;
   align-items: center;
 }
+
 .see-details {
   position: relative;
   line-height: 150%;
@@ -62,6 +68,7 @@
   -ms-user-select: none;
   user-select: none;
 }
+
 .see-details-wrapper {
   position: absolute;
   height: 12.1%;
@@ -84,6 +91,7 @@
   color: #000;
   cursor: pointer;
 }
+
 .jobcard-item {
   position: absolute;
   height: 12.53%;
@@ -98,6 +106,7 @@
   max-height: 100%;
   object-fit: cover;
 }
+
 .frame-child {
   position: relative;
   border-radius: 50%;
@@ -107,6 +116,7 @@
   width: 10.5px;
   height: 10.5px;
 }
+
 .ellipse-parent {
   position: absolute;
   height: 6.45%;

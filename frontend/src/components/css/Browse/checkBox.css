@@ -6,6 +6,7 @@
   -ms-user-select: none;
   user-select: none;
 }
+
 .ellipse {
   position: relative;
   border-radius: 50%;
@@ -15,6 +16,7 @@
   width: 10.5px;
   height: 10.5px;
 }
+
 .ellipse-parent {
   position: static;
   height: min-content;
@@ -30,9 +32,11 @@
   color: #a39bb4;
   cursor: pointer;
 }
+
 .ellipse-toggled {
   background-color: white;
 }
+
 .for-job-card {
   position: absolute;
   height: 6.45%;
