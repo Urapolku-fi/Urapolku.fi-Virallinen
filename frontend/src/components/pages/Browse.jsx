@@ -10,17 +10,25 @@ import AdCard from "./Browse/AdCard";
 const Browse = () => {
   const [searchInput, setSearchInput] = useState("");
 
-  const [comparedJobs, setComparedJobs] = useState([])
+  const [comparedJobs, setComparedJobs] = useState([]);
 
   useEffect(() => {
     if (comparedJobs.length > 4) {
-      setComparedJobs([...comparedJobs].slice(1, 4))
+      setComparedJobs([...comparedJobs].slice(1, 4));
     }
   }, [comparedJobs]);
 
   const handleChange = (event) => {
     event.preventDefault();
     setSearchInput(event.target.value);
+  };
+
+  const clearComparables = () => {
+    setComparedJobs([]);
+  };
+
+  const removeComparedJobById = (id) => {
+    setComparedJobs(comparedJobs.filter((e) => e.id !== id));
   };
 
   const exampleData = {
@@ -61,16 +69,43 @@ const Browse = () => {
       <div className="job-and-filter-container">
         <Filter />
         <div className="job-container">
-          <JobCard data={{...exampleData, id: 1}} comparedJobs={comparedJobs} setComparedJobs={setComparedJobs} />
-          <JobCard data={{...exampleData, id: 2}} comparedJobs={comparedJobs} setComparedJobs={setComparedJobs} />
+          <JobCard
+            data={{ ...exampleData, id: 1 }}
+            comparedJobs={comparedJobs}
+            setComparedJobs={setComparedJobs}
+          />
+          <JobCard
+            data={{ ...exampleData, id: 2 }}
+            comparedJobs={comparedJobs}
+            setComparedJobs={setComparedJobs}
+          />
           <AdCard text="Näillä kymmenellä alalla on eniten töitä tällä hetkellä." />
-          <JobCard data={{...exampleData, id: 3}} comparedJobs={comparedJobs} setComparedJobs={setComparedJobs} />
-          <JobCard data={{...exampleData, id: 4}} comparedJobs={comparedJobs} setComparedJobs={setComparedJobs} />
-          <JobCard data={{...exampleData, id: 5}} comparedJobs={comparedJobs} setComparedJobs={setComparedJobs} />
+          <JobCard
+            data={{ ...exampleData, id: 3 }}
+            comparedJobs={comparedJobs}
+            setComparedJobs={setComparedJobs}
+          />
+          <JobCard
+            data={{ ...exampleData, id: 4 }}
+            comparedJobs={comparedJobs}
+            setComparedJobs={setComparedJobs}
+          />
+          <JobCard
+            data={{ ...exampleData, id: 5 }}
+            comparedJobs={comparedJobs}
+            setComparedJobs={setComparedJobs}
+          />
         </div>
       </div>
       <Footer />
-      <CompareBox comparables={comparedJobs} />
+      {
+        <CompareBox
+          comparables={comparedJobs}
+          clearComparables={clearComparables}
+          hidden={comparedJobs.length === 0}
+          removeComparedJobById={removeComparedJobById}
+        />
+      }
     </div>
   );
 };

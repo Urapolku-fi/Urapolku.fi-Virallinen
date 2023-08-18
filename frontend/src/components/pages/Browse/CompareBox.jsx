@@ -3,28 +3,28 @@ import CompareJobCardSeperator from "./CompareCardSeperator";
 import CompareJobCard from "./CompareJobCard";
 import ToggleButton from "./ToggleButton";
 
-const CompareBox = ({ comparables }) => {
+const CompareBox = ({ comparables, clearComparables, hidden, removeComparedJobById }) => {
   return (
-    <div className="compare-box">
+    <div className={hidden ? "compare-box compare-box-hide"  : "compare-box compare-box-show"}>
       {comparables.length > 0 ? (
-        <CompareJobCard data={comparables[0]} />
+        <CompareJobCard data={comparables[0]} removeComparedJobById={removeComparedJobById} />
       ) : (
         <CompareJobCard empty />
       )}
       <CompareJobCardSeperator />
       {comparables.length > 1 ? (
-        <CompareJobCard data={comparables[1]} />
+        <CompareJobCard data={comparables[1]} removeComparedJobById={removeComparedJobById} />
       ) : (
         <CompareJobCard empty />
       )}
       <CompareJobCardSeperator />
       {comparables.length > 2 ? (
-        <CompareJobCard data={comparables[2]} />
+        <CompareJobCard data={comparables[2]} removeComparedJobById={removeComparedJobById} />
       ) : (
         <CompareJobCard empty />
       )}
       <ToggleButton text="vertaile" selected forCompareBox />
-      <div className="close-button-text">Sulje</div>
+      <div className="close-button-text" onClick={clearComparables}>Sulje</div>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../../css/Browse/jobCard.css";
 import CheckBox from "./CheckBox";
 import BookmarkButton from "./BookmarkButton";
@@ -19,6 +19,12 @@ const JobCard = ({ data, comparedJobs, setComparedJobs }) => {
     }
     setCompareToggled(newCompareToggled);
   };
+
+  useEffect(() => {
+    if (comparedJobs.filter((e) => e.id === data.id).length === 0) {
+      setCompareToggled(false);
+    }
+  }, [comparedJobs, data.id]);
 
   return (
     <div className="jobcard" key={data.id}>

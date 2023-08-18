@@ -1,6 +1,10 @@
 import "../../css/Browse/CompareJobCard.css";
 
-const CompareJobCard = ({ data = null, empty = false }) => {
+const CompareJobCard = ({
+  data = null,
+  empty = false,
+  removeComparedJobById,
+}) => {
   return (
     <>
       {empty ? (
@@ -20,8 +24,20 @@ const CompareJobCard = ({ data = null, empty = false }) => {
               <p className="full-time">{data.location}</p>
             </span>
           </div>
-          <div className="compare-job-card-inner" />
-          <img className="group-icon" alt="" src={"svg/close-icon.svg"} />
+          <div
+            className="compare-job-card-inner"
+            onClick={() => {
+              removeComparedJobById(data.id);
+            }}
+          />
+          <img
+            className="group-icon"
+            alt=""
+            src={"svg/close-icon.svg"}
+            onClick={() => {
+              removeComparedJobById(data.id);
+            }}
+          />
         </div>
       )}
     </>
