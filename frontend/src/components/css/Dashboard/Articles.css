@@ -24,15 +24,11 @@
   justify-content: center;
   gap: 10px;
 }
-.First-article-card-background {
-  background-image: url("/pictures/temp/First-article-image.png");
+.Article-card-background {
   height: 100%;
   border-radius: 12px;
-}
-.Second-article-card-background {
-  background-image: url("/pictures/temp/Second-article-image.png");
-  height: 100%;
-  border-radius: 12px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .Article-card-text {
   display: flex;

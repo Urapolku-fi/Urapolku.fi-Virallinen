@@ -10,11 +10,11 @@ import "../css/dashboard.css";
 function Dashboard() {
   const articlesData = [
     {
-      backgroundClass: "First-article-card-background",
+      backgroundImage: "/pictures/temp/First-article-image.png",
       text: "Cracking the Code: Unconventional Strategies for Landing Your Dream Job",
     },
     {
-      backgroundClass: "Second-article-card-background",
+      backgroundImage: "/pictures/temp/Second-article-image.png",
       text: "The Art of Becoming: Uncover Your True Self and Harness Your Potential",
     },
   ];
@@ -23,15 +23,16 @@ function Dashboard() {
       title: "Job",
       description:
         "Haluatko mukaan dynaamiseen tiimiin jossa myös etätyö onnistuu?",
+      backgroundImage: "/pictures/temp/Daily-pick-image.png",
     },
   ];
   const newsData = [
     {
-      backgroundClass: "News-first-background",
+      backgroundImage: "/pictures/temp/First-article-image.png",
       text: "Cracking the Code: Unconventional Strategies for Landing Your Dream Job",
     },
     {
-      backgroundClass: "News-second-background",
+      backgroundImage: "/pictures/temp/Second-article-image.png",
       text: "The Art of Becoming: Uncover Your True Self and Harness Your Potential",
     },
   ];

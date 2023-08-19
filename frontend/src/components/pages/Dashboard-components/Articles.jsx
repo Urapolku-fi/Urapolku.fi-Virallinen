@@ -1,9 +1,14 @@
 import React from "react";
 import "../../css/Dashboard/Articles.css";
-function ArticleCard({ backgroundClass, text }) {
+
+function ArticleCard({ backgroundClass, backgroundImage, text }) {
+  const cardStyle = {
+    backgroundImage: `url(${backgroundImage})`,
+  };
+
   return (
     <div className={`Article-card ${backgroundClass}`}>
-      <div className="Article-card-background">
+      <div className="Article-card-background" style={cardStyle}>
         <div className="Article-card-text">
           <p>{text}</p>
         </div>
@@ -31,11 +36,10 @@ function Articles({ articles }) {
       </div>
       <div className="Article-cards">
         {articles.map((article, index) => (
-          <div className="Article-card">
+          <div className="Article-card" key={index}>
             <ArticleCard
-              key={index}
-              title={article.title}
               backgroundClass={article.backgroundClass}
+              backgroundImage={article.backgroundImage}
               text={article.text}
             />
           </div>

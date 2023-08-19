@@ -1,9 +1,12 @@
 import React from "react";
 import "../../css/Dashboard/DailyPicks.css";
 
-function DailyPickCard({ title, description }) {
+function DailyPickCard({ title, description, backgroundImage }) {
+  const cardStyle = {
+    backgroundImage: `url(${backgroundImage})`,
+  };
   return (
-    <div className="Daily-Pick-Card">
+    <div className="Daily-Pick-Card" style={cardStyle}>
       <div className="Card-text-content">
         <p>{title}</p>
         <p className="Card-description">{description}</p>
@@ -23,6 +26,7 @@ function DailyPicks({ dailyPicks }) {
               <DailyPickCard
                 title={pick.title}
                 description={pick.description}
+                backgroundImage={pick.backgroundImage}
               />
             </div>
           ))}

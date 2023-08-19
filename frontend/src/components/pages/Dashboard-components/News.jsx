@@ -1,10 +1,13 @@
 import React from "react";
 import "../../css/Dashboard/News.css";
 
-function NewsItem({ backgroundClass, text }) {
+function NewsItem({ backgroundClass, text, backgroundImage }) {
+  const cardStyle = {
+    backgroundImage: `url(${backgroundImage})`,
+  };
   return (
     <div className={`News-item ${backgroundClass}`}>
-      <div className="News-item-background">
+      <div className="News-item-background" style={cardStyle}>
         <div className="News-item-text-content">
           <p>{text}</p>
         </div>
@@ -34,6 +37,7 @@ function News({ news }) {
           <div className="News-item" key={index}>
             <NewsItem
               backgroundClass={newsItem.backgroundClass}
+              backgroundImage={newsItem.backgroundImage}
               text={newsItem.text}
             />
           </div>
