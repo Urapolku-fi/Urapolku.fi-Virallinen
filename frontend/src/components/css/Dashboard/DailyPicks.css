@@ -40,6 +40,7 @@
   justify-content: flex-end;
   align-items: flex-start;
   border-radius: 8px;
+  padding-right: 20%;
 }
 
 .Card-job {
@@ -60,5 +61,16 @@
 @media only screen and (max-width: 1000px) {
   .Daily-Pick-Card .Card-text-content {
     height: 317px;
+  }
+  .Daily-Pick-Card .Card-description {
+    font-size: 22px;
+  }
+  .Daily-Pick-Card .Card-text-content {
+    padding-right: 5%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .Daily-pick-frame h2 {
+    font-size: 30px;
   }
 }

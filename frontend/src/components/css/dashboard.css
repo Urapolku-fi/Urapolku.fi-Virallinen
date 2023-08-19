@@ -27,7 +27,6 @@ h2 {
   margin: 0% 5% 0% 5%;
 }
 .Dashboard-daily-picks,
-.Dashboard-articles,
 .Dashboard-news {
   margin-bottom: 5%;
 }
@@ -44,4 +43,14 @@ h2 {
 .Sticky-left-bar {
   position: sticky;
   top: 20px;
+}
+@media only screen and (max-width: 800px) {
+  #Dashboard-content {
+    gap: 10%;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .Dashboard-left-bar {
+    display: none;
+  }
 }

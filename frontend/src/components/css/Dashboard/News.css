@@ -5,10 +5,10 @@
 .News-items {
   display: flex;
   justify-content: space-between;
+  gap: 10%;
 }
 .News-item {
   height: 466px;
-  width: 45%;
   display: flex;
   margin-bottom: 10%;
   box-shadow: 0px 0.5px 0px 0px rgba(255, 255, 255, 0.5) inset,
@@ -54,6 +54,10 @@
   line-height: 150%; /* 30px */
   margin: 5%;
 }
+.News-frame a {
+  color: #ececec;
+  text-decoration: none;
+}
 @media only screen and (max-width: 1200px) {
   .News-items {
     flex-direction: column;
@@ -61,5 +65,15 @@
   .News-item {
     width: 100%;
     height: 317px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .News-item .News-item-text-content p {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .News-items > :nth-child(2) {
+    display: none;
   }
 }
