@@ -2,19 +2,12 @@ import "../../css/Browse/largeFilter.css";
 import ToggleButton from "./ToggleButton";
 import MultiOptionDropdown from "./MultiOptionDropdown";
 
-const LargeFilter = () => {
+const LargeFilter = ({ options, values, setValues }) => {
   return (
     <MultiOptionDropdown
-      options={['lorem', 'ipsum', 'dolor', 'sit', 'amet', 'consectetur',
-      'adipiscing', 'elit', 'curabitur', 'vel', 'hendrerit', 'libero',
-      'eleifend', 'blandit', 'nunc', 'ornare', 'odio', 'ut',
-      'orci', 'gravida', 'imperdiet', 'nullam', 'purus', 'lacinia',
-      'a', 'pretium', 'quis', 'congue', 'praesent', 'sagittis', 
-      'laoreet', 'auctor', 'mauris', 'non', 'velit', 'eros', ["hello"],
-      'dictum', 'proin', 'accumsan', 'sapien', 'nec', 'massa',
-      'volutpat', 'venenatis', 'sed', 'eu', 'molestie', 'lacus',
-      'quisque', 'porttitor', 'ligula', 'dui', 'mollis', 'tempus',
-    ]}
+      options={options}
+      values={values}
+      setValues={setValues}
       childComponent={
         <div className="large-filter-opener">
           <img

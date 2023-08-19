@@ -8,10 +8,78 @@ import CompareBox from "./Browse/CompareBox";
 import AdCard from "./Browse/AdCard";
 import SingleOptionDropdown from "./Browse/SingleOptionDropdown";
 
+const loremIpsum = [
+  "lorem",
+  "ipsum",
+  "dolor",
+  "sit",
+  "amet",
+  "consectetur",
+  "adipiscing",
+  "elit",
+  "curabitur",
+  "vel",
+  "hendrerit",
+  "libero",
+  "eleifend",
+  "blandit",
+  "nunc",
+  "ornare",
+  "odio",
+  "ut",
+  ["hello"],
+  "orci",
+  "gravida",
+  "imperdiet",
+  "nullam",
+  "purus",
+  "lacinia",
+  "a",
+  "pretium",
+  "quis",
+  "congue",
+  "praesent",
+  "sagittis",
+  "laoreet",
+  "auctor",
+  "mauris",
+  "non",
+  "velit",
+  "eros",
+  ["world"],
+  "dictum",
+  "proin",
+  "accumsan",
+  "sapien",
+  "nec",
+  "massa",
+  "volutpat",
+  "venenatis",
+  "sed",
+  "eu",
+  "molestie",
+  "lacus",
+  "quisque",
+  "porttitor",
+  "ligula",
+  "dui",
+  "mollis",
+  "tempus",
+];
+
 const Browse = () => {
   const [searchInput, setSearchInput] = useState("");
 
   const [comparedJobs, setComparedJobs] = useState([]);
+
+  const [filtersState, setFiltersState] = useState({
+    location: [
+      loremIpsum,
+
+      Array(loremIpsum.filter((e) => typeof e === "string").length).fill(false),
+    ],
+    jobType: [false, true, false, false],
+  });
 
   useEffect(() => {
     if (comparedJobs.length > 4) {
@@ -75,7 +143,7 @@ const Browse = () => {
       </div>
 
       <div className="job-and-filter-container">
-        <Filter />
+        <Filter filtersState={filtersState} setFiltersState={setFiltersState} />
         <div className="job-container">
           <JobCard
             data={{ ...exampleData, id: 1 }}

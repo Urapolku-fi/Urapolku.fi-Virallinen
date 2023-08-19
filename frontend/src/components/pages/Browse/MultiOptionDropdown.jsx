@@ -4,12 +4,12 @@ import CheckBox from "./CheckBox";
 import ToggleButton from "./ToggleButton";
 import FilterLabel from "./FilterLabel";
 
-const MultiOptionDropdown = ({ options, childComponent }) => {
-  const [values, setValues] = useState(
-    options.map((option) =>
-      Array.isArray(option) ? option[0] : [option, false]
-    )
-  );
+const MultiOptionDropdown = ({
+  options,
+  childComponent,
+  values,
+  setValues,
+}) => {
   const [showDropdown, setShowDropdown] = useState(false);
 
   const toggleDropdown = () => {
@@ -17,21 +17,20 @@ const MultiOptionDropdown = ({ options, childComponent }) => {
   };
 
   const handleOptionClick = (index) => {
-    let newValues = values;
-    newValues[index] = [newValues[index][0], !newValues[index][1]];
-    setValues(newValues);
+    setValues(values.map((e, i) => (i === index ? !e : e)));
     toggleDropdown();
     setTimeout(() => {
       setShowDropdown(true);
     }, 1);
   };
 
-  const handleTogglebuttonClick = (value) => {
-    setValues(values.map((val) => (val[0] === value ? [value, false] : val)));
+  const handleTogglebuttonClick = (index) => {
+
+    setValues(values.map((e, i) => (i === index ? !e : e)));
   };
 
   const handleClearClick = () => {
-    setValues(options.map((option) => [option, false]));
+    setValues(Array(values.length).fill(false));
     toggleDropdown();
   };
 
@@ -47,17 +46,29 @@ const MultiOptionDropdown = ({ options, childComponent }) => {
           }
         >
           <div className="dropdown-flex-container">
-            {values.map((item, index) =>
-              typeof item !== "string" ? (
+            {options.map((item) =>
+              typeof item === "string" ? (
                 <CheckBox
-                  key={item[0]}
-                  text={item[0]}
-                  toggled={item[1]}
-                  onClick={() => handleOptionClick(index)}
+                  key={item}
+                  text={item}
+                  toggled={
+                    values[
+                      options
+                        .filter((e) => typeof e === "string")
+                        .findIndex((e) => e === item)
+                    ]
+                  }
+                  onClick={() =>
+                    handleOptionClick(
+                      options
+                        .filter((e) => typeof e === "string")
+                        .findIndex((e) => e === item)
+                    )
+                  }
                 />
               ) : (
-                <div className="filter-label-container" key={item}>
-                  <FilterLabel text={item} />
+                <div className="filter-label-container" key={item[0]}>
+                  <FilterLabel text={item[0]} />
                 </div>
               )
             )}
@@ -87,15 +98,16 @@ const MultiOptionDropdown = ({ options, childComponent }) => {
         </div>
       </div>
       <div className="multi-option-dropdown-togglebutton-container">
-        {values
-          .filter((value) => typeof value !== "string")
-          .filter((value) => value[1] === true)
+        {options
+          .filter((e) => typeof e === "string")
+          .map((e, i) => [e, i])
+          .filter((e) => values[e[1]])
           .map((value) => (
             <ToggleButton
               text={value[0]}
               selected={true}
+              onClick={() => handleTogglebuttonClick(value[1])}
               key={value[0]}
-              onClick={() => handleTogglebuttonClick(value[0])}
             />
           ))}
       </div>
