@@ -31,3 +31,25 @@
   line-height: 160%;
   margin: 0% 20% 0% 20%;
 }
+@media only screen and (max-width: 1000px) {
+  .Urapolku-title h1 {
+    font-size: 60px;
+  }
+  .Urapolku-title p {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .Urapolku-title {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .Urapolku-title h1 {
+    font-size: 45px;
+  }
+  .Urapolku-title p {
+    font-size: 14px;
+  }
+}

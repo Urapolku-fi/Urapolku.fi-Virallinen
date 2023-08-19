@@ -27,7 +27,9 @@ const UrapolkuAi = () => {
                 </p>
               </div>
               <div className="Urapolku-link">
-                <p className="UrapolkuAI-link">Read more</p>
+                <a href="/">
+                  <p className="UrapolkuAI-link">Read more</p>
+                </a>
               </div>
             </div>
             <div className="Digital">
@@ -47,13 +49,16 @@ const UrapolkuAi = () => {
                 </p>
               </div>
               <div className="Urapolku-link">
-                <p className="UrapolkuAI-link">View tokens</p>
+                <a href="/">
+                  <p className="UrapolkuAI-link">View tokens</p>
+                </a>
               </div>
             </div>
           </div>
         </div>
         <div className="Code-collab">
           <img
+            className="Collab-logo"
             src="/pictures/code-collab-logo.png"
             alt=""
             height="48px"
@@ -71,7 +76,9 @@ const UrapolkuAi = () => {
                 ensure that your data is consistent and reliable.
               </p>
               <div className="Urapolku-link">
-                <p className="UrapolkuAI-link">View code collaboration</p>
+                <a href="/">
+                  <p className="UrapolkuAI-link">View code collaboration</p>
+                </a>
               </div>
             </div>
             <div className="code-collab-image">

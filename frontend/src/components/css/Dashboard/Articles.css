@@ -12,7 +12,6 @@
   height: 467px;
   display: flex;
   border-radius: 10px;
-  width: 45%;
   margin-bottom: 20px;
   box-shadow: 0px 0.5px 0px 0px rgba(255, 255, 255, 0.5) inset,
     0px -2px 40px 0px rgba(187, 155, 255, 0.15),
@@ -40,7 +39,6 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
-  border-radius: 8px;
   height: 100%;
   border-radius: 10px;
   background: linear-gradient(
@@ -56,22 +54,31 @@
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
-  line-height: 150%; /* 30px */
+  line-height: 150%;
   margin: 5%;
+}
+.Articles-frame a {
+  color: #ececec;
+  text-decoration: none;
 }
 @media only screen and (max-width: 1200px) {
   .Article-cards {
     flex-direction: column;
   }
   .Article-card {
-    width: 100%;
-    height: 100%;
-  }
-  .Second-article-card-background,
-  .First-article-card-background {
     height: 317px;
   }
-  .Article-cards > :nth-child(1) {
+  icle-cards > :nth-child(1) {
     margin-bottom: 10%;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .Article-card .Article-card-text p {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .Article-cards > :nth-child(2) {
+    display: none;
   }
 }

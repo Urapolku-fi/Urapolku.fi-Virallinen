@@ -3,7 +3,7 @@
   padding: 60px;
   flex-direction: column;
   gap: 16px;
-  margin: 5%;
+  margin-top: 5%;
   border-radius: 20px;
   background: linear-gradient(
     180deg,
@@ -43,4 +43,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media only screen and (max-width: 1000px) {
+  .Urapolku-info-container h2 {
+    font-size: 36px;
+  }
+  .Urapolku-info-container p {
+    font-size: 16px;
+  }
 }

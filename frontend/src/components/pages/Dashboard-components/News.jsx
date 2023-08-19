@@ -1,11 +1,26 @@
+import React from "react";
 import "../../css/Dashboard/News.css";
-const News = () => {
+
+function NewsItem({ backgroundClass, text }) {
+  return (
+    <div className={`News-item ${backgroundClass}`}>
+      <div className="News-item-background">
+        <div className="News-item-text-content">
+          <p>{text}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+function News({ news }) {
   return (
     <section className="News-frame">
       <div className="News-title">
-        <h2 className="Text">News</h2>
+        <h2>News</h2>
         <div className="View-all">
-          <p>View-all</p>
+          <a href="/">
+            <p>View-all</p>
+          </a>
           <img
             src="/pictures/Arrow-right-alt.png"
             alt=""
@@ -15,28 +30,17 @@ const News = () => {
         </div>
       </div>
       <div className="News-items">
-        <div className="News-item">
-          <div className="News-first-background">
-            <div className="News-item-text-content">
-              <p>
-                Cracking the Code: Unconventional Strategies for Landing Your
-                Dream Job
-              </p>
-            </div>
+        {news.map((newsItem, index) => (
+          <div className="News-item" key={index}>
+            <NewsItem
+              backgroundClass={newsItem.backgroundClass}
+              text={newsItem.text}
+            />
           </div>
-        </div>
-        <div className="News-item">
-          <div className="News-second-background">
-            <div className="News-item-text-content">
-              <p>
-                The Art of Becoming: Uncover Your True Self and Harness Your
-                Potential
-              </p>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );
-};
+}
+
 export default News;

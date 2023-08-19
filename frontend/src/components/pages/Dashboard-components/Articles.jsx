@@ -1,43 +1,48 @@
+import React from "react";
 import "../../css/Dashboard/Articles.css";
-const Articles = () => {
+function ArticleCard({ backgroundClass, text }) {
+  return (
+    <div className={`Article-card ${backgroundClass}`}>
+      <div className="Article-card-background">
+        <div className="Article-card-text">
+          <p>{text}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Articles({ articles }) {
   return (
     <section className="Articles-frame">
       <div className="Article-title">
-        <h2 className="Text">Articles</h2>
+        <h2>Articles</h2>
         <div className="View-all">
-          <p>View-all</p>
+          <a href="/">
+            <p>View-all</p>
+          </a>
           <img
             src="/pictures/Arrow-right-alt.png"
             alt=""
-            width="24px"
             height="24px"
+            width="24px"
           />
         </div>
       </div>
       <div className="Article-cards">
-        <div className="Article-card">
-          <div className="First-article-card-background">
-            <div className="Article-card-text">
-              <p>
-                Cracking the Code: Unconventional Strategies for Landing Your
-                Dream Job
-              </p>
-            </div>
+        {articles.map((article, index) => (
+          <div className="Article-card">
+            <ArticleCard
+              key={index}
+              title={article.title}
+              backgroundClass={article.backgroundClass}
+              text={article.text}
+            />
           </div>
-        </div>
-        <div className="Article-card">
-          <div className="Second-article-card-background">
-            <div className="Article-card-text">
-              <p>
-                The Art of Becoming: Uncover Your True Self and Harness Your
-                Potential
-              </p>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );
-};
+}
 
 export default Articles;
