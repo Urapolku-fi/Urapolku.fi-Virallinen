@@ -17,13 +17,16 @@ const CompareJobCard = ({
             alt=""
             src={"/pictures/job-example-image.png"}
           />
-          <div className="nurse">{data.title}</div>
-          <div className="full-time-container">
-            <span className="full-time-container1">
-              <p className="full-time">{data.type}</p>
-              <p className="full-time">{data.location}</p>
-            </span>
+          <div className="compare-job-card-text-container">
+            <div className="compare-job-card-header">{data.title}</div>
+            <div className="full-time-container">
+              <span className="full-time-container1">
+                <p className="full-time">{data.type}</p>
+                <p className="full-time">{data.location}</p>
+              </span>
+            </div>
           </div>
+
           <div
             className="compare-job-card-inner"
             onClick={() => {

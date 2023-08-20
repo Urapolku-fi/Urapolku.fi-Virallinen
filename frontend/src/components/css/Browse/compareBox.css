@@ -13,7 +13,6 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-  
 }
 
 .compare-box-hide {
@@ -32,4 +31,50 @@
   color: white;
   text-decoration: underline;
   cursor: pointer;
+}
+
+.compare-box-buttons-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 250px;
+  height: 113px;
+}
+
+.compare-box-buttons-container-mobile {
+  display: none;
+}
+
+.comparables-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 95%;
+  margin-left: 2.5%;
+}
+
+@media screen and (max-width: 1500px) {
+  .compare-box-buttons-container {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .compare-box {
+    flex-direction: column;
+  }
+
+  .compare-box-buttons-container {
+    display: none;
+  }
+
+  .compare-box-buttons-container-mobile {
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+  }
 }
