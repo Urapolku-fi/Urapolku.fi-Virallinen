@@ -21,6 +21,7 @@
   border-radius: 12px;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 
 .News-item-text-content {
