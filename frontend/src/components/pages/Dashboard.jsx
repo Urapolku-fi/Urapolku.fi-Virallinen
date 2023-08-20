@@ -8,6 +8,7 @@ import UrapolkuTitle from "./Dashboard-components/UrapolkuTitle";
 import AppliedJobs from "./Dashboard-components/AppliedJobs";
 import "../css/dashboard.css";
 function Dashboard() {
+  // Appliedjobs should be only visible
   const articlesData = [
     {
       backgroundImage: "/pictures/temp/First-article-image.png",
