@@ -8,7 +8,7 @@ const Filter = ({ filtersState, setFiltersState, clearFilters }) => {
     <div className="filter">
       <div className="filter-header-container">
         <div className="filter-header">Suodattimet</div>
-        <div className="filter-clear" onClick={clearFilters} >Poista suodattimet</div>
+        <div className="filter-clear" onClick={clearFilters}>Poista suodattimet</div>
       </div>
       <div className="filters-flex-container">
         <FilterLabel text="Industry" />

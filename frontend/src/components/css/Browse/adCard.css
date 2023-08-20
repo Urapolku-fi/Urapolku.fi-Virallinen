@@ -31,3 +31,18 @@
   flex-direction: column-reverse;
   text-align: left;
 }
+
+@media only screen and (max-width: 800px) {
+  .ad-card {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .ad-card-text-container {
+    width: 70vw;
+  }
+
+  .ad-card-text {
+    width: 70vw;
+  }
+}

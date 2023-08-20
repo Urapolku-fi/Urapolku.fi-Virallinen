@@ -15,6 +15,12 @@
   padding: 8px 16px;
 }
 
+@media screen and (max-width: 1100px) {
+  .filter {
+    display: none;
+  }
+}
+
 .filter-header-container {
   display: flex;
   flex-direction: row;
