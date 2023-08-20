@@ -29,7 +29,6 @@ const JobCard = ({ data, comparedJobs, setComparedJobs }) => {
   return (
     <div className="jobcard" key={data.id}>
       <div className="jobcard-child" />
-      <div className="nurse">{data.title}</div>
       <div className="jobcard-info-welfare-container">
         <span className="jobcard-info-welfare-container1">
           <p className="jobcard-info">{`Western Uusimaa`}</p>
@@ -38,6 +37,7 @@ const JobCard = ({ data, comparedJobs, setComparedJobs }) => {
       </div>
       <div className="health-care-full-container">
         <span className="jobcard-info-welfare-container1">
+          <p className="jobcard-title">{data.title}</p>
           <p className="jobcard-info">{data.field}</p>
           <p className="jobcard-info">{data.type}</p>
           <p className="jobcard-info">{data.salary}</p>

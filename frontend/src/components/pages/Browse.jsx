@@ -9,6 +9,7 @@ import AdCard from "./Browse/AdCard";
 import SingleOptionDropdown from "./Browse/SingleOptionDropdown";
 
 const loremIpsum = [
+  ["hello"],
   "lorem",
   "ipsum",
   "dolor",
@@ -27,7 +28,7 @@ const loremIpsum = [
   "ornare",
   "odio",
   "ut",
-  ["hello"],
+  ["damn"],
   "orci",
   "gravida",
   "imperdiet",
@@ -75,7 +76,6 @@ const Browse = () => {
   const [filtersState, setFiltersState] = useState({
     location: [
       loremIpsum,
-
       Array(loremIpsum.filter((e) => typeof e === "string").length).fill(false),
     ],
     jobType: [false, true, false, false],

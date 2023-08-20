@@ -1,14 +1,20 @@
 .toggle-button-toggled {
   border-radius: 5px;
+  border: #ececec solied 1px;
   background-color: #ececec;
   overflow: hidden;
   padding: 7px 16px 7.5px;
   width: fit-content;
-  margin: 12px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin: 10px 5px 5px 5px;
   text-align: center;
+
   cursor: pointer;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 .toggle-button {
@@ -18,11 +24,16 @@
   overflow: hidden;
   padding: 7px 16px 7.5px;
   width: fit-content;
-  margin: 12px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin: 10px 5px 5px 5px;
   text-align: center;
+  
   cursor: pointer;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 .inner-text-selected {
@@ -50,7 +61,8 @@
   padding: 10px 16px 5px;
 }
 
-.for-compare-box > .inner-text,  .for-compare-box > .inner-text-toggled {
+.for-compare-box > .inner-text,
+.for-compare-box > .inner-text-toggled {
   position: relative;
   transform: translate();
 }

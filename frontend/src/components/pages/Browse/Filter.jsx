@@ -11,6 +11,17 @@ const Filter = ({ filtersState, setFiltersState }) => {
         <div className="filter-clear">Poista suodattimet</div>
       </div>
       <div className="filters-flex-container">
+        <FilterLabel text="Industry" />
+        <LargeFilter
+          options={filtersState.location[0]}
+          values={filtersState.location[1]}
+          setValues={(newValues) => {
+            setFiltersState({
+              ...filtersState,
+              location: [filtersState.location[0], newValues],
+            });
+          }}
+        />
         <FilterLabel text="Job Type" />
         <div className="toggle-buttons-flex-container">
           <ToggleButton
@@ -62,17 +73,6 @@ const Filter = ({ filtersState, setFiltersState }) => {
             }}
           />
         </div>
-        <FilterLabel text="Industry" />
-        <LargeFilter
-          options={filtersState.location[0]}
-          values={filtersState.location[1]}
-          setValues={(newValues) => {
-            setFiltersState({
-              ...filtersState,
-              location: [filtersState.location[0], newValues],
-            });
-          }}
-        />
       </div>
     </div>
   );

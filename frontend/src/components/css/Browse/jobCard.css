@@ -17,12 +17,8 @@
     0px 0.5px 0px rgba(255, 255, 255, 0.5) inset;
 }
 
-.nurse {
-  position: absolute;
-  height: 8.07%;
-  width: 21.25%;
-  top: 24.26%;
-  left: 6.83%;
+.jobcard-title {
+  color: white;
   font-size: 20px;
   line-height: 150%;
   font-weight: 600;
