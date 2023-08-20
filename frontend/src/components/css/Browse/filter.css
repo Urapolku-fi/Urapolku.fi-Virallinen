@@ -40,8 +40,9 @@
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
-  line-height: 150%; /* 18px */
+  line-height: 150%;
   text-decoration-line: underline;
+  cursor: pointer;
 }
 
 .filters-flex-container {

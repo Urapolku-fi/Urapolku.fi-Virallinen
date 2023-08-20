@@ -3,12 +3,12 @@ import FilterLabel from "./FilterLabel";
 import LargeFilter from "./LargeFilter";
 import ToggleButton from "./ToggleButton";
 
-const Filter = ({ filtersState, setFiltersState }) => {
+const Filter = ({ filtersState, setFiltersState, clearFilters }) => {
   return (
     <div className="filter">
       <div className="filter-header-container">
         <div className="filter-header">Suodattimet</div>
-        <div className="filter-clear">Poista suodattimet</div>
+        <div className="filter-clear" onClick={clearFilters} >Poista suodattimet</div>
       </div>
       <div className="filters-flex-container">
         <FilterLabel text="Industry" />

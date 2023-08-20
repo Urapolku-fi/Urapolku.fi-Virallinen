@@ -68,18 +68,20 @@ const loremIpsum = [
   "tempus",
 ];
 
+const defaultFiltersState = {
+  location: [
+    loremIpsum,
+    Array(loremIpsum.filter((e) => typeof e === "string").length).fill(false),
+  ],
+  jobType: [true, false, false, false],
+};
+
 const Browse = () => {
   const [searchInput, setSearchInput] = useState("");
 
   const [comparedJobs, setComparedJobs] = useState([]);
 
-  const [filtersState, setFiltersState] = useState({
-    location: [
-      loremIpsum,
-      Array(loremIpsum.filter((e) => typeof e === "string").length).fill(false),
-    ],
-    jobType: [false, true, false, false],
-  });
+  const [filtersState, setFiltersState] = useState(defaultFiltersState);
 
   useEffect(() => {
     if (comparedJobs.length > 4) {
@@ -90,6 +92,10 @@ const Browse = () => {
   const handleChange = (event) => {
     event.preventDefault();
     setSearchInput(event.target.value);
+  };
+
+  const clearFilters = () => {
+    setFiltersState(defaultFiltersState);
   };
 
   const clearComparables = () => {
@@ -143,7 +149,7 @@ const Browse = () => {
       </div>
 
       <div className="job-and-filter-container">
-        <Filter filtersState={filtersState} setFiltersState={setFiltersState} />
+        <Filter filtersState={filtersState} setFiltersState={setFiltersState} clearFilters={clearFilters} />
         <div className="job-container">
           <JobCard
             data={{ ...exampleData, id: 1 }}
