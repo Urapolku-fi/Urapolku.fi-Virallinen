@@ -20,7 +20,7 @@ const ToggleButton = ({
           }
           onClick={onClick}
         >
-          <div className="inner-text-toggled">{text}</div>
+          <div className="toggle-button-inner-text-toggled">{text}</div>
         </div>
       ) : (
         <div
@@ -33,7 +33,7 @@ const ToggleButton = ({
           }
           onClick={onClick}
         >
-          <div className="inner-text">{text}</div>
+          <div className="toggle-button-inner-text">{text}</div>
         </div>
       )}
     </>

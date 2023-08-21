@@ -3,11 +3,19 @@ import "../../css/Browse/checkBox.css";
 const CheckBox = ({ text, toggled, onClick, forJobcard = false }) => {
   return (
     <div
-      className={forJobcard ? "ellipse-parent for-job-card" : "ellipse-parent"}
+      className={
+        forJobcard
+          ? "check-box-ellipse-parent for-job-card"
+          : "check-box-ellipse-parent"
+      }
       onClick={onClick ? onClick : () => {}}
     >
-      <div className={toggled ? "ellipse ellipse-toggled" : "ellipse"} />
-      <div className="label">{text}</div>
+      <div
+        className={
+          toggled ? "check-box-ellipse ellipse-toggled" : "check-box-ellipse"
+        }
+      />
+      <div className="check-box-label">{text}</div>
     </div>
   );
 };

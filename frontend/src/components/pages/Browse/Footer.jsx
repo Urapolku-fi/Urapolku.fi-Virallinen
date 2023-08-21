@@ -3,9 +3,9 @@ import "../../css/Browse/footer.css";
 const Footer = () => {
   return (
     <div className="footer">
-      <div className="container">
-        <div className="columns">
-          <div className="column">
+      <div className="footer-container">
+        <div className="footer-columns">
+          <div className="footer-column">
             <div className="footer-links-wrapper">
               <div className="contact">Contact</div>
               <div className="footer-links">
@@ -28,7 +28,7 @@ const Footer = () => {
               © 2023 Vaultflow. All Rights Reserved.
             </div>
           </div>
-          <div className="column">
+          <div className="footer-column">
             <div className="footer-links-wrapper">
               <div className="contact">Address</div>
               <div className="address-wrapper">
@@ -47,7 +47,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="column2">
+          <div className="footer-column2">
             <div className="logo-wrapper">
               <div className="logo">
                 <img className="valtflow-icon" alt="" src={"/pictures/urapolku.png"} />

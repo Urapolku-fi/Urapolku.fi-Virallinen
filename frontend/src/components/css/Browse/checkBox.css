@@ -1,4 +1,4 @@
-.label {
+.check-box-label {
   position: relative;
   line-height: 150%;
   font-weight: 500;
@@ -7,7 +7,7 @@
   user-select: none;
 }
 
-.ellipse {
+.check-box-ellipse {
   position: relative;
   border-radius: 50%;
   background-color: #0f0524;
@@ -17,7 +17,7 @@
   height: 10.5px;
 }
 
-.ellipse-parent {
+.check-box-ellipse-parent {
   position: static;
   height: min-content;
   width: 150px;
@@ -33,7 +33,7 @@
   cursor: pointer;
 }
 
-.ellipse-toggled {
+.check-box-ellipse-toggled {
   background-color: white;
 }
 

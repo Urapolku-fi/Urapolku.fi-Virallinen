@@ -36,14 +36,14 @@
   user-select: none;
 }
 
-.inner-text-selected {
+.toggle-button-inner-text-selected {
   line-height: 150%;
   font-size: 12px;
   color: #040404;
   font-family: Montserrat;
 }
 
-.inner-text {
+.toggle-button-inner-text {
   line-height: 150%;
   font-size: 12px;
   color: #fff;
