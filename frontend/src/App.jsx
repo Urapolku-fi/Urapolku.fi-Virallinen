@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/pages/Home";
+import JobDetails from "./components/pages/JobDetails"
 import { NavBarLayout } from "./components/NavLayout";
 import ProfileCompletionOne from "./components/pages/ProfileCompletionOne";
 import ProfileCompletionTwo from "./components/pages/ProfileCompletionTwo";
@@ -39,6 +40,7 @@ function App() {
               path="/profilethree"
               Component={withAuth(ProfileCompletionThree)}
             />
+            <Route exact path="/job" element={<JobDetails />} />
           </Routes>
         </NavBarLayout>
       </BrowserRouter>
