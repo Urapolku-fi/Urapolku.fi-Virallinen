@@ -1,6 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { useEffect, useState } from "react";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useFetch } from "../../api/requestHooks";
 import "../css/accountType.css";
 import closeIcon from "../../assets/close-menu.svg";
@@ -31,35 +31,30 @@ const Card = (props) => {
 const CallbackPage = () => {
   const { isLoading, user } = useAuth0();
   const withAuth = useFetch();
-  const [redirectPage, setRedirectPage] = useState();
-  const [loading, setLoading] = useState(true);
-  const [activeCard, setActiveCard] = useState(1);
+  const [accType, setAccType] = useState("employer");
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    if (user && user.userId === undefined) {
-      const addUser = async () => {
-        const dbUserData = {
-          email: user.email,
-          name: user.name,
-          picture: user.picture,
-          onBoardingFinished: false,
-        };
-        //send userinfo to backend and get userid back
+  const addUser = async () => {
+    let dbUserData = {
+      email: user.email,
+      name: user.name,
+      picture: user.picture,
+      onBoardingFinished: false,
+    };
+
+    withAuth
+      .post(`/user/create?type=${accType}`, dbUserData)
+      .then(({ status, json }) => {
+        //user exists
         /*
-        withAuth.post("/user/create", dbUserData).then(({ status, json }) => {
-          //user exists
-          if (status === 200) {
-            if (json.onBoardingFinished) setRedirectPage("/browse");
-            else setRedirectPage("/profileone");
-          } else if (status === 201) setRedirectPage("/profileone"); //user didn't exist
-          localStorage.setItem("userId", json.userId);
-          setLoading(false);
-        });
+        if (status === 200) {
+          if (json.onBoardingFinished) navigate("/browse");
+          else navigate("/profileone");
+        } else if (status === 201) navigate("/profileone"); //user didn't exist
         */
-      };
-      addUser();
-    }
-  }, [user, withAuth]);
+        localStorage.setItem("userId", json.userId);
+      });
+  };
 
   return (
     <div id="account-type-page-wrapper">
@@ -74,20 +69,20 @@ const CallbackPage = () => {
             logo={userIcon}
             header="Sign up as an employer"
             description="Access a pool of qualified candidates"
-            active={activeCard === 1}
-            setActive={() => setActiveCard(1)}
+            active={accType === "employer"}
+            setActive={() => setAccType("employer")}
           />
           <Card
             logo={briefcaseIcon}
             header="Sign up as a candidate"
             description="Discover the perfect job matches"
-            active={activeCard === 2}
-            setActive={() => setActiveCard(2)}
+            active={accType === "employee"}
+            setActive={() => setAccType("employee")}
           />
         </div>
         <div id="account-type-box-bottom">
-          <button>Cancel</button>
-          <button>Confirm</button>
+          <button onClick={() => navigate("/")}>Cancel</button>
+          <button onClick={addUser}>Confirm</button>
         </div>
       </div>
     </div>

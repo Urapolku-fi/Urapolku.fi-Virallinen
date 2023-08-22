@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const UserSchema = new Schema(
+const EmployerSchema = new Schema(
   {
     userId: { type: String, required: true, max: 36, unique: true },
     name: { type: String, required: true, max: 100 },
@@ -10,17 +10,13 @@ const UserSchema = new Schema(
     bannerPicture: { type: String },
     description: { type: String },
     industry: { type: String },
-    skills: { type: [{ type: String }] },
-    title: { type: String },
-    employmentType: { type: String },
     location: { type: String },
-    locationType: { type: String },
-    startDate: { type: String },
-    endDate: { type: String },
+    numOfEmployees: { type: String },
+    website: { type: String },
     onBoardingFinished: { type: Boolean },
   },
-  { collection: "users" }
+  { collection: "employers" }
 );
 
 // Export model
-module.exports = mongoose.model("User", UserSchema);
+module.exports = mongoose.model("Employer", EmployerSchema);

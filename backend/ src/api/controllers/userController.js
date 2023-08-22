@@ -1,9 +1,11 @@
 const User = require("../models/userModel");
+const Employer = require("../models/employerModel");
 const { v4: uuidv4 } = require("uuid");
 
 const userController = {
   createUser: async (req, res) => {
-    const existingUser = await User.find({ email: req.body.email });
+    const model = req.query.type === "employer" ? Employer : User;
+    const existingUser = await model.find({ email: req.body.email });
 
     if (existingUser.length) {
       res.status(200);
@@ -15,7 +17,8 @@ const userController = {
       res.send();
     } else {
       const user = { userId: uuidv4(), ...req.body }; //should check whether this gives already existing id but eh...
-      User.create(user)
+      model
+        .create(user)
         .then((newUser) => {
           res.status(201);
           res.json({
