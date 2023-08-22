@@ -8,9 +8,9 @@ const JobDetails = () => {
                     <div className="profile containerBorder">
                         <img src="pictures/company-logo.jpg" alt="" className="profilePicture" />
                         
-                        <h1 className="profileName">
+                        <h2 className="profileName">
                             University of Eastern Finland
-                        </h1>
+                        </h2>
                         
                         <a href="#" className="profileWebsite"><p>
                             Visit Website
@@ -27,9 +27,27 @@ const JobDetails = () => {
                         </p></a>
                     </div>   
                     <div className="tools containerBorder">
+                        <h2>
+                            Tools
+                        </h2>
+                        <ul>
+                            <li>
+                                <p>Profession Guide</p>
+                            </li>
+                            <li>
+                                <p>Job Application Guide</p>
+                            </li>
+                            <li>
+                                <p>Employment Guide</p>
+                            </li>
+                            <li>
+                                <p>Salary Information</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="similarJobs containerBorder">
                         
                     </div>
-                    <div className="similarJobs containerBorder"></div>
                 </div>
                 <div className="right containerBorder"></div>
             </div>
