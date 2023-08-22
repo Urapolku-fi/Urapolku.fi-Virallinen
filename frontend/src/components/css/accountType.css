@@ -10,7 +10,6 @@
   padding: 2rem;
   box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   border-radius: .6rem;
-  width: 30%;
 }
 
 #account-type-box > p {
@@ -122,4 +121,20 @@
   width: 1rem;
   border-radius: 100%;
   border: .1rem solid #a5a5a559;
+}
+
+@media screen and (max-width: 400px) {
+  #account-type-box {
+    margin: 1rem;
+  }
+
+  #account-type-page-wrapper {
+    place-items: unset;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #account-type-box-bottom {
+    flex-direction:column-reverse
+  }
 }
