@@ -27,6 +27,7 @@ const blacklistAddr = [
   "/profiletwo",
   "/profilethree",
   "/callback",
+  "/emponboarding",
 ];
 
 const MenuButton = () => {

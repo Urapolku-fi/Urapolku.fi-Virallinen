@@ -4,7 +4,7 @@ const { v4: uuidv4 } = require("uuid");
 
 const userController = {
   createUser: async (req, res) => {
-    const model = req.query.type === "employer" ? Employer : User;
+    const model = req.query.type === "Employer" ? Employer : User;
     const existingUser = await model.find({ email: req.body.email });
 
     if (existingUser.length) {
@@ -43,7 +43,15 @@ const userController = {
     const foundUsers = await User.findOne({ [key]: userId });
     const foundEmployers = await Employer.findOne({ [key]: userId });
     Promise.all([foundUsers, foundEmployers]).then((users) => {
-      res.json(users.filter((val) => val !== null)[0]);
+      let user = {};
+      if (users[0] && users[0] !== null) {
+        user = users[0].toObject();
+        user["accountType"] = "User";
+      } else if (users[1] && users[1] !== null) {
+        user = users[1].toObject();
+        user["accountType"] = "Employer";
+      }
+      res.json(user);
     });
   },
 

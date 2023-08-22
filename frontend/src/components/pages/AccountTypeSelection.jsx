@@ -29,10 +29,28 @@ const Card = (props) => {
 };
 
 const CallbackPage = () => {
-  const { isLoading, user } = useAuth0();
+  const { user } = useAuth0();
   const withAuth = useFetch();
-  const [accType, setAccType] = useState("employer");
+  const [accType, setAccType] = useState("Employer");
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (user) {
+      withAuth.get(`/user/${user.email}`).then(({ json }) => {
+        if (json.onBoardingFinished) {
+          navigate("/browse");
+          localStorage.setItem("userId", json.userId);
+        } else if (json.accountType !== undefined) {
+          navigate(
+            json.accountType === "Employer" ? "/emponboarding" : "/profileone"
+          );
+          localStorage.setItem("userId", json.userId);
+        }
+        setLoading(false);
+      });
+    }
+  }, [user, withAuth, navigate]);
 
   const addUser = async () => {
     let dbUserData = {
@@ -44,19 +62,15 @@ const CallbackPage = () => {
 
     withAuth
       .post(`/user/create?type=${accType}`, dbUserData)
-      .then(({ status, json }) => {
-        //user exists
-        /*
-        if (status === 200) {
-          if (json.onBoardingFinished) navigate("/browse");
-          else navigate("/profileone");
-        } else if (status === 201) navigate("/profileone"); //user didn't exist
-        */
+      .then(({ json }) => {
+        navigate(accType === "Employer" ? "/emponboarding" : "/profileone");
         localStorage.setItem("userId", json.userId);
       });
   };
 
-  return (
+  return loading ? (
+    <></>
+  ) : (
     <div id="account-type-page-wrapper">
       <div id="account-type-box">
         <div id="account-type-box-top">
@@ -69,15 +83,15 @@ const CallbackPage = () => {
             logo={userIcon}
             header="Sign up as an employer"
             description="Access a pool of qualified candidates"
-            active={accType === "employer"}
-            setActive={() => setAccType("employer")}
+            active={accType === "Employer"}
+            setActive={() => setAccType("Employer")}
           />
           <Card
             logo={briefcaseIcon}
             header="Sign up as a candidate"
             description="Discover the perfect job matches"
-            active={accType === "employee"}
-            setActive={() => setAccType("employee")}
+            active={accType === "User"}
+            setActive={() => setAccType("User")}
           />
         </div>
         <div id="account-type-box-bottom">

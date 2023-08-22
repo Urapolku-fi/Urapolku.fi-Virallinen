@@ -9,6 +9,7 @@ import {
   withAuthenticationRequired as withAuth,
 } from "@auth0/auth0-react";
 import AccountTypeSelection from "./components/pages/AccountTypeSelection";
+import EmployerOnboarding from "./components/pages/EmployerOnboarding";
 
 function App() {
   return (
@@ -38,6 +39,10 @@ function App() {
             <Route
               path="/profilethree"
               Component={withAuth(ProfileCompletionThree)}
+            />
+            <Route
+              path="/emponboarding"
+              Component={withAuth(EmployerOnboarding)}
             />
           </Routes>
         </NavBarLayout>
