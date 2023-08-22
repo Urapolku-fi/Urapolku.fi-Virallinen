@@ -9,16 +9,9 @@
 }
 
 
-.containerBorder {
-    border-radius: 20px;
-    background: linear-gradient(180deg, rgba(65, 65, 65, 0.05) 0%, rgba(255, 255, 255, 0.00) 100%);
-    box-shadow: 0px 0.5px 0px 0px rgba(255, 255, 255, 0.50) inset, 0px -2px 40px 0px rgba(187, 155, 255, 0.15), 0px -2px 10px 0px rgba(233, 223, 255, 0.30);
-}
-
-
 .body {
     box-sizing: border-box;
-    margin-top: -25vh;
+    margin-top: -40vh;
     width: 100%;
     display: flex;
     position: relative;
@@ -30,11 +23,24 @@
     text-align: center;
     font-feature-settings: 'clig' off, 'liga' off;
     font-family: Montserrat;
+    letter-spacing: -.2px;
     font-size: 1.2rem;
     font-style: normal;
     font-weight: 500;
     line-height: 150%; /* 30px */
 
+
+
+    /* temp */
+
+    padding-bottom: 10vh;
+
+}
+
+
+
+body * {
+    background: transparent;
 }
 
 .left {
@@ -46,6 +52,7 @@
 
 .right {
     width: 60vw;
+    text-align: left;
 }
 
 a, h1, h2, h3, h4, h5, h6, .body p {
@@ -63,8 +70,9 @@ a, h1, h2, h3, h4, h5, h6, .body p {
     gap: 20px;
 
     justify-content: center;
+
     align-items: center;
-    padding: 1.28rem;
+    padding: calc(1.28rem * 1.25);
 }
 
 .profile > * {
@@ -93,7 +101,7 @@ a, h1, h2, h3, h4, h5, h6, .body p {
 .profileDescription {
     font-style: normal;
     font-size: 1.2rem;
-    text-align: center;
+    text-align: left;
     font-weight: 300;
     padding: 20px 0;
     line-height: 150%; 
@@ -106,6 +114,10 @@ a, h1, h2, h3, h4, h5, h6, .body p {
     line-height: 150%;
 }
 
+.tools > h2,  .similarJobs > h2 {
+    margin-top: calc(1.18rem * 1.25);
+    padding-left: calc(1.18rem * 1.25);
+}
 
 .tools {
     display: flex;
@@ -124,7 +136,114 @@ a, h1, h2, h3, h4, h5, h6, .body p {
     list-style-type: none;
 
     padding: 0;
-
+    padding-left: calc(1.18rem * 1.25);
     gap: 1.18rem;
     margin: 0;
+}
+
+.tools > ul > li > a {
+    color: #ECECEC;
+    text-decoration: none;
+}
+
+
+.tools > ul > li:first-child{
+    padding: 1.15rem 0 0 0;
+}
+
+.tools > ul > li:last-child{
+    padding: 0 0 1.15rem 0;
+}
+
+.similarJobs {
+    display: flex;
+    flex-direction: column;
+    gap: 1.18rem;
+    width: 100%;
+
+    text-align: left;
+
+    justify-content: center;
+    padding: 1.18rem;
+
+}
+
+.similarJobs > ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+
+    padding: 0;
+    padding-left: calc(1.18rem * 1.25);
+    gap: 1.18rem;
+    margin: 0;
+}
+
+.similarJobs > ul > li  a {
+    display: flex;
+    flex-direction: row;
+    gap: 1.18rem;
+    align-items: center;
+}
+.similarJobs > ul > li:not(:last-child) {
+    padding: 1.15rem 0;
+}
+
+.similarJobs > ul > li  img {
+    border-radius: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.company {
+    font-weight: 600;
+}
+.jobTitle {
+    font-weight: 500;
+}
+.location {
+    font-weight: 400;
+}
+.tryOut {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 1.15rem 0;
+
+    color: #EBEBEB;
+    font-family: Montserrat;
+    font-size: 1.14rem normal;
+    text-decoration: none;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.14px;
+}
+
+
+
+
+
+/* Utility classes */
+
+.containerBorder {
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgba(65, 65, 65, 0.05) 0%, rgba(255, 255, 255, 0.00) 100%);
+    box-shadow: 0px 0.5px 0px 0px rgba(255, 255, 255, 0.50) inset, 0px -2px 40px 0px rgba(187, 155, 255, 0.15), 0px -2px 10px 0px rgba(233, 223, 255, 0.30);
+}
+
+.subHeader {
+    color: #A39BB4;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 180%;
+}
+
+.none {
+    color: unset;
+    text-decoration: unset;
+    font-weight: unset;
+    font-size: unset;
 }
