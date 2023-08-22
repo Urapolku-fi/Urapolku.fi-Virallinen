@@ -132,7 +132,7 @@ const NavBarLayout = (props) => {
                       returnTo: "https://localhost:5173/",
                     },
                   });
-                  localStorage.removeItem("userId");
+                  localStorage.clear();
                 }}
               >
                 Kirjaudu ulos
