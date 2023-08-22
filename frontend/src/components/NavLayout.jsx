@@ -22,7 +22,12 @@ const navbarMenuItems = [
   },
 ];
 
-const blacklistAddr = ["/profileone", "/profiletwo", "/profilethree"];
+const blacklistAddr = [
+  "/profileone",
+  "/profiletwo",
+  "/profilethree",
+  "/callback",
+];
 
 const MenuButton = () => {
   const vizContext = useContext(NavMenuContext);
