@@ -37,9 +37,28 @@ const userController = {
   },
 
   fetchUser: async (req, res) => {
-    const userId = req.params.userId;
-
-    res.body = await User.find({ userId: userId });
+    try {
+      const userId = req.params.id;
+      if (userId.includes("@")) {
+        //query users with email
+        const foundUsers = await User.findOne({ email: userId });
+        const foundEmployers = await Employer.findOne({ email: userId });
+        Promise.all([foundUsers, foundEmployers]).then((users) => {
+          res.json(users.filter((val) => val !== null)[0]);
+          res.send();
+        });
+      } else {
+        //query users with UUID
+        const foundUsers = await User.findOne({ userId: userId });
+        const foundEmployers = await Employer.findOne({ userId: userId });
+        Promise.all([foundUsers, foundEmployers]).then((users) => {
+          res.json(users.filter((val) => val !== null)[0]);
+          res.send();
+        });
+      }
+    } catch (err) {
+      console.log(err);
+    }
   },
 
   updateUser: async (req, res) => {
