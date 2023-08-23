@@ -1,6 +1,5 @@
 import React from "react";
 import "../../css/Dashboard/Articles.css";
-import Ball from "../HoverBall";
 import { useNavigate } from "react-router-dom";
 
 function ArticleCard({ backgroundImage, text, url }) {
@@ -46,9 +45,6 @@ function Articles({ articles }) {
       <div className="Article-cards">
         {articles.map((article, index) => (
           <div className="Article-card" key={index}>
-            <div className="Ball">
-              <Ball />
-            </div>
             <ArticleCard
               backgroundClass={article.backgroundClass}
               backgroundImage={article.backgroundImage}
