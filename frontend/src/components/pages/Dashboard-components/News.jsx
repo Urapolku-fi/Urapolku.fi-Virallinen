@@ -42,13 +42,12 @@ function News({ news }) {
       </div>
       <div className="News-items">
         {news.map((newsItem, index) => (
-          <div className="News-item" key={index}>
-            <NewsItem
-              backgroundImage={newsItem.backgroundImage}
-              text={newsItem.text}
-              url={newsItem.url}
-            />
-          </div>
+          <NewsItem
+            key={index}
+            backgroundImage={newsItem.backgroundImage}
+            text={newsItem.text}
+            url={newsItem.url}
+          />
         ))}
       </div>
     </section>
