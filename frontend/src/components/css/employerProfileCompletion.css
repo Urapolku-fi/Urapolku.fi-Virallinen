@@ -1,0 +1,32 @@
+#employer-profile-completion {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+#employer-profile-completion-right-bar {
+  flex-grow: 1;
+  background-color: white;
+  padding: 2rem 4rem;
+}
+
+#employer-profile-completion-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+#employer-profile-completion-top > div{
+  height: 2rem;
+  display: flex;
+  font-weight: 900;
+  font-size: larger;
+  align-items: center;
+}
+
+#employer-profile-completion-top p {
+  margin: 0;
+  line-height: 0;
+}
+
+#employer-profile-completion-top img {
+  height: 100%;
+}
