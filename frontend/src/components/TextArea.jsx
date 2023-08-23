@@ -7,9 +7,10 @@ const TextArea = (props) => {
       border: "none",
       outline: ".1rem solid #CCCCCC",
       resize: "none",
-      padding: "2rem",
+      padding: "1.5rem",
       boxSizing: "border-box",
       fontSize: "1.1rem",
+      fontFamily: "Montserrat, sans-serif",
       ...props.extraClass,
     },
     title: {
@@ -21,7 +22,10 @@ const TextArea = (props) => {
   return (
     <div>
       <h3 style={styles.title}>{props.title}</h3>
-      <textarea style={styles.textBox}></textarea>
+      <textarea
+        style={styles.textBox}
+        placeholder={props.placeholder}
+      ></textarea>
     </div>
   );
 };
