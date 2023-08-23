@@ -44,14 +44,13 @@ function Articles({ articles }) {
       </div>
       <div className="Article-cards">
         {articles.map((article, index) => (
-          <div className="Article-card" key={index}>
-            <ArticleCard
-              backgroundClass={article.backgroundClass}
-              backgroundImage={article.backgroundImage}
-              text={article.text}
-              url={article.url}
-            />
-          </div>
+          <ArticleCard
+            key={index}
+            backgroundClass={article.backgroundClass}
+            backgroundImage={article.backgroundImage}
+            text={article.text}
+            url={article.url}
+          />
         ))}
       </div>
     </section>

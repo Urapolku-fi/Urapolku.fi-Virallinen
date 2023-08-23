@@ -29,14 +29,13 @@ function DailyPicks({ dailyPicks }) {
     <section className="Daily-pick-frame">
       <h2>Daily Picks</h2>
       {dailyPicks.map((pick, index) => (
-        <div className="Daily-pick-card" key={index}>
-          <DailyPickCard
-            title={pick.title}
-            description={pick.description}
-            backgroundImage={pick.backgroundImage}
-            url={pick.url}
-          />
-        </div>
+        <DailyPickCard
+          key={index}
+          title={pick.title}
+          description={pick.description}
+          backgroundImage={pick.backgroundImage}
+          url={pick.url}
+        />
       ))}
     </section>
   );
