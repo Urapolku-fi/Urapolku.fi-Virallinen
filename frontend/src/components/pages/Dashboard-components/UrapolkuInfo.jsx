@@ -1,5 +1,7 @@
 import "../../css/Dashboard/UrapolkuInfo.css";
+import { useNavigate } from "react-router-dom";
 const UrapolkuInfo = () => {
+  const navigate = useNavigate();
   return (
     <section className="Urapolku-info-container">
       <h2>Tietoa urapolusta</h2>
@@ -12,7 +14,14 @@ const UrapolkuInfo = () => {
         kiehtovimmat tarinat työelämän koukeroista.
       </p>
       <div className="Urapolku-info-register-button">
-        <button>Rekisteröidy</button>
+        <button
+          onClick={() => {
+            navigate("/");
+            window.scrollTo(0, 0);
+          }}
+        >
+          Rekisteröidy
+        </button>
       </div>
     </section>
   );

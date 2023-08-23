@@ -1,12 +1,21 @@
 import React from "react";
 import "../../css/Dashboard/DailyPicks.css";
+import { useNavigate } from "react-router-dom";
 
-function DailyPickCard({ title, description, backgroundImage }) {
+function DailyPickCard({ title, description, backgroundImage, url }) {
+  const navigate = useNavigate();
   const cardStyle = {
     backgroundImage: `url(${backgroundImage})`,
   };
   return (
-    <div className="Daily-Pick-Card" style={cardStyle}>
+    <div
+      className="Daily-Pick-Card"
+      style={cardStyle}
+      onClick={() => {
+        navigate(url);
+        window.scrollTo(0, 0);
+      }}
+    >
       <div className="Card-text-content">
         <p>{title}</p>
         <p className="Card-description">{description}</p>
@@ -25,6 +34,7 @@ function DailyPicks({ dailyPicks }) {
             title={pick.title}
             description={pick.description}
             backgroundImage={pick.backgroundImage}
+            url={pick.url}
           />
         </div>
       ))}

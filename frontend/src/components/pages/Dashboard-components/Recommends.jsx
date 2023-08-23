@@ -1,9 +1,17 @@
 import React from "react";
 import "../../css/Dashboard/Recommends.css";
+import { useNavigate } from "react-router-dom";
 
-function RecommendCard({ imageSrc, title, description, location }) {
+function RecommendCard({ imageSrc, title, description, location, url }) {
+  const navigate = useNavigate();
   return (
-    <div className="Recommends-Card">
+    <div
+      className="Recommends-Card"
+      onClick={() => {
+        navigate(url);
+        window.scrollTo(0, 0);
+      }}
+    >
       <div className="Recommends-circle-image">
         <img className="Recommends-card-image" src={imageSrc} alt="" />
       </div>
@@ -28,6 +36,7 @@ function Recommends({ recommends }) {
             title={recommend.title}
             description={recommend.description}
             location={recommend.location}
+            url={recommend.url}
           />
         ))}
       </div>

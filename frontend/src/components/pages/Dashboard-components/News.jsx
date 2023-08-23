@@ -1,12 +1,20 @@
 import React from "react";
 import "../../css/Dashboard/News.css";
+import { useNavigate } from "react-router-dom";
 
-function NewsItem({ backgroundClass, text, backgroundImage }) {
+function NewsItem({ text, backgroundImage, url }) {
+  const navigate = useNavigate();
   const cardStyle = {
     backgroundImage: `url(${backgroundImage})`,
   };
   return (
-    <div className={`News-item ${backgroundClass}`}>
+    <div
+      className={`News-item`}
+      onClick={() => {
+        navigate(url);
+        window.scrollTo(0, 0);
+      }}
+    >
       <div className="News-item-background" style={cardStyle}>
         <div className="News-item-text-content">
           <p>{text}</p>
@@ -21,9 +29,9 @@ function News({ news }) {
       <div className="News-title">
         <h2>News</h2>
         <div className="View-all">
-          <a href="/">
-            <p>View-all</p>
-          </a>
+          <p>
+            <a href="/">View-all</a>
+          </p>
           <img
             src="/pictures/Arrow-right-alt.png"
             alt=""
@@ -36,9 +44,9 @@ function News({ news }) {
         {news.map((newsItem, index) => (
           <div className="News-item" key={index}>
             <NewsItem
-              backgroundClass={newsItem.backgroundClass}
               backgroundImage={newsItem.backgroundImage}
               text={newsItem.text}
+              url={newsItem.url}
             />
           </div>
         ))}
