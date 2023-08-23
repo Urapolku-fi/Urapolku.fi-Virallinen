@@ -1,4 +1,4 @@
-import LeftBar from "./ProfileCompletion/LeftBarProfile";
+import { LeftBar } from "./ProfileCompletion/LeftBarProfile";
 import SkipButton from "./ProfileCompletion/SkipButton";
 import CompleteButton from "./ProfileCompletion/CompleteButton";
 import ProgressBar from "./ProfileCompletion/progressBar";
