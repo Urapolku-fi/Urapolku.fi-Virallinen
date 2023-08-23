@@ -2,7 +2,7 @@
 
 /* These are changes for this site only elements */
 #ProfileCompletion-Wrapper {
-  height: 100%;
+  height: calc(100vh + 10rem);
   display: flex;
 }
 #ProfileCompletion-wrapper p,
@@ -21,9 +21,9 @@ h3 {
   margin-top: 100px;
   display: flex;
   flex-direction: column;
-  margin: 10% 20% 0% 10%;
+  margin: 3rem 6rem;
+  max-width: 800px;
   gap: 20px;
-  width: 45%;
 }
 .Profile-completion-two-right .Header-text {
   color: #000;
@@ -182,10 +182,15 @@ h3 {
 .Profile-completion-two-right .skipButton button {
   padding: 21px 45px;
 }
+
+.Profile-completion-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+}
 @media screen and (max-width: 1000px) and (min-width: 800px) {
   .Profile-completion-two-right .Profile-completion-two-content {
-    width: 70%;
-    margin-top: 12.5;
+    margin: auto;
   }
   .Profile-completion-two-content .Industry-dropdown-button,
   .skill-dropdown-button,
@@ -220,9 +225,7 @@ h3 {
   }
   .Profile-completion-two-content {
     gap: 20px;
-    margin-top: 15%;
-    width: 80%;
-    min-width: 300px;
+    margin: 15% 3rem;
   }
   .Profile-completion-two-right .skipButton button {
     padding: 15px 45px;
@@ -242,9 +245,7 @@ h3 {
       align-items: center;
     }
     .Profile-completion-two-content {
-      margin-right: 35px;
-      width: 80%;
-      margin-top: 20%;
+      margin: 6rem 1rem;
     }
     .Profile-completion-two-right .Bottom .Next-Button button {
       padding: 5px 30px;

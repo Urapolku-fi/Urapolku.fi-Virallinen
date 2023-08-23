@@ -3,7 +3,7 @@ import "../../css/LeftBarProfile.css";
 function LeftBar() {
   return (
     <div id="Profile-completion-sidebar">
-      <UrapolkuLogo />
+      <UrapolkuLogo textColor="white" />
       <div className="Profile-completion-image-frame">
         <img
           src="pictures/ProfileCompletionImage.jpg"

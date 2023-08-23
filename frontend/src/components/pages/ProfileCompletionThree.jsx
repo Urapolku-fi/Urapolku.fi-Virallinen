@@ -135,11 +135,9 @@ function ProfileCreateThree() {
     <div id="ProfileCompletion-Wrapper">
       <LeftBar />
       <div className="Profile-completion-three-right">
-        <div className="Skipbutton-wrapper" onClick={skipPage}>
-          <SkipButton />
-        </div>
-        <div className="Header-logo">
+        <div className="Profile-completion-header-wrapper">
           <UrapolkuLogo />
+          <SkipButton onClick={skipPage} />
         </div>
         <div className="Profile-completion-three-content">
           <div className="Header-text">
