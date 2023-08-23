@@ -40,7 +40,7 @@ function App() {
               path="/profilethree"
               Component={withAuth(ProfileCompletionThree)}
             />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/dashboard" Component={withAuth(Dashboard)} />
           </Routes>
         </NavBarLayout>
       </BrowserRouter>
