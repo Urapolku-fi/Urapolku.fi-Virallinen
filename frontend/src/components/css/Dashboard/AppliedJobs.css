@@ -81,3 +81,40 @@
   color: #fff;
   text-decoration: none;
 }
+.AppliedJobs-frame a:hover {
+  opacity: 80%;
+}
+.AppliedJobs-Card:hover {
+  cursor: pointer;
+  opacity: 80%;
+}
+.progress-bars {
+  display: flex;
+  gap: 10px;
+}
+.grey-bar {
+  background: #d9d9d9;
+  width: 40px;
+  height: 4px;
+  border-radius: 10px;
+}
+.green-bar {
+  background: rgba(88, 190, 25, 0.9);
+  width: 40px;
+  height: 4px;
+  border-radius: 10px;
+}
+.half-bar {
+  display: flex;
+  border-radius: 10px;
+}
+.half-green {
+  width: 20px;
+  height: 4px;
+  background: rgba(88, 190, 25, 0.9);
+}
+.half-grey {
+  width: 20px;
+  height: 4px;
+  background: #d9d9d9;
+}

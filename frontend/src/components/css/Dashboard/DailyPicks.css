@@ -13,16 +13,21 @@
   color: rgba(255, 255, 255, 0.85);
   margin-top: 0px;
 }
-.Daily-pick-background {
-  border-radius: 10px;
-  background-repeat: no-repeat;
-  background-size: cover;
+.Daily-Pick-Card:hover {
+  cursor: pointer;
+  scale: 1.01;
+  transition: 0.4s ease-in-out;
+  box-shadow: none;
 }
 .Daily-Pick-Card {
   box-shadow: 0px 0.5px 0px 0px rgba(255, 255, 255, 0.5) inset,
     0px -2px 40px 0px rgba(187, 155, 255, 0.15),
     0px -2px 10px 0px rgba(233, 223, 255, 0.3);
   border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
 }
 .Daily-Pick-Card .Card-text-content {
   background: linear-gradient(
@@ -31,7 +36,6 @@
     rgba(11, 1, 33, 0.21) 50%,
     #0b0121 100%
   );
-  max-width: 1000px;
   height: 450px;
   padding: 5%;
   display: flex;
@@ -39,7 +43,7 @@
   justify-content: flex-end;
   align-items: flex-start;
   border-radius: 8px;
-  padding-right: 20%;
+  margin-right: 0px;
 }
 
 .Card-job {
@@ -57,6 +61,7 @@
   margin-top: 0px;
   width: 95%;
 }
+
 @media only screen and (max-width: 1000px) {
   .Daily-Pick-Card .Card-text-content {
     height: 317px;

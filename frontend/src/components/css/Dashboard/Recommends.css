@@ -80,3 +80,10 @@
   color: #fff;
   text-decoration: none;
 }
+.Recommends-frame a:hover {
+  opacity: 80%;
+}
+.Recommends-Card:hover {
+  cursor: pointer;
+  opacity: 80%;
+}

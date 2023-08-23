@@ -1,9 +1,25 @@
 import React from "react";
 import "../../css/Dashboard/AppliedJobs.css";
+import { useNavigate } from "react-router-dom";
+import ProgressBar from "./ProgressBar";
 
-function AppliedJobsCard({ imageSrc, title, description, location }) {
+function AppliedJobsCard({
+  imageSrc,
+  title,
+  description,
+  location,
+  url,
+  progress,
+}) {
+  const navigate = useNavigate();
   return (
-    <div className="AppliedJobs-Card">
+    <div
+      className="AppliedJobs-Card"
+      onClick={() => {
+        navigate(url);
+        window.scrollTo(0, 0);
+      }}
+    >
       <div className="AppliedJobs-circle-image">
         <img className="AppliedJobs-card-image" src={imageSrc} alt="" />
       </div>
@@ -11,6 +27,7 @@ function AppliedJobsCard({ imageSrc, title, description, location }) {
         <h2 className="AppliedJobs-card-title">{title}</h2>
         <p>{description}</p>
         {location && <p className="AppliedJobs-card-location">{location}</p>}
+        <ProgressBar progress={progress} />
       </div>
     </div>
   );
@@ -27,6 +44,8 @@ function AppliedJobs({ appliedJobs }) {
             title={job.title}
             description={job.description}
             location={job.location}
+            url={job.url}
+            progress={job.progress}
           />
         ))}
       </div>

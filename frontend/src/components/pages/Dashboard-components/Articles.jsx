@@ -1,13 +1,22 @@
 import React from "react";
 import "../../css/Dashboard/Articles.css";
+import Ball from "../HoverBall";
+import { useNavigate } from "react-router-dom";
 
-function ArticleCard({ backgroundClass, backgroundImage, text }) {
+function ArticleCard({ backgroundImage, text, url }) {
+  const navigate = useNavigate();
+
   const cardStyle = {
     backgroundImage: `url(${backgroundImage})`,
   };
-
   return (
-    <div className={`Article-card ${backgroundClass}`}>
+    <div
+      className={`Article-card`}
+      onClick={() => {
+        navigate(url);
+        window.scrollTo(0, 0);
+      }}
+    >
       <div className="Article-card-background" style={cardStyle}>
         <div className="Article-card-text">
           <p>{text}</p>
@@ -37,10 +46,14 @@ function Articles({ articles }) {
       <div className="Article-cards">
         {articles.map((article, index) => (
           <div className="Article-card" key={index}>
+            <div className="Ball">
+              <Ball />
+            </div>
             <ArticleCard
               backgroundClass={article.backgroundClass}
               backgroundImage={article.backgroundImage}
               text={article.text}
+              url={article.url}
             />
           </div>
         ))}
