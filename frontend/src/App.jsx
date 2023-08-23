@@ -45,7 +45,7 @@ function App() {
               path="/emponboarding"
               Component={withAuth(EmployerProfileCompletion)}
             />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/dashboard" Component={withAuth(Dashboard)} />
           </Routes>
         </NavBarLayout>
       </BrowserRouter>
