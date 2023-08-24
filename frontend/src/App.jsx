@@ -4,6 +4,7 @@ import { NavBarLayout } from "./components/NavLayout";
 import ProfileCompletionOne from "./components/pages/ProfileCompletionOne";
 import ProfileCompletionTwo from "./components/pages/ProfileCompletionTwo";
 import ProfileCompletionThree from "./components/pages/ProfileCompletionThree";
+import Dashboard from "./components/pages/Dashboard";
 import {
   Auth0Provider,
   withAuthenticationRequired as withAuth,
@@ -39,6 +40,7 @@ function App() {
               path="/profilethree"
               Component={withAuth(ProfileCompletionThree)}
             />
+            <Route path="/dashboard" Component={withAuth(Dashboard)} />
           </Routes>
         </NavBarLayout>
       </BrowserRouter>

@@ -1,0 +1,202 @@
+.Urapolku-AI {
+  border-radius: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  box-shadow: 0px 0.5px 0px 0px rgba(255, 255, 255, 0.5) inset,
+    0px -2px 40px 0px rgba(187, 155, 255, 0.15),
+    0px -2px 10px 0px rgba(233, 223, 255, 0.3);
+  margin-top: 2.5%;
+  padding: 5%;
+}
+.First-two-cards {
+  display: flex;
+  gap: 5%;
+  justify-content: space-between;
+  margin-bottom: 5%;
+}
+.Career,
+.Digital {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  width: 50%;
+  box-shadow: 0px 0.5px 0px 0px rgba(255, 255, 255, 0.5) inset,
+    0px -2px 40px 0px rgba(187, 155, 255, 0.15),
+    0px -2px 10px 0px rgba(233, 223, 255, 0.3);
+  padding: 2.5%;
+}
+.Career img,
+.Digital img,
+.Code-collab img {
+  margin-bottom: 16px;
+}
+.Code-collab {
+  position: relative;
+  height: 100%;
+  box-shadow: 0px 0.5px 0px 0px rgba(255, 255, 255, 0.5) inset,
+    0px -2px 40px 0px rgba(187, 155, 255, 0.15),
+    0px -2px 10px 0px rgba(233, 223, 255, 0.3);
+  border-radius: 20px;
+  padding: 2.5%;
+}
+.Digital-text-content,
+.Career-text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+.Code-collab-text-content {
+  flex-direction: column;
+  height: 100%;
+}
+.Urapolku-link {
+  display: flex;
+  padding-top: 16px;
+  gap: 16px;
+  flex: 1;
+  align-items: flex-end;
+
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 27px */
+  text-decoration-line: underline;
+}
+.UrapolkuAI-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  text-decoration-line: underline;
+  background: none;
+  border: none;
+  color: #ececec;
+  text-decoration: none;
+  padding-bottom: 1px;
+}
+.Digital h2,
+.Career h2,
+.Code-collab h2 {
+  color: #ececec;
+  font-feature-settings: "clig" off, "liga" off;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 41.6px */
+  letter-spacing: -0.16px;
+  margin-top: 0px;
+}
+.UrapolkuAI-title {
+  color: #ececec;
+  text-align: center;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 57.6px */
+  margin-top: 0px;
+}
+.Code-collab-content {
+  display: flex;
+  gap: 5%;
+}
+.code-collab-image {
+  width: 50%;
+}
+.code-collab-image img {
+  max-width: 100%;
+  height: auto;
+  max-height: 300px;
+  min-height: 250px;
+}
+.Code-collab-text-content {
+  width: 50%;
+}
+.UrapolkuAI-description {
+  margin: 0% 0% 0% 0%;
+  min-height: 100px;
+}
+.Urapolku-link {
+  display: flex;
+  padding-top: 16px;
+  gap: 16px;
+  flex: 1;
+  background: none;
+  align-items: flex-end;
+}
+.Urapolku-AI a {
+  text-decoration: none;
+}
+.Urapolku-AI a:hover {
+  opacity: 80%;
+}
+@media only screen and (max-width: 1000px) {
+  .UrapolkuAI-title {
+    font-size: 36px;
+  }
+  .Urapolku-AI .Career-text-content p,
+  .Digital-text-content p,
+  .Code-collab-text-content p {
+    font-size: 16px;
+  }
+  .Urapolku-AI .Career-text-content h2,
+  .Digital-text-content h2,
+  .Code-collab-text-content h2 {
+    font-size: 26px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .Urapolku-AI .First-two-cards {
+    flex-direction: column;
+  }
+  .Career,
+  .Digital {
+    width: 95%;
+  }
+  .Code-collab {
+    padding: 0em;
+  }
+  .Code-collab-text-content {
+    width: 90%;
+    padding: 5%;
+  }
+  .Collab-logo {
+    padding: 5%;
+  }
+  .Urapolku-AI .First-two-cards > :nth-child(1) {
+    margin-bottom: 10%;
+  }
+  .Code-collab-content {
+    flex-direction: column;
+  }
+  .code-collab-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .code-collab-image {
+    left: 0px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .UrapolkuAI-title {
+    font-size: 24px;
+  }
+  .Urapolku-AI .Career-text-content p,
+  .Digital-text-content p,
+  .Code-collab-text-content p {
+    font-size: 14px;
+  }
+  .Career,
+  .Digital .Code-collab {
+    padding: 4%;
+  }
+}
