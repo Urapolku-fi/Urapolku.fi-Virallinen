@@ -125,19 +125,68 @@ const JobDetails = () => {
                         </div>
                         <div className="assignments">
                             <h2>What you’ll do</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                <ul>
+                                    <li>
+                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    </li>
+                                    <li>
+                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                    </li>
+                                    <li>
+                                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </li>
+                                </ul>
+                            </p>
                         </div>
                         <div className="need">
                             <h2>What you’ll need</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                <ul>
+                                    <li>
+                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    </li>
+                                    <li>
+                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                    </li>
+                                    <li>
+                                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
 
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <div className="skills">
+
+                        </div>
+
+                        <div className="contact">
+                            <h2>Contact Informrmation</h2>
+                            <p>
+                                Address:<br />
+                                Ut enim ad minim veniam,<br />
+                                Duis aute irure<br />
+                                Excepteur sint occaecat<br />
+
+                                Contact No.
+                                00000000000
+                            </p>
+                        </div>
+
+
+                        <div className="actions">
+                            <div className="callToAction">
+                                <ApplyNow link="#" />
+                            </div>
+                            <a href="#" className="profileReports"><p>
+                                Report as offline or expired
+                            </p></a>
+                        </div>
+
+                        <div className="social">
+
                         </div>
                     </div>
                 </div>

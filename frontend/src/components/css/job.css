@@ -24,7 +24,7 @@
     font-feature-settings: 'clig' off, 'liga' off;
     font-family: Montserrat;
     letter-spacing: -.2px;
-    font-size: 1.2rem;
+    /* font-size: 1.2rem; */
     font-style: normal;
     font-weight: 500;
     line-height: 150%; /* 30px */
@@ -92,7 +92,7 @@ a, h1, h2, h3, h4, h5, h6, .body p {
 }
 .profileWebsite {
     color: #A39BB4;
-    font-size: 1.24rem;
+    font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
@@ -100,7 +100,7 @@ a, h1, h2, h3, h4, h5, h6, .body p {
 }
 .profileDescription {
     font-style: normal;
-    font-size: 1.2rem;
+    font-size: 14px;
     text-align: left;
     font-weight: 300;
     padding: 20px 0;
@@ -108,7 +108,7 @@ a, h1, h2, h3, h4, h5, h6, .body p {
 }
 .profileReports {
     color: #A39BB4;
-    font-size: 1.24rem;
+    font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
@@ -212,7 +212,7 @@ a, h1, h2, h3, h4, h5, h6, .body p {
 
     color: #EBEBEB;
     font-family: Montserrat;
-    font-size: 1.14rem normal;
+    font-size: 14px;
     text-decoration: none;
     font-weight: 500;
     line-height: normal;
@@ -220,8 +220,63 @@ a, h1, h2, h3, h4, h5, h6, .body p {
 }
 
 
+/* Right */
+.right {
+    padding: 3rem;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    color: #EBEBEB;
+    font-family: Montserrat;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 36px */
+}
 
 
+
+.right h1 {
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.right h2 {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+
+.right p {
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 21px */
+    font-family: Montserrat;
+}
+
+
+.mainJobTitle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.jobText {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+.actions {
+    display: flex;
+    flex-direction: column;
+}
 
 /* Utility classes */
 
