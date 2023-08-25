@@ -19,6 +19,10 @@
   gap: 2rem;
 }
 
+#employer-profile-completion-right-bar-content > h1 {
+  font-weight: 900;
+  font-size: 3rem;
+}
 
 #employer-profile-completion-top {
   display: flex;
@@ -40,4 +44,10 @@
 
 #employer-profile-completion-top img {
   height: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  #gradient-left-bar {
+    display: none;
+  }
 }
