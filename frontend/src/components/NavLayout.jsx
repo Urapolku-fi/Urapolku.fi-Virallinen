@@ -22,7 +22,13 @@ const navbarMenuItems = [
   },
 ];
 
-const blacklistAddr = ["/profileone", "/profiletwo", "/profilethree"];
+const blacklistAddr = [
+  "/profileone",
+  "/profiletwo",
+  "/profilethree",
+  "/callback",
+  "/emponboarding",
+];
 
 const MenuButton = () => {
   const vizContext = useContext(NavMenuContext);
@@ -126,7 +132,7 @@ const NavBarLayout = (props) => {
                       returnTo: "https://localhost:5173/",
                     },
                   });
-                  localStorage.removeItem("userId");
+                  localStorage.clear();
                 }}
               >
                 Kirjaudu ulos

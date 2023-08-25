@@ -1,0 +1,53 @@
+#employer-profile-completion {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100%;
+  min-height: 100vh;
+}
+
+#employer-profile-completion-right-bar {
+  flex-grow: 1;
+  background-color: white;
+  padding: 2rem 4rem;
+}
+
+#employer-profile-completion-right-bar-content {
+  margin-top: 6rem;
+  max-width: 850px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#employer-profile-completion-right-bar-content > h1 {
+  font-weight: 900;
+  font-size: 3rem;
+}
+
+#employer-profile-completion-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+#employer-profile-completion-top > div{
+  height: 2rem;
+  display: flex;
+  font-weight: 900;
+  font-size: larger;
+  align-items: center;
+}
+
+#employer-profile-completion-top p {
+  margin: 0;
+  line-height: 0;
+}
+
+#employer-profile-completion-top img {
+  height: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  #gradient-left-bar {
+    display: none;
+  }
+}

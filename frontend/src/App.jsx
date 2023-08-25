@@ -9,7 +9,8 @@ import {
   Auth0Provider,
   withAuthenticationRequired as withAuth,
 } from "@auth0/auth0-react";
-import CallbackPage from "./components/Auth0Callback";
+import AccountTypeSelection from "./components/pages/AccountTypeSelection";
+import EmployerProfileCompletion from "./components/pages/EmployerProfileCompletion";
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
         <NavBarLayout>
           <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route path="/callback" element={<CallbackPage />} />
+            <Route path="/callback" element={<AccountTypeSelection />} />
             <Route
               path="/profileone"
               Component={withAuth(ProfileCompletionOne)}
@@ -39,6 +40,10 @@ function App() {
             <Route
               path="/profilethree"
               Component={withAuth(ProfileCompletionThree)}
+            />
+            <Route
+              path="/emponboarding"
+              Component={withAuth(EmployerProfileCompletion)}
             />
             <Route path="/dashboard" Component={withAuth(Dashboard)} />
           </Routes>

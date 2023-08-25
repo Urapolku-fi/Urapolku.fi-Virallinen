@@ -1,24 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap");
 /* These are changes for this site only elements */
 #ProfileCompletion-Wrapper {
-  height: 100%;
+  height: calc(100% + 10rem);
   display: flex;
   font-family: "Montserrat", sans-serif;
 }
 .Profile-completion-three-right {
   width: 100%;
   min-height: 100vh;
-  max-height: 100%;
+  height: 100%;
   background-color: white;
 }
 .Profile-completion-three-content {
   margin-top: 100px;
   display: flex;
   flex-direction: column;
-  margin: 2.5% 20% 0% 10%;
+  margin: 3rem 6rem;
   gap: 10px;
-  width: 45%;
-  min-width: 400px;
+  max-width: 800px;
 }
 .Profile-completion-three-content p,
 input {
@@ -214,6 +213,14 @@ input {
 .Profile-completion-three-right .skipButton button {
   padding: 21px 45px;
 }
+
+.Profile-completion-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
 @keyframes slideLeftToRight {
   0% {
     transform: translateX(-100%);
@@ -224,7 +231,6 @@ input {
 }
 @media screen and (max-width: 1000px) {
   .Profile-completion-three-content {
-    width: 60%;
     margin-top: 12.5%;
   }
   .Profile-completion-three-right .Header-logo {
@@ -239,15 +245,11 @@ input {
   }
   .Profile-completion-three-content {
     margin-top: 15%;
-    width: 80%;
-    min-width: 0px;
   }
 }
 @media screen and (max-width: 400px) {
   .Profile-completion-three-content {
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin: 6rem 1rem;
   }
   .Bottom {
     margin-left: 0px;
