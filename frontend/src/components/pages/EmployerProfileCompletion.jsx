@@ -8,6 +8,7 @@ import TextArea from "../TextArea";
 import Dropdown from "../Dropdown";
 import TextInput from "../TextInput";
 import { useState } from "react";
+import { useFetch } from "../../api/requestHooks";
 
 const industries = [
   { value: "IT", label: "Information Technology (IT)" },
@@ -83,14 +84,16 @@ const industries = [
 
 function EmployerProfileCompletion() {
   const navigate = useNavigate();
+  const withAuth = useFetch();
   const [employerInfo, setEmployerInfo] = useState({
     profilePicture: "",
     bannerPicture: "",
     description: "",
-    industry: "",
+    industry: [],
     location: "",
     numOfEmployees: "",
     website: "",
+    onBoardingFinished: false,
   });
 
   const skipPage = () => {
@@ -98,7 +101,17 @@ function EmployerProfileCompletion() {
   };
 
   const nextPage = () => {
-    console.log(employerInfo);
+    const profileData = {
+      ...employerInfo,
+      onBoardingFinished: true,
+      industry: employerInfo.industry.map((item) => item.value),
+    };
+
+    withAuth.patch(
+      `/user/${localStorage.getItem("userId")}?type=Employer`,
+      profileData
+    );
+    navigate("/empbrowse");
   };
 
   return (
@@ -114,7 +127,16 @@ function EmployerProfileCompletion() {
         </div>
         <div id="employer-profile-completion-right-bar-content">
           <h1>Tell us more about you</h1>
-          <ProfileImageUpload />
+          <ProfileImageUpload
+            onChange={(type, newValue) =>
+              setEmployerInfo({
+                ...employerInfo,
+                [type === "profile-picture"
+                  ? "profilePicture"
+                  : "bannerPicture"]: newValue,
+              })
+            }
+          />
           <TextArea
             title="Description"
             placeholder="Write a description of your business, it's core values, vision etc."

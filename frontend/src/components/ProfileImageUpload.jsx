@@ -45,7 +45,6 @@ const ProfileImageUpload = (props) => {
 
   const openFileSelector = (ev) => {
     // Trigger the hidden input file when the button is clicked
-    console.log(ev);
     let input = document.createElement("input");
     input.type = "file";
     input.click();

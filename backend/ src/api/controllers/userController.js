@@ -56,10 +56,11 @@ const userController = {
   },
 
   updateUser: async (req, res) => {
+    const model = req.query.type === "Employer" ? Employer : User;
     const userId = req.params.id;
     const data = req.body;
 
-    await User.updateOne({ userId: userId }, data);
+    await model.updateOne({ userId: userId }, data);
     res.status(200);
     res.send();
   },
