@@ -41,8 +41,8 @@ function App() {
               path="/profilethree"
               Component={withAuth(ProfileCompletionThree)}
             />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route exact path="/hovertest" element={<HoverTest />} />
+            <Route path="/dashboard" Component={withAuth(Dashboard)} />
+            <Route path="/hovertest" element={<HoverTest />} />
           </Routes>
         </NavBarLayout>
       </BrowserRouter>
