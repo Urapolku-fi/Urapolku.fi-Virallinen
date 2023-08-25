@@ -139,13 +139,10 @@
 .Profile-completion-one-right .Header-logo {
   display: none;
 }
-.Profile-completion-one-right .skipButton button {
-  padding: 21px 45px;
-}
-
 .Profile-completion-header-wrapper {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 2rem;
 }
 
@@ -174,9 +171,6 @@
   }
   .Profile-completion-one-content .Description textarea {
     min-width: 0px;
-  }
-  .Profile-completion-one-right .skipButton button {
-    padding: 7px 26px;
   }
   .Profile-completion-one-content .Bottom .Proggress-bar {
     margin-right: 0px;
