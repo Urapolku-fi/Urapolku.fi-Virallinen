@@ -5,6 +5,7 @@ import ProfileCompletionOne from "./components/pages/ProfileCompletionOne";
 import ProfileCompletionTwo from "./components/pages/ProfileCompletionTwo";
 import ProfileCompletionThree from "./components/pages/ProfileCompletionThree";
 import Dashboard from "./components/pages/Dashboard";
+import HoverTest from "./components/pages/HoverTest";
 import {
   Auth0Provider,
   withAuthenticationRequired as withAuth,
@@ -40,7 +41,8 @@ function App() {
               path="/profilethree"
               Component={withAuth(ProfileCompletionThree)}
             />
-            <Route path="/dashboard" Component={withAuth(Dashboard)} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route exact path="/hovertest" element={<HoverTest />} />
           </Routes>
         </NavBarLayout>
       </BrowserRouter>

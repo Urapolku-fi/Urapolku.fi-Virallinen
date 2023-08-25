@@ -1,0 +1,85 @@
+.ball {
+  display: none;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #0b0121;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* Enable pointer events for the ball */
+}
+.box1:hover .ball {
+  display: block;
+  opacity: 100%;
+}
+.box2:hover .ball {
+  display: block;
+  opacity: 80%;
+}
+.box3:hover .ball {
+  display: block;
+  opacity: 60%;
+}
+.box4:hover .ball {
+  display: block;
+  opacity: 50%;
+}
+.card1:hover .ball {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+.card2:hover .ball {
+  display: block;
+  width: 60px;
+  height: 60px;
+}
+.card3:hover .ball {
+  display: block;
+  width: 70px;
+  height: 70px;
+}
+.Dashboard-card .Articles:hover .ball {
+  display: block;
+  opacity: 80%;
+}
+
+.test .Dashboard-card {
+  justify-content: center;
+}
+.Dashboard-card .Articles {
+  justify-content: center;
+  width: 100%;
+}
+.test .Dashboard-card .Articles .Articles-frame .Article-card {
+  max-width: 1000px;
+}
+.Dashboard-card .Articles-frame .Article-cards .Article-card:hover .ball {
+  display: block;
+}
+.test .News-cards {
+  display: flex;
+  justify-content: center;
+}
+.test .News-frame .News-item {
+  max-width: 1000px;
+}
+.test .News-frame .News-title h2 {
+  color: white;
+}
+.test .News-frame .News-items :nth-child(2) {
+  display: none;
+}
+.test .Dashboard-card .Articles .Articles-frame .Article-cards :nth-child(2) {
+  display: none;
+}
+h1 {
+  text-align: center;
+  color: white;
+}
+.test .News-cards:hover .ball {
+  display: block;
+  opacity: 60%;
+  width: 40px;
+  height: 40px;
+}
