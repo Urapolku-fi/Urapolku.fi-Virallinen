@@ -11,7 +11,7 @@ const EmployerSchema = new Schema(
     description: { type: String },
     industry: { type: [{ type: String }] },
     location: { type: String },
-    numOfEmployees: { type: String },
+    numOfEmployees: { type: Number },
     website: { type: String },
     onBoardingFinished: { type: Boolean },
   },
