@@ -13,6 +13,7 @@ const Dropdown = (props) => {
       borderRadius: ".5rem",
       padding: ".4rem 1.5rem",
       fontFamily: "Montserrat, sans-serif",
+      userSelect: "none",
     },
     title: {
       fontWeight: "200",
@@ -29,10 +30,10 @@ const Dropdown = (props) => {
       zIndex: "999",
       maxHeight: "20rem",
       overflow: "scroll",
+      backgroundColor: "white",
     },
     menuClosed: {
-      height: "0",
-      opacity: "0",
+      display: "none",
     },
     wrapper: {
       position: "relative",
