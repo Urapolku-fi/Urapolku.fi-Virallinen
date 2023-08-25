@@ -13,15 +13,19 @@ const ProfileImageUpload = () => {
       borderRadius: "100%",
       outline: ".1rem solid #4A4A4A",
       translate: "2rem -3.5rem",
+      position: "absolute",
     },
     profileImageText: {
       fontWeight: "200",
       marginBottom: ".5rem",
     },
+    wrapper: {
+      marginBottom: "4rem",
+    },
   };
 
   return (
-    <div>
+    <div style={styles.wrapper}>
       <h3 style={styles.profileImageText}>Upload your photos</h3>
       <div>
         <div style={styles.profileImageBanner}>

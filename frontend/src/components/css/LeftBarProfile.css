@@ -17,7 +17,7 @@
 
 #gradient-left-bar {
   width: 40%;
-  height: 100vh;
+  min-height: 100%;
   background: rgb(76,0,145);
   background: linear-gradient(164deg, rgba(76,0,145,1) 0%, rgba(161,0,115,1) 35%, rgba(171,0,255,1) 100%);
 }

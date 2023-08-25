@@ -1,12 +1,16 @@
 #employer-profile-completion {
   display: flex;
   flex-wrap: nowrap;
+  height: 100vh;
 }
 
 #employer-profile-completion-right-bar {
   flex-grow: 1;
   background-color: white;
   padding: 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 #employer-profile-completion-top {
