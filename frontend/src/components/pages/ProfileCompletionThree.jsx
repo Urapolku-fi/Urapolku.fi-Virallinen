@@ -4,7 +4,7 @@ import CompleteButton from "./ProfileCompletion/CompleteButton";
 import ProgressBar from "./ProfileCompletion/progressBar";
 import UrapolkuLogo from "./ProfileCompletion/UrapolkuLogoText";
 import "../css/profileCompletionThree.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useFetch } from "../../api/requestHooks";
 
