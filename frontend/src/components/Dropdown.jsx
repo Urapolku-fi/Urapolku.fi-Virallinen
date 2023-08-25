@@ -9,14 +9,14 @@ const Dropdown = (props) => {
     if (selected.includes(option)) {
       const newSelected = selected.filter((opt) => opt !== option);
       //run the external value setter -> expose component internal values outside of it
-      if (props.setValue) props.setValue(newSelected);
+      if (props.onChange) props.onChange(newSelected);
       setSelected(newSelected);
     }
 
     //not in the selected list and less than 4 selected -> add to selected
     if (selected.length < props.numberToSelect && !selected.includes(option)) {
       const newSelected = [...selected, option];
-      if (props.setValue) props.setValue(newSelected);
+      if (props.onChange) props.onChange(newSelected);
       setSelected(newSelected);
     }
   };

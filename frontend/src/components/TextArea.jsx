@@ -19,10 +19,15 @@ const TextArea = (props) => {
     },
   };
 
+  const handleChange = (e) => {
+    props.onChange(e.target.value);
+  };
+
   return (
     <div>
       <h3 style={styles.title}>{props.title}</h3>
       <textarea
+        onChange={handleChange}
         style={styles.textBox}
         placeholder={props.placeholder}
       ></textarea>

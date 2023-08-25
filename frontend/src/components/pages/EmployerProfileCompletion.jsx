@@ -7,6 +7,7 @@ import ProfileImageUpload from "../ProfileImageUpload";
 import TextArea from "../TextArea";
 import Dropdown from "../Dropdown";
 import TextInput from "../TextInput";
+import { useState } from "react";
 
 const industries = [
   { value: "IT", label: "Information Technology (IT)" },
@@ -82,9 +83,22 @@ const industries = [
 
 function EmployerProfileCompletion() {
   const navigate = useNavigate();
+  const [employerInfo, setEmployerInfo] = useState({
+    profilePicture: "",
+    bannerPicture: "",
+    description: "",
+    industry: "",
+    location: "",
+    numOfEmployees: "",
+    website: "",
+  });
 
   const skipPage = () => {
     navigate("/empbrowse");
+  };
+
+  const nextPage = () => {
+    console.log(employerInfo);
   };
 
   return (
@@ -98,16 +112,45 @@ function EmployerProfileCompletion() {
           </div>
           <SkipButton onClick={skipPage} />
         </div>
-        <h1>Tell us more about you</h1>
-        <ProfileImageUpload />
-        <TextArea
-          title="Description"
-          placeholder="Write a description of your business, it's core values, vision etc."
-        />
-        <Dropdown title={"Industry"} options={industries} />
-        <TextInput title="Location" placeholder="Ex. Helsinki" />
-        <TextInput title="Official website link" />
-        <NextButton />
+        <div id="employer-profile-completion-right-bar-content">
+          <h1>Tell us more about you</h1>
+          <ProfileImageUpload />
+          <TextArea
+            title="Description"
+            placeholder="Write a description of your business, it's core values, vision etc."
+            onChange={(newVal) =>
+              setEmployerInfo({ ...employerInfo, description: newVal })
+            }
+          />
+          <Dropdown
+            title={"Industry"}
+            options={industries}
+            numberToSelect={4}
+            onChange={(newVal) =>
+              setEmployerInfo({ ...employerInfo, industry: newVal })
+            }
+          />
+          <TextInput
+            title="No of employees"
+            onChange={(newVal) =>
+              setEmployerInfo({ ...employerInfo, numOfEmployees: newVal })
+            }
+          />
+          <TextInput
+            title="Location"
+            placeholder="Ex. Helsinki"
+            onChange={(newVal) =>
+              setEmployerInfo({ ...employerInfo, location: newVal })
+            }
+          />
+          <TextInput
+            title="Official website link"
+            onChange={(newVal) =>
+              setEmployerInfo({ ...employerInfo, website: newVal })
+            }
+          />
+          <NextButton onClick={nextPage} />
+        </div>
       </div>
     </div>
   );

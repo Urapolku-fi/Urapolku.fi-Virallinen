@@ -17,10 +17,15 @@ const TextInput = (props) => {
     },
   };
 
+  const handleChange = (e) => {
+    props.onChange(e.target.value);
+  };
+
   return (
     <div>
       <h3 style={styles.title}>{props.title}</h3>
       <input
+        onChange={handleChange}
         type={props.type || "text"}
         style={styles.textInput}
         placeholder={props.placeholder}
