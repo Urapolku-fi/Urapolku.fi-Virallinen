@@ -13,8 +13,11 @@ const Dropdown = (props) => {
       setSelected(newSelected);
     }
 
-    //not in the selected list and less than 4 selected -> add to selected
-    if (selected.length < props.numberToSelect && !selected.includes(option)) {
+    //not in the selected list and less than N currently selected -> add to selected
+    if (
+      selected.length < (props.numberToSelect || 1) &&
+      !selected.includes(option)
+    ) {
       const newSelected = [...selected, option];
       if (props.onChange) props.onChange(newSelected);
       setSelected(newSelected);
@@ -34,6 +37,7 @@ const Dropdown = (props) => {
       padding: ".4rem 1.5rem",
       fontFamily: "Montserrat, sans-serif",
       userSelect: "none",
+      overflow: "hidden",
       height: "3.5rem",
     },
     title: {
