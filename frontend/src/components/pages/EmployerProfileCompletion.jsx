@@ -1,10 +1,12 @@
 import { GradientLeftBar } from "./ProfileCompletion/LeftBarProfile";
 import SkipButton from "./ProfileCompletion/SkipButton";
+import NextButton from "./ProfileCompletion/nextButton";
 import "../css/employerProfileCompletion.css";
 import { useNavigate } from "react-router-dom";
 import ProfileImageUpload from "../ProfileImageUpload";
 import TextArea from "../TextArea";
 import Dropdown from "../Dropdown";
+import TextInput from "../TextInput";
 
 const industries = [
   { value: "IT", label: "Information Technology (IT)" },
@@ -103,6 +105,9 @@ function EmployerProfileCompletion() {
           placeholder="Write a description of your business, it's core values, vision etc."
         />
         <Dropdown title={"Industry"} options={industries} />
+        <TextInput title="Location" placeholder="Ex. Helsinki" />
+        <TextInput title="Official website link" />
+        <NextButton />
       </div>
     </div>
   );
