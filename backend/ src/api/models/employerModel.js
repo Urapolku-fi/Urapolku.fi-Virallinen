@@ -9,7 +9,7 @@ const EmployerSchema = new Schema(
     profilePicture: { type: String },
     bannerPicture: { type: String },
     description: { type: String },
-    industry: { type: [{ type: String }] },
+    industry: { type: String },
     location: { type: String },
     numOfEmployees: { type: Number },
     website: { type: String },

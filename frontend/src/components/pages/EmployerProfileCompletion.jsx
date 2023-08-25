@@ -89,7 +89,7 @@ function EmployerProfileCompletion() {
     profilePicture: "",
     bannerPicture: "",
     description: "",
-    industry: [],
+    industry: "",
     location: "",
     numOfEmployees: "",
     website: "",
@@ -104,7 +104,6 @@ function EmployerProfileCompletion() {
     const profileData = {
       ...employerInfo,
       onBoardingFinished: true,
-      industry: employerInfo.industry.map((item) => item.value),
     };
 
     withAuth.patch(
@@ -147,9 +146,9 @@ function EmployerProfileCompletion() {
           <Dropdown
             title={"Industry"}
             options={industries}
-            numberToSelect={4}
+            numberToSelect={1}
             onChange={(newVal) =>
-              setEmployerInfo({ ...employerInfo, industry: newVal })
+              setEmployerInfo({ ...employerInfo, industry: newVal[0].value })
             }
           />
           <TextInput
