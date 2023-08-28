@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap");
+#Dashboard-wrapper {
+  display: flex;
+  justify-content: center;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+}
+#Dashboard-wrapper p,
+h2 {
+  font-family: "Montserrat", sans-serif;
+}
+#Dashboard-content {
+  display: flex;
+  gap: 15%;
+  width: 100%;
+  justify-content: space-between;
+}
+.Dashboard-hero {
+  background-image: url(../pictures/gradient-image.jpg);
+  background-size: 105.195% 101.71%;
+  background-repeat: no-repeat;
+  background-color: lightgray;
+  margin: 0px;
+}
+.Dashboard-content-section {
+  margin: 0% 5% 0% 5%;
+}
+.Dashboard-daily-picks,
+.Dashboard-news {
+  margin-bottom: 5%;
+}
+.Urapolku-cards {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.Dashboard-left-bar {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10%;
+}
+.Sticky-left-bar {
+  position: sticky;
+  top: 20px;
+}
+@media only screen and (max-width: 800px) {
+  #Dashboard-content {
+    gap: 10%;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .Dashboard-left-bar {
+    display: none;
+  }
+}

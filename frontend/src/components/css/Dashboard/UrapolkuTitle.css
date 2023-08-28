@@ -1,0 +1,55 @@
+.Urapolku-title {
+  margin: 0% 20% 68px 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: -35px;
+  align-self: stretch;
+}
+.Urapolku-title h1 {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  text-align: center;
+  font-size: 80px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -2.4px;
+  background-image: linear-gradient(to right, white, gray);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.Urapolku-title p {
+  color: rgba(236, 236, 236, 0.65);
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 160%;
+  margin: 0% 5% 0% 5%;
+}
+@media only screen and (max-width: 1000px) {
+  .Urapolku-title h1 {
+    font-size: 60px;
+  }
+  .Urapolku-title p {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .Urapolku-title {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .Urapolku-title h1 {
+    font-size: 45px;
+  }
+  .Urapolku-title p {
+    font-size: 14px;
+  }
+}
