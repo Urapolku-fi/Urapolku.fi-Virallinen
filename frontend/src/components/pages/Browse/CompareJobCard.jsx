@@ -1,4 +1,4 @@
-import "../../css/Browse/CompareJobCard.css";
+import "../../css/Browse/compareJobCard.css";
 
 const CompareJobCard = ({
   data = null,
