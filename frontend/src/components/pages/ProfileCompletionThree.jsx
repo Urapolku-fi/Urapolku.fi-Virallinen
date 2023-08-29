@@ -1,10 +1,10 @@
-import LeftBar from "./ProfileCompletion/LeftBarProfile";
+import { LeftBar } from "./ProfileCompletion/LeftBarProfile";
 import SkipButton from "./ProfileCompletion/SkipButton";
 import CompleteButton from "./ProfileCompletion/CompleteButton";
 import ProgressBar from "./ProfileCompletion/progressBar";
 import UrapolkuLogo from "./ProfileCompletion/UrapolkuLogoText";
 import "../css/profileCompletionThree.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useFetch } from "../../api/requestHooks";
 
@@ -135,11 +135,9 @@ function ProfileCreateThree() {
     <div id="ProfileCompletion-Wrapper">
       <LeftBar />
       <div className="Profile-completion-three-right">
-        <div className="Skipbutton-wrapper" onClick={skipPage}>
-          <SkipButton />
-        </div>
-        <div className="Header-logo">
+        <div className="Profile-completion-header-wrapper">
           <UrapolkuLogo />
+          <SkipButton onClick={skipPage} />
         </div>
         <div className="Profile-completion-three-content">
           <div className="Header-text">

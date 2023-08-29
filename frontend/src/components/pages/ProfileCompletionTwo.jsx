@@ -1,4 +1,4 @@
-import LeftBar from "./ProfileCompletion/LeftBarProfile";
+import { LeftBar } from "./ProfileCompletion/LeftBarProfile";
 import SkipButton from "./ProfileCompletion/SkipButton";
 import NextButton from "./ProfileCompletion/nextButton";
 import ProgressBar from "./ProfileCompletion/progressBar";
@@ -182,11 +182,9 @@ function ProfileCompletionTwo() {
     <div id="ProfileCompletion-Wrapper">
       <LeftBar />
       <div className="Profile-completion-two-right">
-        <div className="Skipbutton-wrapper" onClick={skipPage}>
-          <SkipButton />
-        </div>
-        <div className="Header-logo">
+        <div className="Profile-completion-header-wrapper">
           <UrapolkuLogo />
+          <SkipButton onClick={skipPage} />
         </div>
         <div className="Profile-completion-two-content">
           <div className="Header-text">
