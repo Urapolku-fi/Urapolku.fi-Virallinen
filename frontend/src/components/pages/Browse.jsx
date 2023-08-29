@@ -73,7 +73,31 @@ const defaultFiltersState = {
     loremIpsum,
     Array(loremIpsum.filter((e) => typeof e === "string").length).fill(false),
   ],
-  jobType: [true, false, false, false],
+  jobType: [
+    ["Full Time", true],
+    ["Part Time", false],
+    ["Internship", false],
+    ["Apprenticeship", false],
+  ],
+  workType: [
+    ["On-site", true],
+    ["Hybrid", false],
+    ["Remote", false],
+    ["Custom hours", false],
+  ],
+  industry: [
+    loremIpsum,
+    Array(loremIpsum.filter((e) => typeof e === "string").length).fill(false),
+  ],
+  company: [
+    loremIpsum,
+    Array(loremIpsum.filter((e) => typeof e === "string").length).fill(false),
+  ],
+  language: [true, false, false, false],
+  role: [
+    loremIpsum,
+    Array(loremIpsum.filter((e) => typeof e === "string").length).fill(false),
+  ],
 };
 
 const Browse = () => {

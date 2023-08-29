@@ -1,4 +1,5 @@
 import "../../css/Browse/filter.css";
+import ButtonGroup from "./ButtonGroup";
 import FilterLabel from "./FilterLabel";
 import JobToolsPanel from "./JobToolsPanel";
 import LargeFilter from "./LargeFilter";
@@ -15,7 +16,7 @@ const Filter = ({ filtersState, setFiltersState, clearFilters }) => {
           </div>
         </div>
         <div className="filters-flex-container">
-          <FilterLabel text="Industry" />
+          <FilterLabel text="Location" />
           <LargeFilter
             options={filtersState.location[0]}
             values={filtersState.location[1]}
@@ -28,55 +29,31 @@ const Filter = ({ filtersState, setFiltersState, clearFilters }) => {
           />
           <FilterLabel text="Job Type" />
           <div className="toggle-buttons-flex-container">
-            <ToggleButton
-              text="Full Time"
-              selected={filtersState.jobType[0]}
-              onClick={() => {
-                setFiltersState({
-                  ...filtersState,
-                  jobType: filtersState.jobType.map((e, index) =>
-                    index === 0 ? !e : e
-                  ),
-                });
-              }}
-            />
-            <ToggleButton
-              text="Part Time"
-              selected={filtersState.jobType[1]}
-              onClick={() => {
-                setFiltersState({
-                  ...filtersState,
-                  jobType: filtersState.jobType.map((e, index) =>
-                    index === 1 ? !e : e
-                  ),
-                });
-              }}
-            />
-            <ToggleButton
-              text="Internship"
-              selected={filtersState.jobType[2]}
-              onClick={() => {
-                setFiltersState({
-                  ...filtersState,
-                  jobType: filtersState.jobType.map((e, index) =>
-                    index === 2 ? !e : e
-                  ),
-                });
-              }}
-            />
-            <ToggleButton
-              text="Apprenticeship"
-              selected={filtersState.jobType[3]}
-              onClick={() => {
-                setFiltersState({
-                  ...filtersState,
-                  jobType: filtersState.jobType.map((e, index) =>
-                    index === 3 ? !e : e
-                  ),
-                });
-              }}
+            <ButtonGroup
+              propertyName={"jobType"}
+              filtersState={filtersState}
+              setFiltersState={setFiltersState}
             />
           </div>
+          <FilterLabel text="Work Type" />
+          <div className="toggle-buttons-flex-container">
+            <ButtonGroup
+              propertyName={"workType"}
+              filtersState={filtersState}
+              setFiltersState={setFiltersState}
+            />
+          </div>
+          <FilterLabel text="Industry" />
+          <LargeFilter
+            options={filtersState.industry[0]}
+            values={filtersState.industry[1]}
+            setValues={(newValues) => {
+              setFiltersState({
+                ...filtersState,
+                industry: [filtersState.industry[0], newValues],
+              });
+            }}
+          />
         </div>
       </div>
       <JobToolsPanel />
