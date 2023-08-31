@@ -93,10 +93,33 @@ const defaultFiltersState = {
     loremIpsum,
     Array(loremIpsum.filter((e) => typeof e === "string").length).fill(false),
   ],
-  language: [true, false, false, false],
+  language: [
+    ["English", true],
+    ["Swedish", false],
+    ["Finnish", false],
+  ],
   role: [
     loremIpsum,
     Array(loremIpsum.filter((e) => typeof e === "string").length).fill(false),
+  ],
+  salary: [
+    "€1,000 - €2,000",
+    "€2,000 - €3,000",
+    "€3,000 - €4,000",
+    "€4,000 - €5,000",
+    "€5,000 - €10,000",
+    "€10,000 +",
+  ],
+  education: [
+    "Bachelor",
+    "Master",
+    "Licentiate",
+    "Doctor",
+    "Upper secondary school",
+    "Vocational school",
+    "Comprehensive school",
+    "No education",
+    "Certified course",
   ],
 };
 
