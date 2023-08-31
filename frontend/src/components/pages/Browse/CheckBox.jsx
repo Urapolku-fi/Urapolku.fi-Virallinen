@@ -12,7 +12,9 @@ const CheckBox = ({ text, toggled, onClick, forJobcard = false }) => {
     >
       <div
         className={
-          toggled ? "check-box-ellipse ellipse-toggled" : "check-box-ellipse"
+          toggled
+            ? "check-box-ellipse check-box-ellipse-toggled"
+            : "check-box-ellipse"
         }
       />
       <div className="check-box-label">{text}</div>
