@@ -2,10 +2,7 @@
   border-radius: 5px;
   border: #ececec solid 1px;
   background-color: #ececec;
-  overflow: hidden;
   padding: 7px 16px 7.5px;
-  width: fit-content;
-  margin: 10px 5px 5px 5px;
   text-align: center;
 
   cursor: pointer;
@@ -24,8 +21,6 @@
   background-color: transparent;
   overflow: hidden;
   padding: 7px 16px 7.5px;
-  width: fit-content;
-  margin: 10px 5px 5px 5px;
   text-align: center;
   
   cursor: pointer;
