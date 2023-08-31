@@ -21,18 +21,10 @@ const Filter = ({ filtersState, setFiltersState, clearFilters }) => {
             </div>
           </div>
           <div className="filters-flex-container">
-            <FilterLabel text="Location" />
-            <LargeFilter propertyName={"location"} />
-            <FilterLabel text="Job Type" />
-            <div className="toggle-buttons-flex-container">
-              <ButtonGroup propertyName={"jobType"} />
-            </div>
-            <FilterLabel text="Work Type" />
-            <div className="toggle-buttons-flex-container">
-              <ButtonGroup propertyName={"workType"} />
-            </div>
-            <FilterLabel text="Industry" />
-            <LargeFilter propertyName={"industry"} />
+            <LargeFilter propertyName={"location"} label={"Location"} />
+            <ButtonGroup propertyName={"jobType"} label={"Job Type"} />
+            <ButtonGroup propertyName={"workType"} label={"Work Type"} />
+            <LargeFilter propertyName={"industry"} label={"Industry"} />
           </div>
         </div>
         <JobToolsPanel />

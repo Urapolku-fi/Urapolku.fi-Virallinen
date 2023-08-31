@@ -3,8 +3,9 @@ import ToggleButton from "./ToggleButton";
 import MultiOptionDropdown from "./MultiOptionDropdown";
 import { FilterContext } from "./Filter";
 import { useContext } from "react";
+import FilterLabel from "./FilterLabel";
 
-const LargeFilter = ({ propertyName }) => {
+const LargeFilter = ({ propertyName, label }) => {
   const { filtersState, setFiltersState } = useContext(FilterContext);
 
   return (
@@ -18,14 +19,17 @@ const LargeFilter = ({ propertyName }) => {
         });
       }}
       childComponent={
-        <div className="large-filter-opener">
-          <img
-            className="expand-more-arrow"
-            src={"/pictures/expand-arrow.png"}
-          ></img>
-          <div className="large-filter-opener-text">Hello world</div>
-          {false && <ToggleButton />}
-        </div>
+        <>
+          {label && <FilterLabel text={label} />}
+          <div className="large-filter-opener">
+            <img
+              className="expand-more-arrow"
+              src={"/pictures/expand-arrow.png"}
+            ></img>
+            <div className="large-filter-opener-text">Hello world</div>
+            {false && <ToggleButton />}
+          </div>
+        </>
       }
     />
   );
