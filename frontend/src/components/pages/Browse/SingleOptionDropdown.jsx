@@ -29,18 +29,12 @@ const SingleOptionDropdown = ({ options, childComponent, forSort }) => {
   }, [value]);
 
   return (
-    <>
+    <div>
       <div onClick={toggleDropdown}>{childComponent}</div>
       <div
-        className={
-          showDropdown
-            ? forSort
-              ? "education-list for-sort"
-              : "education-list"
-            : forSort
-            ? "education-list for-sort hide"
-            : "education-list hide"
-        }
+        className={`education-list ${!showDropdown ? "hide" : ""} ${
+          forSort ? "for-sort" : ""
+        }`}
       >
         {options.map((item) => (
           <div
@@ -55,7 +49,7 @@ const SingleOptionDropdown = ({ options, childComponent, forSort }) => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
