@@ -1,6 +1,6 @@
 .multi-option-dropdown {
-  width: 400px;
-  height: 500px;
+  width: 25rem;
+  height: 30rem;
   position: absolute;
   margin-top: 16px;
   z-index: 100;
@@ -27,14 +27,18 @@
 
 .sticky-dropdown-controls {
   position: relative;
-  top: 500px;
+  box-sizing: border-box;
+  top: 30rem;
   border-radius: 0px 0px 20px 20px;
+  border: solid rgba(187, 155, 255, 0.32);
+  border-width: 0px 1px 1px 1px ;
   background-color: #0b0121;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  width: 400px;
-  height: 54px; 
+  width: 25rem;
+  height: 3.5rem;
   z-index: 999;
   transition: opacity 0.25s ease-in, height 0.5s step-start;
+  box-shadow: 0px 2px 4px #0b0121, 0px 4px 7px rgba(233, 223, 255, 0.3);
 }
 
 .whitespace-under-dropdown-controls {
