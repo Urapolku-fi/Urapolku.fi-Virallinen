@@ -42,7 +42,7 @@ function App() {
               path="/profilethree"
               Component={withAuth(ProfileCompletionThree)}
             />
-            <Route path="/browse" Component={withAuth(<Browse />)} />
+            <Route path="/browse" Component={withAuth(Browse)} />
             <Route
               path="/emponboarding"
               Component={withAuth(EmployerProfileCompletion)}
