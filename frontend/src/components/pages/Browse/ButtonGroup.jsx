@@ -1,6 +1,10 @@
 import ToggleButton from "./ToggleButton";
+import { FilterContext } from "./Filter";
+import { useContext } from "react";
 
-const ButtonGroup = ({ propertyName, filtersState, setFiltersState }) => {
+const ButtonGroup = ({ propertyName }) => {
+  const { filtersState, setFiltersState } = useContext(FilterContext);
+
   return filtersState[propertyName].map((item, i) => (
     <ToggleButton
       key={i}

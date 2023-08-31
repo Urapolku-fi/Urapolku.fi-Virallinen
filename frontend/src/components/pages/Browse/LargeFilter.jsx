@@ -1,13 +1,22 @@
 import "../../css/Browse/largeFilter.css";
 import ToggleButton from "./ToggleButton";
 import MultiOptionDropdown from "./MultiOptionDropdown";
+import { FilterContext } from "./Filter";
+import { useContext } from "react";
 
-const LargeFilter = ({ options, values, setValues }) => {
+const LargeFilter = ({ propertyName }) => {
+  const { filtersState, setFiltersState } = useContext(FilterContext);
+
   return (
     <MultiOptionDropdown
-      options={options}
-      values={values}
-      setValues={setValues}
+      options={filtersState[propertyName][0]}
+      values={filtersState[propertyName][1]}
+      setValues={(newValues) => {
+        setFiltersState({
+          ...filtersState,
+          [propertyName]: [filtersState[propertyName][0], newValues],
+        });
+      }}
       childComponent={
         <div className="large-filter-opener">
           <img
