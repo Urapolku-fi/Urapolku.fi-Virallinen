@@ -42,11 +42,10 @@
 
 .frame-item {
   position: relative;
-  top: 1px;
   border-right: 1px solid #ececec;
   box-sizing: border-box;
   width: 1px;
-  height: 48px;
+  height: 100%;
 }
 
 .color-icon {

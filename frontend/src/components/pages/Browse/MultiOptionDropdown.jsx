@@ -25,7 +25,6 @@ const MultiOptionDropdown = ({
   };
 
   const handleTogglebuttonClick = (index) => {
-
     setValues(values.map((e, i) => (i === index ? !e : e)));
   };
 
@@ -37,14 +36,8 @@ const MultiOptionDropdown = ({
   return (
     <>
       <span onClick={toggleDropdown}>{childComponent}</span>
-      <div className="dropdown-container">
-        <div
-          className={
-            showDropdown
-              ? "multi-option-dropdown"
-              : "multi-option-dropdown hide"
-          }
-        >
+      <div className={`dropdown-container${showDropdown ? "" : " hide"}`}>
+        <div className={"multi-option-dropdown"}>
           <div className="dropdown-flex-container">
             {options.map((item) =>
               typeof item === "string" ? (
@@ -75,13 +68,7 @@ const MultiOptionDropdown = ({
           </div>
           <div className="whitespace-under-dropdown-controls" />
         </div>
-        <div
-          className={
-            showDropdown
-              ? "sticky-dropdown-controls"
-              : "sticky-dropdown-controls hide"
-          }
-        >
+        <div className={"sticky-dropdown-controls"}>
           <div className="dropdown-controls-container">
             <ToggleButton
               text="clear"

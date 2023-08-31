@@ -16,13 +16,14 @@
   font-family: Montserrat;
   display: block;
   opacity: 1;
-  transition: opacity 0.25s ease-in, height 0.5s step-start;
 }
 
 .hide {
   opacity: 0;
   height: 0;
+  transition: opacity 0.25s ease-in, height 0.5s step-start;
   transition-timing-function: linear, step-end;
+  pointer-events: none;
 }
 
 .sticky-dropdown-controls {
@@ -37,7 +38,6 @@
   width: 25rem;
   height: 3.5rem;
   z-index: 999;
-  transition: opacity 0.25s ease-in, height 0.5s step-start;
   box-shadow: 0px 2px 4px #0b0121, 0px 4px 7px rgba(233, 223, 255, 0.3);
 }
 
@@ -72,5 +72,5 @@
 }
 
 .dropdown-container {
-  max-height: 20px;
+  height: 0;
 }
