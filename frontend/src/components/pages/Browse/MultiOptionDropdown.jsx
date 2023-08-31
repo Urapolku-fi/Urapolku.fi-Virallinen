@@ -18,10 +18,13 @@ const MultiOptionDropdown = ({
 
   const handleOptionClick = (index) => {
     setValues(values.map((e, i) => (i === index ? !e : e)));
+    /*
+    what is this???? causes flickering but dunno what it does so...
     toggleDropdown();
     setTimeout(() => {
       setShowDropdown(true);
     }, 1);
+    */
   };
 
   const handleTogglebuttonClick = (index) => {
