@@ -48,7 +48,7 @@ const UserSchema = new Schema(
           default: 'Startup'
       }
     },
-    applicant: {
+    candidate: {
       skills: { type: [{ type: String }] },
       title: { type: String },
       employmentType: { type: String, enum: [

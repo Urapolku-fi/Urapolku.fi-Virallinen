@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const userController = require("../controllers/userController");
 const checkJwt = require("../../middleware/jwt");
+const checkUserCapabilities = require("../../middleware/permissions");
 
 router.post("/create", checkJwt, userController.createUser);
 router
