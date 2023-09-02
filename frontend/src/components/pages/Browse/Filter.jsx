@@ -22,13 +22,29 @@ const Filter = ({ filtersState, setFiltersState, clearFilters }) => {
             </div>
           </div>
           <div className="filters-flex-container">
-            <LargeFilter propertyName={"location"} label={"Location"} />
+            <LargeFilter
+              propertyName={"location"}
+              label={"Location"}
+              placeholder={"Search Location"}
+            />
             <ButtonGroup propertyName={"jobType"} label={"Job Type"} />
             <ButtonGroup propertyName={"workType"} label={"Work Type"} />
-            <LargeFilter propertyName={"industry"} label={"Industry"} />
-            <LargeFilter propertyName={"company"} label={"Company"} />
+            <LargeFilter
+              propertyName={"industry"}
+              label={"Industry"}
+              placeholder={"Search Industry"}
+            />
+            <LargeFilter
+              propertyName={"company"}
+              label={"Company"}
+              placeholder={"Search Company"}
+            />
             <ButtonGroup propertyName={"language"} label={"Language"} />
-            <LargeFilter propertyName={"role"} label={"Role"} />
+            <LargeFilter
+              propertyName={"role"}
+              label={"Role"}
+              placeholder={"Search Role"}
+            />
             <MultipointRangeInput
               minValue={0}
               maxValue={15000}

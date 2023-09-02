@@ -5,7 +5,7 @@ import { FilterContext } from "./Filter";
 import { useContext } from "react";
 import FilterLabel from "./FilterLabel";
 
-const LargeFilter = ({ propertyName, label }) => {
+const LargeFilter = ({ propertyName, label, placeholder }) => {
   const { filtersState, setFiltersState } = useContext(FilterContext);
 
   return (
@@ -26,7 +26,9 @@ const LargeFilter = ({ propertyName, label }) => {
               className="expand-more-arrow"
               src={"/pictures/expand-arrow.png"}
             ></img>
-            <div className="large-filter-opener-text">Hello world</div>
+            <div className="large-filter-opener-text">
+              {placeholder || label || "Placeholder"}
+            </div>
             {false && <ToggleButton />}
           </div>
         </>
