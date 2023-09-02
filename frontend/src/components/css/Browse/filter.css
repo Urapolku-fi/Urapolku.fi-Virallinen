@@ -10,7 +10,7 @@
     0px 0.5px 0px rgba(255, 255, 255, 0.5) inset;
   width: 100%;
   height: min-content;
-  padding: 8px 16px;
+  padding: 8px 16px 40px 8px;
 }
 
 .filter-and-tools-container {

@@ -62,12 +62,22 @@
 }
 
 .job-count-and-sort-container {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
   width: 65vw;
   height: 24px;
   margin-left: 17.5vw;
   margin-bottom: 32px;
+}
+
+.job-count-and-sort-container > div:nth-child(1) {
+  grid-column: 2;
+}
+
+.job-count-and-sort-container > div:nth-child(2) {
+  grid-column: 3;
+  justify-self: end;
 }
 
 .text-job-count {

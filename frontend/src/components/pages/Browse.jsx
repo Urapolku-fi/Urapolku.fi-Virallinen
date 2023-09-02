@@ -170,6 +170,9 @@ const Browse = () => {
         <SearchBar searchInput={searchInput} handleInputChange={handleChange} />
       </div>
       <div className="job-count-and-sort-container">
+        <div className="text-job-count">
+          Näytetään 500 työtä alalla terveydenhuolto
+        </div>
         <SingleOptionDropdown
           options={["päiväys", "osuvuus"]}
           forSort
@@ -183,16 +186,6 @@ const Browse = () => {
             </div>
           }
         />
-        <div className="text-job-count">
-          Näytetään 500 työtä alalla terveydenhuolto
-        </div>
-        <div className="filter-dropdown">
-          Suodata
-          <img
-            className="sort-dropdown-arrow"
-            src={"/pictures/expand-arrow.png"}
-          />
-        </div>
       </div>
 
       <div className="job-and-filter-container">
