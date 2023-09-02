@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "../../css/Browse/singleOptionDropdown.css";
+import FilterLabel from "./FilterLabel";
 
 // options is an array of the options, they must be unique since they're being used as values
 // example: [
@@ -12,7 +13,7 @@ import "../../css/Browse/singleOptionDropdown.css";
 // ]
 // childComponent is the component that should open the dropdown
 
-const SingleOptionDropdown = ({ options, childComponent, forSort }) => {
+const SingleOptionDropdown = ({ options, childComponent, forSort, label }) => {
   const [value, setValue] = useState(options[0]);
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -30,6 +31,7 @@ const SingleOptionDropdown = ({ options, childComponent, forSort }) => {
 
   return (
     <div>
+      {label && <FilterLabel text={label} />}
       <div onClick={toggleDropdown}>{childComponent}</div>
       <div
         className={`education-list ${!showDropdown ? "hide" : ""} ${

@@ -35,6 +35,21 @@ const Filter = ({ filtersState, setFiltersState, clearFilters }) => {
               marks={[3000, 6000, 9000, 12000]}
               defaultValues={[3500, 12000]}
             />
+            <SingleOptionDropdown
+              label={"Education"}
+              options={filtersState.education}
+              childComponent={
+                <div className="large-filter-opener">
+                  <img
+                    className="expand-more-arrow"
+                    src={"/pictures/expand-arrow.png"}
+                  ></img>
+                  <div className="large-filter-opener-text">
+                    Choose Education
+                  </div>
+                </div>
+              }
+            />
           </div>
         </div>
         <JobToolsPanel />
