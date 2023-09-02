@@ -18,8 +18,6 @@
   height: 163px;
   position: absolute;
   top: auto;
-  margin-top: 16px;
-  transform: translateY(calc(50% + 24px));
   z-index: 999;
   border-radius: 20px;
   background-color: #0b0121;

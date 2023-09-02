@@ -4,6 +4,7 @@ import JobToolsPanel from "./JobToolsPanel";
 import LargeFilter from "./LargeFilter";
 import { createContext } from "react";
 import SingleOptionDropdown from "./SingleOptionDropdown";
+import MultipointRangeInput from "./MultipointRangeInput";
 
 export const FilterContext = createContext({});
 
@@ -28,17 +29,11 @@ const Filter = ({ filtersState, setFiltersState, clearFilters }) => {
             <LargeFilter propertyName={"company"} label={"Company"} />
             <ButtonGroup propertyName={"language"} label={"Language"} />
             <LargeFilter propertyName={"role"} label={"Role"} />
-            <SingleOptionDropdown
-              options={filtersState.salary}
-              childComponent={
-                <div className="large-filter-opener">
-                  <img
-                    className="expand-more-arrow"
-                    src={"/pictures/expand-arrow.png"}
-                  ></img>
-                  <div className="large-filter-opener-text">Hello world</div>
-                </div>
-              }
+            <MultipointRangeInput
+              minValue={0}
+              maxValue={15000}
+              marks={[3000, 6000, 9000, 12000]}
+              defaultValues={[3500, 12000]}
             />
           </div>
         </div>
