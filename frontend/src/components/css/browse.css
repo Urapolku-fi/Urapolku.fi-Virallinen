@@ -192,5 +192,14 @@
   .job-container {
     justify-content: center;
   }
+
+  .hero-stack {
+    height: 20rem;
+    padding-bottom: 0;
+  }
+
+  .header-looking-for-job {
+    font-size: 2.5rem;
+  }
 }
 
