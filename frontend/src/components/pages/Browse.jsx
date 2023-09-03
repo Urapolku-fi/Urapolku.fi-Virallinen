@@ -170,6 +170,7 @@ const Browse = () => {
         <SearchBar searchInput={searchInput} handleInputChange={handleChange} />
       </div>
       <div className="job-count-and-sort-container">
+        <div className="text-job-filter-toggle">Filters</div>
         <div className="text-job-count">
           Näytetään 500 työtä alalla terveydenhuolto
         </div>

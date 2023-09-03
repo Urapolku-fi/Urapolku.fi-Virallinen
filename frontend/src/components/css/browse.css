@@ -67,15 +67,11 @@
   grid-template-rows: 1fr;
   width: 65vw;
   height: 24px;
-  margin-left: 17.5vw;
+  margin: auto;
   margin-bottom: 32px;
 }
 
-.job-count-and-sort-container > div:nth-child(1) {
-  grid-column: 2;
-}
-
-.job-count-and-sort-container > div:nth-child(2) {
+.job-count-and-sort-container > div:nth-child(3) {
   grid-column: 3;
   justify-self: end;
 }
@@ -91,6 +87,12 @@
   font-weight: 400;
   line-height: 150%;
   text-align: center;
+  grid-column: 2;
+}
+
+.text-job-filter-toggle {
+  display: none;
+  color: #ddd;
 }
 
 .button-sort {
@@ -168,8 +170,23 @@
     height: 100px;
     align-items: center;
   }
+
+  .text-job-filter-toggle {
+    display: block;
+    grid-column: 1;
+  }
+
   .text-job-count {
-    order: 3;
+    display: none;
+  }
+
+  .job-count-and-sort-container > div:nth-child(3) {
+    justify-self: end;
+    grid-column: 3;
+  }
+
+  .job-count-and-sort-container  .button-sort {
+    text-align: end;
   }
 
   .job-container {
