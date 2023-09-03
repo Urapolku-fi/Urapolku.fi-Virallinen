@@ -134,8 +134,7 @@
 .jobcard {
   position: relative;
   width: 47%;
-  margin-bottom: 6%;
-  height: 372px;
+  height: 25rem;
   text-align: left;
   font-size: 16px;
   color: #ececec;
@@ -144,10 +143,7 @@
 
 @media screen and (max-width: 800px) {
   .jobcard {
-    position: relative;
     width: 90%;
-    margin-bottom: 6%;
-    height: 372px;
     text-align: left;
     font-size: 16px;
     color: #ececec;
