@@ -7,6 +7,7 @@ import Filter from "./Browse/Filter";
 import CompareBox from "./Browse/CompareBox";
 import AdCard from "./Browse/AdCard";
 import SingleOptionDropdown from "./Browse/SingleOptionDropdown";
+import MobileFilters from "./Browse/MobileFilters";
 
 const loremIpsum = [
   ["hello"],
@@ -170,7 +171,21 @@ const Browse = () => {
         <SearchBar searchInput={searchInput} handleInputChange={handleChange} />
       </div>
       <div className="job-count-and-sort-container">
-        <div className="text-job-filter-toggle">Filters</div>
+        <MobileFilters
+          filtersState={filtersState}
+          setFiltersState={setFiltersState}
+          categoryNames={[
+            "Location",
+            "Job Type",
+            "Work Type",
+            "Industry",
+            "Company",
+            "Language",
+            "Role",
+            "Salary",
+            "Education",
+          ]}
+        />
         <div className="text-job-count">
           Näytetään 500 työtä alalla terveydenhuolto
         </div>
@@ -188,7 +203,6 @@ const Browse = () => {
           }
         />
       </div>
-
       <div className="job-and-filter-container">
         <Filter
           filtersState={filtersState}

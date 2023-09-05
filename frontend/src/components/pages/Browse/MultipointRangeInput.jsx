@@ -9,7 +9,12 @@ const MultipointRangeInput = (props) => {
   const [maxValue, setMaxValue] = useState(props.defaultValues[1]);
   const [minText, setMinText] = useState(minValue);
   const [maxText, setMaxText] = useState(maxValue);
-  const { filtersState, setFiltersState } = useContext(FilterContext);
+  let { filtersState, setFiltersState } = useContext(FilterContext);
+
+  if (!filtersState) {
+    filtersState = props.filtersState;
+    setFiltersState = props.setFiltersState;
+  }
 
   const handleSliderChange = (values) => {
     if (typeof values[0] === "number") {
@@ -32,7 +37,7 @@ const MultipointRangeInput = (props) => {
 
   return (
     <div>
-      <FilterLabel text="Salary" />
+      {props.label && <FilterLabel text={props.label} />}
       <div className="multipoint-input-wrapper">
         <ReactSlider
           className="multipoint-slider"

@@ -3,13 +3,26 @@ import { FilterContext } from "./Filter";
 import { useContext } from "react";
 import FilterLabel from "./FilterLabel";
 
-const ButtonGroup = ({ propertyName, label }) => {
-  const { filtersState, setFiltersState } = useContext(FilterContext);
+const ButtonGroup = ({
+  propertyName,
+  label,
+  filtersStateProp = false,
+  setFiltersStateProp = false,
+  mobile = false,
+}) => {
+  let { filtersState, setFiltersState } = useContext(FilterContext);
+
+  if (!filtersState) {
+    filtersState = filtersStateProp;
+    setFiltersState = setFiltersStateProp;
+  }
 
   return (
     <>
       {label && <FilterLabel text={label} />}
-      <div className="toggle-buttons-flex-container">
+      <div
+        className={`toggle-buttons-flex-container ${mobile ? "mobile" : ""}`}
+      >
         {filtersState[propertyName].map((item, i) => (
           <ToggleButton
             key={i}

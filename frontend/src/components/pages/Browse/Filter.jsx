@@ -46,6 +46,7 @@ const Filter = ({ filtersState, setFiltersState, clearFilters }) => {
               placeholder={"Search Role"}
             />
             <MultipointRangeInput
+              label="Salary"
               minValue={0}
               maxValue={15000}
               marks={[3000, 6000, 9000, 12000]}
