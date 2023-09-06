@@ -64,15 +64,8 @@
   width: 20px;
   height: 20px;
   cursor: pointer;
-}
-
-.group-icon {
-  position: absolute;
-  top: 1.55px;
-  right: 2.78px;
-  width: 8.2px;
-  height: 8.2px;
-  cursor: pointer;
+  display: grid;
+  place-items: center;
 }
 
 .compare-job-card {
@@ -93,6 +86,10 @@
   border: 1px solid #979797;
   background-color: transparent;
   box-sizing: border-box;
+}
+
+.empty-compare-job-card img {
+  display: none;
 }
 
 @media screen and (max-width: 1100px) {
@@ -124,7 +121,7 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
   .compare-job-card-text-container {
     left: 0px;
     justify-content: flex-start;
@@ -132,6 +129,44 @@
   }
   
   .compare-job-card-header {
-    left: 10px;
+    background: none;
+    color: white;
+    top: 0;
+    padding-left: 0;
+  }
+
+  .compare-job-card {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .compare-job-card-child {
+    background: none;
+    border-radius: 0;
+  }
+
+  .compare-job-card-item, .full-time {
+    display: block;
+  }
+
+  .compare-job-card-inner {
+    top: 35%;
+    right: 10%;
+  }
+
+  .empty-compare-job-card {
+    width: 100%;
+    border: none;
+    display: grid;
+    place-items: center;
+    border-radius: 0;
+    margin: .5rem 0;
+  }
+
+  .empty-compare-job-card img {
+    display: block;
+    height: 1.5rem;
+    width: 1.5rem;
+    filter:invert(1);
   }
 }

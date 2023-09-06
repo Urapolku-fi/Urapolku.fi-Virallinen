@@ -9,3 +9,12 @@
     display: none;
   }
 }
+
+@media screen and (max-width: 650px) {
+  .compare-job-card-seperator {
+    display: block;
+    width: 100%;
+    height: 1px;
+    border-bottom: #392F4D 1px solid;
+  }
+}

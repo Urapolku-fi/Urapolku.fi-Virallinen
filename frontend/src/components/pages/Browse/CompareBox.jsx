@@ -15,11 +15,10 @@ const CompareBox = ({
         hidden ? "compare-box compare-box-hide" : "compare-box compare-box-show"
       }
     >
-      <div className="compare-box-buttons-container-mobile">
-        <ToggleButton text="vertaile" selected forCompareBox />
-        <div className="close-button-text" onClick={clearComparables}>
-          Sulje
-        </div>
+      <div className="mobile-compare-header">
+        <p>Compare</p>
+        <div className="mobile-compare-thumb"></div>
+        <p>Clear all</p>
       </div>
       <div className="comparables-container">
         {comparables.length > 0 ? (
@@ -50,9 +49,9 @@ const CompareBox = ({
         )}
       </div>
       <div className="compare-box-buttons-container">
-        <ToggleButton text="vertaile" selected forCompareBox />
+        <ToggleButton text="Compare" selected forCompareBox />
         <div className="close-button-text" onClick={clearComparables}>
-          Sulje
+          Cancel
         </div>
       </div>
     </div>

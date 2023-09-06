@@ -104,3 +104,7 @@
   align-items: unset;
   padding: 0;
 }
+
+.mobile-filters.compare {
+  height: 50%;
+}

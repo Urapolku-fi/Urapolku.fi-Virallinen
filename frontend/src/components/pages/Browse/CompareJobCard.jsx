@@ -1,4 +1,5 @@
 import "../../css/Browse/compareJobCard.css";
+import FilledPlus from "../../../assets/filled-plus.svg";
 
 const CompareJobCard = ({
   data = null,
@@ -8,7 +9,9 @@ const CompareJobCard = ({
   return (
     <>
       {empty ? (
-        <div className="empty-compare-job-card" />
+        <div className="empty-compare-job-card">
+          <img src={FilledPlus} alt="add icon" />
+        </div>
       ) : (
         <div className="compare-job-card">
           <div className="compare-job-card-child" />
@@ -32,15 +35,9 @@ const CompareJobCard = ({
             onClick={() => {
               removeComparedJobById(data.id);
             }}
-          />
-          <img
-            className="group-icon"
-            alt=""
-            src={"svg/close-icon.svg"}
-            onClick={() => {
-              removeComparedJobById(data.id);
-            }}
-          />
+          >
+            <img className="group-icon" alt="" src={"svg/close-icon.svg"} />
+          </div>
         </div>
       )}
     </>
