@@ -26,18 +26,15 @@
 
 .jobcard-info {
   margin: 0;
-  width: 250px;
 }
 
 .jobcard-info-welfare-container1 {
   line-break: anywhere;
-  width: 100%;
 }
 
 .jobcard-info-welfare-container {
   position: absolute;
   height: 11.29%;
-  width: 58.54%;
   top: 5.91%;
   left: 27.61%;
   line-height: 150%;
