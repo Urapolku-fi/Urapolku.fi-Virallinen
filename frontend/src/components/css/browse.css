@@ -162,6 +162,11 @@
   .filter-dropdown {
     visibility: visible;
   }
+
+  .text-job-filter-toggle {
+    display: block;
+    grid-column: 1;
+  }
 }
 
 @media only screen and (max-width: 800px) {
@@ -169,11 +174,6 @@
     flex-direction: column;
     height: 100px;
     align-items: center;
-  }
-
-  .text-job-filter-toggle {
-    display: block;
-    grid-column: 1;
   }
 
   .text-job-count {
