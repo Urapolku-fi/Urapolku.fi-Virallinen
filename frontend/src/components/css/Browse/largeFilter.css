@@ -1,0 +1,28 @@
+.large-filter-opener {
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid #ececec;
+  padding: 4px;
+  padding-left: 0px;
+  top: -5px;
+  cursor: pointer;
+}
+
+.large-filter-opener-text {
+  font-size: 12px;
+  line-height: 150%;
+  font-family: Montserrat;
+  color: #a39bb4;
+  text-align: left; 
+  user-select: none;
+}
+
+.expand-more-arrow {
+  position: relative;
+  top: 27px;
+  left: calc(100% - 18px);
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  user-select: none;
+}

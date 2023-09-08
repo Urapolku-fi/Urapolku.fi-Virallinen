@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/pages/Home";
+import Browse from "./components/pages/Browse";
 import { NavBarLayout } from "./components/NavLayout";
 import ProfileCompletionOne from "./components/pages/ProfileCompletionOne";
 import ProfileCompletionTwo from "./components/pages/ProfileCompletionTwo";
@@ -41,6 +42,7 @@ function App() {
               path="/profilethree"
               Component={withAuth(ProfileCompletionThree)}
             />
+            <Route path="/browse" Component={withAuth(Browse)} />
             <Route
               path="/emponboarding"
               Component={withAuth(EmployerProfileCompletion)}

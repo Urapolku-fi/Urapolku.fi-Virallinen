@@ -1,0 +1,48 @@
+.check-box-label {
+  position: relative;
+  line-height: 150%;
+  font-weight: 500;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.check-box-ellipse {
+  position: relative;
+  border-radius: 50%;
+  background-color: #0f0524;
+  border: 1.5px solid white;
+  box-sizing: border-box;
+  width: 10.5px;
+  height: 10.5px;
+}
+
+.check-box-ellipse-parent {
+  position: static;
+  height: min-content;
+  width: 150px;
+  margin: 5px;
+  margin-left: 22px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 7px;
+  font-size: 14px;
+  color: #a39bb4;
+  cursor: pointer;
+}
+
+.check-box-ellipse-toggled {
+  background-color: white;
+}
+
+.for-job-card {
+  position: absolute;
+  height: 6.45%;
+  width: 52.91%;
+  top: 72.87%;
+  right: 37.98%;
+  bottom: 20.68%;
+  left: 2.5%;
+}
