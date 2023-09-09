@@ -110,7 +110,7 @@ const NavBarLayout = (props) => {
       {navbarVisible && (
         <header className="navbar">
           <div className="nav-logo-wrapper" onClick={() => navigate("/")}>
-            <img className="nav-logo" src={"/pictures/urapolku.png"} />ä
+            <img className="nav-logo" src={"/pictures/urapolku.png"} />
             <p>Urapolku</p>
           </div>
           <div className="nav-items-wrapper">
