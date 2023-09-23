@@ -5,68 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="804ac7e9-acd0-44d8-9d6a-07accdd0e40f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.eslintrc.cjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.prettierrc.cjs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/api/requestHooks.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/requestHooks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/api/s3Client.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/s3Client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/api/s3Hooks.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/s3Hooks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/api/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Dropdown.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Dropdown.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/NavLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/NavLayout.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/ProfileImageUpload.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ProfileImageUpload.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/TextArea.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/TextArea.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/TextInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/TextInput.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/animations/hover.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/animations/hover.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/AccountTypeSelection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/AccountTypeSelection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Browse.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Browse.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Browse/AdCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Browse/AdCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Browse/BookmarkButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Browse/BookmarkButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Browse/ButtonGroup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Browse/ButtonGroup.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Browse/CheckBox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Browse/CheckBox.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Browse/CompareBox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Browse/CompareBox.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Browse/CompareCardSeperator.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Browse/CompareCardSeperator.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Browse/CompareJobCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Browse/CompareJobCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Browse/Filter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Browse/Filter.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Browse/FilterLabel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Browse/FilterLabel.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Browse/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Browse/Footer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Browse/JobCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Browse/JobCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Browse/JobToolsPanel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Browse/JobToolsPanel.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Browse/LargeFilter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Browse/LargeFilter.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Browse/MobileCompare.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Browse/MobileCompare.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Browse/MobileFilters.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Browse/MobileFilters.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Browse/MultiOptionDropdown.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Browse/MultiOptionDropdown.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Browse/MultipointRangeInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Browse/MultipointRangeInput.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Browse/SearchBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Browse/SearchBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Browse/SingleOptionDropdown.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Browse/SingleOptionDropdown.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Browse/ToggleButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Browse/ToggleButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Dashboard-components/AppliedJobs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Dashboard-components/AppliedJobs.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Dashboard-components/Articles.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Dashboard-components/Articles.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Dashboard-components/DailyPicks.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Dashboard-components/DailyPicks.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Dashboard-components/News.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Dashboard-components/News.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Dashboard-components/ProgressBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Dashboard-components/ProgressBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Dashboard-components/Recommends.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Dashboard-components/Recommends.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Dashboard-components/UrapolkuAi.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Dashboard-components/UrapolkuAi.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Dashboard-components/UrapolkuInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Dashboard-components/UrapolkuInfo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Dashboard-components/UrapolkuTitle.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Dashboard-components/UrapolkuTitle.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Dashboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/EmployerProfileCompletion.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/EmployerProfileCompletion.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/ProfileCompletion/CompleteButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/ProfileCompletion/CompleteButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/ProfileCompletion/LeftBarProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/ProfileCompletion/LeftBarProfile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/ProfileCompletion/SkipButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/ProfileCompletion/SkipButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/ProfileCompletion/UrapolkuLogoText.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/ProfileCompletion/UrapolkuLogoText.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/ProfileCompletion/nextButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/ProfileCompletion/nextButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/ProfileCompletion/progressBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/ProfileCompletion/progressBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/ProfileCompletionOne.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/ProfileCompletionOne.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/ProfileCompletionThree.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/ProfileCompletionThree.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/ProfileCompletionTwo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/ProfileCompletionTwo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/pages/Signup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/pages/Signup.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/helpers/objectShallowEqual.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/helpers/objectShallowEqual.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,21 +31,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Updating-Code-Standards&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/hylke/Documents/Projecten/Persoonlijk/Urapolku.fi-Virallinen&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Updating-Code-Standards",
+    "last_opened_file_path": "/home/simbaclaws/Projects/Personal/Urapolku.fi-Virallinen/backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -111,6 +54,11 @@
         <entry key="com.haulmont.rcb.storybook" value="false" />
       </map>
     </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -123,7 +71,7 @@
       <workItem from="1691521551515" duration="3536000" />
       <workItem from="1691943149049" duration="43000" />
       <workItem from="1691943195630" duration="6408000" />
-      <workItem from="1695470168255" duration="3910000" />
+      <workItem from="1695470168255" duration="4621000" />
     </task>
     <servers />
   </component>
