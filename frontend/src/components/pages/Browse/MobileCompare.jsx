@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
-import ToggleButton from "./ToggleButton";
-import "../../css/Browse/mobileFilters.css";
+import { useEffect, useState } from 'react';
+import ToggleButton from './ToggleButton';
+import '../../css/Browse/mobileFilters.css';
 
 const MobileCompare = () => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    if (open) document.body.classList.add("stop-scrolling");
-    else document.body.classList.remove("stop-scrolling");
+    if (open) document.body.classList.add('stop-scrolling');
+    else document.body.classList.remove('stop-scrolling');
   }, [open]);
 
   return (
@@ -21,7 +21,7 @@ const MobileCompare = () => {
             className="mobile-filters-thumb-wrapper" //this exists because the part is too small to grab otherwise
             onClick={() => setOpen(false)}
           >
-            <div className="mobile-filters-thumb"></div>{" "}
+            <div className="mobile-filters-thumb"></div>{' '}
           </div>
 
           <div className="mobile-filters-header">

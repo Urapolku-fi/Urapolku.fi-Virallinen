@@ -1,15 +1,10 @@
-import { useState } from "react";
-import "../../css/Browse/multiOptionDropdown.css";
-import CheckBox from "./CheckBox";
-import ToggleButton from "./ToggleButton";
-import FilterLabel from "./FilterLabel";
+import { useState } from 'react';
+import '../../css/Browse/multiOptionDropdown.css';
+import CheckBox from './CheckBox';
+import ToggleButton from './ToggleButton';
+import FilterLabel from './FilterLabel';
 
-const MultiOptionDropdown = ({
-  options,
-  childComponent,
-  values,
-  setValues,
-}) => {
+const MultiOptionDropdown = ({ options, childComponent, values, setValues }) => {
   const [showDropdown, setShowDropdown] = useState(false);
 
   const toggleDropdown = () => {
@@ -39,26 +34,22 @@ const MultiOptionDropdown = ({
   return (
     <>
       <span onClick={toggleDropdown}>{childComponent}</span>
-      <div className={`dropdown-container${showDropdown ? "" : " hide"}`}>
-        <div className={"multi-option-dropdown"}>
+      <div className={`dropdown-container${showDropdown ? '' : ' hide'}`}>
+        <div className={'multi-option-dropdown'}>
           <div className="dropdown-flex-container">
             {options.map((item) =>
-              typeof item === "string" ? (
+              typeof item === 'string' ? (
                 <CheckBox
                   key={item}
                   text={item}
                   toggled={
                     values[
-                      options
-                        .filter((e) => typeof e === "string")
-                        .findIndex((e) => e === item)
+                      options.filter((e) => typeof e === 'string').findIndex((e) => e === item)
                     ]
                   }
                   onClick={() =>
                     handleOptionClick(
-                      options
-                        .filter((e) => typeof e === "string")
-                        .findIndex((e) => e === item)
+                      options.filter((e) => typeof e === 'string').findIndex((e) => e === item),
                     )
                   }
                 />
@@ -66,18 +57,14 @@ const MultiOptionDropdown = ({
                 <div className="filter-label-container" key={item[0]}>
                   <FilterLabel text={item[0]} />
                 </div>
-              )
+              ),
             )}
           </div>
           <div className="whitespace-under-dropdown-controls" />
         </div>
-        <div className={"sticky-dropdown-controls"}>
+        <div className={'sticky-dropdown-controls'}>
           <div className="dropdown-controls-container">
-            <ToggleButton
-              text="clear"
-              forDropdownControls
-              onClick={handleClearClick}
-            />
+            <ToggleButton text="clear" forDropdownControls onClick={handleClearClick} />
             <ToggleButton
               text="apply"
               selected={true}
@@ -89,7 +76,7 @@ const MultiOptionDropdown = ({
       </div>
       <div className="multi-option-dropdown-togglebutton-container">
         {options
-          .filter((e) => typeof e === "string")
+          .filter((e) => typeof e === 'string')
           .map((e, i) => [e, i])
           .filter((e) => values[e[1]])
           .map((value) => (

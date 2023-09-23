@@ -1,6 +1,6 @@
-import React from "react";
-import "../../css/Dashboard/DailyPicks.css";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import '../../css/Dashboard/DailyPicks.css';
+import { useNavigate } from 'react-router-dom';
 
 function DailyPickCard({ title, description, backgroundImage, url }) {
   const navigate = useNavigate();

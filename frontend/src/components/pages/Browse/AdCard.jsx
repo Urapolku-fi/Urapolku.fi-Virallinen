@@ -1,4 +1,4 @@
-import "../../css/Browse/adCard.css";
+import '../../css/Browse/adCard.css';
 
 const AdCard = ({ text }) => {
   return (

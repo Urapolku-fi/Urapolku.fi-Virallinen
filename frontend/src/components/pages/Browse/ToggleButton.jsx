@@ -1,4 +1,4 @@
-import "../../css/Browse/toggleButton.css";
+import '../../css/Browse/toggleButton.css';
 
 const ToggleButton = ({
   text,
@@ -13,10 +13,10 @@ const ToggleButton = ({
         <div
           className={
             forDropdownControls
-              ? "toggle-button-toggled for-dropdown-controls"
-              : (forCompareBox
-              ? "toggle-button-toggled for-compare-box"
-              : "toggle-button-toggled")
+              ? 'toggle-button-toggled for-dropdown-controls'
+              : forCompareBox
+              ? 'toggle-button-toggled for-compare-box'
+              : 'toggle-button-toggled'
           }
           onClick={onClick}
         >
@@ -26,10 +26,10 @@ const ToggleButton = ({
         <div
           className={
             forDropdownControls
-              ? "toggle-button for-dropdown-controls"
+              ? 'toggle-button for-dropdown-controls'
               : forCompareBox
-              ? "toggle-button for-compare-box"
-              : "toggle-button"
+              ? 'toggle-button for-compare-box'
+              : 'toggle-button'
           }
           onClick={onClick}
         >

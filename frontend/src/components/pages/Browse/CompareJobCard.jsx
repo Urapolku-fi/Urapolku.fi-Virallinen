@@ -1,11 +1,7 @@
-import "../../css/Browse/compareJobCard.css";
-import FilledPlus from "../../../assets/filled-plus.svg";
+import '../../css/Browse/compareJobCard.css';
+import FilledPlus from '../../../assets/filled-plus.svg';
 
-const CompareJobCard = ({
-  data = null,
-  empty = false,
-  removeComparedJobById,
-}) => {
+const CompareJobCard = ({ data = null, empty = false, removeComparedJobById }) => {
   return (
     <>
       {empty ? (
@@ -15,11 +11,7 @@ const CompareJobCard = ({
       ) : (
         <div className="compare-job-card">
           <div className="compare-job-card-child" />
-          <img
-            className="compare-job-card-item"
-            alt=""
-            src={"/pictures/job-example-image.png"}
-          />
+          <img className="compare-job-card-item" alt="" src={'/pictures/job-example-image.png'} />
           <div className="compare-job-card-text-container">
             <div className="compare-job-card-header">{data.title}</div>
             <div className="full-time-container">
@@ -36,7 +28,7 @@ const CompareJobCard = ({
               removeComparedJobById(data.id);
             }}
           >
-            <img className="group-icon" alt="" src={"svg/close-icon.svg"} />
+            <img className="group-icon" alt="" src={'svg/close-icon.svg'} />
           </div>
         </div>
       )}
