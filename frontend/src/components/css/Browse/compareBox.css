@@ -16,13 +16,17 @@
 }
 
 .compare-box-hide {
-  transition: visibility 0.5s, opacity 0.5s;
+  transition:
+    visibility 0.5s,
+    opacity 0.5s;
   visibility: hidden;
   opacity: 0;
 }
 
 .compare-box-show {
-  transition: visibility 0.5s, opacity 0.5s;
+  transition:
+    visibility 0.5s,
+    opacity 0.5s;
   visibility: visible;
   opacity: 1;
 }
@@ -93,29 +97,29 @@
     box-sizing: border-box;
     gap: 0;
   }
-  
+
   .mobile-compare-thumb {
-    height: .3rem;
+    height: 0.3rem;
     width: 5rem;
-    background-color: #392F4D;
+    background-color: #392f4d;
     border-radius: 1rem;
-    margin-top: .5rem;
+    margin-top: 0.5rem;
   }
-  
+
   .mobile-compare-header {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-    padding: .5rem 1.5rem;
+    padding: 0.5rem 1.5rem;
     font-size: 1.1rem;
-    color: #D0CED3;
+    color: #d0ced3;
     width: 100%;
     box-sizing: border-box;
-    border-bottom: #392F4D 1px solid;
+    border-bottom: #392f4d 1px solid;
   }
-  
+
   .mobile-compare-header p:nth-child(3) {
-    color: #9087A1;
+    color: #9087a1;
     text-decoration: underline;
   }
 
@@ -124,7 +128,9 @@
   }
 
   .compare-box-buttons-container {
-    box-shadow: 0px 2px 4px #0b0121, 0px -2px 7px rgba(233, 223, 255, 0.3);
+    box-shadow:
+      0px 2px 4px #0b0121,
+      0px -2px 7px rgba(233, 223, 255, 0.3);
     width: 100%;
     height: 4rem;
     flex-direction: row-reverse;
@@ -132,7 +138,7 @@
 
   .compare-box-buttons-container .for-compare-box {
     height: unset;
-    padding: .4rem;
+    padding: 0.4rem;
   }
 
   .compare-box-buttons-container .toggle-button-inner-text-toggled {
@@ -144,7 +150,7 @@
     outline: white 1px solid;
     width: 120px;
     text-align: center;
-    padding: .4rem;
+    padding: 0.4rem;
     border-radius: 5px;
   }
 }

@@ -1,5 +1,5 @@
 .navbar {
-  background-color: #0B0121;
+  background-color: #0b0121;
   display: flex;
   gap: 2rem;
   padding: 1rem 2rem;
@@ -13,7 +13,7 @@
 
 .nav-logo-wrapper p {
   font-size: 1.7rem;
-  font-weight:bolder;
+  font-weight: bolder;
   color: white;
   line-height: 0;
 }
@@ -38,7 +38,7 @@
 
 .nav-link {
   text-decoration: none;
-  color: #ECECEC;
+  color: #ececec;
   font-size: 1.2rem;
   white-space: nowrap;
 }
@@ -53,20 +53,21 @@
 }
 
 .button-hollow {
-  border: #ECECEC .2rem solid;
+  border: #ececec 0.2rem solid;
   border-radius: 2rem;
-  padding: .7rem;
-  background-color: #0B0121;
+  padding: 0.7rem;
+  background-color: #0b0121;
 }
 
 .button-filled {
-  background-color: #ECECEC;
-  color:#0B0121;
+  background-color: #ececec;
+  color: #0b0121;
   border-radius: 2rem;
-  padding: .8rem;
+  padding: 0.8rem;
 }
 
-.button-hollow:hover, .button-filled:hover {
+.button-hollow:hover,
+.button-filled:hover {
   filter: brightness(80%);
 }
 
@@ -82,5 +83,4 @@
   .navbar {
     justify-content: space-between;
   }
-
 }

@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap');
 /* These are changes for this site only elements */
 #ProfileCompletion-Wrapper {
   height: calc(100% + 10rem);
   display: flex;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 .Profile-completion-three-right {
   width: 100%;
@@ -21,7 +21,7 @@
 }
 .Profile-completion-three-content p,
 input {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 .Profile-completion-three-content .Title,
 .Location {
@@ -80,7 +80,7 @@ input {
   border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: 3px 2px 4px 0px rgba(0, 0, 0, 0.25);
-  animation: fadeInDown .3s;
+  animation: fadeInDown 0.3s;
 }
 .Profile-completion-three-content .Employment-type-content p:hover,
 .Location-type-content p:hover,
@@ -190,7 +190,7 @@ input {
   padding: 16px 43px;
 }
 .Profile-completion-three-content .Bottom .Finish-button p {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   font-style: normal;
   line-height: normal;
@@ -198,7 +198,7 @@ input {
 }
 .Profile-completion-three-right .skipButton p {
   color: #000;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   font-style: normal;
   line-height: normal;

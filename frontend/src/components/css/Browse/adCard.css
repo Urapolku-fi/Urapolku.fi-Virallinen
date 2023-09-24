@@ -1,10 +1,10 @@
 .ad-card {
   width: 47%;
   height: 25rem;
-  background-image: url("/pictures/ad-example.png");
+  background-image: url('/pictures/ad-example.png');
   background-repeat: no-repeat;
-  box-shadow: 0px 2px 4px rgba(157, 153, 153, 0.25); 
-  border: 1px solid linear-gradient(#FFFFFF00, #0B012185, #0B0121);
+  box-shadow: 0px 2px 4px rgba(157, 153, 153, 0.25);
+  border: 1px solid linear-gradient(#ffffff00, #0b012185, #0b0121);
   border-radius: 20px;
   background-size: cover;
 }

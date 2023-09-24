@@ -5,7 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="804ac7e9-acd0-44d8-9d6a-07accdd0e40f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/quality.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/quality.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/Browse/adCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/Browse/adCard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/Browse/checkBox.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/Browse/checkBox.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/Browse/compareBox.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/Browse/compareBox.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/Browse/compareJobCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/Browse/compareJobCard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/Browse/compareJobCardSeperator.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/Browse/compareJobCardSeperator.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/Browse/filter.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/Browse/filter.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/Browse/jobCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/Browse/jobCard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/Browse/jobToolsPanel.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/Browse/jobToolsPanel.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/Browse/largeFilter.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/Browse/largeFilter.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/Browse/mobileFilters.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/Browse/mobileFilters.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/Browse/multiOptionDropdown.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/Browse/multiOptionDropdown.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/Browse/multipointRangeInput.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/Browse/multipointRangeInput.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/Browse/searchBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/Browse/searchBar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/Browse/singleOptionDropdown.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/Browse/singleOptionDropdown.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/Browse/toggleButton.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/Browse/toggleButton.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/Dashboard/AppliedJobs.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/Dashboard/AppliedJobs.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/Dashboard/Articles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/Dashboard/Articles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/Dashboard/DailyPicks.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/Dashboard/DailyPicks.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/Dashboard/News.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/Dashboard/News.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/Dashboard/Recommends.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/Dashboard/Recommends.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/Dashboard/UrapolkuAi.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/Dashboard/UrapolkuAi.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/Dashboard/UrapolkuInfo.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/Dashboard/UrapolkuInfo.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/Dashboard/UrapolkuTitle.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/Dashboard/UrapolkuTitle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/LeftBarProfile.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/LeftBarProfile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/accountType.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/accountType.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/browse.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/browse.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/dashboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/employerProfileCompletion.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/employerProfileCompletion.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/navLayout.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/navLayout.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/profileCompletionOne.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/profileCompletionOne.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/profileCompletionThree.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/profileCompletionThree.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/profileCompletionTwo.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/profileCompletionTwo.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/css/signup.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/css/signup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
