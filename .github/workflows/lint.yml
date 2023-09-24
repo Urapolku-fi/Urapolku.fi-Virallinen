@@ -32,8 +32,9 @@ jobs:
       - name: Run linters frontend
         uses: wearerequired/lint-action@v2
         with:
-          working-directory: ./frontend
+          eslint_dir: ./frontend
           eslint: true
+          prettier_dir: ./frontend
           prettier: true
 
       - name: Install Node.js dependencies backend
@@ -43,6 +44,7 @@ jobs:
       - name: Run linters backend
         uses: wearerequired/lint-action@v2
         with:
-          working-directory: ./backend
+          eslint_dir: ./backend
           eslint: true
+          prettier_dir: ./backend
           prettier: true
