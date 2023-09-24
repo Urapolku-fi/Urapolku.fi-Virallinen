@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="804ac7e9-acd0-44d8-9d6a-07accdd0e40f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/lint.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/lint.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.eslintrc.cjs" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.eslintrc.cjs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +69,7 @@
       <workItem from="1691943195630" duration="6408000" />
       <workItem from="1695470168255" duration="5340000" />
       <workItem from="1695565293976" duration="640000" />
-      <workItem from="1695565944656" duration="845000" />
+      <workItem from="1695565944656" duration="1458000" />
     </task>
     <servers />
   </component>
