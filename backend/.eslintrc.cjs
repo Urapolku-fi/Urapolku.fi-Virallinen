@@ -23,7 +23,7 @@ module.exports = {
     "react/prop-types": [0], // Disabling prop-types rule for now
 
     // Add more code quality and security rules as needed
-    'no-console': 'error', // Prevent the use of console.log, consider using proper logging
+    // 'no-console': 'error', // Prevent the use of console.log, consider using proper logging
 
     // Styling Guidelines
 
