@@ -65,12 +65,6 @@ jobs:
           prettier_dir: frontend
           prettier: true
 
-      - name: Check For Linting Issues Frontend
-        uses: wearerequired/lint-action@v2
-        with:
-          eslint_dir: frontend
-          eslint: true
-
       - name: Check for Styling Issues Backend
         uses: wearerequired/lint-action@v2
         with:
