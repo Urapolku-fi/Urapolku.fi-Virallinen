@@ -12,7 +12,7 @@ on:
 
 jobs:
   run-linters:
-    name: Fix Linting and Formatting Issues
+    name: Fix and Check for Linting and Formatting Issues
     runs-on: ubuntu-latest
 
     steps:
@@ -33,63 +33,52 @@ jobs:
         working-directory: ./backend
         run: npm ci
 
-      - name: Automatically Fix Linting Issues Frontend
+      - name: Fix Linting Issues Frontend
         working-directory: ./frontend
         continue-on-error: true
         run: npm run lint:fix
 
-      - name: Automatically Fix Styling Issues Frontend
+      - name: Fix Styling Issues Frontend
         working-directory: ./frontend
         continue-on-error: true
         run: npm run styles:fix
 
-      - name: Automatically Fix Linting Issues Backend
+      - name: Fix Linting Issues Backend
         working-directory: ./backend
         continue-on-error: true
         run: npm run lint:fix
 
-      - name: Automatically Fix Styling Issues Backend
+      - name: Fix Styling Issues Backend
         working-directory: ./backend
         continue-on-error: true
         run: npm run styles:fix
 
-  check-linters:
-    name: Check for Linting and Formatting Issues
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Check out Git repository
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v1
+      - name: Check For Linting Issues Frontend
+        uses: wearerequired/lint-action@v2
         with:
-          node-version: 18
+          eslint_dir: frontend
+          eslint: true
 
-      - name: Install Node.js dependencies frontend
-        working-directory: ./frontend
-        run: npm ci
+      - name: Check for Styling Issues Frontend
+        uses: wearerequired/lint-action@v2
+        with:
+          prettier_dir: frontend
+          prettier: true
 
-      - name: Install Node.js dependencies backend
-        working-directory: ./backend
-        run: npm ci
+      - name: Check For Linting Issues Frontend
+        uses: wearerequired/lint-action@v2
+        with:
+          eslint_dir: frontend
+          eslint: true
 
-      - name: Check for Linting Issues Frontend
-        working-directory: ./frontend
-        continue-on-error: true
-        run: npm run lint:check
-
-      - name: Check for Styles Issues Frontend
-        working-directory: ./frontend
-        continue-on-error: true
-        run: npm run styles:check
+      - name: Check for Styling Issues Backend
+        uses: wearerequired/lint-action@v2
+        with:
+          prettier_dir: backend
+          prettier: true
 
       - name: Check for Linting Issues Backend
-        working-directory: ./backend
-        continue-on-error: true
-        run: npm run lint:check
-
-      - name: Check for Styles Issues Backend
-        working-directory: ./backend
-        continue-on-error: true
-        run: npm run styles:check
+        uses: wearerequired/lint-action@v2
+        with:
+          eslint_dir: backend
+          eslint: true
