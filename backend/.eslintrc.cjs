@@ -28,7 +28,7 @@ module.exports = {
     // Styling Guidelines
 
     // Prettier Rules
-    'prettier/prettier': 'error',
+    'prettier/prettier': 'off', // Make sure the editor doesn't show errors for linting, since formatting should fix that automatically.
 
     // Accessibility Guidelines
     // Ensure your code follows accessibility best practices

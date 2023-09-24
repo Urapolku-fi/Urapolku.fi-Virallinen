@@ -1,4 +1,4 @@
-name: Lint
+name: Code Quality
 
 on:
   # Trigger the workflow on push or pull request,
@@ -12,7 +12,7 @@ on:
 
 jobs:
   run-linters:
-    name: Run linters
+    name: Run linters and formatters
     runs-on: ubuntu-latest
 
     steps:
@@ -29,22 +29,22 @@ jobs:
         working-directory: ./frontend
         run: npm ci
 
-      - name: Run linters frontend
-        uses: wearerequired/lint-action@v2
-        with:
-          eslint_dir: ./frontend
-          eslint: true
-          prettier_dir: ./frontend
-          prettier: true
-
       - name: Install Node.js dependencies backend
         working-directory: ./backend
         run: npm ci
 
-      - name: Run linters backend
-        uses: wearerequired/lint-action@v2
-        with:
-          eslint_dir: ./backend
-          eslint: true
-          prettier_dir: ./backend
-          prettier: true
+      - name: Automatically Fix Code Quality Issues Frontend
+        working-directory: ./frontend
+        run: npm run quality:fix-all
+
+      - name: Check Code Quality Issues Frontend
+        working-directory: ./frontend
+        run: npm run quality:check-all
+
+      - name: Automatically Fix Code Quality Issues Backend
+        working-directory: ./backend
+        run: npm run quality:fix-all
+
+      - name: Check Code Quality Issues Backend
+        working-directory: ./backend
+        run: npm run quality:check-all
