@@ -140,3 +140,16 @@ jobs:
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: ./frontend/snyk.sarif
+
+      - uses: actions/checkout@master
+      - name: Run Snyk to check for vulnerabilities in backend
+        uses: snyk/actions/node@master
+        continue-on-error: true
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: ./backend --sarif-file-output=./backend/snyk.sarif
+      - name: Upload result to Github Code Scanning for frontend
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: ./backend/snyk.sarif
