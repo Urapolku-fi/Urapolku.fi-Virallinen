@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="804ac7e9-acd0-44d8-9d6a-07accdd0e40f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.github/workflows/quality.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/quality.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +73,7 @@
       <workItem from="1695638943706" duration="607000" />
       <workItem from="1695728563725" duration="1202000" />
       <workItem from="1695734467349" duration="1798000" />
-      <workItem from="1695919595775" duration="8528000" />
+      <workItem from="1695919595775" duration="9031000" />
     </task>
     <servers />
   </component>
