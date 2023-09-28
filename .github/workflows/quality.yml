@@ -135,8 +135,8 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          args: --sarif-file-output=snyk.sarif
+          args: ./frontend --sarif-file-output=./frontend/snyk.sarif
       - name: Upload result to Github Code Scanning for frontend
         uses: github/codeql-action/upload-sarif@v2
         with:
-          sarif_file: snyk.sarif
+          sarif_file: ./frontend/snyk.sarif
