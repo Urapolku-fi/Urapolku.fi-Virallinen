@@ -5,10 +5,10 @@ on:
   # but only for the main branch
   push:
     branches:
-      - Updating-Code-Standards
+      - Staging
   pull_request:
     branches:
-      - Updating-Code-Standards
+      - Staging
 
 jobs:
   run-linters-frontend:
