@@ -76,3 +76,13 @@ jobs:
         with:
           prettier_dir: backend
           prettier: true
+
+      - name: Check for Duplication and Code Smells Frontend
+        working-directory: ./frontend
+        continue-on-error: true
+        run: jsinspect ./
+
+      - name: Check for Duplication and Code Smells Backend
+        working-directory: ./backend
+        continue-on-error: true
+        run: jsinspect ./
