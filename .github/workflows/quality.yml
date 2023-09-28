@@ -80,7 +80,7 @@ jobs:
           commit: false
 
   run-quality-frontend:
-    name: Check for Code Quality Frontend
+    name: Check Code Quality Frontend
     runs-on: ubuntu-latest
     steps:
       - name: Check out Git repository
@@ -100,7 +100,7 @@ jobs:
         run: ./node_modules/jsinspect/bin/jsinspect ./
 
   run-quality-backend:
-    name: Check for Code Quality Backend
+    name: Check Code Quality Backend
     runs-on: ubuntu-latest
     steps:
       - name: Check out Git repository
@@ -120,7 +120,31 @@ jobs:
         run: ./node_modules/jsinspect/bin/jsinspect ./
 
   run-security-frontend:
-    name: Static Security Analysis Frontend
+    name: Check Static Security Analysis Frontend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18
+
+      - name: Install Node.js dependencies frontend
+        working-directory: ./frontend
+        run: npm ci
+
+      - uses: actions/checkout@master
+      - name: Run Snyk to check for vulnerabilities in frontend
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: ./frontend
+
+  upload-security-frontend:
+    name: Upload Static Security Analysis Frontend
     runs-on: ubuntu-latest
     steps:
       - name: Check out Git repository
@@ -149,7 +173,31 @@ jobs:
           sarif_file: ./frontend/snyk.sarif
 
   run-security-backend:
-    name: Static Security Analysis Backend
+    name: Check Static Security Analysis Backend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18
+
+      - name: Install Node.js dependencies backend
+        working-directory: ./backend
+        run: npm ci
+
+      - uses: actions/checkout@master
+      - name: Run Snyk to check for vulnerabilities in backend
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: ./backend
+
+  upload-security-backend:
+    name: Upload Static Security Analysis Backend
     runs-on: ubuntu-latest
     steps:
       - name: Check out Git repository
