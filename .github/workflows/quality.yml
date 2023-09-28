@@ -10,10 +10,6 @@ on:
     branches:
       - Updating-Code-Standards
 
-permissions:
-  checks: write
-  contents: write
-
 jobs:
   run-linters-frontend:
     name: Check and Fix Linting Frontend
