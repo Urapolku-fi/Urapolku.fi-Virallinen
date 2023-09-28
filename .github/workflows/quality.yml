@@ -79,7 +79,7 @@ jobs:
           prettier_dir: backend
           prettier: true
   run-quality:
-    name: Check for Duplicate Code and Code Smell issues.
+    name: Check for Duplicate Code and Code Smell issues
     runs-on: ubuntu-latest
     steps:
       - name: Check out Git repository
@@ -108,8 +108,8 @@ jobs:
         continue-on-error: true
         run: ./node_modules/jsinspect/bin/jsinspect ./
 
-  run-security:
-    name: Static Security Analysis using Snyk
+  run-security-frontend:
+    name: Static Security Analysis for the Frontend
     runs-on: ubuntu-latest
     steps:
       - name: Check out Git repository
@@ -140,6 +140,26 @@ jobs:
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: ./frontend/snyk.sarif
+
+  run-security-backend:
+    name: Static Security Analysis for the Backend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18
+
+      - name: Install Node.js dependencies frontend
+        working-directory: ./frontend
+        run: npm ci
+
+      - name: Install Node.js dependencies backend
+        working-directory: ./backend
+        run: npm ci
 
       - uses: actions/checkout@master
       - name: Run Snyk to check for vulnerabilities in backend
