@@ -1,7 +1,7 @@
-import ToggleButton from "./ToggleButton";
-import { FilterContext } from "./Filter";
-import { useContext } from "react";
-import FilterLabel from "./FilterLabel";
+import ToggleButton from './ToggleButton';
+import { FilterContext } from './Filter';
+import { useContext } from 'react';
+import FilterLabel from './FilterLabel';
 
 const ButtonGroup = ({
   propertyName,
@@ -20,9 +20,7 @@ const ButtonGroup = ({
   return (
     <>
       {label && <FilterLabel text={label} />}
-      <div
-        className={`toggle-buttons-flex-container ${mobile ? "mobile" : ""}`}
-      >
+      <div className={`toggle-buttons-flex-container ${mobile ? 'mobile' : ''}`}>
         {filtersState[propertyName].map((item, i) => (
           <ToggleButton
             key={i}
@@ -32,7 +30,7 @@ const ButtonGroup = ({
               setFiltersState({
                 ...filtersState,
                 [propertyName]: filtersState[propertyName].map((e, index) =>
-                  index === i ? [e[0], !e[1]] : [e[0], e[1]]
+                  index === i ? [e[0], !e[1]] : [e[0], e[1]],
                 ),
               });
             }}

@@ -1,9 +1,9 @@
 function urapolkuLogo(props) {
   const display = {
-    display: "flex",
-    gap: "5px",
-    alignItems: "center",
-    justifyConent: "center",
+    display: 'flex',
+    gap: '5px',
+    alignItems: 'center',
+    justifyConent: 'center',
     color: props.textColor,
   };
   return (

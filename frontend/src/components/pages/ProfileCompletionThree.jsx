@@ -1,12 +1,12 @@
-import { LeftBar } from "./ProfileCompletion/LeftBarProfile";
-import SkipButton from "./ProfileCompletion/SkipButton";
-import CompleteButton from "./ProfileCompletion/CompleteButton";
-import ProgressBar from "./ProfileCompletion/progressBar";
-import UrapolkuLogo from "./ProfileCompletion/UrapolkuLogoText";
-import "../css/profileCompletionThree.css";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useFetch } from "../../api/requestHooks";
+import { LeftBar } from './ProfileCompletion/LeftBarProfile';
+import SkipButton from './ProfileCompletion/SkipButton';
+import CompleteButton from './ProfileCompletion/CompleteButton';
+import ProgressBar from './ProfileCompletion/progressBar';
+import UrapolkuLogo from './ProfileCompletion/UrapolkuLogoText';
+import '../css/profileCompletionThree.css';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useFetch } from '../../api/requestHooks';
 
 function ProfileCreateThree() {
   //really need to get rid of these
@@ -18,12 +18,12 @@ function ProfileCreateThree() {
   const [openStartYear, setOpenStartYear] = useState(false);
   const [openEndYear, setOpenEndYear] = useState(false);
   const [employmentInfo, setEmploymentInfo] = useState({
-    title: "",
-    employmentType: "",
-    location: "",
-    locationType: "",
-    startDate: "MM YY",
-    endDate: "MM YY",
+    title: '',
+    employmentType: '',
+    location: '',
+    locationType: '',
+    startDate: 'MM YY',
+    endDate: 'MM YY',
   });
   const navigate = useNavigate();
   const withAuth = useFetch();
@@ -44,18 +44,18 @@ function ProfileCreateThree() {
   };
 
   const Months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
   ];
 
   // Pushes every year from 1930 to 2023 to years list
@@ -69,28 +69,23 @@ function ProfileCreateThree() {
   // These functions gets the text-content when element children is clicked
   // It stores the value into DataValue
 
-  const handleSelectClick = (
-    event,
-    targetClassName,
-    setOpenState,
-    valueName
-  ) => {
+  const handleSelectClick = (event, targetClassName, setOpenState, valueName) => {
     let dataValue = event.currentTarget.textContent;
     const select = document.querySelector(`.${targetClassName}`);
     select.textContent = dataValue;
 
     switch (targetClassName) {
-      case "Start-Month":
-        dataValue = `${dataValue} ${employmentInfo.startDate.split(" ")[1]}`;
+      case 'Start-Month':
+        dataValue = `${dataValue} ${employmentInfo.startDate.split(' ')[1]}`;
         break;
-      case "Start-Year":
-        dataValue = `${employmentInfo.startDate.split(" ")[0]} ${dataValue}`;
+      case 'Start-Year':
+        dataValue = `${employmentInfo.startDate.split(' ')[0]} ${dataValue}`;
         break;
-      case "End-Month":
-        dataValue = `${dataValue} ${employmentInfo.endDate.split(" ")[1]}`;
+      case 'End-Month':
+        dataValue = `${dataValue} ${employmentInfo.endDate.split(' ')[1]}`;
         break;
-      case "End-Year":
-        dataValue = `${employmentInfo.endDate.split(" ")[0]} ${dataValue}`;
+      case 'End-Year':
+        dataValue = `${employmentInfo.endDate.split(' ')[0]} ${dataValue}`;
         break;
     }
 
@@ -110,25 +105,25 @@ function ProfileCreateThree() {
       onBoardingFinished: true,
     };
 
-    withAuth.patch(`/user/${localStorage.getItem("userId")}`, profileData);
-    navigate("/browse");
+    withAuth.patch(`/user/${localStorage.getItem('userId')}`, profileData);
+    navigate('/browse');
   };
 
   const skipPage = () => {
     // No data saved, just skipped
-    withAuth.patch(`/user/${localStorage.getItem("userId")}`, {
+    withAuth.patch(`/user/${localStorage.getItem('userId')}`, {
       onBoardingFinished: true,
     });
-    navigate("/browse");
+    navigate('/browse');
   };
 
   const employmentTypes = [
-    "Full time",
-    "Part time",
-    "Freelance",
-    "Contract",
-    "Self-employed",
-    "Internship",
+    'Full time',
+    'Part time',
+    'Freelance',
+    'Contract',
+    'Self-employed',
+    'Internship',
   ];
 
   return (
@@ -151,9 +146,7 @@ function ProfileCreateThree() {
               id=""
               placeholder="Ex. Project Manager"
               value={employmentInfo.title}
-              onChange={(e) =>
-                setEmploymentInfo({ ...employmentInfo, title: e.target.value })
-              }
+              onChange={(e) => setEmploymentInfo({ ...employmentInfo, title: e.target.value })}
             />
           </div>
           <div className="Employment-type-dropdown">
@@ -161,7 +154,7 @@ function ProfileCreateThree() {
             <button onClick={() => handleOpen(setOpenEmployment)}>
               <p className="Employment-type-text">Please select</p>
               <img
-                className={`Expand-more ${openEmployment ? "up" : ""}`}
+                className={`Expand-more ${openEmployment ? 'up' : ''}`}
                 src="pictures/expand-more.png"
                 alt=""
               />
@@ -175,9 +168,9 @@ function ProfileCreateThree() {
                     onClick={(event) =>
                       handleSelectClick(
                         event,
-                        "Employment-type-text",
+                        'Employment-type-text',
                         setOpenEmployment,
-                        "employmentType"
+                        'employmentType',
                       )
                     }
                   >
@@ -206,24 +199,19 @@ function ProfileCreateThree() {
             <button onClick={() => handleOpen(setOpenLocationType)}>
               <p className="Location-text">Please select</p>
               <img
-                className={`Expand-more ${openLocationType ? "up" : ""}`}
+                className={`Expand-more ${openLocationType ? 'up' : ''}`}
                 src="pictures/expand-more.png"
                 alt=""
               />
             </button>
             {openLocationType && (
               <div className="Location-type-content">
-                {["On-site", "Hybrid", "Remote"].map((type, i) => (
+                {['On-site', 'Hybrid', 'Remote'].map((type, i) => (
                   <p
                     key={i}
                     className="Location-type"
                     onClick={(event) =>
-                      handleSelectClick(
-                        event,
-                        "Location-text",
-                        setOpenLocationType,
-                        "locationType"
-                      )
+                      handleSelectClick(event, 'Location-text', setOpenLocationType, 'locationType')
                     }
                   >
                     {type}
@@ -249,7 +237,7 @@ function ProfileCreateThree() {
                 <button onClick={() => handleOpen(setOpenStartMonth)}>
                   <p className="Start-Month">Month</p>
                   <img
-                    className={`Expand-more ${openStartMonth ? "up" : ""}`}
+                    className={`Expand-more ${openStartMonth ? 'up' : ''}`}
                     src="pictures/expand-more.png"
                     alt=""
                   />
@@ -261,12 +249,7 @@ function ProfileCreateThree() {
                         key={month}
                         data-value={month}
                         onClick={(event) =>
-                          handleSelectClick(
-                            event,
-                            "Start-Month",
-                            setOpenStartMonth,
-                            "startDate"
-                          )
+                          handleSelectClick(event, 'Start-Month', setOpenStartMonth, 'startDate')
                         }
                       >
                         {month}
@@ -279,7 +262,7 @@ function ProfileCreateThree() {
                 <button onClick={() => handleOpen(setOpenStartYear)}>
                   <p className="Start-Year">Year</p>
                   <img
-                    className={`Expand-more ${openStartYear ? "up" : ""}`}
+                    className={`Expand-more ${openStartYear ? 'up' : ''}`}
                     src="pictures/expand-more.png"
                     alt=""
                   />
@@ -291,12 +274,7 @@ function ProfileCreateThree() {
                         key={Year}
                         data-value={Year}
                         onClick={(event) =>
-                          handleSelectClick(
-                            event,
-                            "Start-Year",
-                            setOpenStartYear,
-                            "startDate"
-                          )
+                          handleSelectClick(event, 'Start-Year', setOpenStartYear, 'startDate')
                         }
                       >
                         {Year}
@@ -315,7 +293,7 @@ function ProfileCreateThree() {
                   <button onClick={() => handleOpen(setOpenEndMonth)}>
                     <p className="End-Month">Month</p>
                     <img
-                      className={`Expand-more ${openEndMonth ? "up" : ""}`}
+                      className={`Expand-more ${openEndMonth ? 'up' : ''}`}
                       src="pictures/expand-more.png"
                       alt=""
                     />
@@ -327,12 +305,7 @@ function ProfileCreateThree() {
                           key={month}
                           data-value={month}
                           onClick={(event) =>
-                            handleSelectClick(
-                              event,
-                              "End-Month",
-                              setOpenEndMonth,
-                              "endDate"
-                            )
+                            handleSelectClick(event, 'End-Month', setOpenEndMonth, 'endDate')
                           }
                         >
                           {month}
@@ -345,7 +318,7 @@ function ProfileCreateThree() {
                   <button onClick={() => handleOpen(setOpenEndYear)}>
                     <p className="End-Year">Year</p>
                     <img
-                      className={`Expand-more ${openEndYear ? "up" : ""}`}
+                      className={`Expand-more ${openEndYear ? 'up' : ''}`}
                       src="pictures/expand-more.png"
                       alt=""
                     />
@@ -357,12 +330,7 @@ function ProfileCreateThree() {
                           key={Year}
                           data-value={Year}
                           onClick={(event) =>
-                            handleSelectClick(
-                              event,
-                              "End-Year",
-                              setOpenEndYear,
-                              "endDate"
-                            )
+                            handleSelectClick(event, 'End-Year', setOpenEndYear, 'endDate')
                           }
                         >
                           {Year}

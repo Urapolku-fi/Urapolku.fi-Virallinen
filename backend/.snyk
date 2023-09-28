@@ -1,0 +1,29 @@
+# .snyk
+
+# Specify the language and package manager for your project (e.g., Node.js and npm)
+language: "nodejs"
+
+# Specify the project's package manager (e.g., npm, yarn)
+# If you're using npm, you don't need to include this as npm is the default.
+packageManager: "npm"
+
+# Specify the test command to run tests (if applicable)
+testCommand: "npm test"
+
+# Specify the production and development dependencies
+# Here, we exclude the 'test' and 'development' dependencies
+# from Snyk vulnerability checks.
+# Note: Customize this list based on your project structure.
+dependencies:
+  # Production dependencies
+  production:
+    # Include only production dependencies
+    targetFile: "package.json"
+  # Development dependencies (optional)
+  # development:
+    # Include development dependencies
+    # targetFile: "package.json"
+
+# Specify your organization ID (optional)
+# If you're working within an organization on Snyk, you can specify the organization ID here.
+# org: "your-organization-id"

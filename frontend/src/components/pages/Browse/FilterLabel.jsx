@@ -1,6 +1,6 @@
-import "../../css/Browse/filterLabel.css";
+import '../../css/Browse/filterLabel.css';
 
-const FilterLabel = ({text}) => {
+const FilterLabel = ({ text }) => {
   return <div className="filter-label">{text}</div>;
 };
 

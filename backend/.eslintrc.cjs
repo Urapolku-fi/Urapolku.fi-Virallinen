@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  env: { browser: true, es2020: true },
+  env: { browser: true, es2020: true, node: true },
   extends: [
     'eslint:recommended',
     'plugin:prettier/recommended',
@@ -23,9 +23,11 @@ module.exports = {
     "react/prop-types": [0], // Disabling prop-types rule for now
 
     // Add more code quality and security rules as needed
-    'no-console': 'error', // Prevent the use of console.log, consider using proper logging
+    // 'no-console': 'error', // Prevent the use of console.log, consider using proper logging
 
     // Styling Guidelines
+
+    // Prettier Rules
     'prettier/prettier': 'off', // Make sure the editor doesn't show errors for linting, since formatting should fix that automatically.
 
     // Accessibility Guidelines

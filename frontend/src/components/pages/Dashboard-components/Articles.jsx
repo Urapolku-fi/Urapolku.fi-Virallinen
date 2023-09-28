@@ -1,6 +1,6 @@
-import React from "react";
-import "../../css/Dashboard/Articles.css";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import '../../css/Dashboard/Articles.css';
+import { useNavigate } from 'react-router-dom';
 
 function ArticleCard({ backgroundImage, text, url }) {
   const navigate = useNavigate();
@@ -34,12 +34,7 @@ function Articles({ articles }) {
           <a href="/">
             <p>View-all</p>
           </a>
-          <img
-            src="/pictures/Arrow-right-alt.png"
-            alt=""
-            height="24px"
-            width="24px"
-          />
+          <img src="/pictures/Arrow-right-alt.png" alt="" height="24px" width="24px" />
         </div>
       </div>
       <div className="Article-cards">

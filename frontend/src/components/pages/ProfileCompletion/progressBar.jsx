@@ -1,8 +1,8 @@
 function ProgressBar() {
   const floatRight = {
-    display: "flex",
-    float: "Right",
-    gap: "10px",
+    display: 'flex',
+    float: 'Right',
+    gap: '10px',
   };
   return (
     <div className="Proggress-bar" style={floatRight}>

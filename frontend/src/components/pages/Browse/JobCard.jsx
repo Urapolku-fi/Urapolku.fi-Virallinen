@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import "../../css/Browse/jobCard.css";
-import CheckBox from "./CheckBox";
-import BookmarkButton from "./BookmarkButton";
-import objectShallowEqual from "../../../helpers/objectShallowEqual";
+import { useEffect, useState } from 'react';
+import '../../css/Browse/jobCard.css';
+import CheckBox from './CheckBox';
+import BookmarkButton from './BookmarkButton';
+import objectShallowEqual from '../../../helpers/objectShallowEqual';
 
 const JobCard = ({ data, comparedJobs, setComparedJobs }) => {
   const [compareToggled, setCompareToggled] = useState(false);
@@ -47,11 +47,7 @@ const JobCard = ({ data, comparedJobs, setComparedJobs }) => {
       <div className="see-details-wrapper">
         <div className="see-details">Lue lisää</div>
       </div>
-      <img
-        className="jobcard-item"
-        alt=""
-        src={"/pictures/job-example-image.png"}
-      />
+      <img className="jobcard-item" alt="" src={'/pictures/job-example-image.png'} />
       <CheckBox
         text="Lisää vertailtavaksi"
         toggled={compareToggled}

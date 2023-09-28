@@ -1,17 +1,17 @@
-import { useAuth0 } from "@auth0/auth0-react";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useFetch } from "../../api/requestHooks";
-import "../css/accountType.css";
-import closeIcon from "../../assets/close-menu.svg";
-import checkmarkIcon from "../../assets/checkmark.svg";
-import userIcon from "../../assets/user.svg";
-import briefcaseIcon from "../../assets/briefcase.svg";
+import { useAuth0 } from '@auth0/auth0-react';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useFetch } from '../../api/requestHooks';
+import '../css/accountType.css';
+import closeIcon from '../../assets/close-menu.svg';
+import checkmarkIcon from '../../assets/checkmark.svg';
+import userIcon from '../../assets/user.svg';
+import briefcaseIcon from '../../assets/briefcase.svg';
 
 const Card = (props) => {
   return (
     <div
-      className={`account-type-card ${props.active ? "active" : "inactive"}`}
+      className={`account-type-card ${props.active ? 'active' : 'inactive'}`}
       onClick={props.setActive}
     >
       <img className="account-type-card-logo" src={props.logo} />
@@ -31,7 +31,7 @@ const Card = (props) => {
 const CallbackPage = () => {
   const { user } = useAuth0();
   const withAuth = useFetch();
-  const [accType, setAccType] = useState("Employer");
+  const [accType, setAccType] = useState('Employer');
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
 
@@ -39,13 +39,11 @@ const CallbackPage = () => {
     if (user) {
       withAuth.get(`/user/${user.email}`).then(({ json }) => {
         if (json.onBoardingFinished) {
-          navigate("/browse");
-          localStorage.setItem("userId", json.userId);
+          navigate('/browse');
+          localStorage.setItem('userId', json.userId);
         } else if (json.accountType !== undefined) {
-          navigate(
-            json.accountType === "Employer" ? "/emponboarding" : "/profileone"
-          );
-          localStorage.setItem("userId", json.userId);
+          navigate(json.accountType === 'Employer' ? '/emponboarding' : '/profileone');
+          localStorage.setItem('userId', json.userId);
         }
         setLoading(false);
       });
@@ -60,12 +58,10 @@ const CallbackPage = () => {
       onBoardingFinished: false,
     };
 
-    withAuth
-      .post(`/user/create?type=${accType}`, dbUserData)
-      .then(({ json }) => {
-        navigate(accType === "Employer" ? "/emponboarding" : "/profileone");
-        localStorage.setItem("userId", json.userId);
-      });
+    withAuth.post(`/user/create?type=${accType}`, dbUserData).then(({ json }) => {
+      navigate(accType === 'Employer' ? '/emponboarding' : '/profileone');
+      localStorage.setItem('userId', json.userId);
+    });
   };
 
   return loading ? (
@@ -83,19 +79,19 @@ const CallbackPage = () => {
             logo={userIcon}
             header="Sign up as an employer"
             description="Access a pool of qualified candidates"
-            active={accType === "Employer"}
-            setActive={() => setAccType("Employer")}
+            active={accType === 'Employer'}
+            setActive={() => setAccType('Employer')}
           />
           <Card
             logo={briefcaseIcon}
             header="Sign up as a candidate"
             description="Discover the perfect job matches"
-            active={accType === "User"}
-            setActive={() => setAccType("User")}
+            active={accType === 'User'}
+            setActive={() => setAccType('User')}
           />
         </div>
         <div id="account-type-box-bottom">
-          <button onClick={() => navigate("/")}>Cancel</button>
+          <button onClick={() => navigate('/')}>Cancel</button>
           <button onClick={addUser}>Confirm</button>
         </div>
       </div>

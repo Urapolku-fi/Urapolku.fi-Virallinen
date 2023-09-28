@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema(
@@ -19,8 +19,8 @@ const UserSchema = new Schema(
     endDate: { type: String },
     onBoardingFinished: { type: Boolean },
   },
-  { collection: "users" }
+  { collection: 'users' },
 );
 
 // Export model
-module.exports = mongoose.model("User", UserSchema);
+module.exports = mongoose.model('User', UserSchema);

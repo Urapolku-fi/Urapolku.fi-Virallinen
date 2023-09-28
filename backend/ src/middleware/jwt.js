@@ -1,6 +1,6 @@
-const { expressjwt: jwt } = require("express-jwt");
-const { expressJwtSecret } = require("jwks-rsa");
-require("dotenv").config();
+const { expressjwt: jwt } = require('express-jwt');
+const { expressJwtSecret } = require('jwks-rsa');
+require('dotenv').config();
 
 const checkJwt = jwt({
   secret: expressJwtSecret({
@@ -13,7 +13,7 @@ const checkJwt = jwt({
   // Validate the audience and the issuer
   audience: `${process.env.AUTH0_AUDIENCE}`,
   issuer: process.env.AUTH0_BASE_URL,
-  algorithms: ["RS256"],
+  algorithms: ['RS256'],
 });
 
 module.exports = checkJwt;

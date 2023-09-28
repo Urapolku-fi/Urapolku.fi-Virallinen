@@ -21,7 +21,9 @@
   z-index: 999;
   border-radius: 20px;
   background-color: #0b0121;
-  box-shadow: 0px 2px 4px #0b0121, 0px -2px 7px rgba(233, 223, 255, 0.3);
+  box-shadow:
+    0px 2px 4px #0b0121,
+    0px -2px 7px rgba(233, 223, 255, 0.3);
   border: 1px solid rgba(187, 155, 255, 0.32);
   box-sizing: border-box;
   overflow: scroll;
@@ -31,7 +33,9 @@
   font-family: Montserrat;
   display: block;
   opacity: 1;
-  transition: opacity 0.25s ease-in, height 0.5s step-start;
+  transition:
+    opacity 0.25s ease-in,
+    height 0.5s step-start;
 }
 
 .for-sort {
