@@ -1,0 +1,38 @@
+.job-tools-panel {
+  border-radius: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0)
+  );
+  box-shadow: 0px -2px 10px rgba(233, 223, 255, 0.3),
+    0px -2px 40px rgba(187, 155, 255, 0.15),
+    0px 0.5px 0px rgba(255, 255, 255, 0.5) inset;
+  height: min-content;
+  width: 100%;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.job-tools-header {
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 600;
+  font-family: Montserrat;
+  color: #ececec;
+  text-align: left;
+}
+
+.job-tools-text,
+.job-tools-text > a {
+  font-size: 14px;
+  line-height: 150%;
+  font-weight: 500;
+  font-family: Montserrat;
+  color: #ececec;
+  text-align: left;
+  text-decoration: none;
+}

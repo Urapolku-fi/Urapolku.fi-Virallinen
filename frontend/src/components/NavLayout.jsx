@@ -22,7 +22,13 @@ const navbarMenuItems = [
   },
 ];
 
-const blacklistAddr = ["/profileone", "/profiletwo", "/profilethree"];
+const blacklistAddr = [
+  "/profileone",
+  "/profiletwo",
+  "/profilethree",
+  "/callback",
+  "/emponboarding",
+];
 
 const MenuButton = () => {
   const vizContext = useContext(NavMenuContext);
@@ -104,7 +110,7 @@ const NavBarLayout = (props) => {
       {navbarVisible && (
         <header className="navbar">
           <div className="nav-logo-wrapper" onClick={() => navigate("/")}>
-            <img className="nav-logo" src={"/pictures/urapolku.png"} />ä
+            <img className="nav-logo" src={"/pictures/urapolku.png"} />
             <p>Urapolku</p>
           </div>
           <div className="nav-items-wrapper">
@@ -126,7 +132,7 @@ const NavBarLayout = (props) => {
                       returnTo: "https://localhost:5173/",
                     },
                   });
-                  localStorage.removeItem("userId");
+                  localStorage.clear();
                 }}
               >
                 Kirjaudu ulos

@@ -1,0 +1,74 @@
+.multipoint-slider {
+  height: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.multipoint-slider-thumb-container {
+  transform: translateY(-1rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  outline: none;
+}
+
+.multipoint-slider-thumb {
+  background-color: #0B0121;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 100%;
+  box-shadow: 0px -2px 10px rgba(233, 223, 255, 0.3),
+  0px -2px 40px rgba(187, 155, 255, 0.15),
+  0px 0.5px 0px rgba(255, 255, 255, 0.5) inset;
+  outline: #BB9BFF .1rem solid;
+  cursor: grab;
+}
+
+.multipoint-slide-thumb-headsup-value {
+  color: white;
+  margin-bottom: .75rem;
+}
+
+.multipoint-slider-track {
+  background-color: white;
+  height: .1rem;
+}
+
+.multipoint-slider-mark {
+  background-color: rgba(255, 255, 255, 0.301);
+  height: 1rem;
+  width: .1rem;
+}
+
+.multipoint-input-wrapper {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.multipoint-input-text-fields {
+  display: flex;
+  overflow: hidden;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.multipoint-input-text-fields p {
+  color: white;
+}
+
+.multipoint-input-text-fields input {
+  width: 6rem;
+  padding: .7rem;
+  border-radius: .5rem;
+  background-color: #0B0121;
+  color: white;
+  outline: none;
+  -moz-appearance:textfield;
+}
+
+.multipoint-input-text-fields input::-webkit-inner-spin-button,
+.multipoint-input-text-fields input::-webkit-outer-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}

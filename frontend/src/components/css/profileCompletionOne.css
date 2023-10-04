@@ -3,22 +3,23 @@
 /* These are changes for this site only elements */
 #ProfileCompletion-Wrapper {
   height: 100%;
+  min-height: 100vh;
   display: flex;
   font-family: "Montserrat", sans-serif;
 }
 .Profile-completion-one-right {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   background-color: white;
 }
 .Profile-completion-one-content {
   margin-top: 100px;
   display: flex;
   flex-direction: column;
-  margin: 5% 20% 0% 10%;
+  margin: 3rem 6rem;
   gap: 25px;
-  width: 50%;
-  min-width: 50%;
+  max-width: 800px;
 }
 .Profile-completion-one-content .Description p,
 .User-photos p {
@@ -138,46 +139,38 @@
 .Profile-completion-one-right .Header-logo {
   display: none;
 }
-.Profile-completion-one-right .skipButton button {
-  padding: 21px 45px;
+.Profile-completion-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
 }
 
 /* Media queries */
 @media screen and (max-width: 1000px) {
-  .Profile-completion-one-right .Header-logo {
-    display: block;
-    margin-left: 5%;
-    margin-top: 2%;
-  }
   .Profile-completion-one-content {
-    width: 70%;
     justify-content: left;
     margin: 2.5% 20% 0% 10%;
   }
 }
 @media screen and (max-width: 800px) {
   .Profile-completion-one-content {
-    margin: 5% 10% 5% 5%;
-    width: 80%;
-    min-width: 350px;
+    margin: 10%;
   }
   .Profile-completion-one-content .Description textarea {
     min-width: 300px;
   }
 }
 @media screen and (max-width: 400px) {
+  .Profile-completion-one-content {
+    margin: 6rem 1rem;
+  } 
   .Profile-completion-one-right .Header-text h3 {
     text-align: center;
     font-size: 30px;
   }
-  .Profile-completion-one-content {
-    min-width: 90%;
-  }
   .Profile-completion-one-content .Description textarea {
     min-width: 0px;
-  }
-  .Profile-completion-one-right .skipButton button {
-    padding: 7px 26px;
   }
   .Profile-completion-one-content .Bottom .Proggress-bar {
     margin-right: 0px;

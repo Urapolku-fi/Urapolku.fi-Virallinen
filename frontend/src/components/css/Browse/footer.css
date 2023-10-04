@@ -1,0 +1,177 @@
+.contact {
+  align-self: stretch;
+  position: relative;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+}
+
+.work-inquires-workvaultflow {
+  align-self: stretch;
+  position: relative;
+  letter-spacing: -0.01em;
+  font-weight: 300;
+}
+
+.footer-links {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 6px;
+  font-size: 18px;
+}
+
+.footer-links-wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+.careers {
+  position: relative;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+}
+
+.careersvaultflowcom {
+  position: relative;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  font-weight: 300;
+}
+
+.footer-links-wrapper1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+.vaultflow-all-rights {
+  position: relative;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  font-weight: 300;
+  color: #939393;
+}
+
+.footer-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 40px;
+}
+
+.th-street-floor {
+  margin: 0;
+}
+
+.th-street-floor-container {
+  flex: 1;
+  position: relative;
+  letter-spacing: -0.01em;
+  font-weight: 300;
+}
+
+.address-wrapper {
+  width: 210px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: 18px;
+}
+
+.twitter {
+  position: relative;
+  letter-spacing: -0.01em;
+  font-weight: 300;
+}
+
+.valtflow-icon {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.urapolku {
+  position: absolute;
+  top: 0px;
+  left: 32px;
+  letter-spacing: -0.03em;
+  line-height: 100%;
+}
+
+.logo {
+  position: relative;
+  width: 133px;
+  height: 22px;
+}
+
+.logo-wrapper {
+  width: 138px;
+  height: 22px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.footer-column2 {
+  align-self: stretch;
+  width: 180px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  font-size: 22px;
+  color: #ececec;
+}
+
+.footer-columns {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 24px;
+}
+
+.footer-container {
+  width: 85vw;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.footer {
+  padding-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  font-size: 24px;
+  color: #ffffff;
+  font-family: Montserrat;
+}
+
+@media only screen and (max-width: 800px) {
+  .footer-columns {
+    flex-direction: column;
+  }
+  .footer-column2 {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+}

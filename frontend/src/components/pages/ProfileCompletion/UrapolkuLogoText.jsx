@@ -1,11 +1,10 @@
-function urapolkuLogo() {
+function urapolkuLogo(props) {
   const display = {
     display: "flex",
     gap: "5px",
     alignItems: "center",
     justifyConent: "center",
-    color: "#FFF",
-    float: "left",
+    color: props.textColor,
   };
   return (
     <div style={display}>

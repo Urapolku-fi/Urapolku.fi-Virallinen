@@ -1,0 +1,149 @@
+.jobcard-child {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+  border-radius: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(107, 107, 107, 0.05),
+    rgba(191, 191, 191, 0.05)
+  );
+  box-shadow: 0px -2px 10px rgba(233, 223, 255, 0.3),
+    0px -2px 40px rgba(187, 155, 255, 0.15),
+    0px 0.5px 0px rgba(255, 255, 255, 0.5) inset;
+}
+
+.jobcard-title {
+  color: white;
+  font-size: 20px;
+  line-height: 150%;
+  font-weight: 600;
+}
+
+.jobcard-info {
+  margin: 0;
+}
+
+.jobcard-info-welfare-container1 {
+  line-break: anywhere;
+}
+
+.jobcard-info-welfare-container {
+  position: absolute;
+  height: 11.29%;
+  top: 5.91%;
+  left: 27.61%;
+  line-height: 150%;
+  display: flex;
+  align-items: center;
+}
+
+.health-care-full-container {
+  position: absolute;
+  height: 25.82%;
+  width: 50.52%;
+  top: 34.76%;
+  left: 6.83%;
+  line-height: 150%;
+  color: #a39bb4;
+  display: flex;
+  align-items: center;
+}
+
+.see-details {
+  position: relative;
+  line-height: 150%;
+  font-weight: 500;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.see-details-wrapper {
+  position: absolute;
+  height: 12.1%;
+  width: 66.55%;
+  top: 83.06%;
+  right: 25.7%;
+  bottom: 4.84%;
+  left: 7.75%;
+  border-radius: 5px;
+  background-color: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  padding: 12px 59px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  color: #000;
+  cursor: pointer;
+}
+
+.jobcard-item {
+  position: absolute;
+  height: 4rem;
+  width: 4rem;
+  top: 5.64%;
+  right: 77.98%;
+  bottom: 81.83%;
+  left: 5.78%;
+  border-radius: 50%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.frame-child {
+  position: relative;
+  border-radius: 50%;
+  background-color: #0f0524;
+  border: 1.5px solid #fff;
+  box-sizing: border-box;
+  width: 10.5px;
+  height: 10.5px;
+}
+
+.ellipse-parent {
+  position: absolute;
+  height: 6.45%;
+  width: 52.91%;
+  top: 72.87%;
+  right: 37.98%;
+  bottom: 20.68%;
+  left: 9.11%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 7px;
+  font-size: 14px;
+  color: #a39bb4;
+}
+
+.jobcard {
+  position: relative;
+  width: 47%;
+  height: 25rem;
+  text-align: left;
+  font-size: 16px;
+  color: #ececec;
+  font-family: Montserrat;
+}
+
+@media screen and (max-width: 800px) {
+  .jobcard {
+    width: 90%;
+    text-align: left;
+    font-size: 16px;
+    color: #ececec;
+    font-family: Montserrat;
+  }
+}

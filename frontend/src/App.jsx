@@ -1,15 +1,18 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/pages/Home";
 import JobDetails from "./components/pages/JobDetails"
+import Browse from "./components/pages/Browse";
 import { NavBarLayout } from "./components/NavLayout";
 import ProfileCompletionOne from "./components/pages/ProfileCompletionOne";
 import ProfileCompletionTwo from "./components/pages/ProfileCompletionTwo";
 import ProfileCompletionThree from "./components/pages/ProfileCompletionThree";
+import Dashboard from "./components/pages/Dashboard";
 import {
   Auth0Provider,
   withAuthenticationRequired as withAuth,
 } from "@auth0/auth0-react";
-import CallbackPage from "./components/Auth0Callback";
+import AccountTypeSelection from "./components/pages/AccountTypeSelection";
+import EmployerProfileCompletion from "./components/pages/EmployerProfileCompletion";
 
 function App() {
   return (
@@ -27,7 +30,7 @@ function App() {
         <NavBarLayout>
           <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route path="/callback" element={<CallbackPage />} />
+            <Route path="/callback" element={<AccountTypeSelection />} />
             <Route
               path="/profileone"
               Component={withAuth(ProfileCompletionOne)}
@@ -41,6 +44,12 @@ function App() {
               Component={withAuth(ProfileCompletionThree)}
             />
             <Route exact path="/job" element={<JobDetails />} />
+            <Route path="/browse" Component={withAuth(Browse)} />
+            <Route
+              path="/emponboarding"
+              Component={withAuth(EmployerProfileCompletion)}
+            />
+            <Route path="/dashboard" Component={withAuth(Dashboard)} />
           </Routes>
         </NavBarLayout>
       </BrowserRouter>

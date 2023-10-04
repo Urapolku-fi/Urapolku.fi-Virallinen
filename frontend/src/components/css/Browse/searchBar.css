@@ -1,0 +1,161 @@
+.search-bar-left {
+  height: 100%;
+  flex-grow: 1;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.search-for-a {
+  outline: none;
+  color: #A39BB4;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 25%;
+  left: 2.08%;
+  line-height: 150%;
+}
+
+.search-for-a:focus {
+  color: white;
+}
+
+.experience {
+  position: relative;
+  line-height: 150%;
+}
+
+.search-bar-expand-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.frame-item {
+  position: relative;
+  border-right: 1px solid #ececec;
+  box-sizing: border-box;
+  width: 1px;
+  height: 100%;
+}
+
+.color-icon {
+  position: relative;
+  width: 12.63px;
+  height: 16.92px;
+}
+
+.color-parent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 9px;
+  padding-right: 1rem;
+}
+
+.line-parent {
+  height: 99.04%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+.frame-inner {
+  position: relative;
+  border-radius: 0px 30px 30px 0px;
+  background-color: #ececec;
+  width: 126px;
+  height: 48px;
+  overflow: hidden;
+  flex-shrink: 0;
+  z-index: 0;
+}
+
+.search {
+  top: 12.5px;
+  left: 35.68px;
+  line-height: 150%;
+  z-index: 1;
+}
+
+.frame-parent {
+  height: 100%;
+  width: 8rem;
+  line-height: 3rem;
+  background-color: #ececec;
+  text-align: center;
+  color: #0b081c;
+  border-radius: 0 30px 30px 0;
+}
+
+.search-bar {
+  position: relative;
+  display: flex;
+  top: 80px;
+  width: 65vw;
+  margin: auto;
+  height: 48px;
+  text-align: left;
+  font-size: 16px;
+  color: #a39bb4;
+  font-family: Montserrat;
+  border: 1px solid #ececec;
+  border-radius: 30px;
+}
+
+.mobile-search-bar {
+  display: none;
+  align-items: center;
+  padding: .7rem;
+  gap: .5rem;
+  width: 80%;
+  margin: auto;
+  font-size: 16px;
+  color: #a39bb4;
+  font-family: Montserrat;
+  border: 1px solid #ececec;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.mobile-search-bar input {
+  background-color: transparent;
+  color: white;
+  border: none;
+  outline: none;
+  height: 100%;
+  flex-grow: 1;
+}
+
+.mobile-search-bar img {
+  height: 1.5rem;
+  filter: invert(1);
+}
+
+@media screen and (max-width: 900px) {
+  .search-bar {
+    width: 90vw;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .search-bar {
+    top: 0;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .search-bar {
+    display: none;
+  }
+
+  .mobile-search-bar {
+    display: flex;
+    flex-direction: row;
+  }
+}

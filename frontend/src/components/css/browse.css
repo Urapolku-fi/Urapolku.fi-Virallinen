@@ -1,0 +1,205 @@
+.Browse-wrapper {
+  width: 100vw;
+}
+
+.hero-stack {
+  display: inline-flex;
+  width: 100vw;
+  height: 436px;
+  padding: 80px 0px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, #391f8f 0%, #0b0122 100%);
+}
+
+.header-looking-for-job {
+  opacity: 1;
+  align-self: stretch;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 115%; /* 60px */
+  letter-spacing: -1.8px;
+
+  background: linear-gradient(179deg, #fafafc 0%, #75689d 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-ipsum {
+  flex: 1;
+  position: relative;
+  line-height: 160%;
+  width: 90vw;
+}
+
+.paragraph-wrapper {
+  width: 90vw;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+  text-align: center;
+  font-size: 60px;
+  color: rgba(236, 236, 236, 0.65);
+  font-family: Montserrat;
+}
+
+.job-count-and-sort-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  width: 65vw;
+  height: 24px;
+  margin: auto;
+  margin-bottom: 32px;
+}
+
+.job-count-and-sort-container > div:nth-child(3) {
+  grid-column: 3;
+  justify-self: end;
+}
+
+.text-job-count {
+  width: 400px;
+  height: 20px;
+  color: #ddd;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  text-align: center;
+  grid-column: 2;
+}
+
+.text-job-filter-toggle {
+  display: none;
+  color: #ddd;
+}
+
+.button-sort {
+  width: 100px;
+  height: 20px;
+  color: #ddd;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.filter-dropdown {
+  width: 100px;
+  height: 20px;
+  color: #ddd;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  visibility: hidden;
+}
+
+.job-and-filter-container {
+  display: flex;
+  justify-content: space-between;
+  width: 65vw;
+  margin: auto;
+  align-items: start;
+  gap: 3rem;
+}
+.job-container {
+  flex-grow: 2;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.filter-container {
+  flex-grow: 1;
+  height: 100px;
+}
+
+.sort-dropdown-arrow {
+  position: absolute;
+  transform: transformY(50%);
+}
+
+@media only screen and (max-width: 1500px) {
+  .job-and-filter-container {
+    width: 90vw;
+  }
+  .job-count-and-sort-container {
+    width: 90vw;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .job-count-and-sort-container {
+    width: 80vw;
+  }
+  .filter-dropdown {
+    visibility: visible;
+  }
+
+  .text-job-filter-toggle {
+    display: block;
+    grid-column: 1;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .job-count-and-sort-container {
+    flex-direction: column;
+    height: 100px;
+    align-items: center;
+  }
+
+  .text-job-count {
+    display: none;
+  }
+
+  .job-count-and-sort-container > div:nth-child(3) {
+    justify-self: end;
+    grid-column: 3;
+  }
+
+  .job-count-and-sort-container  .button-sort {
+    text-align: end;
+  }
+
+  .job-container {
+    justify-content: center;
+  }
+
+  .hero-stack {
+    height: 20rem;
+    padding-bottom: 0;
+  }
+
+  .header-looking-for-job {
+    font-size: 2.5rem;
+  }
+}
+
