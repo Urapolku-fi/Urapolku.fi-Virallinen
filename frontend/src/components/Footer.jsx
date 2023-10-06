@@ -1,4 +1,4 @@
-import "../../css/Browse/footer.css";
+import "./css/footer.css";
 
 const Footer = () => {
   return (
@@ -50,7 +50,11 @@ const Footer = () => {
           <div className="footer-column2">
             <div className="logo-wrapper">
               <div className="logo">
-                <img className="valtflow-icon" alt="" src={"/pictures/urapolku.png"} />
+                <img
+                  className="valtflow-icon"
+                  alt=""
+                  src={"/pictures/urapolku.png"}
+                />
                 <b className="urapolku">Urapolku</b>
               </div>
             </div>
