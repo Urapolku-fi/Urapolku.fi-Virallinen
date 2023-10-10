@@ -121,7 +121,7 @@ h6,
 }
 
 .tools {
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 1.18rem;
   width: 100%;
@@ -298,13 +298,13 @@ h6,
   font-size: unset;
 }
 
-#jobHeader {
+.jobHeader {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
 }
 
-#jobHeader h1 {
+.jobHeader h1 {
   font-size: 26px;
   font-weight: 500;
 }
@@ -358,6 +358,42 @@ h6,
   margin-top: 1.5rem;
 }
 
+@media screen and (min-width: 1280px) {
+  .body {
+    flex-direction: row-reverse;
+    max-width: 1280px;
+    margin: -10rem auto 0 auto;
+    align-items: start;
+  }
+
+  .cards {
+    flex-direction: column;
+    width: 30%;
+  }
+
+  .cards > div {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .jobHeader,
+  #toolsSection {
+    display: none;
+  }
+
+  .jobContainer {
+    width: 70%;
+  }
+
+  .mainJobTitle.desktopTitle h1 {
+    font-size: 2rem;
+  }
+
+  .tools {
+    display: flex;
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .cards {
     flex-wrap: wrap;
@@ -365,7 +401,7 @@ h6,
 }
 
 @media screen and (max-width: 500px) {
-  #jobHeader {
+  .jobHeader {
     flex-direction: column;
     gap: 2rem;
   }

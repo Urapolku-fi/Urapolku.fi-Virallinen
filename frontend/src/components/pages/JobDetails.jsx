@@ -10,7 +10,7 @@ const JobDetails = () => {
     <>
       <img className="headerImage" src="pictures/Job-details.png" alt="image" />
       <div className="body">
-        <section id="jobHeader">
+        <section className="jobHeader">
           <div className="mainJobTitle">
             <h1>Job Name</h1>
             <p className="subHeader">
@@ -24,6 +24,13 @@ const JobDetails = () => {
         </section>
         <section className="jobContainer containerBorder">
           <div className="jobText">
+            <div className="mainJobTitle desktopTitle">
+              <p>Posted on 23rd of July 2023</p>
+              <h1>Job Name</h1>
+              <p className="subHeader">
+                Full time | On Site <br /> Espoo | €35,000 annually
+              </p>
+            </div>
             <div className="description">
               <h2>Job Description</h2>
               <p>
@@ -150,6 +157,23 @@ const JobDetails = () => {
             <a href="#" className="profileReports">
               <p>Report as offline or expired</p>
             </a>
+          </div>
+          <div className="tools containerBorder">
+            <h2>Tools</h2>
+            <ul>
+              <li>
+                <a href="#">Profession Guide</a>
+              </li>
+              <li>
+                <a href="#">Job Application Guide</a>
+              </li>
+              <li>
+                <a href="#">Employment Guide</a>
+              </li>
+              <li>
+                <a href="#">Salary Information</a>
+              </li>
+            </ul>
           </div>
           <div className="similarJobs containerBorder">
             <h2>Similar Jobs</h2>
