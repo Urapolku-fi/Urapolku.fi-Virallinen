@@ -1,4 +1,3 @@
-import React from "react";
 import "../../css/Dashboard/AppliedJobs.css";
 import { useNavigate } from "react-router-dom";
 import ProgressBar from "./ProgressBar";

@@ -50,7 +50,7 @@ const JobDetails = () => {
               </p>
             </div>
             <div className="assignments">
-              <h2>What you’ll do</h2>
+              <h2>What you&apoll do</h2>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -71,7 +71,7 @@ const JobDetails = () => {
               </ul>
             </div>
             <div className="need">
-              <h2>What you’ll need</h2>
+              <h2>What you&apoll need</h2>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -182,7 +182,7 @@ const JobDetails = () => {
                 <a href="#" className="none">
                   <img src="pictures/Lowes.jpg" alt="" width={"57px"} />
                   <div className="similarJobTitle">
-                    <p className="company">Lowe's Companies, Inc</p>
+                    <p className="company">Lowe&apos Companies, Inc</p>
                     <p className="jobTitle">Human Resources Services</p>
                     <p className="location">Helsinki, Finland</p>
                   </div>
@@ -192,7 +192,7 @@ const JobDetails = () => {
                 <a href="#" className="none">
                   <img src="pictures/Lowes.jpg" alt="" width={"57px"} />
                   <div className="similarJobTitle">
-                    <p className="company">Lowe's Companies, Inc</p>
+                    <p className="company">Lowe&apos Companies, Inc</p>
                     <p className="jobTitle">Human Resources Services</p>
                     <p className="location">Helsinki, Finland</p>
                   </div>
@@ -202,7 +202,7 @@ const JobDetails = () => {
                 <a href="#" className="none">
                   <img src="pictures/Lowes.jpg" alt="" width={"57px"} />
                   <div className="similarJobTitle">
-                    <p className="company">Lowe's Companies, Inc</p>
+                    <p className="company">Lowe&apos Companies, Inc</p>
                     <p className="jobTitle">Human Resources Services</p>
                     <p className="location">Helsinki, Finland</p>
                   </div>
