@@ -113,11 +113,6 @@ h6,
   line-height: 150%;
 }
 
-.tools > h2 {
-  margin-top: calc(1.18rem * 1.25);
-  padding-left: calc(1.18rem * 1.25);
-}
-
 .tools {
   display: none;
   flex-direction: column;
@@ -125,7 +120,8 @@ h6,
   width: 100%;
 
   text-align: start;
-  padding: 1.18rem;
+  padding: 2.5rem;
+  font-size: small;
 }
 
 .tools > ul {
@@ -134,7 +130,6 @@ h6,
   list-style-type: none;
 
   padding: 0;
-  padding-left: calc(1.18rem * 1.25);
   gap: 1.18rem;
   margin: 0;
 }
@@ -142,14 +137,6 @@ h6,
 .tools > ul > li > a {
   color: #ececec;
   text-decoration: none;
-}
-
-.tools > ul > li:first-child {
-  padding: 1.15rem 0 0 0;
-}
-
-.tools > ul > li:last-child {
-  padding: 0 0 1.15rem 0;
 }
 
 .similarJobs {
@@ -351,6 +338,10 @@ h6,
   margin-top: 1.5rem;
 }
 
+.mainJobTitle.desktopTitle {
+  display: none;
+}
+
 @media screen and (min-width: 1280px) {
   .body {
     flex-direction: row-reverse;
@@ -376,6 +367,10 @@ h6,
 
   .jobContainer {
     width: 70%;
+  }
+
+  .mainJobTitle.desktopTitle {
+    display: flex;
   }
 
   .mainJobTitle.desktopTitle h1 {
