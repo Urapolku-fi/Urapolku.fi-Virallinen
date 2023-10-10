@@ -34,7 +34,7 @@ function App() {
             <Route path="/browse" Component={withAuth(Browse)} />
             <Route path="/emponboarding" Component={withAuth(EmployerProfileCompletion)} />
             <Route path="/dashboard" Component={withAuth(Dashboard)} />
-            <Route exact path="/job" Component={withAuth(<JobDetails />)} />
+            <Route exact path="/job" Component={withAuth(JobDetails)} />
           </Routes>
         </NavBarLayout>
       </BrowserRouter>
