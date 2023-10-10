@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import '../css/browse.css';
 import SearchBar from './Browse/SearchBar';
-import Footer from './Browse/Footer';
+import Footer from '../Footer';
 import JobCard from './Browse/JobCard';
 import Filter from './Browse/Filter';
 import CompareBox from './Browse/CompareBox';

@@ -3,9 +3,11 @@ import '../../css/Browse/jobCard.css';
 import CheckBox from './CheckBox';
 import BookmarkButton from './BookmarkButton';
 import objectShallowEqual from '../../../helpers/objectShallowEqual';
+import DetailedJobCard from './DetailedJobCard';
 
 const JobCard = ({ data, comparedJobs, setComparedJobs }) => {
   const [compareToggled, setCompareToggled] = useState(false);
+  const [showDetailedCard, setShowDetailedCard] = useState(false);
 
   const toggleCompareToggled = () => {
     const newCompareToggled = !compareToggled;
@@ -28,6 +30,7 @@ const JobCard = ({ data, comparedJobs, setComparedJobs }) => {
 
   return (
     <div className="jobcard" key={data.id}>
+      {showDetailedCard && <DetailedJobCard close={() => setShowDetailedCard(false)} />}
       <div className="jobcard-child" />
       <div className="jobcard-info-welfare-container">
         <span className="jobcard-info-welfare-container1">
@@ -44,7 +47,7 @@ const JobCard = ({ data, comparedJobs, setComparedJobs }) => {
           <p className="jobcard-info">{data.location}</p>
         </span>
       </div>
-      <div className="see-details-wrapper">
+      <div onClick={() => setShowDetailedCard(!showDetailedCard)} className="see-details-wrapper">
         <div className="see-details">Lue lisää</div>
       </div>
       <img className="jobcard-item" alt="" src={'/pictures/job-example-image.png'} />

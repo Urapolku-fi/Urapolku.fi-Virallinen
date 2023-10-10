@@ -9,6 +9,7 @@ import Dashboard from './components/pages/Dashboard';
 import { Auth0Provider, withAuthenticationRequired as withAuth } from '@auth0/auth0-react';
 import AccountTypeSelection from './components/pages/AccountTypeSelection';
 import EmployerProfileCompletion from './components/pages/EmployerProfileCompletion';
+import JobDetails from './components/pages/JobDetails';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             <Route path="/browse" Component={withAuth(Browse)} />
             <Route path="/emponboarding" Component={withAuth(EmployerProfileCompletion)} />
             <Route path="/dashboard" Component={withAuth(Dashboard)} />
+            <Route exact path="/job" Component={withAuth(JobDetails)} />
           </Routes>
         </NavBarLayout>
       </BrowserRouter>

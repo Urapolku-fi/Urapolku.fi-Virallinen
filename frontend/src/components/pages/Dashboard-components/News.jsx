@@ -1,4 +1,3 @@
-import React from 'react';
 import '../../css/Dashboard/News.css';
 import { useNavigate } from 'react-router-dom';
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import '../../css/Dashboard/DailyPicks.css';
 import { useNavigate } from 'react-router-dom';
 

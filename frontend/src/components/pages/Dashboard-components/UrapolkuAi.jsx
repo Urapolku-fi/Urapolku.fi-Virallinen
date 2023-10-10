@@ -11,8 +11,8 @@ const UrapolkuAi = () => {
               <div className="Career-text-content">
                 <h2>Career quide</h2>
                 <p className="UrapolkuAI-description">
-                  The "Career Guide" is an innovative AI system integrated into our job search
-                  platform, designed to provide personalized career recommendations and
+                  The &quotCareer Guide&quot is an innovative AI system integrated into our job
+                  search platform, designed to provide personalized career recommendations and
                   comprehensive roadmaps to users based on their responses to a series of input
                   questions. This feature aims to assist job seekers in making informed and
                   strategic decisions about their career paths, helping them discover suitable
@@ -56,7 +56,7 @@ const UrapolkuAi = () => {
               <h2>Code collaboration</h2>
               <p className="UrapolkuAI-description">
                 Our advanced code synchronization technology ensures that your data is always
-                up-to-date and accurate, no matter where it's coming from. Whether you're
+                up-to-date and accurate, no matter where it&apos coming from. Whether you&apore
                 integrating data from multiple sources or working with a team of developers, our
                 synchronization technology makes it easy to collaborate and ensure that your data is
                 consistent and reliable.

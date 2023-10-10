@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useState } from 'react';
 import ReactSlider from 'react-slider'; //might need to change this since the marks and track length are bugged
 import '../../css/Browse/multipointRangeInput.css';
 import FilterLabel from './FilterLabel';

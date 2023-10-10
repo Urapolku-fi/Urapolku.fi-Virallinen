@@ -62,7 +62,6 @@
 
 .see-details-wrapper {
   position: absolute;
-  height: 12.1%;
   width: 66.55%;
   top: 83.06%;
   right: 25.7%;
@@ -70,10 +69,9 @@
   left: 7.75%;
   border-radius: 5px;
   background-color: #fff;
-  overflow: hidden;
   display: flex;
   flex-direction: row;
-  padding: 12px 59px;
+  padding: 10px 59px;
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
