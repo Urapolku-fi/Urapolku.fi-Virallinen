@@ -1,4 +1,4 @@
-import "../../css/JobDetails/skillsGroup.css";
+import '../../css/JobDetails/skillsGroup.css';
 
 export const SkillsGroup = ({ skills }) => {
   return (

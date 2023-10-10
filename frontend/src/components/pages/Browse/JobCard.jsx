@@ -30,9 +30,7 @@ const JobCard = ({ data, comparedJobs, setComparedJobs }) => {
 
   return (
     <div className="jobcard" key={data.id}>
-      {showDetailedCard && (
-        <DetailedJobCard close={() => setShowDetailedCard(false)} />
-      )}
+      {showDetailedCard && <DetailedJobCard close={() => setShowDetailedCard(false)} />}
       <div className="jobcard-child" />
       <div className="jobcard-info-welfare-container">
         <span className="jobcard-info-welfare-container1">
@@ -49,10 +47,7 @@ const JobCard = ({ data, comparedJobs, setComparedJobs }) => {
           <p className="jobcard-info">{data.location}</p>
         </span>
       </div>
-      <div
-        onClick={() => setShowDetailedCard(!showDetailedCard)}
-        className="see-details-wrapper"
-      >
+      <div onClick={() => setShowDetailedCard(!showDetailedCard)} className="see-details-wrapper">
         <div className="see-details">Lue lisää</div>
       </div>
       <img className="jobcard-item" alt="" src={'/pictures/job-example-image.png'} />

@@ -1,4 +1,4 @@
-import "../../css/JobDetails/applyButton.css";
+import '../../css/JobDetails/applyButton.css';
 
 export const ApplyNow = ({ link }) => {
   return (

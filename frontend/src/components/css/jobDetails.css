@@ -23,7 +23,9 @@
 
   /* Typography */
   color: #ebebeb;
-  font-feature-settings: "clig" off, "liga" off;
+  font-feature-settings:
+    'clig' off,
+    'liga' off;
   font-family: Montserrat;
   letter-spacing: -0.2px;
   /* font-size: 1.2rem; */
@@ -202,7 +204,9 @@ h6,
   box-sizing: border-box;
   color: #ebebeb;
   font-family: Montserrat;
-  font-feature-settings: "clig" off, "liga" off;
+  font-feature-settings:
+    'clig' off,
+    'liga' off;
   font-style: normal;
   font-weight: 500;
   line-height: 150%; /* 36px */
@@ -219,7 +223,9 @@ h6,
 }
 
 .jobContainer p {
-  font-feature-settings: "clig" off, "liga" off;
+  font-feature-settings:
+    'clig' off,
+    'liga' off;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -251,19 +257,18 @@ h6,
 
 .containerBorder {
   border-radius: 20px;
-  background: linear-gradient(
-    180deg,
-    rgba(65, 65, 65, 0.05) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  box-shadow: 0px 0.5px 0px 0px rgba(255, 255, 255, 0.5) inset,
+  background: linear-gradient(180deg, rgba(65, 65, 65, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+  box-shadow:
+    0px 0.5px 0px 0px rgba(255, 255, 255, 0.5) inset,
     0px -2px 40px 0px rgba(187, 155, 255, 0.15),
     0px -2px 10px 0px rgba(233, 223, 255, 0.3);
 }
 
 .subHeader {
   color: #a39bb4;
-  font-feature-settings: "clig" off, "liga" off;
+  font-feature-settings:
+    'clig' off,
+    'liga' off;
   font-family: Montserrat;
   font-size: 16px;
   font-style: normal;

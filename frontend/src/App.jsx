@@ -9,7 +9,7 @@ import Dashboard from './components/pages/Dashboard';
 import { Auth0Provider, withAuthenticationRequired as withAuth } from '@auth0/auth0-react';
 import AccountTypeSelection from './components/pages/AccountTypeSelection';
 import EmployerProfileCompletion from './components/pages/EmployerProfileCompletion';
-import JobDetails from "./components/pages/JobDetails"
+import JobDetails from './components/pages/JobDetails';
 
 function App() {
   return (

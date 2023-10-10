@@ -1,14 +1,14 @@
-import "../css/jobDetails.css";
-import { SkillsGroup } from "./JobDetails/SkillsGroup";
-import { ApplyNow } from "./JobDetails/ApplyNow";
-import { Socials } from "./JobDetails/Socials";
-import LinkSVG from "../../assets/link.svg";
-import Footer from "../Footer";
+import '../css/jobDetails.css';
+import { SkillsGroup } from './JobDetails/SkillsGroup';
+import { ApplyNow } from './JobDetails/ApplyNow';
+import { Socials } from './JobDetails/Socials';
+import LinkSVG from '../../assets/link.svg';
+import Footer from '../Footer';
 
 const JobDetails = () => {
   return (
     <>
-      <img className="headerImage" src="pictures/Job-details.png" alt="image" />
+      <img className="headerImage" src="pictures/Job-details.png" alt="header" />
       <div className="body">
         <section className="jobHeader">
           <div className="mainJobTitle">
@@ -18,7 +18,7 @@ const JobDetails = () => {
             </p>
           </div>
           <div className="mainJobCompany">
-            <img src="pictures/company-logo.jpg" alt="company logo" />
+            <img src="pictures/company-logo.jpg" alt="company" />
             <p>University of Eastern Finland</p>
           </div>
         </section>
@@ -34,72 +34,69 @@ const JobDetails = () => {
             <div className="description">
               <h2>Job Description</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                esse cillum dolore eu fugiat nulla pariatur.
               </p>
             </div>
             <div className="assignments">
               <h2>What you&apoll do</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua.
               </p>
               <ul>
                 <li>
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                  ex ea commodo consequat.
                 </li>
                 <li>
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulla pariatur.
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                  fugiat nulla pariatur.
                 </li>
                 <li>
-                  Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                  qui officia deserunt mollit anim id est laborum.
+                  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                  mollit anim id est laborum.
                 </li>
               </ul>
             </div>
             <div className="need">
               <h2>What you&apoll need</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua.
               </p>
               <ul>
                 <li>
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                  ex ea commodo consequat.
                 </li>
                 <li>
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulla pariatur.
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                  fugiat nulla pariatur.
                 </li>
                 <li>
-                  Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                  qui officia deserunt mollit anim id est laborum.
+                  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                  mollit anim id est laborum.
                 </li>
               </ul>
             </div>
 
             <SkillsGroup
               skills={[
-                "MS Office",
-                "Software skills",
-                "Special skills",
-                "Software skills",
-                "Software skills",
-                "Software Skills",
+                'MS Office',
+                'Software skills',
+                'Special skills',
+                'Software skills',
+                'Software skills',
+                'Software Skills',
               ]}
             />
 
@@ -120,13 +117,13 @@ const JobDetails = () => {
 
             <div className="actions">
               <div className="callToAction">
-                <ApplyNow link="#" />
+                <ApplyNow link="/" />
                 <button className="bookmarkButton" onClick={() => {}}>
                   <img src="svg/bookmark.svg" alt="bookmark" />
                 </button>
               </div>
             </div>
-            <a href="#" className="profileReports">
+            <a href="/" className="profileReports">
               Report as offline or expired
             </a>
           </div>
@@ -134,27 +131,23 @@ const JobDetails = () => {
         </section>
         <section className="cards">
           <div className="profile containerBorder">
-            <img
-              src="pictures/company-logo.jpg"
-              alt=""
-              className="profilePicture"
-            />
+            <img src="pictures/company-logo.jpg" alt="company" className="profilePicture" />
 
             <h2 className="profileName">University of Eastern Finland</h2>
 
-            <a href="#" className="profileWebsite">
-              <img src={LinkSVG} alt="link icon" />
+            <a href="/" className="profileWebsite">
+              <img src={LinkSVG} alt="link" />
               <p>Visit Website</p>
             </a>
 
             <p className="profileDescription">
-              write Company tag line or description or something about it
-              in-short hbabcbcb bdjbh hshbbs fhbfb bh hgsb
+              write Company tag line or description or something about it in-short hbabcbcb bdjbh
+              hshbbs fhbfb bh hgsb
             </p>
 
-            <ApplyNow link="#" />
+            <ApplyNow link="/" />
 
-            <a href="#" className="profileReports">
+            <a href="/" className="profileReports">
               <p>Report as offline or expired</p>
             </a>
           </div>
@@ -162,16 +155,16 @@ const JobDetails = () => {
             <h2>Tools</h2>
             <ul>
               <li>
-                <a href="#">Profession Guide</a>
+                <a href="/">Profession Guide</a>
               </li>
               <li>
-                <a href="#">Job Application Guide</a>
+                <a href="/">Job Application Guide</a>
               </li>
               <li>
-                <a href="#">Employment Guide</a>
+                <a href="/">Employment Guide</a>
               </li>
               <li>
-                <a href="#">Salary Information</a>
+                <a href="/">Salary Information</a>
               </li>
             </ul>
           </div>
@@ -179,8 +172,8 @@ const JobDetails = () => {
             <h2>Similar Jobs</h2>
             <ul>
               <li>
-                <a href="#" className="none">
-                  <img src="pictures/Lowes.jpg" alt="" width={"57px"} />
+                <a href="/" className="none">
+                  <img src="pictures/Lowes.jpg" alt="lowes company" width={'57px'} />
                   <div className="similarJobTitle">
                     <p className="company">Lowe&apos Companies, Inc</p>
                     <p className="jobTitle">Human Resources Services</p>
@@ -189,8 +182,8 @@ const JobDetails = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="none">
-                  <img src="pictures/Lowes.jpg" alt="" width={"57px"} />
+                <a href="/" className="none">
+                  <img src="pictures/Lowes.jpg" alt="lowes company" width={'57px'} />
                   <div className="similarJobTitle">
                     <p className="company">Lowe&apos Companies, Inc</p>
                     <p className="jobTitle">Human Resources Services</p>
@@ -199,8 +192,8 @@ const JobDetails = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="none">
-                  <img src="pictures/Lowes.jpg" alt="" width={"57px"} />
+                <a href="/" className="none">
+                  <img src="pictures/Lowes.jpg" alt="lowes company" width={'57px'} />
                   <div className="similarJobTitle">
                     <p className="company">Lowe&apos Companies, Inc</p>
                     <p className="jobTitle">Human Resources Services</p>
@@ -210,8 +203,8 @@ const JobDetails = () => {
               </li>
             </ul>
 
-            <a href="#" className="tryOut">
-              <img src="pictures/left-Arrow.svg" alt="" className="arrow" />
+            <a href="/" className="tryOut">
+              <img src="pictures/left-Arrow.svg" alt="lowes company" className="arrow" />
               <p>View all recommendations</p>
             </a>
           </div>

@@ -1,8 +1,8 @@
-import "../../css/JobDetails/socials.css";
-import Linkedin from "../../../assets/linkedin.svg";
-import Facebook from "../../../assets/facebook.svg";
-import Instagram from "../../../assets/instagram.svg";
-import Twitter from "../../../assets/twitter.svg";
+import '../../css/JobDetails/socials.css';
+import Linkedin from '../../../assets/linkedin.svg';
+import Facebook from '../../../assets/facebook.svg';
+import Instagram from '../../../assets/instagram.svg';
+import Twitter from '../../../assets/twitter.svg';
 
 export const Socials = () => {
   return (
