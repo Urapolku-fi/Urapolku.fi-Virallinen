@@ -39,7 +39,7 @@ body * {
 .cards {
   display: flex;
   flex-wrap: nowrap;
-  gap: 50px;
+  gap: 2rem;
 }
 
 a,
@@ -57,14 +57,15 @@ h6,
 .profile {
   display: flex;
   flex-direction: column;
-  min-width: 350px;
+  min-width: 250px;
   width: 100%;
-  gap: 20px;
+  gap: 0.5rem;
 
   justify-content: center;
 
   align-items: center;
-  padding: calc(1.28rem * 1.25);
+  padding: 2.5rem;
+  font-size: small;
 }
 
 .profile > * {
@@ -78,7 +79,6 @@ h6,
   border-radius: 50%;
 }
 .profileName {
-  font-size: 2rem;
   word-wrap: normal;
   font-weight: 500;
   line-height: 110%;
@@ -103,7 +103,6 @@ h6,
   font-style: normal;
   font-size: 14px;
   font-weight: 300;
-  padding: 20px 0;
   line-height: 150%;
 }
 .profileReports {
@@ -114,8 +113,7 @@ h6,
   line-height: 150%;
 }
 
-.tools > h2,
-.similarJobs > h2 {
+.tools > h2 {
   margin-top: calc(1.18rem * 1.25);
   padding-left: calc(1.18rem * 1.25);
 }
@@ -158,13 +156,14 @@ h6,
   display: flex;
   flex-direction: column;
   gap: 1.18rem;
-  min-width: 350px;
+  min-width: 250px;
   width: 100%;
 
   text-align: left;
 
   justify-content: center;
-  padding: 1.18rem;
+  padding: 2.5rem;
+  font-size: small;
 }
 
 .similarJobs > ul {
@@ -173,7 +172,6 @@ h6,
   list-style-type: none;
 
   padding: 0;
-  padding-left: calc(1.18rem * 1.25);
   gap: 1.18rem;
   margin: 0;
 }
@@ -181,11 +179,8 @@ h6,
 .similarJobs > ul > li a {
   display: flex;
   flex-direction: row;
-  gap: 1.18rem;
+  gap: 1rem;
   align-items: center;
-}
-.similarJobs > ul > li:not(:last-child) {
-  padding: 1.15rem 0;
 }
 
 .similarJobs > ul > li img {
@@ -206,8 +201,6 @@ h6,
   display: flex;
   justify-content: center;
   gap: 10px;
-
-  padding: 1.15rem 0;
 
   color: #ebebeb;
   font-family: Montserrat;
@@ -394,7 +387,7 @@ h6,
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 800px) {
   .cards {
     flex-wrap: wrap;
   }
@@ -407,7 +400,7 @@ h6,
   }
 
   .body {
-    margin: -5rem 1rem 0 1rem;
+    margin: -5rem 1.5rem 0 1.5rem;
   }
 
   .similarJobs,
@@ -421,5 +414,9 @@ h6,
 
   .profile > * {
     max-width: 100%;
+  }
+
+  .jobText {
+    margin: 1.5rem 1.5rem 0 1.5rem;
   }
 }

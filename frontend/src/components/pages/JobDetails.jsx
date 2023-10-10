@@ -208,16 +208,6 @@ const JobDetails = () => {
                   </div>
                 </a>
               </li>
-              <li>
-                <a href="#" className="none">
-                  <img src="pictures/Lowes.jpg" alt="" width={"57px"} />
-                  <div className="similarJobTitle">
-                    <p className="company">Lowe's Companies, Inc</p>
-                    <p className="jobTitle">Human Resources Services</p>
-                    <p className="location">Helsinki, Finland</p>
-                  </div>
-                </a>
-              </li>
             </ul>
 
             <a href="#" className="tryOut">
