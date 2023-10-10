@@ -9,7 +9,7 @@ export const useS3 = () => {
       );
       return data.$metadata.httpStatusCode;
     } catch (err) {
-      console.error('Error', err);
+      return 500;
     }
   };
 
