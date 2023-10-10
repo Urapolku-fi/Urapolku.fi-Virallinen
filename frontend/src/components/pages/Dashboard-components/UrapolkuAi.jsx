@@ -1,4 +1,4 @@
-import "../../css/Dashboard/UrapolkuAi.css";
+import '../../css/Dashboard/UrapolkuAi.css';
 const UrapolkuAi = () => {
   return (
     <section className="Urapolku-AI">
@@ -7,12 +7,7 @@ const UrapolkuAi = () => {
         <div className="Card-content">
           <div className="First-two-cards">
             <div className="Career">
-              <img
-                src="\pictures\Urapolku_AI_logo.png"
-                alt=""
-                height="48px"
-                width="48px"
-              />
+              <img src="\pictures\Urapolku_AI_logo.png" alt="" height="48px" width="48px" />
               <div className="Career-text-content">
                 <h2>Career quide</h2>
                 <p className="UrapolkuAI-description">
@@ -33,19 +28,13 @@ const UrapolkuAi = () => {
               </div>
             </div>
             <div className="Digital">
-              <img
-                src="/pictures/Digital-image.png"
-                alt=""
-                height="48px"
-                width="48px"
-              />
+              <img src="/pictures/Digital-image.png" alt="" height="48px" width="48px" />
               <div className="Digital-text-content">
                 <h2>Digital credit tokens</h2>
                 <p className="UrapolkuAI-description">
-                  Reward your customers and incentivize engagement with our
-                  innovative digital credit tokens. Our tokens can be customized
-                  to match your branding, and are a flexible and scalable way to
-                  drive customer loyalty and encourage repeat business.
+                  Reward your customers and incentivize engagement with our innovative digital
+                  credit tokens. Our tokens can be customized to match your branding, and are a
+                  flexible and scalable way to drive customer loyalty and encourage repeat business.
                 </p>
               </div>
               <div className="Urapolku-link">

@@ -1,6 +1,6 @@
-import { useAuth0 } from "@auth0/auth0-react";
+import { useAuth0 } from '@auth0/auth0-react';
 
-let backend = import.meta.env.VITE_BACKEND_URL + "api";
+let backend = import.meta.env.VITE_BACKEND_URL + 'api';
 
 export const useFetch = () => {
   const { getAccessTokenSilently } = useAuth0();
@@ -9,7 +9,7 @@ export const useFetch = () => {
     const token = await getAccessTokenSilently();
     const response = await fetch(backend + url, {
       ...options,
-      mode: "cors",
+      mode: 'cors',
       headers: {
         ...options.headers,
         Authorization: `Bearer ${token}`,
@@ -30,12 +30,12 @@ export const useFetch = () => {
   const postWAuth = async (url, body, options = {}) => {
     const token = await getAccessTokenSilently();
     const response = await fetch(backend + url, {
-      method: "POST",
+      method: 'POST',
       ...options,
-      mode: "cors",
+      mode: 'cors',
       headers: {
         ...options.headers,
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
         Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(body),

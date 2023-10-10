@@ -1,5 +1,5 @@
-import "../../css/Dashboard/DailyPicks.css";
-import { useNavigate } from "react-router-dom";
+import '../../css/Dashboard/DailyPicks.css';
+import { useNavigate } from 'react-router-dom';
 
 function DailyPickCard({ title, description, backgroundImage, url }) {
   const navigate = useNavigate();

@@ -7,10 +7,7 @@ export default function objectShallowEqual(obj1, obj2) {
   }
 
   for (let key of keys1) {
-    if (
-      !Object.prototype.hasOwnProperty.call(obj2, key) ||
-      obj1[key] !== obj2[key]
-    ) {
+    if (!Object.prototype.hasOwnProperty.call(obj2, key) || obj1[key] !== obj2[key]) {
       return false;
     }
   }

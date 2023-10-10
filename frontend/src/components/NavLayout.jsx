@@ -1,33 +1,33 @@
-import { useState, createContext, useContext, useEffect } from "react";
-import MenuIcon from "../assets/menu.svg";
-import MenuCloseIcon from "../assets/close-menu.svg";
-import "./css/navLayout.css";
-import { Link, useNavigate, useLocation } from "react-router-dom";
-import { useAuth0 } from "@auth0/auth0-react";
+import { useState, createContext, useContext, useEffect } from 'react';
+import MenuIcon from '../assets/menu.svg';
+import MenuCloseIcon from '../assets/close-menu.svg';
+import './css/navLayout.css';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const NavMenuContext = createContext(undefined);
 
 const navbarMenuItems = [
   {
-    text: "Avoimet Työpaikat",
-    link: "/browse",
+    text: 'Avoimet Työpaikat',
+    link: '/browse',
   },
   {
-    text: "Jätä työpaikkailmoitus",
-    link: "/query",
+    text: 'Jätä työpaikkailmoitus',
+    link: '/query',
   },
   {
-    text: "Suosikit",
-    link: "/favorites",
+    text: 'Suosikit',
+    link: '/favorites',
   },
 ];
 
 const blacklistAddr = [
-  "/profileone",
-  "/profiletwo",
-  "/profilethree",
-  "/callback",
-  "/emponboarding",
+  '/profileone',
+  '/profiletwo',
+  '/profilethree',
+  '/callback',
+  '/emponboarding',
 ];
 
 const MenuButton = () => {
@@ -38,17 +38,13 @@ const MenuButton = () => {
       {vizContext?.sideBarVisible ? (
         <img
           className="menu-burger-button"
-          onClick={() =>
-            vizContext?.setSideBarVisible(!vizContext?.sideBarVisible)
-          }
+          onClick={() => vizContext?.setSideBarVisible(!vizContext?.sideBarVisible)}
           src={MenuCloseIcon}
         />
       ) : (
         <img
           className="menu-burger-button"
-          onClick={() =>
-            vizContext?.setSideBarVisible(!vizContext?.sideBarVisible)
-          }
+          onClick={() => vizContext?.setSideBarVisible(!vizContext?.sideBarVisible)}
           src={MenuIcon}
         />
       )}
@@ -56,7 +52,7 @@ const MenuButton = () => {
   );
 };
 
-const NavLink = ({ styling = "", ...props }) => {
+const NavLink = ({ styling = '', ...props }) => {
   return (
     <Link to={props.link} className={`nav-link${styling}`}>
       {props.text}
@@ -71,10 +67,7 @@ const SideBar = () => {
   return (
     <>
       {vizContext?.sideBarVisible && (
-        <div
-          className="sidebar-backblur"
-          onClick={() => vizContext.setSideBarVisible(false)}
-        />
+        <div className="sidebar-backblur" onClick={() => vizContext.setSideBarVisible(false)} />
       )}
       <div className={`sidebar`}>
         <MenuButton />
@@ -109,18 +102,13 @@ const NavBarLayout = (props) => {
     >
       {navbarVisible && (
         <header className="navbar">
-          <div className="nav-logo-wrapper" onClick={() => navigate("/")}>
-            <img className="nav-logo" src={"/pictures/urapolku.png"} />
+          <div className="nav-logo-wrapper" onClick={() => navigate('/')}>
+            <img className="nav-logo" src={'/pictures/urapolku.png'} />
             <p>Urapolku</p>
           </div>
           <div className="nav-items-wrapper">
             {navbarMenuItems.map((item) => (
-              <NavLink
-                key={item.link}
-                link={item.link}
-                text={item.text}
-                styling={item.styling}
-              />
+              <NavLink key={item.link} link={item.link} text={item.text} styling={item.styling} />
             ))}
 
             {isAuthenticated ? (
@@ -129,7 +117,7 @@ const NavBarLayout = (props) => {
                 onClick={() => {
                   logout({
                     logoutParams: {
-                      returnTo: "https://localhost:5173/",
+                      returnTo: 'https://localhost:5173/',
                     },
                   });
                   localStorage.clear();
@@ -138,10 +126,7 @@ const NavBarLayout = (props) => {
                 Kirjaudu ulos
               </button>
             ) : (
-              <button
-                className="nav-link button-hollow"
-                onClick={() => loginWithRedirect()}
-              >
+              <button className="nav-link button-hollow" onClick={() => loginWithRedirect()}>
                 Kirjaudu
               </button>
             )}

@@ -1,11 +1,11 @@
-import "../css/home.css";
+import '../css/home.css';
 
-import observer from "../animations/hover";
-import { useEffect } from "react";
+import observer from '../animations/hover';
+import { useEffect } from 'react';
 
 function Home() {
   useEffect(() => {
-    const elements = document.querySelectorAll(".hidden");
+    const elements = document.querySelectorAll('.hidden');
     elements.forEach((el) => observer.observe(el));
 
     // Clean up the observer when the component unmounts
@@ -23,13 +23,11 @@ function Home() {
                 <p>Kaikki työpaikat - ja myös niiden palkat</p>
               </div>
               <div className="Content hidden">
-                <h1>
-                  Yhdellä haulla urapolulta löydät kaikki avoimet työpaikat.
-                </h1>
+                <h1>Yhdellä haulla urapolulta löydät kaikki avoimet työpaikat.</h1>
                 <div className="Paragraph-wrapper">
                   <p>
-                    Urapolku on työnetsimisalusta, joka tarjoaa sinulle nopean
-                    ja tehokkaan tavan löytää juuri sinulle sopivia työpaikkoja.
+                    Urapolku on työnetsimisalusta, joka tarjoaa sinulle nopean ja tehokkaan tavan
+                    löytää juuri sinulle sopivia työpaikkoja.
                   </p>
                 </div>
               </div>
@@ -44,7 +42,7 @@ function Home() {
       <section id="s3" className="hidden">
         <div id="Content">
           <div className="Video">
-            <img src={"/pictures/video.png"} alt="" />
+            <img src={'/pictures/video.png'} alt="" />
           </div>
         </div>
       </section>
@@ -55,8 +53,7 @@ function Home() {
               <h2>Teemme uran löytämisestä sinulle helpompaa!</h2>
             </div>
             <p>
-              Check out our amazing features and experience the power of
-              Vaultflow for yourself.
+              Check out our amazing features and experience the power of Vaultflow for yourself.
             </p>
           </div>
         </div>
@@ -64,19 +61,17 @@ function Home() {
           <div className="Middle-section-column">
             <div className="Middle-section-card-wrapper">
               <div className="Middle-section-icon-wrapper">
-                <img src={"/pictures/Urapolku_AI_logo.png"} alt="" />
+                <img src={'/pictures/Urapolku_AI_logo.png'} alt="" />
               </div>
               <div className="Middle-section-card-content">
                 <h2>Urapolku AI</h2>
                 <p>
-                  Urapolku AI on innovatiivinen työkalu, joka auttaa sinua
-                  löytämään oikean urapolun hyödyntämällä tekoälyä. Urapolun
-                  avulla voit saada yksilöllisiä ja räätälöityjä suosituksia,
-                  jotka perustuvat vastaamasi 20 eri kysymykseen tulokseen.
-                  Vastausten avulla Urapolku AI arvioi kykyjäsi, kiinnostuksen
-                  kohteitasi ja tavoitteitasi urasi suhteen. Urapolku AI on
-                  suunniteltu auttamaan kaikkia, jotka haluavat löytää itselleen
-                  sopivan urapolun.
+                  Urapolku AI on innovatiivinen työkalu, joka auttaa sinua löytämään oikean urapolun
+                  hyödyntämällä tekoälyä. Urapolun avulla voit saada yksilöllisiä ja räätälöityjä
+                  suosituksia, jotka perustuvat vastaamasi 20 eri kysymykseen tulokseen. Vastausten
+                  avulla Urapolku AI arvioi kykyjäsi, kiinnostuksen kohteitasi ja tavoitteitasi
+                  urasi suhteen. Urapolku AI on suunniteltu auttamaan kaikkia, jotka haluavat löytää
+                  itselleen sopivan urapolun.
                 </p>
               </div>
               <div className="Middle-section-button">
@@ -87,15 +82,14 @@ function Home() {
           <div className="Middle-section-column">
             <div className="Middle-section-card-wrapper">
               <div className="Middle-section-icon-wrapper">
-                <img src={"/pictures/Digital-image.png"} alt="" className="" />
+                <img src={'/pictures/Digital-image.png'} alt="" className="" />
               </div>
               <div className="Middle-section-card-content">
                 <h2>Digital Credit Tokens</h2>
                 <p>
-                  Reward your customers and incentivize engagement with our
-                  innovative digital credit tokens. Our tokens can be customized
-                  to match your branding, and are a flexible and scalable way to
-                  drive customer loyalty and encourage repeat business.
+                  Reward your customers and incentivize engagement with our innovative digital
+                  credit tokens. Our tokens can be customized to match your branding, and are a
+                  flexible and scalable way to drive customer loyalty and encourage repeat business.
                 </p>
               </div>
               <div className="Middle-section-button">
@@ -110,12 +104,11 @@ function Home() {
           <div className="Lower-container-content">
             <h2>Tietoa Urapolusta</h2>
             <p>
-              Etsitpä sitten töitä tai haluat löytää uusia työntekijöitä, me
-              tarjoamme sinulle innovatiivisen ratkaisun löytää juuri sen mitä
-              etsit: olipa kyseessä sitten uusi työpaikka, taitava osaaja,
-              suunnanmuutos, unelmatyön tavoittelu tai vaikka kesätyö.
-              Urapolullta löydät suuren valikoiman avoimia työpaikkoja, parhaat
-              vinkit työnhakuun ja kiehtovimmat tarinat työelämän koukeroista.
+              Etsitpä sitten töitä tai haluat löytää uusia työntekijöitä, me tarjoamme sinulle
+              innovatiivisen ratkaisun löytää juuri sen mitä etsit: olipa kyseessä sitten uusi
+              työpaikka, taitava osaaja, suunnanmuutos, unelmatyön tavoittelu tai vaikka kesätyö.
+              Urapolullta löydät suuren valikoiman avoimia työpaikkoja, parhaat vinkit työnhakuun ja
+              kiehtovimmat tarinat työelämän koukeroista.
             </p>
             <button>Rekisteröidy</button>
           </div>
@@ -159,7 +152,7 @@ function Home() {
               <div className="Footer-third-column">
                 <div className="Footer-logo-wrapper">
                   <div className="Footer-logo">
-                    <img src={"/pictures/urapolku.png"} alt="" />
+                    <img src={'/pictures/urapolku.png'} alt="" />
                     <h2>Urapolku</h2>
                   </div>
                 </div>

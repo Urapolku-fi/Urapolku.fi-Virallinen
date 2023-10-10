@@ -1,4 +1,4 @@
-import "../css/login.css";
+import '../css/login.css';
 
 function Login() {
   return (
@@ -6,29 +6,18 @@ function Login() {
       <div id="Login">
         <div id="Login-Left-side">
           <div id="Login-Header-desktop">
-            <img
-              src="pictures/urapolku.png"
-              width="26px"
-              height="26px"
-              alt=""
-            />
+            <img src="pictures/urapolku.png" width="26px" height="26px" alt="" />
             <h2>Urapolku</h2>
           </div>
           <div id="Login-Info-box">
             <p>
-              create a free account to land your dream job and connect with your
-              ideal employers
+              create a free account to land your dream job and connect with your ideal employers
             </p>
           </div>
         </div>
         <div id="Login-Container">
           <div id="Login-Header">
-            <img
-              src="pictures/urapolku.png"
-              width="26px"
-              height="26px"
-              alt=""
-            />
+            <img src="pictures/urapolku.png" width="26px" height="26px" alt="" />
             <h2>Urapolku</h2>
           </div>
           <div className="Login-Welcome">
@@ -53,12 +42,7 @@ function Login() {
           </div>
           <div className="Login-Input-fields">
             <input type="text" name="" id="Login-Email" placeholder="Email" />
-            <input
-              type="text"
-              name=""
-              id="Login-Password"
-              placeholder="Password"
-            />
+            <input type="text" name="" id="Login-Password" placeholder="Password" />
             <button className="Login-passframe">
               <img src="pictures/pass-frame.png" alt="" />
             </button>
@@ -87,7 +71,7 @@ function Login() {
           </div>
           <div className="Login-No-account">
             <p>
-              Don&apot have an account? <a href="/register">Sign up</a>
+              Don't have an account? <a href="/register">Sign up</a>
             </p>
           </div>
         </div>

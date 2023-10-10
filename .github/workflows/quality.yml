@@ -1,0 +1,262 @@
+name: Code Quality
+
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+  push:
+    branches:
+      - Staging
+  pull_request:
+    branches:
+      - Staging
+
+jobs:
+  run-formatters-frontend:
+    name: Check and Fix Formatting Frontend
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18
+
+      # ESLint and Prettier must be in `package.json`
+      - name: Install Node.js dependencies frontend
+        working-directory: ./frontend
+        run: npm ci
+
+      - name: Check for Styling Issues Frontend
+        uses: wearerequired/lint-action@v2
+        with:
+          auto_fix: true
+          prettier_dir: frontend
+          prettier: true
+          commit: false
+
+  run-formatters-backend:
+    name: Check and Fix Formatting Backend
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18
+
+      # ESLint and Prettier must be in `package.json`
+      - name: Install Node.js dependencies backend
+        working-directory: ./backend
+        run: npm ci
+
+      - name: Check for Styling Issues Backend
+        uses: wearerequired/lint-action@v2
+        with:
+          auto_fix: true
+          prettier_dir: backend
+          prettier: true
+          commit: false
+
+  run-linters-frontend:
+    name: Check and Fix Linting Frontend
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18
+
+      # ESLint and Prettier must be in `package.json`
+      - name: Install Node.js dependencies frontend
+        working-directory: ./frontend
+        run: npm ci
+
+      - name: Check For Linting Issues Frontend
+        uses: wearerequired/lint-action@v2
+        with:
+          auto_fix: true
+          eslint_dir: frontend
+          eslint: true
+          commit: false
+
+  run-linters-backend:
+    name: Check and Fix Linting Backend
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18
+
+      # ESLint and Prettier must be in `package.json`
+      - name: Install Node.js dependencies backend
+        working-directory: ./backend
+        run: npm ci
+
+      - name: Check For Linting Issues Backend
+        uses: wearerequired/lint-action@v2
+        with:
+          auto_fix: true
+          eslint_dir: backend
+          eslint: true
+          commit: false
+
+  run-quality-frontend:
+    name: Check Code Quality Frontend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18
+
+      - name: Install Node.js dependencies frontend
+        working-directory: ./frontend
+        run: npm ci
+
+      - name: Check for Duplication and Code Smells Frontend
+        working-directory: ./frontend
+        run: ./node_modules/jsinspect/bin/jsinspect ./
+
+  run-quality-backend:
+    name: Check Code Quality Backend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18
+
+      - name: Install Node.js dependencies backend
+        working-directory: ./backend
+        run: npm ci
+
+      - name: Check for Duplication and Code Smells Backend
+        working-directory: ./backend
+        run: ./node_modules/jsinspect/bin/jsinspect ./
+
+  run-security-frontend:
+    name: Check Static Security Analysis Frontend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18
+
+      - name: Install Node.js dependencies frontend
+        working-directory: ./frontend
+        run: npm ci
+
+      - uses: actions/checkout@master
+      - name: Run Snyk to check for vulnerabilities in frontend
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: ./frontend
+
+  upload-security-frontend:
+    name: Upload Static Security Analysis Frontend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18
+
+      - name: Install Node.js dependencies frontend
+        working-directory: ./frontend
+        run: npm ci
+
+      - uses: actions/checkout@master
+      - name: Run Snyk to check for vulnerabilities in frontend
+        uses: snyk/actions/node@master
+        continue-on-error: true
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: ./frontend --sarif-file-output=./frontend/snyk.sarif
+      - name: Upload result to Github Code Scanning for frontend
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: ./frontend/snyk.sarif
+
+  run-security-backend:
+    name: Check Static Security Analysis Backend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18
+
+      - name: Install Node.js dependencies backend
+        working-directory: ./backend
+        run: npm ci
+
+      - uses: actions/checkout@master
+      - name: Run Snyk to check for vulnerabilities in backend
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: ./backend
+
+  upload-security-backend:
+    name: Upload Static Security Analysis Backend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18
+
+      - name: Install Node.js dependencies backend
+        working-directory: ./backend
+        run: npm ci
+
+      - uses: actions/checkout@master
+      - name: Run Snyk to check for vulnerabilities in backend
+        uses: snyk/actions/node@master
+        continue-on-error: true
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: ./backend --sarif-file-output=./backend/snyk.sarif
+      - name: Upload result to Github Code Scanning for backend
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: ./backend/snyk.sarif

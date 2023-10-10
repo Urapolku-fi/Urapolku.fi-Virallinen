@@ -11,7 +11,7 @@ function ProgressBar({ progress }) {
       <div className="bar half-bar" key="half">
         <div className="half-green" />
         <div className="half-grey" />
-      </div>
+      </div>,
     );
   }
   const numGreyBars = 4 - bars.length;

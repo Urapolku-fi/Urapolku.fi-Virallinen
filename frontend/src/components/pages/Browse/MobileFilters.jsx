@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react";
-import "../../css/Browse/mobileFilters.css";
-import ToggleButton from "./ToggleButton";
-import ButtonGroup from "./ButtonGroup";
-import MultipointRangeInput from "./MultipointRangeInput";
+import { useEffect, useState } from 'react';
+import '../../css/Browse/mobileFilters.css';
+import ToggleButton from './ToggleButton';
+import ButtonGroup from './ButtonGroup';
+import MultipointRangeInput from './MultipointRangeInput';
 
 const FilterListItem = ({ text, active }) => {
   return (
     <div className="mobile-filter-list-value-item">
-      <div className={`mobile-filters-ellipse ${active ? "active" : ""}`} />
-      <p className={`mobile-filters-value ${active ? "active" : ""}`}>{text}</p>
+      <div className={`mobile-filters-ellipse ${active ? 'active' : ''}`} />
+      <p className={`mobile-filters-value ${active ? 'active' : ''}`}>{text}</p>
     </div>
   );
 };
@@ -16,35 +16,35 @@ const FilterListItem = ({ text, active }) => {
 const ListItems = ({ activeFilter, filtersState, setFiltersState }) => {
   //ugly but does the job, using ternary operator for rendering these would look way too messy
   switch (activeFilter) {
-    case "jobtype":
+    case 'jobtype':
       return (
         <ButtonGroup
-          propertyName={"jobType"}
+          propertyName={'jobType'}
           filtersStateProp={filtersState}
           setFiltersStateProp={setFiltersState}
           mobile={true}
         />
       );
-    case "worktype":
+    case 'worktype':
       return (
         <ButtonGroup
-          propertyName={"workType"}
+          propertyName={'workType'}
           filtersStateProp={filtersState}
           setFiltersStateProp={setFiltersState}
           mobile={true}
         />
       );
-    case "language":
+    case 'language':
       return (
         <ButtonGroup
-          propertyName={"language"}
+          propertyName={'language'}
           filtersStateProp={filtersState}
           setFiltersStateProp={setFiltersState}
           mobile={true}
         />
       );
 
-    case "salary":
+    case 'salary':
       return (
         <MultipointRangeInput
           minValue={0}
@@ -56,14 +56,12 @@ const ListItems = ({ activeFilter, filtersState, setFiltersState }) => {
         />
       );
 
-    case "education":
-      return filtersState["education"].map((fil, i) => (
-        <FilterListItem key={i} text={fil} />
-      ));
+    case 'education':
+      return filtersState['education'].map((fil, i) => <FilterListItem key={i} text={fil} />);
     default:
       return filtersState[
         Object.keys(filtersState).filter(
-          (filter) => filter.toLowerCase() === activeFilter && filter
+          (filter) => filter.toLowerCase() === activeFilter && filter,
         )
       ][0].map((fil, i) => <FilterListItem key={i} text={fil} />);
   }
@@ -72,17 +70,15 @@ const ListItems = ({ activeFilter, filtersState, setFiltersState }) => {
 const MobileFilters = ({ filtersState, setFiltersState, categoryNames }) => {
   const [open, setOpen] = useState(false);
 
-  const [activeFilter, setActiveFilter] = useState(
-    Object.keys(filtersState)[0].toLowerCase()
-  );
+  const [activeFilter, setActiveFilter] = useState(Object.keys(filtersState)[0].toLowerCase());
 
   useEffect(() => {
-    if (open) document.body.classList.add("stop-scrolling");
-    else document.body.classList.remove("stop-scrolling");
+    if (open) document.body.classList.add('stop-scrolling');
+    else document.body.classList.remove('stop-scrolling');
   }, [open]);
 
   const changeActiveCategory = (e) => {
-    const cleanId = e.target.id.replace(" ", "").toLowerCase();
+    const cleanId = e.target.id.replace(' ', '').toLowerCase();
     setActiveFilter(cleanId);
   };
 
@@ -97,7 +93,7 @@ const MobileFilters = ({ filtersState, setFiltersState, categoryNames }) => {
             className="mobile-filters-thumb-wrapper" //this exists because the part is too small to grab otherwise
             onClick={() => setOpen(false)}
           >
-            <div className="mobile-filters-thumb"></div>{" "}
+            <div className="mobile-filters-thumb"></div>{' '}
           </div>
 
           <div className="mobile-filters-header">
@@ -110,9 +106,7 @@ const MobileFilters = ({ filtersState, setFiltersState, categoryNames }) => {
                 <div
                   onClick={changeActiveCategory}
                   className={`mobile-filters-name ${
-                    filterName.replace(" ", "").toLowerCase() === activeFilter
-                      ? "active"
-                      : ""
+                    filterName.replace(' ', '').toLowerCase() === activeFilter ? 'active' : ''
                   }`}
                   id={filterName}
                   key={filterName}

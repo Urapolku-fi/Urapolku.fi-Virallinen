@@ -1,566 +1,607 @@
 #Signup-wrapper {
-    max-width: 100%;
-    margin: auto;
-    background-color: #FEF9F9;
-    overflow: hidden;
-    font-family: 'Montserrat', sans-serif;
+  max-width: 100%;
+  margin: auto;
+  background-color: #fef9f9;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
 }
 #Content {
-    border-radius: 50px;
+  border-radius: 50px;
 }
 #Left-side {
-    display: none;
+  display: none;
 }
 button:hover {
-    cursor: pointer;
-    opacity: 80%;
+  cursor: pointer;
+  opacity: 80%;
 }
-#Header, #Header-desktop {
-    display: flex;
-    max-width: 400px;
-    justify-content: center;
-    align-items: center;
-    gap: 5%;
-    padding-top: 5%;
+#Header,
+#Header-desktop {
+  display: flex;
+  max-width: 400px;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  padding-top: 5%;
 }
-#Header h2, .Welcome h2, #Header-desktop {
-    color: #000;
-    font-feature-settings: 'clig' off, 'liga' off;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 100%; /* 22px */
-    letter-spacing: -0.66px;
+#Header h2,
+.Welcome h2,
+#Header-desktop {
+  color: #000;
+  font-feature-settings:
+    'clig' off,
+    'liga' off;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%; /* 22px */
+  letter-spacing: -0.66px;
 }
 #Header-desktop h2 {
-    color: #FFF;
-    font-feature-settings: 'clig' off, 'liga' off;
+  color: #fff;
+  font-feature-settings:
+    'clig' off,
+    'liga' off;
+  font-family: Montserrat;
+  font-size: 39.621px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%; /* 39.621px */
+  letter-spacing: -1.189px;
+}
+.Welcome h2 {
+  max-width: 400px;
+  text-align: center;
+  font-size: 30px;
+  border-bottom: 1px solid #cbd3d1;
+  padding-bottom: 20px;
+}
+.Welcome {
+  padding: 0% 15%;
+  padding-top: 10%;
+}
+.Input-fields {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+#Email,
+#Password,
+#Fullname,
+#Phone-number-text,
+#File-upload {
+  width: 75%;
+  height: 40px;
+  align-items: center;
+  gap: 8px;
+  background-color: #fef9f9;
+
+  border-radius: 8px;
+  border: 1px solid var(--foundation-tertiary-tertiary-400, #b9c4c1);
+  /* Shadow / xs */
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+
+  max-width: 350px;
+}
+#Phone-number-text {
+  border: 0px;
+  max-width: 850px;
+}
+input.Email {
+  max-width: 250px;
+}
+input#Email,
+input#Password,
+input#Fullname,
+input#Phone-number-text,
+input#File-upload {
+  color: var(--foundation-tertiary-tertiary-600, #99a5a1);
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  padding-left: 5%;
+}
+.Phone-number {
+  display: flex;
+  border: 1px solid #e1dede;
+  width: 80%;
+  border-radius: 10px;
+}
+.Country-number {
+  display: flex;
+  height: 30px;
+  padding: 6px 20px 10px 22px;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  border-radius: 8px;
+  background: #ecebeb;
+}
+label {
+  display: flex;
+  position: relative;
+  color: #5c5c5c;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 136.5%; /* 19.11px */
+  letter-spacing: 1.12px;
+  float: right;
+}
+.user-agree {
+  text-align: center;
+}
+.user-agree {
+  color: #5c5c5c;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 136.5%; /* 16.38px */
+  letter-spacing: 0.3px;
+}
+.Login-button {
+  display: flex;
+  max-width: 400px;
+  justify-content: center;
+  align-items: center;
+  margin: 5%;
+}
+.Login-button button {
+  display: flex;
+  padding: 0 10%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  background: #120a2f;
+}
+.Login-button p {
+  color: #fffefe;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.81px;
+}
+.OR,
+.Desktop-OR {
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.OR p,
+.Desktop-OR p {
+  color: #000;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.81px;
+  margin-top: 0px;
+}
+.Signin-buttons {
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Google-signin,
+.Facebook-signin {
+  display: flex;
+  padding: 10px 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.Google-signin button,
+.Facebook-signin button {
+  width: 90%;
+  display: flex;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  background-color: #fffefe;
+  border: 1px solid pink;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+.Google-signin p,
+.Facebook-signin p {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 175% */
+}
+.No-account {
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20%;
+}
+.No-account a {
+  color: #3f3cee;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  text-decoration-line: underline;
+}
+.No-account p {
+  color: #101828;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+}
+.Desktop-OR {
+  display: none;
+}
+.Desktop-signin-buttons {
+  display: none;
+}
+.passframe {
+  display: none;
+}
+@media screen and (min-width: 400px) {
+  #Signup-wrapper {
+    max-width: 600px;
+    padding: 15%;
+    padding-bottom: 0%;
+    padding-top: 5%;
+  }
+  #Email,
+  #Password,
+  #Header,
+  #Fullname,
+  #File-upload {
+    max-width: 550px;
+  }
+  .Input-fields {
+    max-width: 600px;
+  }
+  .Login-button {
+    max-width: 600px;
+  }
+  .Welcome h2 {
+    max-width: 600px;
+  }
+  .Welcome {
+    padding: 0% 30%;
+  }
+  .OR,
+  .Desktop-OR {
+    max-width: 600px;
+  }
+  .No-account {
+    max-width: 600px;
+  }
+  .Welcome {
+    padding: 0% 15%;
+  }
+}
+@media screen and (min-width: 850px) {
+  #Signup-wrapper {
+    padding: 0%;
+    max-width: 1600px;
+    max-height: 100%;
+  }
+  #Left-side {
+    display: block;
+    width: 50%;
+    background-color: #120a2f;
+    max-width: 350px;
+    padding-top: 15%;
+    height: 100%;
+    padding-bottom: 60%;
+  }
+  #Left-side p {
+    color: #fff;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 156.5%; /* 37.56px */
+    letter-spacing: 1.92px;
+    padding: 0% 5%;
+  }
+  #Header-desktop p {
+    color: #fff;
+    font-feature-settings:
+      'clig' off,
+      'liga' off;
     font-family: Montserrat;
     font-size: 39.621px;
     font-style: normal;
     font-weight: 700;
     line-height: 100%; /* 39.621px */
     letter-spacing: -1.189px;
-}
-.Welcome h2 {
-    max-width: 400px;
-    text-align: center;
-    font-size: 30px;
-    border-bottom: 1px solid #CBD3D1;
-    padding-bottom: 20px;
-}
-.Welcome {
-    padding: 0% 15%;
-    padding-top: 10%;
-}
-.Input-fields {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    justify-content: center;
-    align-items: center;
-    gap: 1em;
-
-}
-#Email, #Password, #Fullname, #Phone-number-text, #File-upload {
-    width: 75%;
-    height: 40px;
-    align-items: center;
-    gap: 8px;
-    background-color: #FEF9F9;;
-
-    border-radius: 8px;
-    border: 1px solid var(--foundation-tertiary-tertiary-400, #B9C4C1);
-    /* Shadow / xs */
-    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
-
-    max-width: 350px;
-    
-}
-#Phone-number-text {
-    border: 0px;
-    max-width: 850px;
-}
-input.Email {
-    max-width: 250px;
-}
-input#Email, input#Password, input#Fullname, input#Phone-number-text, input#File-upload {
-    color: var(--foundation-tertiary-tertiary-600, #99A5A1);
-    font-family: Montserrat;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 28px;
-    padding-left: 5%;
-}
-.Phone-number {
-    display: flex;
-    border: 1px solid #E1DEDE;
-    width: 80%;
-    border-radius: 10px;
-}
-.Country-number {
-    display: flex;
-    height: 30px;
-    padding: 6px 20px 10px 22px;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    border-radius: 8px;
-    background: #ECEBEB;
-}
-label {
-    display: flex;
-    position: relative;
-    color: #5C5C5C;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 136.5%; /* 19.11px */
-    letter-spacing: 1.12px;
-    float: right;
-}
-.user-agree {
-    text-align: center;
-}
-.user-agree {
-    color: #5C5C5C;
-    text-align: center;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 136.5%; /* 16.38px */
-    letter-spacing: 0.3px;
-}
-.Login-button {
-    display: flex;
-    max-width: 400px;
-    justify-content: center;
-    align-items: center;
-    margin: 5%;
-}
-.Login-button button {
-    display: flex;
-    padding: 0 10%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 40px;
-    background: #120A2F;
-}
-.Login-button p {
-    color: #FFFEFE;
-    font-family: Montserrat;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 0.81px;
-}
-.OR, .Desktop-OR {
-    max-width: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.OR p, .Desktop-OR p {
-    color: #000;
-    font-family: Inter;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 0.81px;
-    margin-top: 0px;
-}
-.Signin-buttons {
-    max-width: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.Google-signin, .Facebook-signin {
-    display: flex;
-    padding: 10px 18px;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-}
-.Google-signin button, .Facebook-signin button {
-    width: 90%;
-    display: flex;
-    border-radius: 8px;
-    background: #FFF;
-    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
-    background-color: #FFFEFE;
-    border: 1px solid pink;
-    justify-content: center;
-    align-items: center;
-    gap: 5%;
-}
-.Google-signin p, .Facebook-signin p {
-    color: #000;
-    font-family: Montserrat;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 28px; /* 175% */
-}
-.No-account {
-    max-width: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 20%;
-}
-.No-account a {
-    color: #3F3CEE;
-    font-family: Montserrat;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 16px;
-    text-decoration-line: underline;
-}
-.No-account p {
-    color: #101828;
-    font-family: Montserrat;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 20px; /* 142.857% */
-}
-.Desktop-OR {
-    display: none;
-}
-.Desktop-signin-buttons {
-    display: none;
-}
-.passframe {
-    display: none;
-}
-@media screen and (min-width: 400px) {
-    #Signup-wrapper {
-      max-width: 600px;
-      padding: 15%;
-      padding-bottom: 0%;
-      padding-top: 5%;
-    }
-    #Email, #Password, #Header, #Fullname,#File-upload {
-        max-width: 550px;
-    }
-    .Input-fields {
-        max-width: 600px;
-    }.Login-button {
-        max-width: 600px;
-    }
-    .Welcome h2 {
-        max-width: 600px;
-    }
-    .Welcome {
-        padding: 0% 30%;
-    }
-    .OR, .Desktop-OR {
-        max-width: 600px;
-    }
-    .No-account {
-        max-width: 600px;
-    }
-    .Welcome {
-        padding: 0% 15%;
-    }
   }
-  @media screen and (min-width: 850px) {
+  #Signup-wrapper {
+    display: flex;
+    padding: 0%;
+  }
+  #Header {
+    display: none;
+  }
+  #Container {
+    width: 50%;
+    padding: 0% 10%;
+    border-radius: 8px;
+    padding-bottom: 5%;
+  }
+  .Input-fields {
+    max-width: 1600px;
+  }
+  .Login-button {
+    max-width: 1600px;
+  }
+  .Welcome h2 {
+    max-width: 1600px;
+  }
+  .OR,
+  .Desktop-OR {
+    max-width: 1600px;
+  }
+  .No-account {
+    max-width: 1600px;
+  }
+  .Welcome {
+    padding-top: 10%;
+  }
+  .No-account {
+    padding-bottom: 0px;
+  }
+
+  @media screen and (min-width: 1000px) {
     #Signup-wrapper {
-        padding: 0%;
-        max-width: 1600px;
-        max-height: 100%;
+      overflow: hidden;
     }
     #Left-side {
-        display: block;
-        width: 50%;
-        background-color: #120A2F;
-        max-width: 350px;
-        padding-top: 15%;
-        height: 100%;
-        padding-bottom: 60%;
-    }
-    #Left-side p {
-        color: #FFF;
-        text-align: center;
-        font-family: Montserrat;
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 156.5%; /* 37.56px */
-        letter-spacing: 1.92px;
-        padding: 0% 5%;
-    }
-    #Header-desktop p {
-        color: #FFF;
-        font-feature-settings: 'clig' off, 'liga' off;
-        font-family: Montserrat;
-        font-size: 39.621px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 100%; /* 39.621px */
-        letter-spacing: -1.189px;
-    }
-    #Signup-wrapper {
-        display: flex;
-        padding: 0%;
-    }
-    #Header {
-        display: none;
+      padding-bottom: 50%;
     }
     #Container {
-        width: 50%;
-        padding: 0% 10%;
-        border-radius: 8px;
-        padding-bottom: 5%;
-    }
-    .Input-fields {
-        max-width: 1600px;
-    }.Login-button {
-        max-width: 1600px;
-    }
-    .Welcome h2 {
-        max-width: 1600px;
-    }
-    .OR, .Desktop-OR {
-        max-width: 1600px;
-    }
-    .No-account {
-        max-width: 1600px;
-    }
-    .Welcome {
-        padding-top: 10%;
-    }
-    .No-account {
-        padding-bottom: 0px;
-    }
-
-    
-    @media screen and (min-width: 1000px) {
-        #Signup-wrapper {
-            overflow: hidden;
-            
-        }
-        #Left-side {
-            padding-bottom: 50%;
-        }
-        #Container {
-            padding: 5%;
-        }
-        .Desktop-OR {
-            display: flex;
-        }
-        .Desktop-signin-buttons {
-            display: flex;
-            gap: 30px;
-            flex-direction: column;
-            max-width: 800px;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 5%;
-        }
-        .Google-signin, .Facebook-signin {
-            padding: 0px;
-        }
-        .Google-signin button, .Facebook-signin button {
-            width: 300px;
-        }
-        .Signin-button {
-            display: none;
-        }
-        .OR {
-            display: none;
-        }
-        .Login-button button {
-            width: 90%;
-            border-radius: 6px;
-        }
-        .Phone-number {
-            max-width: 650px;
-        }
-  }
-}
-  @media screen and (min-width: 1600px) {
-    #Signup-wrapper {
-        max-width: 2200px;
-        max-height: 1000px;
-    }
-    #Left-side {
-        max-width: 20%;
-        padding-bottom: 363px;
-        height: 700px;
-    }
-    .Input-fields, .Login-button, .Welcome h2, .Desktop-OR, .No-account, .Google-signin, .Facebook-signin, input.passwords {
-        align-items: left;
-        justify-content: left;
-        
-    }
-    .Welcome {
-        padding-left: 0%;
-        margin-top: 0%;
-    }
-    .Welcome h2 {
-        text-align: left;
-        border-bottom: none;
-    }
-    .Google-signin button, .Facebook-signin button {
-        width: 300px;
-    }
-    .Google-signin {
-        padding-left: 0px;
-    }
-    .Desktop-signin-buttons {
-        display: flex;
-        flex-direction: row;
-        gap: 1.5%;
-        align-items: flex-start;
-        justify-content: flex-start;
-        margin-bottom: 5%;
-    }
-    .Welcome h2 {
-        color: #000;
-        font-family: Montserrat;
-        font-size: 30px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 136.5%; /* 40.95px */
-        letter-spacing: 3px;
-        padding-bottom: 0px;
-    }
-    .Input-fields{
-       max-width: 1300px;
-       justify-content: flex-start;
-       align-items: flex-start;
-       gap: 0px;
-    }
-    input#Email, input#Password, input#Fullname, .user-agree, input#File-upload{
-        max-width: 650px;
-        border: none;
-        border-bottom: 1px solid #C4C4C4;
-        border-radius: 0px;
-
-        color: #5C5C5C;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        letter-spacing: 1.12px;
-        padding: 0%;
-    }
-    input#Phone-number-text {
-        padding-right: 25%;
-    }
-    .Phone-number {
-        width: 700px;
-        margin-bottom: 5%;
-    }
-    .user-agree {
-        border-bottom: 0px;
-        text-align: center;
-    }
-    .user-agree p {
-        width: 60%;
-        text-align: center;
-    }
-    input#Email {
-        margin-bottom: 5%;
-    }
-    input#Fullname {
-        margin-bottom: 5%;
-    }
-    .Phone-number {
-        max-width: 650px;
-    }
-    input#Phone-number-text {
-        max-width: 500px;
+      padding: 5%;
     }
     .Desktop-OR {
-        justify-content: center;
-        align-items: center;
-        max-width: 650px;
-        padding-top: 1%;
+      display: flex;
     }
-    .Desktop-OR p {
-        color: #797979;
-        text-align: center;
-        font-family: Telex;
-        font-size: 26px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 136.5%; /* 35.49px */
-        letter-spacing: 2.47px;
-        margin-bottom: 0px;
+    .Desktop-signin-buttons {
+      display: flex;
+      gap: 30px;
+      flex-direction: column;
+      max-width: 800px;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 5%;
     }
-    .Login-button {
-        max-width: 750px;
-        display: block;
-        margin-left: 0px;
+    .Google-signin,
+    .Facebook-signin {
+      padding: 0px;
+    }
+    .Google-signin button,
+    .Facebook-signin button {
+      width: 300px;
+    }
+    .Signin-button {
+      display: none;
+    }
+    .OR {
+      display: none;
     }
     .Login-button button {
-        width: 50em;
-        display: block;
-        border-radius: 6px;
+      width: 90%;
+      border-radius: 6px;
+    }
+    .Phone-number {
+      max-width: 650px;
+    }
+  }
+}
+@media screen and (min-width: 1600px) {
+  #Signup-wrapper {
+    max-width: 2200px;
+    max-height: 1000px;
+  }
+  #Left-side {
+    max-width: 20%;
+    padding-bottom: 363px;
+    height: 700px;
+  }
+  .Input-fields,
+  .Login-button,
+  .Welcome h2,
+  .Desktop-OR,
+  .No-account,
+  .Google-signin,
+  .Facebook-signin,
+  input.passwords {
+    align-items: left;
+    justify-content: left;
+  }
+  .Welcome {
+    padding-left: 0%;
+    margin-top: 0%;
+  }
+  .Welcome h2 {
+    text-align: left;
+    border-bottom: none;
+  }
+  .Google-signin button,
+  .Facebook-signin button {
+    width: 300px;
+  }
+  .Google-signin {
+    padding-left: 0px;
+  }
+  .Desktop-signin-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 5%;
+  }
+  .Welcome h2 {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 136.5%; /* 40.95px */
+    letter-spacing: 3px;
+    padding-bottom: 0px;
+  }
+  .Input-fields {
+    max-width: 1300px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0px;
+  }
+  input#Email,
+  input#Password,
+  input#Fullname,
+  .user-agree,
+  input#File-upload {
+    max-width: 650px;
+    border: none;
+    border-bottom: 1px solid #c4c4c4;
+    border-radius: 0px;
 
-    }
-    .No-account a {
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        letter-spacing: 1.28px;
-    }
-    .No-account p {
-        color: #6B6A6A;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        letter-spacing: 1.28px;
-    }
-    #Password {
-        margin-bottom: 0%;
-    }
+    color: #5c5c5c;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 1.12px;
+    padding: 0%;
+  }
+  input#Phone-number-text {
+    padding-right: 25%;
+  }
+  .Phone-number {
+    width: 700px;
+    margin-bottom: 5%;
+  }
+  .user-agree {
+    border-bottom: 0px;
+    text-align: center;
+  }
+  .user-agree p {
+    width: 60%;
+    text-align: center;
+  }
+  input#Email {
+    margin-bottom: 5%;
+  }
+  input#Fullname {
+    margin-bottom: 5%;
+  }
+  .Phone-number {
+    max-width: 650px;
+  }
+  input#Phone-number-text {
+    max-width: 500px;
+  }
+  .Desktop-OR {
+    justify-content: center;
+    align-items: center;
+    max-width: 650px;
+    padding-top: 1%;
+  }
+  .Desktop-OR p {
+    color: #797979;
+    text-align: center;
+    font-family: Telex;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 136.5%; /* 35.49px */
+    letter-spacing: 2.47px;
+    margin-bottom: 0px;
+  }
+  .Login-button {
+    max-width: 750px;
+    display: block;
+    margin-left: 0px;
+  }
+  .Login-button button {
+    width: 50em;
+    display: block;
+    border-radius: 6px;
+  }
+  .No-account a {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 1.28px;
+  }
+  .No-account p {
+    color: #6b6a6a;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 1.28px;
+  }
+  #Password {
+    margin-bottom: 0%;
+  }
+  .passframe {
+    display: block;
+    position: relative;
+    left: 70%;
+    top: -93px;
+    background-color: #fef9f9;
+    border: 0px;
+  }
+  .input#Phone-number,
+  input#Email,
+  input#Password,
+  input#Fullname,
+  input#File-upload {
+    margin-bottom: 4%;
+  }
+  input#File-upload {
+    max-width: 650px;
+  }
+  .Welcome {
+    margin-top: 0px;
+    padding-top: 2%;
+    margin-bottom: 0px;
+  }
+  .Welcome h2 {
+    margin-bottom: 2%;
+  }
+  .Desktop-OR {
+    height: 25px;
+  }
+  .Welcome h2 {
+    margin-top: 0px;
+  }
+  @media screen and (min-width: 1700px) {
     .passframe {
-        display: block;
-        position: relative;
-        left: 70%;
-        top: -93px;
-        background-color: #FEF9F9;
-        border: 0px;
-
+      left: 63%;
+      top: -70px;
     }
-    .input#Phone-number, input#Email, input#Password, input#Fullname, input#File-upload {
-        margin-bottom: 4%;
+    input#Password {
+      margin-bottom: 3%;
     }
-    input#File-upload {
-        max-width: 650px;
+    .Login-button {
+      margin-bottom: 1%;
     }
-    .Welcome {
-        margin-top: 0px;
-        padding-top: 2%;
-        margin-bottom: 0px;
-       }
-       .Welcome h2 {
-        margin-bottom: 2%;
-       }
-       .Desktop-OR {
-        height: 25px;
-       }
-       .Welcome h2 {
-        margin-top: 0px;
-       }
-    @media screen and (min-width: 1700px) {
-        .passframe {
-            left: 63%;
-            top: -70px;
-        }
-        input#Password {
-            margin-bottom: 3%;
-        }
-       .Login-button {
-        margin-bottom: 1%;
-       }
-        }
-    }
+  }
+}

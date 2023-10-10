@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 const Dropdown = (props) => {
   const [open, setOpen] = useState(false);
@@ -14,10 +14,7 @@ const Dropdown = (props) => {
     }
 
     //not in the selected list and less than N currently selected -> add to selected
-    if (
-      selected.length < (props.numberToSelect || 1) &&
-      !selected.includes(option)
-    ) {
+    if (selected.length < (props.numberToSelect || 1) && !selected.includes(option)) {
       const newSelected = [...selected, option];
       if (props.onChange) props.onChange(newSelected);
       setSelected(newSelected);
@@ -26,56 +23,56 @@ const Dropdown = (props) => {
 
   const styles = {
     arrowUp: {
-      transform: "rotate(180deg)",
+      transform: 'rotate(180deg)',
     },
     mainBox: {
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      outline: ".1rem solid #CCCCCC",
-      borderRadius: ".5rem",
-      padding: ".4rem 1.5rem",
-      fontFamily: "Montserrat, sans-serif",
-      userSelect: "none",
-      overflow: "hidden",
-      height: "3.5rem",
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      outline: '.1rem solid #CCCCCC',
+      borderRadius: '.5rem',
+      padding: '.4rem 1.5rem',
+      fontFamily: 'Montserrat, sans-serif',
+      userSelect: 'none',
+      overflow: 'hidden',
+      height: '3.5rem',
     },
     title: {
-      fontWeight: "200",
-      marginBottom: ".5rem",
+      fontWeight: '200',
+      marginBottom: '.5rem',
     },
     menu: {
-      borderRadius: ".5rem",
-      outline: ".1rem solid #CCCCCC",
-      fontFamily: "Montserrat, sans-serif",
-      position: "absolute",
-      width: "100%",
-      boxSizing: "border-box",
-      zIndex: "999",
-      maxHeight: "20rem",
-      overflow: "scroll",
-      backgroundColor: "white",
-      padding: "1rem 0",
+      borderRadius: '.5rem',
+      outline: '.1rem solid #CCCCCC',
+      fontFamily: 'Montserrat, sans-serif',
+      position: 'absolute',
+      width: '100%',
+      boxSizing: 'border-box',
+      zIndex: '999',
+      maxHeight: '20rem',
+      overflow: 'scroll',
+      backgroundColor: 'white',
+      padding: '1rem 0',
     },
     menuClosed: {
-      display: "none",
+      display: 'none',
     },
     wrapper: {
-      position: "relative",
+      position: 'relative',
     },
     selectedText: {
-      overflow: "hidden",
-      textOverflow: "ellipsis",
-      whiteSpace: "nowrap",
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap',
     },
     menuItem: {
-      padding: ".5rem 1.5rem",
-      margin: "0",
-      userSelect: "none",
+      padding: '.5rem 1.5rem',
+      margin: '0',
+      userSelect: 'none',
     },
     selectedMenuItem: {
-      backgroundColor: "#120A2F",
-      color: "white",
+      backgroundColor: '#120A2F',
+      color: 'white',
     },
   };
 
@@ -83,14 +80,8 @@ const Dropdown = (props) => {
     <div style={styles.wrapper}>
       <h3 style={styles.title}>{props.title}</h3>
       <div style={styles.mainBox} onClick={() => setOpen(!open)}>
-        <p style={styles.selectedText}>
-          {selected.map((op) => op.label).join(", ")}
-        </p>
-        <img
-          style={open ? styles.arrowUp : {}}
-          src="pictures/expand-more.png"
-          alt=""
-        />
+        <p style={styles.selectedText}>{selected.map((op) => op.label).join(', ')}</p>
+        <img style={open ? styles.arrowUp : {}} src="pictures/expand-more.png" alt="" />
       </div>
       <div style={open ? styles.menu : styles.menuClosed}>
         {props.options?.map((option, i) => (
