@@ -150,9 +150,9 @@ jobs:
     steps:
       - name: Calculate New Version
         run: |
-          previous_release=$previous_release
-          release_type=$release_type
-          
+          previous_release=${{ env.previous_release }}
+          release_type=${{ env.release_type }}
+
           case "$release_type" in
             major)
               new_version=$(semver -i major "$previous_release")
@@ -192,9 +192,9 @@ jobs:
           name: backend-artifacts
           path: ./artifacts/backend
 
-      - name: Create Release
+      - name: Set Tag Name
         run: |
-          tag_name=$new_version
+          tag_name=${{ env.new_version }}
           echo "tag_name=$tag_name" >> $GITHUB_OUTPUT
         shell: bash
 
