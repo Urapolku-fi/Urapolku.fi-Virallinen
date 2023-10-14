@@ -1,4 +1,4 @@
-# Urapolku GitHub Repository
+# Urapolku GitHub Repository 
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -148,6 +148,6 @@ We utilize GitHub Actions for our CI/CD pipelines. For more details, check the `
 
 ## Acknowledgments
 
-Special thanks to all contributors and team members who have been a part of this project.
+Special thanks to all contributors and team members who have been a part of this project..
 
 
