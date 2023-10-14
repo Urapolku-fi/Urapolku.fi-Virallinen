@@ -46,13 +46,13 @@ jobs:
         working-directory: ./frontend
         run: |
           mkdir -p ../artifacts/zip
-          zip -r ../artifacts/zip/frontend.zip ./dist
+          zip -jr ../artifacts/zip/frontend.zip ./dist
 
       - name: Create Archive as Tar.gz
         working-directory: ./frontend/dist
         run: |
           mkdir -p ../../artifacts/tar  # Adjust the path to the artifacts directory
-          tar -czvf ../../artifacts/tar/frontend.tar.gz .
+          tar -czvf ../../artifacts/tar/frontend.tar.gz -C . .
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v3
@@ -93,7 +93,7 @@ jobs:
         working-directory: ./backend
         run: |
           mkdir -p ../artifacts/tar
-          find . -type f -not -path '*/\.*' -not -name 'Dockerfile' -print0 | xargs -0 tar -czvf ../artifacts/tar/backend.tar.gz
+          find . -type f -not -path '*/\.*' -not -name 'Dockerfile' -print0 | xargs -0 tar -czvf ../artifacts/tar/backend.tar.gz -C . .
         shell: bash
 
       - name: Upload Artifacts
@@ -169,9 +169,6 @@ jobs:
       - name: Install Semver
         run: npm install -g semver
 
-      - name: Install JQ
-        run: sudo apt install -y jq
-
       - name: Calculate New Version
         id: new-version
         run: |
@@ -220,6 +217,12 @@ jobs:
           name: backend-artifacts
           path: ./artifacts/backend
 
+      - name: List Artifacts (Frontend)
+        run: ls -al ./artifacts/frontend
+
+      - name: List Artifacts (Backend)
+        run: ls -al ./artifacts/backend
+
       - name: Set Tag Name
         id: tag
         run: |
@@ -232,6 +235,7 @@ jobs:
         with:
           files: ./artifacts/frontend/* ./artifacts/backend/*
           tag_name: ${{ steps.tag.outputs.tag_name }}
+          prerelease: true
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
