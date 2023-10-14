@@ -266,17 +266,18 @@ jobs:
 
       - name: Build and Push Docker Image (Backend)
         uses: mr-smithers-excellent/docker-build-push@v6
+        working-directory: backend
         with:
           image: urapolku/staging-backend
           tags: v${{ steps.get-release-number.outputs.release_number }}, latest
           registry: docker.io
           dockerfile: ./Dockerfile
-          directory: backend
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
       - name: Build and Push Docker Image (Frontend)
         uses: mr-smithers-excellent/docker-build-push@v6
+        working-directory: frontend
         with:
           image: urapolku/staging-frontend
           tags: v${{ steps.get-release-number.outputs.release_number }}, latest
