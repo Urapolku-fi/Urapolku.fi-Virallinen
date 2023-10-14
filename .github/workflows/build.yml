@@ -125,7 +125,7 @@ jobs:
           repo_name=$GITHUB_REPOSITORY_NAME
           latest_release=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
             -H "Accept: application/vnd.github.v3+json" \
-            "https://api.github.com/repos/$repo_owner/$repo_name/releases/latest" | jq 'map(select(.prerelease)) | first | .tag_name')
+            "https://api.github.com/repos/$repo_owner/$repo_name/releases" | jq 'map(select(.prerelease)) | first | .tag_name')
           echo "previous_release=$latest_release" >> $GITHUB_OUTPUT
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -253,7 +253,7 @@ jobs:
         run: |
           RELEASE_NUMBER=$(curl -s -H "Authorization: token ${{ secrets.GH_TOKEN }}" \
           -H "Accept: application/vnd.github.v3+json" \
-          https://api.github.com/repos/${{ github.repository }}/releases/latest | jq 'map(select(.prerelease)) | first | .tag_name')
+          https://api.github.com/repos/${{ github.repository }}/releases | jq 'map(select(.prerelease)) | first | .tag_name')
           echo "::set-output name=release-number::$RELEASE_NUMBER"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
