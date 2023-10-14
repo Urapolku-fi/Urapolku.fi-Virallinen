@@ -169,6 +169,9 @@ jobs:
       - name: Install Semver
         run: npm install -g semver
 
+      - name: Install JQ
+        run: sudo apt install -y jq
+
       - name: Calculate New Version
         id: new-version
         run: |
