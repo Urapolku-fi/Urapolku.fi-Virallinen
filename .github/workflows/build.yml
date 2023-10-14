@@ -111,9 +111,10 @@ jobs:
 
     steps:
       - name: Check out Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Get Latest Release
+        id: get-release
         run: |
           # Use the GitHub API to fetch the latest release
           GITHUB_TOKEN=$GITHUB_TOKEN
@@ -133,9 +134,10 @@ jobs:
 
     steps:
       - name: Check out code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Read Release Type
+        id: get-type
         run: |
           # Read the release-type.txt file in the root directory
           release_type=$(cat release-type.txt)
@@ -149,9 +151,10 @@ jobs:
 
     steps:
       - name: Calculate New Version
+        id: new-version
         run: |
-          previous_release=${{ env.previous_release }}
-          release_type=${{ env.release_type }}
+          previous_release=${{ steps.get-release.outputs.previous_release }}
+          release_type=${{ steps.get-type.outputs.release_type }}
 
           case "$release_type" in
             major)
@@ -193,8 +196,9 @@ jobs:
           path: ./artifacts/backend
 
       - name: Set Tag Name
+        id: tag
         run: |
-          tag_name=${{ env.new_version }}
+          tag_name=${{ steps.new-version.outputs.new_version }}
           echo "tag_name=$tag_name" >> $GITHUB_OUTPUT
         shell: bash
 
@@ -202,7 +206,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: ./artifacts/frontend/* ./artifacts/backend/*
-          tag_name: ${{ env.tag_name }}
+          tag_name: ${{ steps.tag.outputs.tag_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
