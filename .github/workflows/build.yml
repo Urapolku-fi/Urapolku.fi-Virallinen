@@ -264,6 +264,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
+      - name: List out backend
+        run: ls -al ./backend
+
+      - name: List out frontend
+        run: ls -al ./frontend
+
       - name: Build and Push Docker Image (Backend)
         uses: mr-smithers-excellent/docker-build-push@v6
         with:
