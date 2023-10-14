@@ -1,4 +1,4 @@
-name: Build Frontend
+name: Build, Release and Deploy
 
 on:
   pull_request:
@@ -16,25 +16,234 @@ jobs:
     - run: |
         echo The PR was merged
 
-  build_frontend:
-    name: Build Frontend Artifact
+  build-frontend:
+    name: Build Frontend
     needs: merged
-    runs-on: ${{matrix}}
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x]
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Use Node.js 18.x
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 18.x
           cache: 'npm'
-      - name: Setup CI frontend
+
+      - name: Setup CI
         working-directory: ./frontend
         run: npm ci
-      - name: Run build frontend
+
+      - name: Run Build with Vite
         working-directory: ./frontend
-        run: npm run build --if-present
+        run: npm run build
+
+      - name: Debug - List Files in dist Directory
+        working-directory: ./frontend/dist
+        run: ls -la
+
+      - name: Create Archive as ZIP
+        working-directory: ./frontend
+        run: |
+          mkdir -p ../artifacts/zip
+          zip -r ../artifacts/zip/frontend.zip ./dist
+
+      - name: Create Archive as Tar.gz
+        working-directory: ./frontend/dist
+        run: |
+          mkdir -p ../../artifacts/tar  # Adjust the path to the artifacts directory
+          tar -czvf ../../artifacts/tar/frontend.tar.gz .
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: frontend-artifacts
+          path: ./artifacts
+
+  build-backend:
+    name: Build Backend
+    needs: merged
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: 'npm'
+
+      - name: Setup CI
+        working-directory: ./backend
+        run: npm ci
+
+      - name: Debug - List Files in Backend Directory
+        working-directory: ./backend
+        run: ls -la
+
+      - name: Create Archive as ZIP
+        working-directory: ./backend
+        run: |
+          mkdir -p ../artifacts/zip
+          zip -r ../artifacts/zip/backend.zip . -x ".*" -x "Dockerfile"
+        shell: bash
+
+      - name: Create Archive as Tar.gz
+        working-directory: ./backend
+        run: |
+          mkdir -p ../artifacts/tar
+          find . -type f -not -path '*/\.*' -not -name 'Dockerfile' -print0 | xargs -0 tar -czvf ../artifacts/tar/backend.tar.gz
+        shell: bash
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: backend-artifacts
+          path: ./artifacts
+
+  get-previous-release:
+    name: Get Previous Release
+    needs:
+      - build-frontend
+      - build-backend
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Code
+        uses: actions/checkout@v2
+
+      - name: Get Latest Release
+        id: get-release
+        run: |
+          # Use the GitHub API to fetch the latest release
+          GITHUB_TOKEN=$GITHUB_TOKEN
+          repo_owner=$GITHUB_REPOSITORY_OWNER
+          repo_name=$GITHUB_REPOSITORY_NAME
+          latest_release=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github.v3+json" \
+            "https://api.github.com/repos/$repo_owner/$repo_name/releases/latest" | jq -r .tag_name)
+          echo "::set-output name=previous-release::$latest_release"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+  read-release-type:
+    name: Check Release Type in telease-type.txt
+    runs-on: ubuntu-latest
+    needs: get-previous-release
+
+    steps:
+      - name: Read Release Type
+        id: read-release-type
+        run: |
+          # Read the release-type.txt file in the root directory
+          release_type=$(cat release-type.txt)
+          echo "::set-output name=release-type::$release_type"
+        shell: bash
+
+  calculate-version:
+    name: Calculate Version
+    needs: [get-previous-release, read-release-type]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Calculate New Version
+        id: calculate-version
+        run: |
+          previous_release=${{ needs.get-previous-release.outputs.previous-release }}
+          release_type=${{ needs.read-release-type.outputs.release-type }}
+          
+          case "$release_type" in
+            major)
+              new_version=$(semver -i major "$previous_release")
+              ;;
+            minor)
+              new_version=$(semver -i minor "$previous_release")
+              ;;
+            patch)
+              new_version=$(semver -i patch "$previous_release")
+              ;;
+            *)
+              echo "Invalid release type: $release_type" >&2
+              exit 1
+              ;;
+          esac
+          echo "::set-output name=new-version::$new_version"
+        shell: bash
+
+  create-release:
+    name: Create Release
+    needs: calculate-version
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Download Artifacts (Frontend)
+        uses: actions/download-artifact@v3
+        with:
+          name: frontend-artifacts
+          path: ./artifacts/frontend
+
+      - name: Download Artifacts (Backend)
+        uses: actions/download-artifact@v3
+        with:
+          name: backend-artifacts
+          path: ./artifacts/backend
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ./artifacts/frontend/* ./artifacts/backend/*
+          tag_name: ${{ needs.calculate-version.outputs.new_version }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+  create-docker-images:
+    name: Build and Push Docker Images
+    needs: create-release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Setup Docker BuildX
+        uses: docker/setup-buildx-action@v1
+
+      - name: Get Latest Release Number
+        id: get-release-number
+        run: |
+          RELEASE_NUMBER=$(curl -s -H "Authorization: token ${{ secrets.GH_TOKEN }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/${{ github.repository }}/releases/latest | jq -r .tag_name)
+          echo "::set-output name=release-number::$RELEASE_NUMBER"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: Build and Push Docker Image (Backend)
+        uses: mr-smithers-excellent/docker-build-push@v1
+        with:
+          image: urapolku/staging
+          tags: ${{ steps.get-release-number.outputs.release-number }}, latest
+          registry: docker.io
+          dockerfile: Dockerfile
+          directory: backend
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build and Push Docker Image (Frontend)
+        uses: mr-smithers-excellent/docker-build-push@v1
+        with:
+          image: urapolku/staging
+          tags: ${{ steps.get-release-number.outputs.release-number }}, latest
+          registry: docker.io
+          dockerfile: Dockerfile
+          directory: frontend
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+

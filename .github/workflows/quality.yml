@@ -7,6 +7,8 @@ on:
     branches:
       - Staging
   pull_request:
+    types:
+      - opened
     branches:
       - Staging
 
