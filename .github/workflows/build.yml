@@ -109,6 +109,9 @@ jobs:
       - build-backend
     runs-on: ubuntu-latest
 
+    outputs:
+      previous_release: ${{ steps.get-release.outputs.previous_release }}
+
     steps:
       - name: Check out Code
         uses: actions/checkout@v3
@@ -132,6 +135,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: get-previous-release
 
+    outputs:
+      release_type: ${{ steps.get-type.outputs.release_type }}
+
     steps:
       - name: Check out code
         uses: actions/checkout@v3
@@ -149,12 +155,15 @@ jobs:
     needs: [ get-previous-release, read-release-type ]
     runs-on: ubuntu-latest
 
+    outputs:
+      new_version: ${{ steps.new-version.outputs.new_version }}
+
     steps:
       - name: Calculate New Version
         id: new-version
         run: |
-          previous_release=${{ steps.get-release.outputs.previous_release }}
-          release_type=${{ steps.get-type.outputs.release_type }}
+          previous_release=${{ needs.get-previous-release.outputs.previous_release }}
+          release_type=${{ needs.read-release-type.outputs.release_type }}
 
           case "$release_type" in
             major)
@@ -179,6 +188,9 @@ jobs:
     needs: calculate-version
     runs-on: ubuntu-latest
 
+    outputs:
+      tag: ${{ steps.tag.outputs.tag_name }}
+
     steps:
       - name: Check out code
         uses: actions/checkout@v2
@@ -198,7 +210,7 @@ jobs:
       - name: Set Tag Name
         id: tag
         run: |
-          tag_name=${{ steps.new-version.outputs.new_version }}
+          tag_name=${{ needs.calculate-version.outputs.new_version }}
           echo "tag_name=$tag_name" >> $GITHUB_OUTPUT
         shell: bash
 
