@@ -39,11 +39,15 @@ jobs:
         working-directory: ./frontend
         run: npm run build
 
-      - name: Create Archive as ZIP
+      - mame: Debug - List Files in dist Directory
         working-directory: ./frontend/dist
+        run: ls -la
+
+      - name: Create Archive as ZIP
+        working-directory: ./frontend
         run: |
           mkdir -p ../artifacts/zip
-          zip -r ../artifacts/zip/frontend.zip
+          zip -r ../artifacts/zip/frontend.zip ./dist
 
       - name: Create Archive as Tar.gz
         working-directory: ./frontend/dist
@@ -76,6 +80,10 @@ jobs:
         working-directory: ./backend
         run: npm ci
 
+      - name: Debug - List Files in Backend Directory
+        working-directory: ./backend
+        run: ls -la
+
       - name: Create Archive as ZIP
         working-directory: ./backend
         run: |
@@ -87,7 +95,7 @@ jobs:
         working-directory: ./backend
         run: |
           mkdir -p ../artifacts/tar
-          find . -type f -not -path '*/\.*' -not -name 'Dockerfile' | xargs tar -czvf ../artifacts/tar/backend.tar.gz
+          find . -type f -not -path '*/\.*' -not -name 'Dockerfile' -print0 | xargs -0 tar -czvf ../artifacts/tar/backend.tar.gz
         shell: bash
 
       - name: Upload Artifacts
