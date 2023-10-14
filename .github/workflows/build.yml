@@ -280,18 +280,14 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags:
-            - urapolku/staging-backend:${{ steps.get-release-number.outputs.release_number }}
-            - urapolku/staging-backend:latest
+          tags: urapolku/staging-backend:${{ steps.get-release-number.outputs.release_number }},urapolku/staging-backend:latest
           context: backend
 
       - name: Build and Push Docker Image (Frontend)
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags:
-            - urapolku/staging-frontend:${{ steps.get-release-number.outputs.release_number }}
-            - urapolku/staging-frontend:latest
+          tags: urapolku/staging-frontend:${{ steps.get-release-number.outputs.release_number }},urapolku/staging-frontend:latest
           context: frontend
 
 
