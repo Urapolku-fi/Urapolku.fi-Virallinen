@@ -128,7 +128,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
   read-release-type:
-    name: Check Release Type in telease-type.txt
+    name: Check Release Type
     runs-on: ubuntu-latest
     needs: get-previous-release
 
