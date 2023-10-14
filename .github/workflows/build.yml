@@ -196,13 +196,13 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Download Artifacts (Frontend)
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: frontend-artifacts
           path: ./artifacts/frontend
 
       - name: Download Artifacts (Backend)
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: backend-artifacts
           path: ./artifacts/backend
