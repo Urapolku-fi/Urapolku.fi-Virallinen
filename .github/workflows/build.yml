@@ -133,6 +133,9 @@ jobs:
     needs: get-previous-release
 
     steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
       - name: Read Release Type
         id: read-release-type
         run: |
