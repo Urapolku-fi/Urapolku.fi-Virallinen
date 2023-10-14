@@ -134,8 +134,10 @@ jobs:
 
   read-release-type:
     name: Check Release Type
+    needs:
+      - build-frontend
+      - build-backend
     runs-on: ubuntu-latest
-    needs: get-previous-release
 
     outputs:
       release_type: ${{ steps.get-type.outputs.release_type }}
@@ -258,7 +260,7 @@ jobs:
           RELEASE_NUMBER=$(curl -s -H "Authorization: token ${{ secrets.GH_TOKEN }}" \
           -H "Accept: application/vnd.github.v3+json" \
           https://api.github.com/repos/${{ github.repository }}/releases | jq 'map(select(.prerelease)) | first | .tag_name')
-          echo "::set-output name=release-number::$RELEASE_NUMBER"
+          echo "release_number=$RELEASE_NUMBER" >> $GITHUB_OUTPUT
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
@@ -277,7 +279,7 @@ jobs:
         uses: mr-smithers-excellent/docker-build-push@v6
         with:
           image: urapolku/staging/frontend
-          tags: v${{ steps.get-release-number.outputs.release-number }}, latest
+          tags: v${{ steps.get-release-number.outputs.release_number }}, latest
           registry: docker.io
           dockerfile: ./Dockerfile
           directory: frontend
