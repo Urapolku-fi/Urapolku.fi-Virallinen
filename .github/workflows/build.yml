@@ -233,7 +233,11 @@ jobs:
       - name: Create GitHub Release Draft
         uses: softprops/action-gh-release@v1
         with:
-          files: ./artifacts/frontend/tar/frontend.tar.gz ./artifacts/frontend/zip/frontend.zip ./artifacts/backend/tar/backend.tar.gz ./artifacts/backend/zip/backend.zip
+          files: |
+            ./artifacts/frontend/tar/frontend.tar.gz 
+            ./artifacts/frontend/zip/frontend.zip 
+            ./artifacts/backend/tar/backend.tar.gz 
+            ./artifacts/backend/zip/backend.zip
           tag_name: v${{ steps.tag.outputs.tag_name }}
           prerelease: true
         env:
@@ -261,7 +265,7 @@ jobs:
       - name: Build and Push Docker Image (Backend)
         uses: mr-smithers-excellent/docker-build-push@v6
         with:
-          image: urapolku/staging
+          image: urapolku/staging/backend
           tags: v${{ steps.get-release-number.outputs.release-number }}, latest
           registry: docker.io
           dockerfile: ./Dockerfile
@@ -272,7 +276,7 @@ jobs:
       - name: Build and Push Docker Image (Frontend)
         uses: mr-smithers-excellent/docker-build-push@v6
         with:
-          image: urapolku/staging
+          image: urapolku/staging/frontend
           tags: v${{ steps.get-release-number.outputs.release-number }}, latest
           registry: docker.io
           dockerfile: ./Dockerfile
