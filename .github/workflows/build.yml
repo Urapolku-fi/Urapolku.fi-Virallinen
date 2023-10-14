@@ -1,4 +1,4 @@
-name: Build Frontend
+name: Build, Release and Deploy
 
 on:
   pull_request:
@@ -16,25 +16,158 @@ jobs:
     - run: |
         echo The PR was merged
 
-  build_frontend:
-    name: Build Frontend Artifact
+  build-frontend:
+    name: Build Frontend
     needs: merged
-    runs-on: ${{matrix}}
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x, 18.x]
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Use Node.js 18.x
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 18.x
           cache: 'npm'
-      - name: Setup CI frontend
+
+      - name: Setup CI
         working-directory: ./frontend
         run: npm ci
-      - name: Run build frontend
+
+      - name: Run Build with Vite
         working-directory: ./frontend
-        run: npm run build --if-present
+        run: npm run build
+
+      - name: Create Archive as ZIP
+        working-directory: ./frontend/dist
+        run: |
+          mkdir -p ../artifacts/zip
+          zip -r ../artifacts/zip/frontend.zip
+
+      - name: Create Archive as Tar.gz
+        working-directory: ./frontend/dist
+        run: |
+          mkdir -p ../artifacts/tar
+          tar -czvf ../artifacts/tar/frontend.tar.gz
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: frontend-artifacts
+          path: ./artifacts
+
+  build-backend:
+    name: Build Backend
+    needs: merged
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: 'npm'
+
+      - name: Setup CI
+        working-directory: ./backend
+        run: npm ci
+
+      - name: Create Archive as ZIP
+        working-directory: ./backend
+        run: |
+          mkdir -p ../artifacts/zip
+          zip -r ../artifacts/zip/backend.zip . -x ".*" -x "Dockerfile"
+        shell: bash
+
+      - name: Create Archive as Tar.gz
+        working-directory: ./backend
+        run: |
+          mkdir -p ../artifacts/tar
+          find . -type f -not -path '*/\.*' -not -name 'Dockerfile' | xargs tar -czvf ../artifacts/tar/backend.tar.gz
+        shell: bash
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: backend-artifacts
+          path: ./artifacts
+
+  create-release:
+    name: Create Release
+    needs:
+      - build-frontend
+      - build-backend
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Download Artifacts (Frontend)
+        uses: actions/download-artifact@v2
+        with:
+          name: frontend-artifacts
+          path: ./artifacts/frontend
+
+      - name: Download Artifacts (Backend)
+        uses: actions/download-artifact@v2
+        with:
+          name: backend-artifacts
+          path: ./artifacts/backend
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ./artifacts/frontend/* ./artifacts/backend/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+  create-docker-images:
+    name: Build and Push Docker Images
+    needs: create-release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Setup Docker BuildX
+        uses: docker/setup-buildx-action@v1
+
+      - name: Get Latest Release Number
+        id: get-release-number
+        run: |
+          RELEASE_NUMBER=$(curl -s -H "Authorization: token ${{ secrets.GH_TOKEN }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/${{ github.repository }}/releases/latest | jq -r .tag_name)
+          echo "::set-output name=release-number::$RELEASE_NUMBER"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: Build and Push Docker Image (Backend)
+        uses: mr-smithers-excellent/docker-build-push@v1
+        with:
+          image: urapolku/staging
+          tags: ${{ steps.get-release-number.outputs.release-number }}, latest
+          registry: docker.io
+          dockerfile: Dockerfile
+          directory: backend
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build and Push Docker Image (Frontend)
+        uses: mr-smithers-excellent/docker-build-push@v1
+        with:
+          image: urapolku/staging
+          tags: ${{ steps.get-release-number.outputs.release-number }}, latest
+          registry: docker.io
+          dockerfile: Dockerfile
+          directory: frontend
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+
