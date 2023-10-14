@@ -129,6 +129,8 @@ jobs:
           echo "previous_release=$latest_release" >> $GITHUB_OUTPUT
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_REPOSITORY_OWNER: Urapolku-fi
+          GITHUB_REPOSITORY_NAME: Urapolku.fi-Virallinen
 
   read-release-type:
     name: Check Release Type
@@ -159,6 +161,14 @@ jobs:
       new_version: ${{ steps.new-version.outputs.new_version }}
 
     steps:
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+
+      - name: Install Semver
+        run: npm install -g semver
+
       - name: Calculate New Version
         id: new-version
         run: |
