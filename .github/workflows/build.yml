@@ -39,7 +39,7 @@ jobs:
         working-directory: ./frontend
         run: npm run build
 
-      - mame: Debug - List Files in dist Directory
+      - name: Debug - List Files in dist Directory
         working-directory: ./frontend/dist
         run: ls -la
 
