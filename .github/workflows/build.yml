@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Use Node.js 18.x
         uses: actions/setup-node@v3
@@ -67,7 +67,7 @@ jobs:
 
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Use Node.js 18.x
         uses: actions/setup-node@v3
@@ -114,7 +114,7 @@ jobs:
 
     steps:
       - name: Check out Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Get Latest Release
         id: get-release
@@ -144,7 +144,7 @@ jobs:
 
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Read Release Type
         id: get-type
@@ -205,7 +205,7 @@ jobs:
 
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Download Artifacts (Frontend)
         uses: actions/download-artifact@v3
@@ -252,7 +252,7 @@ jobs:
 
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Get Latest Release Number
         id: get-release-number
@@ -276,7 +276,7 @@ jobs:
           image: urapolku/staging-backend
           tags: v${{ steps.get-release-number.outputs.release_number }}, latest
           registry: docker.io
-          directory: backend
+          directory: ./backend
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
@@ -286,7 +286,7 @@ jobs:
           image: urapolku/staging-frontend
           tags: v${{ steps.get-release-number.outputs.release_number }}, latest
           registry: docker.io
-          directory: frontend
+          directory: ./frontend
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
