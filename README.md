@@ -144,7 +144,7 @@ For guidelines on how to rollback features or database changes, consult our [Rol
 
 ## Continuous Integration and Continuous Deployment (CI/CD)
 
-We utilize GitHub Actions for our CI/CD pipelines. For more details, check the `.github/workflows` directory in this repository.
+We utilize GitHub Actions for our CI/CD pipelines. For more details, check the `.github/workflows` directory in this repository..
 
 ## Acknowledgments
 
