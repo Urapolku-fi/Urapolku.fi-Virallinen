@@ -281,8 +281,8 @@ jobs:
         with:
           push: true
           tags:
-            - ${{ steps.get-release-number.outputs.release_number }}
-            - latest
+            - urapolku/staging-backend:${{ steps.get-release-number.outputs.release_number }}
+            - urapolku/staging-backend:latest
           context: backend
 
       - name: Build and Push Docker Image (Frontend)
@@ -290,8 +290,8 @@ jobs:
         with:
           push: true
           tags:
-            - ${{ steps.get-release-number.outputs.release_number }}
-            - latest
+            - urapolku/staging-frontend:${{ steps.get-release-number.outputs.release_number }}
+            - urapolku/staging-frontend:latest
           context: frontend
 
 
