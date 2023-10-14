@@ -203,7 +203,7 @@ jobs:
 
     steps:
       - name: Check out code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Download Artifacts (Frontend)
         uses: actions/download-artifact@v3
@@ -233,8 +233,8 @@ jobs:
       - name: Create GitHub Release Draft
         uses: softprops/action-gh-release@v1
         with:
-          files: ./artifacts/frontend/* ./artifacts/backend/*
-          tag_name: ${{ steps.tag.outputs.tag_name }}
+          files: ./artifacts/frontend/tar/frontend.tar.gz ./artifacts/frontend/zip/frontend.zip ./artifacts/backend/tar/backend.tar.gz ./artifacts/backend/zip/backend.zip
+          tag_name: v${{ steps.tag.outputs.tag_name }}
           prerelease: true
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -248,9 +248,6 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v3
 
-      - name: Setup Docker BuildX
-        uses: docker/setup-buildx-action@v1
-
       - name: Get Latest Release Number
         id: get-release-number
         run: |
@@ -262,10 +259,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Build and Push Docker Image (Backend)
-        uses: mr-smithers-excellent/docker-build-push@v1
+        uses: mr-smithers-excellent/docker-build-push@v6
         with:
           image: urapolku/staging
-          tags: ${{ steps.get-release-number.outputs.release-number }}, latest
+          tags: v${{ steps.get-release-number.outputs.release-number }}, latest
           registry: docker.io
           dockerfile: Dockerfile
           directory: backend
@@ -273,10 +270,10 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build and Push Docker Image (Frontend)
-        uses: mr-smithers-excellent/docker-build-push@v1
+        uses: mr-smithers-excellent/docker-build-push@v6
         with:
           image: urapolku/staging
-          tags: ${{ steps.get-release-number.outputs.release-number }}, latest
+          tags: v${{ steps.get-release-number.outputs.release-number }}, latest
           registry: docker.io
           dockerfile: Dockerfile
           directory: frontend
