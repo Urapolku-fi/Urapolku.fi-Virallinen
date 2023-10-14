@@ -114,7 +114,6 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Get Latest Release
-        id: get-release
         run: |
           # Use the GitHub API to fetch the latest release
           GITHUB_TOKEN=$GITHUB_TOKEN
@@ -123,7 +122,7 @@ jobs:
           latest_release=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
             -H "Accept: application/vnd.github.v3+json" \
             "https://api.github.com/repos/$repo_owner/$repo_name/releases/latest" | jq -r .tag_name)
-          echo "::set-output name=previous-release::$latest_release"
+          echo "previous_release=$latest_release" >> $GITHUB_OUTPUT
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
@@ -134,27 +133,25 @@ jobs:
 
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Read Release Type
-        id: read-release-type
         run: |
           # Read the release-type.txt file in the root directory
           release_type=$(cat release-type.txt)
-          echo "::set-output name=release-type::$release_type"
+          echo "release_type=$release_type" >> $GITHUB_OUTPUT
         shell: bash
 
   calculate-version:
     name: Calculate Version
-    needs: [get-previous-release, read-release-type]
+    needs: [ get-previous-release, read-release-type ]
     runs-on: ubuntu-latest
 
     steps:
       - name: Calculate New Version
-        id: calculate-version
         run: |
-          previous_release=${{ needs.get-previous-release.outputs.previous-release }}
-          release_type=${{ needs.read-release-type.outputs.release-type }}
+          previous_release=$previous_release
+          release_type=$release_type
           
           case "$release_type" in
             major)
@@ -171,7 +168,7 @@ jobs:
               exit 1
               ;;
           esac
-          echo "::set-output name=new-version::$new_version"
+          echo "new_version=$new_version" >> $GITHUB_OUTPUT
         shell: bash
 
   create-release:
@@ -181,25 +178,31 @@ jobs:
 
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Download Artifacts (Frontend)
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v2
         with:
           name: frontend-artifacts
           path: ./artifacts/frontend
 
       - name: Download Artifacts (Backend)
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v2
         with:
           name: backend-artifacts
           path: ./artifacts/backend
 
       - name: Create Release
+        run: |
+          tag_name=$new_version
+          echo "tag_name=$tag_name" >> $GITHUB_OUTPUT
+        shell: bash
+
+      - name: Create GitHub Release Draft
         uses: softprops/action-gh-release@v1
         with:
           files: ./artifacts/frontend/* ./artifacts/backend/*
-          tag_name: ${{ needs.calculate-version.outputs.new_version }}
+          tag_name: ${{ env.tag_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
