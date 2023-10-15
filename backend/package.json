@@ -4,7 +4,15 @@
   "description": "Backend for urapolku",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "quality:check-all": "npm run lint:check; npm run styles:check",
+    "quality:fix-all": "npm run lint:fix; npm run styles:fix",
+    "lint:check": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --ext js,jsx --fix",
+    "styles:check": "prettier --check '**/*.{js,jsx,ts,tsx,json,md,css}'",
+    "styles:fix": "prettier --write '**/*.{js,jsx,ts,tsx,json,md,css}'",
+    "start:dev": "nodemon app.js",
+    "start:production": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -22,11 +30,21 @@
     "express": "^4.18.2",
     "express-jwt": "^8.4.1",
     "jwks-rsa": "^3.0.1",
-    "mongodb": "5.7",
+    "mongodb": "^5.9.0",
     "mongoose": "^7.4.1",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "eslint-plugin-security": "^1.7.1",
+    "jsinspect": "^0.12.7",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.3"
   }
 }

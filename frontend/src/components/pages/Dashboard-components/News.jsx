@@ -1,6 +1,5 @@
-import React from "react";
-import "../../css/Dashboard/News.css";
-import { useNavigate } from "react-router-dom";
+import '../../css/Dashboard/News.css';
+import { useNavigate } from 'react-router-dom';
 
 function NewsItem({ text, backgroundImage, url }) {
   const navigate = useNavigate();
@@ -32,12 +31,7 @@ function News({ news }) {
           <p>
             <a href="/">View-all</a>
           </p>
-          <img
-            src="/pictures/Arrow-right-alt.png"
-            alt=""
-            height="24px"
-            width="24px"
-          />
+          <img src="/pictures/Arrow-right-alt.png" alt="" height="24px" width="24px" />
         </div>
       </div>
       <div className="News-items">

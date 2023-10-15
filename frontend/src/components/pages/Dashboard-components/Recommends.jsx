@@ -1,6 +1,5 @@
-import React from "react";
-import "../../css/Dashboard/Recommends.css";
-import { useNavigate } from "react-router-dom";
+import '../../css/Dashboard/Recommends.css';
+import { useNavigate } from 'react-router-dom';
 
 function RecommendCard({ imageSrc, title, description, location, url }) {
   const navigate = useNavigate();
@@ -41,12 +40,7 @@ function Recommends({ recommends }) {
         ))}
       </div>
       <div className="Recommends-View-all-recommendations">
-        <img
-          src="/pictures/Arrow-left-alt.png"
-          alt=""
-          width="16px"
-          height="8px"
-        />
+        <img src="/pictures/Arrow-left-alt.png" alt="" width="16px" height="8px" />
         <a href="/">
           <h2 className="Recommends-footer-title">View all recommendations</h2>
         </a>

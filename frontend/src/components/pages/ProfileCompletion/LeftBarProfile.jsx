@@ -1,16 +1,11 @@
-import UrapolkuLogo from "./UrapolkuLogoText";
-import "../../css/LeftBarProfile.css";
+import UrapolkuLogo from './UrapolkuLogoText';
+import '../../css/LeftBarProfile.css';
 function LeftBar() {
   return (
     <div id="Profile-completion-sidebar">
       <UrapolkuLogo textColor="white" />
       <div className="Profile-completion-image-frame">
-        <img
-          src="pictures/ProfileCompletionImage.jpg"
-          alt=""
-          width="360px"
-          height="484px"
-        />
+        <img src="pictures/ProfileCompletionImage.jpg" alt="" width="360px" height="484px" />
       </div>
     </div>
   );

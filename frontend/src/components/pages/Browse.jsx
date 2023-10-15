@@ -1,124 +1,112 @@
-import { useEffect, useState } from "react";
-import "../css/browse.css";
-import SearchBar from "./Browse/SearchBar";
-import Footer from "./Browse/Footer";
-import JobCard from "./Browse/JobCard";
-import Filter from "./Browse/Filter";
-import CompareBox from "./Browse/CompareBox";
-import AdCard from "./Browse/AdCard";
-import SingleOptionDropdown from "./Browse/SingleOptionDropdown";
-import MobileFilters from "./Browse/MobileFilters";
+import { useEffect, useState } from 'react';
+import '../css/browse.css';
+import SearchBar from './Browse/SearchBar';
+import Footer from '../Footer';
+import JobCard from './Browse/JobCard';
+import Filter from './Browse/Filter';
+import CompareBox from './Browse/CompareBox';
+import AdCard from './Browse/AdCard';
+import SingleOptionDropdown from './Browse/SingleOptionDropdown';
+import MobileFilters from './Browse/MobileFilters';
 
 const loremIpsum = [
-  ["hello"],
-  "lorem",
-  "ipsum",
-  "dolor",
-  "sit",
-  "amet",
-  "consectetur",
-  "adipiscing",
-  "elit",
-  "curabitur",
-  "vel",
-  "hendrerit",
-  "libero",
-  "eleifend",
-  "blandit",
-  "nunc",
-  "ornare",
-  "odio",
-  "ut",
-  ["damn"],
-  "orci",
-  "gravida",
-  "imperdiet",
-  "nullam",
-  "purus",
-  "lacinia",
-  "a",
-  "pretium",
-  "quis",
-  "congue",
-  "praesent",
-  "sagittis",
-  "laoreet",
-  "auctor",
-  "mauris",
-  "non",
-  "velit",
-  "eros",
-  ["world"],
-  "dictum",
-  "proin",
-  "accumsan",
-  "sapien",
-  "nec",
-  "massa",
-  "volutpat",
-  "venenatis",
-  "sed",
-  "eu",
-  "molestie",
-  "lacus",
-  "quisque",
-  "porttitor",
-  "ligula",
-  "dui",
-  "mollis",
-  "tempus",
+  ['hello'],
+  'lorem',
+  'ipsum',
+  'dolor',
+  'sit',
+  'amet',
+  'consectetur',
+  'adipiscing',
+  'elit',
+  'curabitur',
+  'vel',
+  'hendrerit',
+  'libero',
+  'eleifend',
+  'blandit',
+  'nunc',
+  'ornare',
+  'odio',
+  'ut',
+  ['damn'],
+  'orci',
+  'gravida',
+  'imperdiet',
+  'nullam',
+  'purus',
+  'lacinia',
+  'a',
+  'pretium',
+  'quis',
+  'congue',
+  'praesent',
+  'sagittis',
+  'laoreet',
+  'auctor',
+  'mauris',
+  'non',
+  'velit',
+  'eros',
+  ['world'],
+  'dictum',
+  'proin',
+  'accumsan',
+  'sapien',
+  'nec',
+  'massa',
+  'volutpat',
+  'venenatis',
+  'sed',
+  'eu',
+  'molestie',
+  'lacus',
+  'quisque',
+  'porttitor',
+  'ligula',
+  'dui',
+  'mollis',
+  'tempus',
 ];
 
 const defaultFiltersState = {
-  location: [
-    loremIpsum,
-    Array(loremIpsum.filter((e) => typeof e === "string").length).fill(false),
-  ],
+  location: [loremIpsum, Array(loremIpsum.filter((e) => typeof e === 'string').length).fill(false)],
   jobType: [
-    ["Full Time", true],
-    ["Part Time", false],
-    ["Internship", false],
-    ["Apprenticeship", false],
+    ['Full Time', true],
+    ['Part Time', false],
+    ['Internship', false],
+    ['Apprenticeship', false],
   ],
   workType: [
-    ["On-site", true],
-    ["Hybrid", false],
-    ["Remote", false],
-    ["Custom hours", false],
+    ['On-site', true],
+    ['Hybrid', false],
+    ['Remote', false],
+    ['Custom hours', false],
   ],
-  industry: [
-    loremIpsum,
-    Array(loremIpsum.filter((e) => typeof e === "string").length).fill(false),
-  ],
-  company: [
-    loremIpsum,
-    Array(loremIpsum.filter((e) => typeof e === "string").length).fill(false),
-  ],
+  industry: [loremIpsum, Array(loremIpsum.filter((e) => typeof e === 'string').length).fill(false)],
+  company: [loremIpsum, Array(loremIpsum.filter((e) => typeof e === 'string').length).fill(false)],
   language: [
-    ["English", true],
-    ["Swedish", false],
-    ["Finnish", false],
+    ['English', true],
+    ['Swedish', false],
+    ['Finnish', false],
   ],
-  role: [
-    loremIpsum,
-    Array(loremIpsum.filter((e) => typeof e === "string").length).fill(false),
-  ],
+  role: [loremIpsum, Array(loremIpsum.filter((e) => typeof e === 'string').length).fill(false)],
   salary: [0, 15000],
   education: [
-    "Bachelor",
-    "Master",
-    "Licentiate",
-    "Doctor",
-    "Upper secondary school",
-    "Vocational school",
-    "Comprehensive school",
-    "No education",
-    "Certified course",
+    'Bachelor',
+    'Master',
+    'Licentiate',
+    'Doctor',
+    'Upper secondary school',
+    'Vocational school',
+    'Comprehensive school',
+    'No education',
+    'Certified course',
   ],
 };
 
 const Browse = () => {
-  const [searchInput, setSearchInput] = useState("");
+  const [searchInput, setSearchInput] = useState('');
 
   const [comparedJobs, setComparedJobs] = useState([]);
 
@@ -148,12 +136,12 @@ const Browse = () => {
   };
 
   const exampleData = {
-    title: "Nurse",
-    area: "Welfare Area",
-    field: "Health Care",
-    type: "Full time | On Site",
-    salary: "€35,000 annually",
-    location: "Espoo",
+    title: 'Nurse',
+    area: 'Welfare Area',
+    field: 'Health Care',
+    type: 'Full time | On Site',
+    salary: '€35,000 annually',
+    location: 'Espoo',
   };
 
   return (
@@ -163,8 +151,8 @@ const Browse = () => {
           <div className="header-looking-for-job">Etsitkö työpaikkaa?</div>
           <div className="paragraph-wrapper">
             <div className="text-ipsum">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua.
             </div>
           </div>
         </div>
@@ -175,30 +163,24 @@ const Browse = () => {
           filtersState={filtersState}
           setFiltersState={setFiltersState}
           categoryNames={[
-            "Location",
-            "Job Type",
-            "Work Type",
-            "Industry",
-            "Company",
-            "Language",
-            "Role",
-            "Salary",
-            "Education",
+            'Location',
+            'Job Type',
+            'Work Type',
+            'Industry',
+            'Company',
+            'Language',
+            'Role',
+            'Salary',
+            'Education',
           ]}
         />
-        <div className="text-job-count">
-          Näytetään 500 työtä alalla terveydenhuolto
-        </div>
+        <div className="text-job-count">Näytetään 500 työtä alalla terveydenhuolto</div>
         <SingleOptionDropdown
-          options={["päiväys", "osuvuus"]}
+          options={['päiväys', 'osuvuus']}
           forSort
           childComponent={
             <div className="button-sort">
-              Järjestä{" "}
-              <img
-                className="sort-dropdown-arrow"
-                src={"/pictures/expand-arrow.png"}
-              />
+              Järjestä <img className="sort-dropdown-arrow" src={'/pictures/expand-arrow.png'} />
             </div>
           }
         />

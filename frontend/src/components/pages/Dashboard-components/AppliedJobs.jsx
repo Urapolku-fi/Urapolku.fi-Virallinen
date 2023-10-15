@@ -1,16 +1,8 @@
-import React from "react";
-import "../../css/Dashboard/AppliedJobs.css";
-import { useNavigate } from "react-router-dom";
-import ProgressBar from "./ProgressBar";
+import '../../css/Dashboard/AppliedJobs.css';
+import { useNavigate } from 'react-router-dom';
+import ProgressBar from './ProgressBar';
 
-function AppliedJobsCard({
-  imageSrc,
-  title,
-  description,
-  location,
-  url,
-  progress,
-}) {
+function AppliedJobsCard({ imageSrc, title, description, location, url, progress }) {
   const navigate = useNavigate();
   return (
     <div
@@ -50,12 +42,7 @@ function AppliedJobs({ appliedJobs }) {
         ))}
       </div>
       <div className="AppliedJobs-View-all-recommendations">
-        <img
-          src="/pictures/Arrow-left-alt.png"
-          alt=""
-          width="16px"
-          height="8px"
-        />
+        <img src="/pictures/Arrow-left-alt.png" alt="" width="16px" height="8px" />
         <a href="/" className="AppliedJobs-footer-link">
           <h2 className="AppliedJobs-footer-title">View all applied jobs</h2>
         </a>

@@ -1,4 +1,4 @@
-import "../../css/Browse/footer.css";
+import './css/footer.css';
 
 const Footer = () => {
   return (
@@ -9,9 +9,7 @@ const Footer = () => {
             <div className="footer-links-wrapper">
               <div className="contact">Contact</div>
               <div className="footer-links">
-                <div className="work-inquires-workvaultflow">
-                  Work inquires: work@vaultflow.com
-                </div>
+                <div className="work-inquires-workvaultflow">Work inquires: work@vaultflow.com</div>
                 <div className="work-inquires-workvaultflow">
                   PR and speaking: press@vaultflow.com
                 </div>
@@ -24,9 +22,7 @@ const Footer = () => {
               <div className="careers">Careers</div>
               <div className="careersvaultflowcom">Careers@vaultflow.com</div>
             </div>
-            <div className="vaultflow-all-rights">
-              © 2023 Vaultflow. All Rights Reserved.
-            </div>
+            <div className="vaultflow-all-rights">© 2023 Vaultflow. All Rights Reserved.</div>
           </div>
           <div className="footer-column">
             <div className="footer-links-wrapper">
@@ -50,7 +46,7 @@ const Footer = () => {
           <div className="footer-column2">
             <div className="logo-wrapper">
               <div className="logo">
-                <img className="valtflow-icon" alt="" src={"/pictures/urapolku.png"} />
+                <img className="valtflow-icon" alt="" src={'/pictures/urapolku.png'} />
                 <b className="urapolku">Urapolku</b>
               </div>
             </div>

@@ -1,0 +1,16 @@
+.socials {
+  background-image: url('pictures/stars.png');
+  background-repeat: repeat;
+  background-size: 80px;
+  height: 4rem;
+}
+
+.social-links {
+  padding: 1rem 0 0 3rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.social-links img {
+  height: 1.5rem;
+}

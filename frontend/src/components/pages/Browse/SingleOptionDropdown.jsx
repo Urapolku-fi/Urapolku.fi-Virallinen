@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import "../../css/Browse/singleOptionDropdown.css";
-import FilterLabel from "./FilterLabel";
+import { useEffect, useState } from 'react';
+import '../../css/Browse/singleOptionDropdown.css';
+import FilterLabel from './FilterLabel';
 
 // options is an array of the options, they must be unique since they're being used as values
 // example: [
@@ -33,15 +33,11 @@ const SingleOptionDropdown = ({ options, childComponent, forSort, label }) => {
     <div>
       {label && <FilterLabel text={label} />}
       <div onClick={toggleDropdown}>{childComponent}</div>
-      <div
-        className={`education-list ${!showDropdown ? "hide" : ""} ${
-          forSort ? "for-sort" : ""
-        }`}
-      >
+      <div className={`education-list ${!showDropdown ? 'hide' : ''} ${forSort ? 'for-sort' : ''}`}>
         {options.map((item) => (
           <div
             value={item}
-            className={item !== value ? "option" : "option selected-option"}
+            className={item !== value ? 'option' : 'option selected-option'}
             onClick={() => {
               handleOptionClick(item);
             }}

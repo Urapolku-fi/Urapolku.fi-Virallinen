@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const EmployerSchema = new Schema(
@@ -15,8 +15,8 @@ const EmployerSchema = new Schema(
     website: { type: String },
     onBoardingFinished: { type: Boolean },
   },
-  { collection: "employers" }
+  { collection: 'employers' },
 );
 
 // Export model
-module.exports = mongoose.model("Employer", EmployerSchema);
+module.exports = mongoose.model('Employer', EmployerSchema);

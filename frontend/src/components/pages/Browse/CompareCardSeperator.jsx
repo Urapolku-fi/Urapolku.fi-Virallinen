@@ -1,4 +1,4 @@
-import "../../css/Browse/compareJobCardSeperator.css";
+import '../../css/Browse/compareJobCardSeperator.css';
 
 const CompareJobCardSeperator = () => {
   return <div className="compare-job-card-seperator" />;

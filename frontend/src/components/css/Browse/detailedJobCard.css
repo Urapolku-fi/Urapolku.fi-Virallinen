@@ -1,0 +1,119 @@
+.detailed-card-wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  backdrop-filter: blur(0.5rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detailed-card {
+  width: 100%;
+  max-width: 65vw;
+  height: 70vh;
+  background-color: #0f0526;
+  display: flex;
+  flex-wrap: nowrap;
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow:
+    0px 0.5px 0px 0px rgba(255, 255, 255, 0.5) inset,
+    0px -2px 40px 0px rgba(187, 155, 255, 0.15),
+    0px -2px 10px 0px rgba(233, 223, 255, 0.3);
+  outline: 0.1rem solid #5a438b;
+  margin: 3rem;
+}
+
+.detailed-card-left {
+  width: 35%;
+  display: flex;
+  align-items: end;
+
+  background: linear-gradient(180deg, transparent, #0f0526), url('pictures/ad-example.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-right: 0.1rem solid #5a438b;
+  box-sizing: border-box;
+}
+
+.detailed-card-right {
+  width: 65%;
+  text-align: left;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.detailed-card-profile {
+  min-width: unset;
+  width: 100%;
+  padding: unset;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+}
+
+.detailed-card-profile .applyButton {
+  padding: 0.5rem 2rem 0.5rem 2rem;
+}
+
+.detailed-card-profile > h2 {
+  font-size: 1rem;
+  color: white;
+}
+
+.detailed-card-profile > img {
+  width: 4rem;
+  box-shadow:
+    0px 0.5px 0px 0px rgba(255, 255, 255, 0.5) inset,
+    0px -2px 40px 0px rgba(187, 155, 255, 0.15),
+    0px -2px 10px 0px rgba(233, 223, 255, 0.3);
+}
+
+.detailed-card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.detailed-card-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.detailed-card-buttons button {
+  border: none;
+  padding: 0;
+  width: 1.7rem;
+}
+
+.detailed-card-buttons img {
+  height: 100%;
+  width: 100%;
+}
+
+.detailed-card-details {
+  height: 75%;
+  overflow-y: auto;
+}
+
+.detailed-card-details h2 {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.detailed-card-details p {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 1500px) {
+  .detailed-card {
+    max-width: unset;
+    height: 60vh;
+  }
+}

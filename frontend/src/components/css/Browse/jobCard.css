@@ -7,12 +7,9 @@
   bottom: 0%;
   left: 0%;
   border-radius: 20px;
-  background: linear-gradient(
-    180deg,
-    rgba(107, 107, 107, 0.05),
-    rgba(191, 191, 191, 0.05)
-  );
-  box-shadow: 0px -2px 10px rgba(233, 223, 255, 0.3),
+  background: linear-gradient(180deg, rgba(107, 107, 107, 0.05), rgba(191, 191, 191, 0.05));
+  box-shadow:
+    0px -2px 10px rgba(233, 223, 255, 0.3),
     0px -2px 40px rgba(187, 155, 255, 0.15),
     0px 0.5px 0px rgba(255, 255, 255, 0.5) inset;
 }
@@ -65,7 +62,6 @@
 
 .see-details-wrapper {
   position: absolute;
-  height: 12.1%;
   width: 66.55%;
   top: 83.06%;
   right: 25.7%;
@@ -73,10 +69,9 @@
   left: 7.75%;
   border-radius: 5px;
   background-color: #fff;
-  overflow: hidden;
   display: flex;
   flex-direction: row;
-  padding: 12px 59px;
+  padding: 10px 59px;
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
