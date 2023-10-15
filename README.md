@@ -149,5 +149,3 @@ We utilize GitHub Actions for our CI/CD pipelines. For more details, check the `
 ## Acknowledgments
 
 Special thanks to all contributors and team members who have been a part of this project.
-
-Those comma';s...
