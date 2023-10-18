@@ -20,4 +20,3 @@ COPY entrypoint.sh /docker-entrypoint.d/99-fix-environment-variables.sh
 RUN chmod +x /docker-entrypoint.d/99-fix-environment-variables.sh
 
 COPY --from=builder /frontend/dist /usr/share/nginx/html
-

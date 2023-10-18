@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="804ac7e9-acd0-44d8-9d6a-07accdd0e40f" name="Changes" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+>>>>>>> 298ed087cca99721506eaa1baf85da015af06e3c
       <change beforePath="$PROJECT_DIR$/frontend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +34,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -47,8 +51,26 @@
     "settings.editor.selected.configurable": "io.snyk.plugin.settings.SnykProjectSettingsConfigurable",
     "ts.external.directory.path": "C:\\Program Files (x86)\\JetBrains\\WebStorm 2023.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
+=======
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Stag-Deployment-Tests&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/hylke/Documents/Projecten/Persoonlijk/Urapolku.fi-Virallinen/backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\hylke\\Documents\\Projecten\\Persoonlijk\\Urapolku.fi-Virallinen\\frontend\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;io.snyk.plugin.settings.SnykProjectSettingsConfigurable&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files (x86)\\JetBrains\\WebStorm 2023.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+>>>>>>> 298ed087cca99721506eaa1baf85da015af06e3c
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -86,7 +108,7 @@
       <workItem from="1695728563725" duration="1202000" />
       <workItem from="1695734467349" duration="1798000" />
       <workItem from="1695919595775" duration="9031000" />
-      <workItem from="1697653327802" duration="5665000" />
+      <workItem from="1697653327802" duration="5987000" />
     </task>
     <servers />
   </component>
