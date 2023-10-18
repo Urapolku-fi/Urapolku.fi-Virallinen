@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="804ac7e9-acd0-44d8-9d6a-07accdd0e40f" name="Changes" comment="">
-<<<<<<< HEAD
-=======
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
->>>>>>> 13113cdd1be6750c9c30c16b89fa276477d7e77d
+    <list default="true" id="d25532ac-e212-4f00-8d6b-f4a9b2fe801e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/frontend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,84 +13,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 3
-}</component>
-  <component name="ProjectId" id="2TiMfLzLawlDEcFKPCWMrZh6uG5" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "staging",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/hylke/Documents/Projecten/Persoonlijk/Urapolku.fi-Virallinen/backend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
+    "git-widget-placeholder": "Staging",
     "prettierjs.PrettierConfiguration.Package": "C:\\Users\\hylke\\Documents\\Projecten\\Persoonlijk\\Urapolku.fi-Virallinen\\frontend\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "io.snyk.plugin.settings.SnykProjectSettingsConfigurable",
-    "ts.external.directory.path": "C:\\Program Files (x86)\\JetBrains\\WebStorm 2023.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+    "ts.external.directory.path": "C:\\Program Files (x86)\\JetBrains\\WebStorm 2023.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external"
   }
-}</component>
-  <component name="ReactDesignerToolWindowState">
-    <option name="myId2Visible">
-      <map>
-        <entry key="com.haulmont.rcb.reactComponents" value="false" />
-        <entry key="com.haulmont.rcb.reactInspector" value="false" />
-        <entry key="com.haulmont.rcb.storybook" value="false" />
-      </map>
-    </option>
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\hylke\Documents\Projecten\Persoonlijk\Urapolku.fi-Virallinen\backend" />
-      <recent name="C:\Users\hylke\Documents\Projecten\Persoonlijk\Urapolku.fi-Virallinen\.github\workflows" />
-      <recent name="$PROJECT_DIR$/backend" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\hylke\Documents\Projecten\Persoonlijk\Urapolku.fi-Virallinen\frontend\src\environment" />
-    </key>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+}]]></component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="804ac7e9-acd0-44d8-9d6a-07accdd0e40f" name="Changes" comment="" />
-      <created>1691521550663</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1691521550663</updated>
-      <workItem from="1691521551515" duration="3536000" />
-      <workItem from="1691943149049" duration="43000" />
-      <workItem from="1691943195630" duration="6408000" />
-      <workItem from="1695470168255" duration="5340000" />
-      <workItem from="1695565293976" duration="640000" />
-      <workItem from="1695565944656" duration="1458000" />
-      <workItem from="1695638943706" duration="607000" />
-      <workItem from="1695728563725" duration="1202000" />
-      <workItem from="1695734467349" duration="1798000" />
-      <workItem from="1695919595775" duration="9031000" />
-      <workItem from="1697653327802" duration="5987000" />
-    </task>
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
 </project>
