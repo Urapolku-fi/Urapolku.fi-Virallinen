@@ -1,6 +1,8 @@
 import '../css/favorites.css';
 import Filter from './Browse/Filter';
 import { useState } from 'react';
+import Bell from '../../assets/bell.svg';
+import Delete from '../../assets/delete.svg';
 
 const mocData = [
   {
@@ -10,6 +12,7 @@ const mocData = [
     location: 'Location',
     description:
       'Designing logos, brand identities, and marketing materials to establish and maintain a consistent visual identity for a company or organization.',
+    ends: 'Ends',
   },
   {
     role: 'Job Role',
@@ -18,6 +21,7 @@ const mocData = [
     location: 'Location',
     description:
       'Designing logos, brand identities, and marketing materials to establish and maintain a consistent visual identity for a company or organization.',
+    ends: 'Ends',
   },
   {
     role: 'Job Role',
@@ -26,6 +30,7 @@ const mocData = [
     location: 'Location',
     description:
       'Designing logos, brand identities, and marketing materials to establish and maintain a consistent visual identity for a company or organization.',
+    ends: 'Ends',
   },
   {
     role: 'Job Role',
@@ -34,6 +39,7 @@ const mocData = [
     location: 'Location',
     description:
       'Designing logos, brand identities, and marketing materials to establish and maintain a consistent visual identity for a company or organization.',
+    ends: 'Ends',
   },
 ];
 
@@ -162,9 +168,41 @@ function Favorites() {
           </div>
         </div>
 
-          </div>
+        <div className="job-card-container">
+          {mocData.map((job, i) => (
+            <JobCard key={`${job.name}-${i}`} {...job} />
+          ))}
         </div>
+      </div>
     </main>
+  );
+}
+
+function JobCard({ role, company, jobType, location, description, ends }) {
+  return (
+    <div className="glowing job-card">
+      <div className="company-picture"></div>
+      <div className="job-info-container">
+        <h1 className="role-text">{role}</h1>
+        <h2 className="company-text">{company}</h2>
+
+        <p className="meta-text">
+          {jobType} | {location} | {ends}
+        </p>
+        <p className="description-text">{description}</p>
+      </div>
+      <div className="buttons-container">
+        <button>View Details</button>
+        <div className="icon-button-container">
+          <button>
+            <img src={Bell} alt="bell" />
+          </button>
+          <button>
+            <img src={Delete} alt="delete" />
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }
 
