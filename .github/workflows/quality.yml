@@ -87,6 +87,7 @@ jobs:
         uses: wearerequired/lint-action@v2
         with:
           auto_fix: true
+          eslint_args: "--config .eslintrc.cjs"
           eslint_dir: frontend
           eslint: true
           commit: false
@@ -113,6 +114,7 @@ jobs:
         uses: wearerequired/lint-action@v2
         with:
           auto_fix: true
+          eslint_args: "--config .eslintrc.cjs"
           eslint_dir: backend
           eslint: true
           commit: false
