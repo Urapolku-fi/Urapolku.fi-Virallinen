@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="804ac7e9-acd0-44d8-9d6a-07accdd0e40f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/quality.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/quality.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +34,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Staging",
+    "git-widget-placeholder": "Stag-Deployment-Tests",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/hylke/Documents/Projecten/Persoonlijk/Urapolku.fi-Virallinen/backend",
     "node.js.detected.package.eslint": "true",
@@ -86,7 +85,7 @@
       <workItem from="1695728563725" duration="1202000" />
       <workItem from="1695734467349" duration="1798000" />
       <workItem from="1695919595775" duration="9031000" />
-      <workItem from="1697653327802" duration="5665000" />
+      <workItem from="1697653327802" duration="5987000" />
     </task>
     <servers />
   </component>
