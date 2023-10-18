@@ -12,13 +12,14 @@ export default defineConfig({
     rollupOptions: {
       output: {
         entryFileNames: '[name]-[hash].js',
-        dir: 'dist'
+        dir: 'dist',
+        manualChunks(id) {
+          if (id.endsWith('src/environment/Config.jsx')) {
+            return 'config'
+          }
+        }
       }
     },
-    manualChunks(id) {
-      if (id.endsWith('src/environment/Config.jsx')) {
-        return 'config'
-      }
-    }
+
   }
 });
