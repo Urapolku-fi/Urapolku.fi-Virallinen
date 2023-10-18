@@ -4,7 +4,6 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     <list default="true" id="d25532ac-e212-4f00-8d6b-f4a9b2fe801e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/frontend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
     </list>
@@ -16,6 +15,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "git-widget-placeholder": "Staging",
+    "node.js.selected.package.tslint": "(autodetect)",
     "prettierjs.PrettierConfiguration.Package": "C:\\Users\\hylke\\Documents\\Projecten\\Persoonlijk\\Urapolku.fi-Virallinen\\frontend\\node_modules\\prettier",
     "ts.external.directory.path": "C:\\Program Files (x86)\\JetBrains\\WebStorm 2023.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external"
   }
