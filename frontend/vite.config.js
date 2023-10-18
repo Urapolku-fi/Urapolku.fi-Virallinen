@@ -8,4 +8,17 @@ export default defineConfig({
     https: true,
   },
   plugins: [react(), mkcert()],
+  build: {
+    rollupOptions: {
+      output: {
+        entryFileNames: '[name]-[hash].js',
+        dir: 'dist'
+      }
+    },
+    manualChunks(id) {
+      if (id.endsWith('src/environment/Config.jsx')) {
+        return 'config'
+      }
+    }
+  }
 });

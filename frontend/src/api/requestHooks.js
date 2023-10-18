@@ -1,6 +1,7 @@
 import { useAuth0 } from '@auth0/auth0-react';
+import config from '../environment/Config';
 
-let backend = import.meta.env.VITE_BACKEND_URL + 'api';
+let backend = config.backend_url + 'api';
 
 export const useFetch = () => {
   const { getAccessTokenSilently } = useAuth0();

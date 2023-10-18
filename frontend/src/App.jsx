@@ -10,15 +10,16 @@ import { Auth0Provider, withAuthenticationRequired as withAuth } from '@auth0/au
 import AccountTypeSelection from './components/pages/AccountTypeSelection';
 import EmployerProfileCompletion from './components/pages/EmployerProfileCompletion';
 import JobDetails from './components/pages/JobDetails';
+import config from './environment/Config';
 
 function App() {
   return (
     <Auth0Provider
-      domain={import.meta.env.VITE_AUTH0_DOMAIN}
-      clientId={import.meta.env.VITE_AUTH0_CLIENTID}
+      domain={config.auth0_domain}
+      clientId={config.auth0_clientID}
       authorizationParams={{
-        redirect_uri: import.meta.env.VITE_AUTH0_CALLBACK_URL,
-        audience: import.meta.env.VITE_AUTH0_AUDIENCE,
+        redirect_uri: config.auth0_callback_url,
+        audience: config.auth0_audience,
       }}
       useRefreshTokens={true}
       cacheLocation="localstorage"

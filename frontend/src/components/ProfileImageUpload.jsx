@@ -1,5 +1,6 @@
 import { useS3 } from '../api/s3Hooks';
 import { useState } from 'react';
+import config from "../environment/Config";
 
 const ProfileImageUpload = (props) => {
   const [bannerImageUrl, setBannerUrl] = useState('/pictures/Camera-alt.png');
@@ -13,15 +14,15 @@ const ProfileImageUpload = (props) => {
       const fileExtension = fileName.split('.').pop(); //Get the file name extension
       const reader = new FileReader(); // Read the file
       reader.onload = async () => {
-        const bucket = import.meta.env.VITE_S3_BUCKET; // Bucket name is going to be Urapolku
+        const bucket = config.s3_bucket; // Bucket name is going to be Urapolku
         const userId = localStorage.getItem('userId'); // Fetch the user ID from localstorage
         const folderAndFile = `${type}s/${userId}.` + fileExtension; // Store the file inside the profile-pictures/userid.ext where ext is the uploaded file extension
         if ((await uploadObject(bucket, folderAndFile, reader.result, 'public-read')) === 200) {
           const uploadedImagePath =
-            import.meta.env.VITE_S3_FULL_ENDPOINT + `${type}s/${userId}.` + fileExtension;
+            config.s3_full_endpoint + `${type}s/${userId}.` + fileExtension;
           if (type === 'profile-banner') {
             setBannerUrl(uploadedImagePath); // Reference the file in the profile pic url
-            props.onChange(type, uploadedImagePath); //sync the changed image to outside of the component
+            props.onChange(type, uploadedImagePath); //sync the changed image to the component
             localStorage.setItem('bannerImage', uploadedImagePath);
           } else if (type === 'profile-picture') {
             setProfileUrl(uploadedImagePath);
@@ -78,35 +79,56 @@ const ProfileImageUpload = (props) => {
   };
 
   return (
-    <div style={styles.wrapper}>
-      <h3 style={styles.profileImageText}>Upload your photos</h3>
-      <div>
-        <div id="profile-banner" onClick={openFileSelector} style={styles.profileImageBanner}>
-          <img
-            style={
-              bannerImageUrl !== '/pictures/Camera-alt.png'
-                ? styles.picture
-                : { pointerEvents: 'none' }
-            }
-            src={bannerImageUrl}
-          />
-        </div>
-        <div
-          style={styles.profileImageProfilePicture}
-          id="profile-picture"
-          onClick={openFileSelector}
-        >
-          <img
-            style={
-              profileImageUrl !== '/pictures/Camera-alt.png'
-                ? styles.picture
-                : { pointerEvents: 'none' }
-            }
-            src={profileImageUrl}
-          />
+      <div style={styles.wrapper}>
+        <h3 style={styles.profileImageText}>Upload your photos</h3>
+        <div>
+          <div
+              id="profile-banner"
+              onClick={openFileSelector}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  openFileSelector();
+                }
+              }}
+              role="button"
+              tabIndex="0"
+              style={styles.profileImageBanner}
+          >
+            <img
+                style={
+                  bannerImageUrl !== '/pictures/Camera-alt.png'
+                      ? styles.picture
+                      : { pointerEvents: 'none' }
+                }
+                src={bannerImageUrl}
+                alt="Banner"
+            />
+          </div>
+
+          <div
+              style={styles.profileImageProfilePicture}
+              id="profile-picture"
+              onClick={openFileSelector}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  openFileSelector();
+                }
+              }}
+              role="button"
+              tabIndex="0"
+          >
+            <img
+                style={
+                  profileImageUrl !== '/pictures/Camera-alt.png'
+                      ? styles.picture
+                      : { pointerEvents: 'none' }
+                }
+                src={profileImageUrl}
+                alt="Profile"
+            />
+          </div>
         </div>
       </div>
-    </div>
   );
 };
 

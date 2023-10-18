@@ -8,6 +8,7 @@ import '../css/profileCompletionOne.css';
 import { useS3 } from '../../api/s3Hooks';
 import { useNavigate } from 'react-router-dom';
 import { useFetch } from '../../api/requestHooks';
+import config from "../../environment/Config";
 
 function ProfileCompletionOne() {
   const [bannerImageUrl, setBannerUrl] = useState('/pictures/Camera-alt.png');
@@ -32,16 +33,16 @@ function ProfileCompletionOne() {
       const fileExtension = fileName.split('.').pop(); //Get the file name extension
       const reader = new FileReader(); // Read the file
       reader.onload = async () => {
-        const bucket = import.meta.env.VITE_S3_BUCKET; // Bucket name is going to be Urapolku
+        const bucket = config.s3_bucket; // Bucket name is going to be Urapolku
         const userId = localStorage.getItem('userId'); // Fetch the user ID from localstorage
         const folderAndFile = `profile-banners/${userId}.` + fileExtension; // Store the file inside the profile-pictures/userid.ext where ext is the uploaded file extension
         if ((await uploadObject(bucket, folderAndFile, reader.result, 'public-read')) === 200) {
           setBannerUrl(
-            import.meta.env.VITE_S3_FULL_ENDPOINT + `profile-banners/${userId}.` + fileExtension,
+            config.s3_full_endpoint + `profile-banners/${userId}.` + fileExtension,
           ); // Reference the file in the profile pic url
           localStorage.setItem(
             'bannerImage',
-            import.meta.env.VITE_S3_FULL_ENDPOINT + `profile-banners/${userId}.` + fileExtension,
+            config.s3_full_endpoint + `profile-banners/${userId}.` + fileExtension,
           );
         }
       };
@@ -56,16 +57,16 @@ function ProfileCompletionOne() {
       const fileExtension = fileName.split('.').pop(); //Get the file name extension
       const reader = new FileReader(); // Read the file
       reader.onload = async () => {
-        const bucket = import.meta.env.VITE_S3_BUCKET; // Bucket name is going to be Urapolku
+        const bucket = config.s3_bucket; // Bucket name is going to be Urapolku
         const userId = localStorage.getItem('userId'); // Fetch the user ID from localstorage
         const folderAndFile = `profile-pictures/${userId}.` + fileExtension; // Store the file inside the profile-pictures/userid.ext where ext is the uploaded file extension
         if ((await uploadObject(bucket, folderAndFile, reader.result, 'public-read')) === 200) {
           setProfileUrl(
-            import.meta.env.VITE_S3_FULL_ENDPOINT + `profile-pictures/${userId}.` + fileExtension,
+            config.s3_full_endpoint + `profile-pictures/${userId}.` + fileExtension,
           ); // Reference the file in the profile pic url
           localStorage.setItem(
             'profileImage',
-            import.meta.env.VITE_S3_FULL_ENDPOINT + `profile-pictures/${userId}.` + fileExtension,
+            config.s3_full_endpoint + `profile-pictures/${userId}.` + fileExtension,
           );
         } // Upload the file to the right place with the public read permissions
       };
@@ -189,7 +190,17 @@ function ProfileCompletionOne() {
             </div>
           </div>
           <div className="Bottom">
-            <div className="Next-button-wrapper" onClick={nextPage}>
+            <div
+                className="Next-button-wrapper"
+                onClick={nextPage}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    nextPage();
+                  }
+                }}
+                role="button"
+                tabIndex="0"
+            >
               <NextButton />
             </div>
             <ProgressBar />
