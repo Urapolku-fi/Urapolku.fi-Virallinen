@@ -35,6 +35,7 @@ jobs:
         uses: wearerequired/lint-action@v2
         with:
           auto_fix: true
+          prettier_args: "--config .prettierrc.cjs"
           prettier_dir: frontend
           prettier: true
           commit: false
@@ -61,6 +62,7 @@ jobs:
         uses: wearerequired/lint-action@v2
         with:
           auto_fix: true
+          prettier_args: "--config .prettierrc.cjs"
           prettier_dir: backend
           prettier: true
           commit: false
