@@ -1,0 +1,6 @@
+main {
+  /* Setting the opacity in the hex by adding '7f' because 'opacity' property would also affect the text */
+  background: linear-gradient(180deg, #673eff7f 0, #0d03257f 27.5rem);
+  font-family: 'Montserrat', sans-serif;
+  color: #ececec;
+}
