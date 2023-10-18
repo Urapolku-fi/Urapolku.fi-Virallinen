@@ -1,7 +1,41 @@
 import '../css/favorites.css';
 import Filter from './Browse/Filter';
 import { useState } from 'react';
-import TextInput from '../TextInput';
+
+const mocData = [
+  {
+    role: 'Job Role',
+    company: 'Company Name',
+    jobType: 'Full Time',
+    location: 'Location',
+    description:
+      'Designing logos, brand identities, and marketing materials to establish and maintain a consistent visual identity for a company or organization.',
+  },
+  {
+    role: 'Job Role',
+    company: 'Company Name',
+    jobType: 'Full Time',
+    location: 'Location',
+    description:
+      'Designing logos, brand identities, and marketing materials to establish and maintain a consistent visual identity for a company or organization.',
+  },
+  {
+    role: 'Job Role',
+    company: 'Company Name',
+    jobType: 'Full Time',
+    location: 'Location',
+    description:
+      'Designing logos, brand identities, and marketing materials to establish and maintain a consistent visual identity for a company or organization.',
+  },
+  {
+    role: 'Job Role',
+    company: 'Company Name',
+    jobType: 'Full Time',
+    location: 'Location',
+    description:
+      'Designing logos, brand identities, and marketing materials to establish and maintain a consistent visual identity for a company or organization.',
+  },
+];
 
 const loremIpsum = [
   ['hello'],
