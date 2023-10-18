@@ -28,3 +28,25 @@ main {
   line-height: 2rem;
 }
 
+.filters-section {
+  border-radius: 20px;
+  padding: 1rem;
+}
+
+.text-job-count {
+  font-size: 2rem;
+  margin: 0px 0px 33px;
+  width: fit-content;
+  height: fit-content;
+}
+
+.text-filter {
+  color: wheat;
+}
+
+.filter-and-jobs-container {
+  display: flex;
+
+  gap: 64px;
+  padding: 0 130px;
+}
