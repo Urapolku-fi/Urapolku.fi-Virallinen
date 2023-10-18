@@ -1,14 +1,16 @@
-#!/bin/bash
+#!/bin/sh
 
 ROOT_DIR=/usr/share/nginx/html
 
-keys=("AUTH0_CALLBACK_URL" "AUTH0_DOMAIN" "AUTH0_CLIENTID" "AUTH0_AUDIENCE" "BACKEND_URL" "S3_ENDPOINT" "S3_FULL_ENDPOINT" "S3_BUCKET" "S3_KEY" "S3_SECRET")
+keys="AUTH0_CALLBACK_URL AUTH0_DOMAIN AUTH0_CLIENTID AUTH0_AUDIENCE BACKEND_URL S3_ENDPOINT S3_FULL_ENDPOINT S3_BUCKET S3_KEY S3_SECRET"
 
 # Replace env vars in files served by NGINX
 for file in $ROOT_DIR/assets/config-*.js*;
 do
   echo "Processing $file ...";
-  for key in "${keys[@]}"
+
+  # Loop over keys
+  for key in $keys
   do
     # Get environment variable
     value=$(eval echo "\$$key")
