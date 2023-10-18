@@ -22,4 +22,4 @@ RUN chmod +x /entrypoint.sh
 
 COPY --from=builder /frontend/dist /usr/share/nginx/html
 
-ENTRYPOINT ["/entrypoint.sh"]
+CMD ["/entrypoint.sh"]
