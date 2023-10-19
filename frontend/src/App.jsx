@@ -10,7 +10,6 @@ import { Auth0Provider, withAuthenticationRequired as withAuth } from '@auth0/au
 import AccountTypeSelection from './components/pages/AccountTypeSelection';
 import EmployerProfileCompletion from './components/pages/EmployerProfileCompletion';
 import JobDetails from './components/pages/JobDetails';
-import ComponentTest from './components/pages/ComponentTest';
 
 function App() {
   return (
@@ -36,7 +35,6 @@ function App() {
             <Route path="/emponboarding" Component={withAuth(EmployerProfileCompletion)} />
             <Route path="/dashboard" Component={withAuth(Dashboard)} />
             <Route exact path="/job" Component={withAuth(JobDetails)} />
-            <Route exact path="/component-test" Component={withAuth(ComponentTest)} />
           </Routes>
         </NavBarLayout>
       </BrowserRouter>
