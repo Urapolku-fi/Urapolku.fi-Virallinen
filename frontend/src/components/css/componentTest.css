@@ -1,0 +1,16 @@
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 130px;
+  gap: 3rem;
+}
+
+main > section {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+main > section.dark {
+  background-color: #ececec;
+}
