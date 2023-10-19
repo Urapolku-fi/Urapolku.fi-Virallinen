@@ -19,7 +19,7 @@ main {
   color: transparent;
   background: var(
     --secondary-hero-text-color,
-    linear-gradient(146deg, #ececec 20.35%, rgba(236, 236, 236, 0) 128.73%)
+    linear-gradient(146deg, #ececec 20.35%, transparent 128.73%)
   );
   background-clip: text;
 }
@@ -29,8 +29,9 @@ main {
 }
 
 .glowing {
+  border: #ffffff7f 1px solid;
+
   box-shadow:
-    0px 0.5px 0px 0px rgba(255, 255, 255, 0.5) inset,
     0px -2px 40px 0px rgba(187, 155, 255, 0.15),
     0px -2px 10px 0px rgba(233, 223, 255, 0.3);
 }
@@ -54,7 +55,8 @@ main {
 .filter-and-jobs-container {
   display: flex;
 
-  gap: 64px;
+  /* gap 32 + border of 20 */
+  gap: 52px;
   padding: 0 130px;
 }
 
