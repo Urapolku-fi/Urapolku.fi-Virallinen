@@ -4,11 +4,13 @@ import classes from './button.module.css';
  * A customizable button component.
  *
  * ---
+ *
  * ## Default values:
  * - variant: 'normal'
  * - glow: false
  * - outline: false
  * - size: 'medium'
+ * - onClick: () => {}
  *
  * ---
  *
@@ -20,14 +22,25 @@ import classes from './button.module.css';
  * @param {"small" | "medium" | "large"} [props.size='medium'] - The size of the button.
  * @param {boolean} [props.dark=false] - Whether the button should have a dark theme.
  * @param {string} [props.className] - The class name of the button. You don't have to prefix with space.
+ * @param {function} [props.onClick] - The function to be called when the button is clicked.
  * @returns {JSX.Element} - The button component.
  */
-function Button({ children, variant, glow, outline, size, dark, className: classNameProp }) {
+function Button({
+  children,
+  variant,
+  glow,
+  outline,
+  size,
+  dark,
+  className: classNameProp,
+  onClick,
+}) {
   if (variant == undefined) variant = 'normal';
   if (glow == undefined) glow = false;
   if (outline == undefined) outline = false;
   if (size == undefined) size = 'medium';
   if (dark == undefined) dark = false;
+  if (onClick == undefined) onClick = () => {};
 
   let className = classes.button;
 
@@ -41,7 +54,11 @@ function Button({ children, variant, glow, outline, size, dark, className: class
   if (variant == 'rounded') className += ` ${classes.rounded}`;
   if (dark) className += ` ${classes.dark}`;
 
-  return <button className={`${className} ${classNameProp}`}>{children}</button>;
+  return (
+    <button className={`${className} ${classNameProp}`} onClick={onClick}>
+      {children}
+    </button>
+  );
 }
 
 export default Button;
