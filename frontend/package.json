@@ -12,7 +12,9 @@
     "lint:fix": "eslint . --ext js,jsx --fix",
     "styles:check": "prettier --check '**/*.{js,jsx,ts,tsx,json,md,css}'",
     "styles:fix": "prettier --write '**/*.{js,jsx,ts,tsx,json,md,css}'",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@auth0/auth0-react": "^2.2.0",
@@ -32,6 +34,14 @@
     "vite-plugin-mkcert": "^1.16.0"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^7.5.0",
+    "@storybook/addon-interactions": "^7.5.0",
+    "@storybook/addon-links": "^7.5.0",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.5.0",
+    "@storybook/react": "^7.5.0",
+    "@storybook/react-vite": "^7.5.0",
+    "@storybook/testing-library": "^0.2.2",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "eslint": "^8.45.0",
@@ -42,7 +52,10 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "eslint-plugin-security": "^1.7.1",
+    "eslint-plugin-storybook": "^0.6.15",
     "jsinspect": "^0.12.7",
-    "prettier": "^3.0.3"
+    "prettier": "^3.0.3",
+    "prop-types": "^15.8.1",
+    "storybook": "^7.5.0"
   }
 }
