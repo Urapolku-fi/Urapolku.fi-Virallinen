@@ -1,8 +1,7 @@
-import '../css/favorites.css';
-import Filter from './Browse/Filter';
+import '../../css/Favorites/favorites.css';
+import Filter from '../Browse/Filter';
 import { useState } from 'react';
-import Bell from '../../assets/bell.svg';
-import Delete from '../../assets/delete.svg';
+import JobCard from './JobCard';
 
 const mocData = [
   {
@@ -148,16 +147,16 @@ function Favorites() {
 
   return (
     <main>
-      <div className="hero-section">
+      <section className="hero-section">
         <h1>Saved Jobs</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
           ut labore et dolore
         </p>
-      </div>
+      </section>
 
       <div className="filter-and-jobs-container">
-        <div>
+        <section>
           <h2 className="text-job-count">{mocData.length} saved jobs</h2>
           <div className="filter-container">
             <Filter
@@ -166,43 +165,15 @@ function Favorites() {
               clearFilters={clearFilters}
             />
           </div>
-        </div>
+        </section>
 
-        <div className="job-card-container">
+        <section className="job-card-container">
           {mocData.map((job, i) => (
             <JobCard key={`${job.name}-${i}`} {...job} />
           ))}
-        </div>
+        </section>
       </div>
     </main>
-  );
-}
-
-function JobCard({ role, company, jobType, location, description, ends }) {
-  return (
-    <div className="glowing job-card">
-      <div className="company-picture"></div>
-      <div className="job-info-container">
-        <h1 className="role-text">{role}</h1>
-        <h2 className="company-text">{company}</h2>
-
-        <p className="meta-text">
-          {jobType} | {location} | {ends}
-        </p>
-        <p className="description-text">{description}</p>
-      </div>
-      <div className="buttons-container">
-        <button>View Details</button>
-        <div className="icon-button-container">
-          <button>
-            <img src={Bell} alt="bell" />
-          </button>
-          <button>
-            <img src={Delete} alt="delete" />
-          </button>
-        </div>
-      </div>
-    </div>
   );
 }
 

@@ -1,0 +1,82 @@
+.glowing {
+  border: #ffffff7f 1px solid;
+
+  box-shadow:
+    0px -2px 40px 0px rgba(187, 155, 255, 0.15),
+    0px -2px 10px 0px rgba(233, 223, 255, 0.3);
+}
+
+.job-card {
+  display: flex;
+  border-radius: 20px;
+  background-color: #0b0121;
+  padding: 16px 24px;
+
+  border-left: #ececec 20px solid;
+}
+
+.company-picture {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+
+  /* just a nice pattern can be removed when picture is available */
+  background: repeating-linear-gradient(45deg, #ececec, #ececec 10px, #2b213f 10px, #2b213f 20px);
+}
+
+.job-info-container {
+  padding: 0 16px;
+  width: fit-content;
+  border-right: #2b213f 2px solid;
+}
+
+.role-text {
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.company-text {
+  font-size: 14px;
+  line-height: 150%;
+}
+
+.meta-text {
+  color: #939393d9;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.buttons-container {
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.buttons-container > button {
+  background-color: #ececec;
+  width: max-content;
+  color: #0b0121;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 17px 16px;
+
+  box-shadow:
+    0px -2px 7px 0px rgba(187, 155, 255, 0.15),
+    0px 2px 4px 0px #a39bb4;
+}
+
+.icon-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 24px;
+}
+
+.icon-button-container > button {
+  border: none;
+}
