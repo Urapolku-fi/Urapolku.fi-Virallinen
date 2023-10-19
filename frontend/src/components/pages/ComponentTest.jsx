@@ -5,7 +5,7 @@ function ComponentTest() {
   return (
     <main>
       <section>
-        <Button>ABCD</Button>
+        <Button onClick={() => alert('works')}>ABCD</Button>
         <Button variant="rounded">ABCD</Button>
         <Button variant="search">ABC</Button>
       </section>
