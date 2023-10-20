@@ -27,21 +27,14 @@ import classes from './button.module.css';
  */
 function Button({
   children,
-  variant,
-  glow,
-  outline,
-  size,
-  dark,
+  variant = 'normal',
+  glow = false,
+  outline = false,
+  size = 'medium',
+  dark = false,
   className: classNameProp,
-  onClick,
+  onClick = () => {},
 }) {
-  if (variant == undefined) variant = 'normal';
-  if (glow == undefined) glow = false;
-  if (outline == undefined) outline = false;
-  if (size == undefined) size = 'medium';
-  if (dark == undefined) dark = false;
-  if (onClick == undefined) onClick = () => {};
-
   let className = classes.button;
 
   if (glow) className += ` ${classes.glow}`;
