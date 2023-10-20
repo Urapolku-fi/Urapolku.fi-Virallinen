@@ -1,5 +1,4 @@
-import Dropdown from '../components/core/Dropdown/Dropdown';
-import useDropdown from '../components/core/Dropdown/useDropdown';
+import { Dropdown, useDropdown } from '../components/core';
 
 export default {
   title: 'Dropdown',
