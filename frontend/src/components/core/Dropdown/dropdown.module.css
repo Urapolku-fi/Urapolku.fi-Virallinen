@@ -1,0 +1,58 @@
+.hidden {
+  display: none;
+}
+
+.option.selected {
+  font-weight: 600;
+  color: #faf8ff;
+}
+
+.option {
+  border: none;
+  background-color: transparent;
+  color: #a39bb4;
+
+  cursor: pointer;
+  
+  transition-duration: 150ms;
+  transition-property: color;
+}
+
+.option:hover {
+  color: #faf8ff;
+}
+
+.modal {
+  position: relative;
+
+  background-color: #0b0121;
+
+  box-shadow: 0px -2px 7px 0px rgba(233, 223, 255, 0.3);
+
+  border-radius: 20px;
+
+  padding: 12px 24px 15px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  gap: 16px;
+
+  width: max-content;
+  min-width: 100px;
+}
+
+.top {
+  top: 10px;
+}
+
+.opener {
+  border: none;
+  background-color: transparent;
+  color: #ececec;
+  font-size: 16px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
